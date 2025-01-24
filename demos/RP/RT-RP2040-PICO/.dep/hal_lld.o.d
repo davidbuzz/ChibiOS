@@ -53,28 +53,32 @@ build/obj/hal_lld.o: ../../../os/hal/ports/RP/RP2040/hal_lld.c \
  ../../../os/rt/include/chdynamic.h cfg/halconf.h cfg/mcuconf.h \
  ../../../os/hal/ports/RP/RP2040/hal_lld.h \
  ../../../os/hal/ports/RP/RP2040/rp_registry.h \
- ../../../ext/pico-sdk/src/rp2_common/hardware_clocks/include/hardware/clocks.h \
- ../../../ext/pico-sdk/src/common/pico_base/include/pico.h \
- ../../../ext/pico-sdk/src/common/pico_base/include/pico/types.h \
- ../../../ext/pico-sdk/src/common/pico_base/include/pico/assert.h \
+ /home/buzz2/Chibi/pico-sdk/src/rp2_common/hardware_clocks/include/hardware/clocks.h \
+ /home/buzz2/Chibi/pico-sdk/src/common/pico_base_headers/include/pico.h \
+ /home/buzz2/Chibi/pico-sdk/src/common/pico_base_headers/include/pico/types.h \
+ /home/buzz2/Chibi/pico-sdk/src/common/pico_base_headers/include/pico/assert.h \
  /opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/assert.h \
  /opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/_ansi.h \
  /opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/newlib.h \
  /opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/config.h \
  /opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/machine/ieeefp.h \
  ../../..//os/various/pico_bindings/dumb/include/pico/version.h \
- ../../../ext/pico-sdk/src/common/pico_base/include/pico/config.h \
+ /home/buzz2/Chibi/pico-sdk/src/common/pico_base_headers/include/pico/config.h \
  ../../..//os/various/pico_bindings/dumb/include/pico/config_autogen.h \
- ../../../ext/pico-sdk/src/boards/include/boards/pico.h \
- ../../../ext/pico-sdk/src/rp2_common/pico_platform/include/pico/platform.h \
+ /home/buzz2/Chibi/pico-sdk/src/boards/include/boards/pico.h \
+ /home/buzz2/Chibi/pico-sdk/src/rp2040/pico_platform/include/pico/platform.h \
+ /home/buzz2/Chibi/pico-sdk/src/rp2_common/pico_platform_compiler/include/pico/platform/compiler.h \
+ /home/buzz2/Chibi/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
  /opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/cdefs.h \
- ../../../ext/pico-sdk/src/common/pico_base/include/pico/types.h \
- ../../../ext/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
- ../../../ext/pico-sdk/src/common/pico_base/include/pico/error.h \
- ../../../ext/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/clocks.h \
- ../../../ext/pico-sdk/src/rp2_common/hardware_base/include/hardware/address_mapped.h \
- ../../../ext/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
- ../../../ext/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/clocks.h \
+ /home/buzz2/Chibi/pico-sdk/src/common/pico_base_headers/include/pico/types.h \
+ /home/buzz2/Chibi/pico-sdk/src/rp2_common/pico_platform_sections/include/pico/platform/sections.h \
+ /home/buzz2/Chibi/pico-sdk/src/rp2_common/pico_platform_panic/include/pico/platform/panic.h \
+ /home/buzz2/Chibi/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
+ /home/buzz2/Chibi/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
+ /home/buzz2/Chibi/pico-sdk/src/common/pico_base_headers/include/pico/error.h \
+ /home/buzz2/Chibi/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/clocks.h \
+ /home/buzz2/Chibi/pico-sdk/src/rp2_common/hardware_base/include/hardware/address_mapped.h \
+ /home/buzz2/Chibi/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/clocks.h \
  ../../../os/hal/ports/common/ARMCMx/nvic.h \
  ../../../os/hal/ports/common/ARMCMx/cache.h \
  ../../../os/hal/ports/RP/RP2040/rp_isr.h \
@@ -108,7 +112,52 @@ build/obj/hal_lld.o: ../../../os/hal/ports/RP/RP2040/hal_lld.c \
  ../../../os/hal/include/hal_st.h \
  ../../../os/hal/ports/RP/LLD/TIMERv1/hal_st_lld.h \
  ../../../os/hal/include/hal_mmc_spi.h \
- ../../../os/hal/include/hal_serial_usb.h
+ ../../../os/hal/include/hal_serial_usb.h \
+ /opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdio.h \
+ /opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/reent.h \
+ /opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/_ansi.h \
+ /opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_types.h \
+ /opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/machine/_types.h \
+ /opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/lock.h \
+ /opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/types.h \
+ /opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/machine/endian.h \
+ /opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/machine/_endian.h \
+ /opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/select.h \
+ /opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_sigset.h \
+ /opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_timeval.h \
+ /opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/timespec.h \
+ /opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_timespec.h \
+ /opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_pthreadtypes.h \
+ /opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/sched.h \
+ /opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/machine/types.h \
+ /opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/stdio.h \
+ /home/buzz2/Chibi/pico-sdk/src/common/pico_stdlib_headers/include/pico/stdlib.h \
+ /home/buzz2/Chibi/pico-sdk/src/rp2_common/pico_stdio/include/pico/stdio.h \
+ /home/buzz2/Chibi/pico-sdk/src/common/pico_time/include/pico/time.h \
+ /home/buzz2/Chibi/pico-sdk/src/rp2_common/hardware_timer/include/hardware/timer.h \
+ /home/buzz2/Chibi/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/timer.h \
+ /home/buzz2/Chibi/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/timer.h \
+ /home/buzz2/Chibi/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/intctrl.h \
+ /home/buzz2/Chibi/pico-sdk/src/rp2_common/hardware_gpio/include/hardware/gpio.h \
+ /home/buzz2/Chibi/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/sio.h \
+ /home/buzz2/Chibi/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/interp.h \
+ /home/buzz2/Chibi/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/pads_bank0.h \
+ /home/buzz2/Chibi/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/pads_bank0.h \
+ /home/buzz2/Chibi/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/io_bank0.h \
+ /home/buzz2/Chibi/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/io_bank0.h \
+ /home/buzz2/Chibi/pico-sdk/src/rp2_common/hardware_irq/include/hardware/irq.h \
+ /home/buzz2/Chibi/pico-sdk/src/rp2040/pico_platform/include/pico/platform/cpu_regs.h \
+ /home/buzz2/Chibi/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/m0plus.h \
+ /home/buzz2/Chibi/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/m0plus.h \
+ /home/buzz2/Chibi/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/nvic.h \
+ /home/buzz2/Chibi/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/scb.h \
+ /home/buzz2/Chibi/pico-sdk/src/rp2_common/hardware_uart/include/hardware/uart.h \
+ /home/buzz2/Chibi/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/uart.h \
+ /home/buzz2/Chibi/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/uart.h \
+ /home/buzz2/Chibi/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/dreq.h \
+ /home/buzz2/Chibi/pico-sdk/src/rp2_common/hardware_resets/include/hardware/resets.h \
+ /home/buzz2/Chibi/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/resets.h \
+ /home/buzz2/Chibi/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/resets.h
 ../../../os/hal/include/hal.h:
 ../../../os/common/portability/GCC/ccportab.h:
 ../../../os/hal/osal/rt-nil/osal.h:
@@ -181,28 +230,32 @@ cfg/halconf.h:
 cfg/mcuconf.h:
 ../../../os/hal/ports/RP/RP2040/hal_lld.h:
 ../../../os/hal/ports/RP/RP2040/rp_registry.h:
-../../../ext/pico-sdk/src/rp2_common/hardware_clocks/include/hardware/clocks.h:
-../../../ext/pico-sdk/src/common/pico_base/include/pico.h:
-../../../ext/pico-sdk/src/common/pico_base/include/pico/types.h:
-../../../ext/pico-sdk/src/common/pico_base/include/pico/assert.h:
+/home/buzz2/Chibi/pico-sdk/src/rp2_common/hardware_clocks/include/hardware/clocks.h:
+/home/buzz2/Chibi/pico-sdk/src/common/pico_base_headers/include/pico.h:
+/home/buzz2/Chibi/pico-sdk/src/common/pico_base_headers/include/pico/types.h:
+/home/buzz2/Chibi/pico-sdk/src/common/pico_base_headers/include/pico/assert.h:
 /opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/assert.h:
 /opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/_ansi.h:
 /opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/newlib.h:
 /opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/config.h:
 /opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/machine/ieeefp.h:
 ../../..//os/various/pico_bindings/dumb/include/pico/version.h:
-../../../ext/pico-sdk/src/common/pico_base/include/pico/config.h:
+/home/buzz2/Chibi/pico-sdk/src/common/pico_base_headers/include/pico/config.h:
 ../../..//os/various/pico_bindings/dumb/include/pico/config_autogen.h:
-../../../ext/pico-sdk/src/boards/include/boards/pico.h:
-../../../ext/pico-sdk/src/rp2_common/pico_platform/include/pico/platform.h:
+/home/buzz2/Chibi/pico-sdk/src/boards/include/boards/pico.h:
+/home/buzz2/Chibi/pico-sdk/src/rp2040/pico_platform/include/pico/platform.h:
+/home/buzz2/Chibi/pico-sdk/src/rp2_common/pico_platform_compiler/include/pico/platform/compiler.h:
+/home/buzz2/Chibi/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h:
 /opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/cdefs.h:
-../../../ext/pico-sdk/src/common/pico_base/include/pico/types.h:
-../../../ext/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h:
-../../../ext/pico-sdk/src/common/pico_base/include/pico/error.h:
-../../../ext/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/clocks.h:
-../../../ext/pico-sdk/src/rp2_common/hardware_base/include/hardware/address_mapped.h:
-../../../ext/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h:
-../../../ext/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/clocks.h:
+/home/buzz2/Chibi/pico-sdk/src/common/pico_base_headers/include/pico/types.h:
+/home/buzz2/Chibi/pico-sdk/src/rp2_common/pico_platform_sections/include/pico/platform/sections.h:
+/home/buzz2/Chibi/pico-sdk/src/rp2_common/pico_platform_panic/include/pico/platform/panic.h:
+/home/buzz2/Chibi/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h:
+/home/buzz2/Chibi/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h:
+/home/buzz2/Chibi/pico-sdk/src/common/pico_base_headers/include/pico/error.h:
+/home/buzz2/Chibi/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/clocks.h:
+/home/buzz2/Chibi/pico-sdk/src/rp2_common/hardware_base/include/hardware/address_mapped.h:
+/home/buzz2/Chibi/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/clocks.h:
 ../../../os/hal/ports/common/ARMCMx/nvic.h:
 ../../../os/hal/ports/common/ARMCMx/cache.h:
 ../../../os/hal/ports/RP/RP2040/rp_isr.h:
@@ -247,3 +300,48 @@ cfg/mcuconf.h:
 ../../../os/hal/ports/RP/LLD/TIMERv1/hal_st_lld.h:
 ../../../os/hal/include/hal_mmc_spi.h:
 ../../../os/hal/include/hal_serial_usb.h:
+/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/stdio.h:
+/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/reent.h:
+/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/_ansi.h:
+/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_types.h:
+/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/machine/_types.h:
+/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/lock.h:
+/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/types.h:
+/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/machine/endian.h:
+/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/machine/_endian.h:
+/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/select.h:
+/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_sigset.h:
+/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_timeval.h:
+/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/timespec.h:
+/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_timespec.h:
+/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/_pthreadtypes.h:
+/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/sched.h:
+/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/machine/types.h:
+/opt/gcc-arm-none-eabi-10-2020-q4-major/arm-none-eabi/include/sys/stdio.h:
+/home/buzz2/Chibi/pico-sdk/src/common/pico_stdlib_headers/include/pico/stdlib.h:
+/home/buzz2/Chibi/pico-sdk/src/rp2_common/pico_stdio/include/pico/stdio.h:
+/home/buzz2/Chibi/pico-sdk/src/common/pico_time/include/pico/time.h:
+/home/buzz2/Chibi/pico-sdk/src/rp2_common/hardware_timer/include/hardware/timer.h:
+/home/buzz2/Chibi/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/timer.h:
+/home/buzz2/Chibi/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/timer.h:
+/home/buzz2/Chibi/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/intctrl.h:
+/home/buzz2/Chibi/pico-sdk/src/rp2_common/hardware_gpio/include/hardware/gpio.h:
+/home/buzz2/Chibi/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/sio.h:
+/home/buzz2/Chibi/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/interp.h:
+/home/buzz2/Chibi/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/pads_bank0.h:
+/home/buzz2/Chibi/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/pads_bank0.h:
+/home/buzz2/Chibi/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/io_bank0.h:
+/home/buzz2/Chibi/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/io_bank0.h:
+/home/buzz2/Chibi/pico-sdk/src/rp2_common/hardware_irq/include/hardware/irq.h:
+/home/buzz2/Chibi/pico-sdk/src/rp2040/pico_platform/include/pico/platform/cpu_regs.h:
+/home/buzz2/Chibi/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/m0plus.h:
+/home/buzz2/Chibi/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/m0plus.h:
+/home/buzz2/Chibi/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/nvic.h:
+/home/buzz2/Chibi/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/scb.h:
+/home/buzz2/Chibi/pico-sdk/src/rp2_common/hardware_uart/include/hardware/uart.h:
+/home/buzz2/Chibi/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/uart.h:
+/home/buzz2/Chibi/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/uart.h:
+/home/buzz2/Chibi/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/dreq.h:
+/home/buzz2/Chibi/pico-sdk/src/rp2_common/hardware_resets/include/hardware/resets.h:
+/home/buzz2/Chibi/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/resets.h:
+/home/buzz2/Chibi/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/resets.h:
