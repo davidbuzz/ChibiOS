@@ -152,3 +152,16 @@ make -d > make.debug.log
 where is the resulting binary.?
 ls build/ch.bin
 file build/ch.bin
+
+
+----------------------------------------
+
+I appear to have gotten the code to commpile using pico "SDK 2.1" as pulled down from git...
+
+make clean ; make -d > make2.debug.log 2>&1
+
+changed made, and log of it building as part of this commit, binaries/assets commited in next commit.
+
+the majority of them were header files that have moved-around and/or the SDK getting more complex and needing to pring in a few more folders.
+
+... "pico-sdk.mk"  is the new "V2" one, and the old one is preserved as "-sdk1.mk" unchanged.
