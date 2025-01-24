@@ -1,0 +1,142 @@
+cd /home/buzz2/Chibi/ChibiOS-RT/demos/RP/RT-RP2040-PICO/
+make
+    Compiler Options
+    arm-none-eabi-gcc -c -mcpu=cortex-m0plus -mthumb -O2 -ggdb -fomit-frame-pointer -falign-functions=16 -ffunction-sections -fdata-sections -fno-common -flto=auto -Wall -Wextra -Wundef -Wstrict-prototypes -DCORTEX_USE_FPU=FALSE -DCRT0_VTOR_INIT=1 -DCRT0_EXTRA_CORES_NUMBER=1 -DPICO_NO_FPGA_CHECK -DNDEBUG -MD -MP -MF ./.dep/build.d -I. -I../../..//os/various/pico_bindings/dumb/include -I../../../ext/pico-sdk/src/boards/include -I../../../ext/pico-sdk/src/common/pico_base/include -I../../../ext/pico-sdk/src/rp2040/hardware_regs/include -I../../../ext/pico-sdk/src/rp2040/hardware_structs/include -I../../../ext/pico-sdk/src/rp2_common/hardware_base/include -I../../../ext/pico-sdk/src/rp2_common/hardware_clocks/include -I../../../ext/pico-sdk/src/rp2_common/hardware_gpio/include -I../../../ext/pico-sdk/src/rp2_common/hardware_irq/include -I../../../ext/pico-sdk/src/rp2_common/hardware_pll/include -I../../../ext/pico-sdk/src/rp2_common/hardware_resets/include -I../../../ext/pico-sdk/src/rp2_common/hardware_watchdog/include -I../../../ext/pico-sdk/src/rp2_common/hardware_xosc/include -I../../../ext/pico-sdk/src/rp2_common/pico_platform/include -I../../../os/common/ext/ARM/CMSIS/Core/Include -I../../../os/common/ext/RP/RP2040 -I../../../os/common/oop/include -I../../../os/common/portability/GCC -I../../../os/common/ports/ARM-common/include -I../../../os/common/ports/ARMv6-M-RP2 -I../../../os/common/startup/ARMCMx/compilers/GCC -I../../../os/common/startup/ARMCMx/devices/RP2040 -I../../../os/hal/boards/RP_PICO_RP2040 -I../../../os/hal/include -I../../../os/hal/lib/streams -I../../../os/hal/osal/rt-nil -I../../../os/hal/ports/RP/LLD/DMAv1 -I../../../os/hal/ports/RP/LLD/GPIOv1 -I../../../os/hal/ports/RP/LLD/RTCv1 -I../../../os/hal/ports/RP/LLD/SPIv1 -I../../../os/hal/ports/RP/LLD/TIMERv1 -I../../../os/hal/ports/RP/LLD/UARTv1 -I../../../os/hal/ports/RP/LLD/WDGv1 -I../../../os/hal/ports/RP/RP2040 -I../../../os/hal/ports/common/ARMCMx -I../../../os/license -I../../../os/oslib/include -I../../../os/rt/include -I../../../os/test/include -I../../../os/various/shell -I../../../test/oslib/source/test -I../../../test/rt/source/test -I./cfg main.c -o main.o
+
+    Compiling crt0_v6m.S
+    Compiling vectors.S
+    Compiling chcoreasm.S
+    Compiling crt1.c
+    Compiling oop_base_object.c
+    Compiling hal.c
+    In file included from ../../../os/hal/include/hal.h:259,
+                    from ../../../os/hal/src/hal.c:25:
+    ../../../os/hal/ports/RP/RP2040/hal_lld.h:34:10: fatal error: hardware/clocks.h: No such file or directory
+    34 | #include "hardware/clocks.h"
+        |          ^~~~~~~~~~~~~~~~~~~
+    compilation terminated.
+    make: *** [../../../os/common/startup/ARMCMx/compilers/GCC/mk/rules.mk:195: build/obj/hal.o] Error 1
+
+
+needs....
+pico-sdk...    there's a .7z in /ext/ that cna be extracted into ./ext/ dir..
+...
+cd /home/buzz2/Chibi/ChibiOS-RT/ext
+7z x pico-sdk\ 1.1.0.7z
+done!  its in ChibiOS-RT/ext/pico-sdk/ folder
+
+        ... or get a diff one..
+        cd /home/buzz2/Chibi
+        git clone https://github.com/raspberrypi/pico-sdk
+        # instrurciotns here: https://github.com/raspberrypi/pico-sdk
+        sudo apt install cmake python3 build-essential gcc-arm-none-eabi libnewlib-arm-none-eabi libstdc++-arm-none-eabi-newlib
+
+        export PICO_SDK_PATH=/home/buzz2/Chibi/pico-sdk
+
+
+make the RP demo...
+
+cd /home/buzz2/Chibi/ChibiOS-RT/demos/RP/RT-RP2040-PICO/
+make
+RT-RP2040-PICO]$ make
+    Compiling hal.c
+    Compiling hal_st.c
+    Compiling hal_buffered_serial.c
+    Compiling hal_buffers.c
+    Compiling hal_queues.c
+    Compiling hal_mmcsd.c
+    Compiling hal_pal.c
+    Compiling hal_sio.c
+    Compiling hal_flash.c
+    Compiling nvic.c
+    Compiling rp_isr.c
+    Compiling hal_lld.c
+    Compiling rp_dma.c
+    Compiling hal_pal_lld.c
+    Compiling hal_spi_lld.c
+    Compiling hal_st_lld.c
+    Compiling hal_sio_lld.c
+    Compiling board.c
+    Compiling osal.c
+    Compiling chsys.c
+    Compiling chrfcu.c
+    Compiling chdebug.c
+    Compiling chtrace.c
+    Compiling chvt.c
+    Compiling chschd.c
+    Compiling chinstances.c
+    Compiling chthreads.c
+    Compiling chtm.c
+    Compiling chregistry.c
+    Compiling chsem.c
+    Compiling chmtx.c
+    Compiling chcond.c
+    Compiling chevents.c
+    Compiling chmsg.c
+    Compiling chdynamic.c
+    Compiling chmemchecks.c
+    Compiling chmboxes.c
+    Compiling chmemcore.c
+    Compiling chmemheaps.c
+    Compiling chmempools.c
+    Compiling chpipes.c
+    Compiling chobjcaches.c
+    Compiling chdelegates.c
+    Compiling chfactory.c
+    Compiling chcore.c
+    Compiling clocks.c
+    Compiling pll.c
+    Compiling watchdog.c
+    Compiling xosc.c
+    Compiling chprintf.c
+    Compiling chscanf.c
+    Compiling memstreams.c
+    Compiling nullstreams.c
+    Compiling bufstreams.c
+    Compiling shell.c
+    Compiling shell_cmd.c
+    Compiling ch_test.c
+    Compiling ch_test_printf.c
+    Compiling rt_test_root.c
+    Compiling rt_test_sequence_001.c
+    Compiling rt_test_sequence_002.c
+    Compiling rt_test_sequence_003.c
+    Compiling rt_test_sequence_004.c
+    Compiling rt_test_sequence_005.c
+    Compiling rt_test_sequence_006.c
+    Compiling rt_test_sequence_007.c
+    Compiling rt_test_sequence_008.c
+    Compiling rt_test_sequence_009.c
+    Compiling rt_test_sequence_010.c
+    Compiling rt_test_sequence_011.c
+    Compiling rt_test_sequence_012.c
+    Compiling oslib_test_root.c
+    Compiling oslib_test_sequence_001.c
+    Compiling oslib_test_sequence_002.c
+    Compiling oslib_test_sequence_003.c
+    Compiling oslib_test_sequence_004.c
+    Compiling oslib_test_sequence_005.c
+    Compiling oslib_test_sequence_006.c
+    Compiling oslib_test_sequence_007.c
+    Compiling oslib_test_sequence_008.c
+    Compiling oslib_test_sequence_009.c
+    Compiling main.c
+    Compiling c1_main.c
+    Linking build/ch.elf
+    Creating build/ch.hex
+    Creating build/ch.bin
+    Creating build/ch.dmp
+
+    text	   data	    bss	    dec	    hex	filename
+    70588	    220	 194824	 265632	  40da0	build/ch.elf
+    Creating build/ch.list
+
+    Done
+
+sweet, compiles.  now what.?
+
+make it with more verbosity.?
+make clean
+make -d
+[masses of output]
+make -d > make.debug.log
