@@ -153,6 +153,8 @@ where is the resulting binary.?
 ls build/ch.bin
 file build/ch.bin
 
+# interesting
+arm-none-eabi-objdump -p build/ch.elf
 
 ----------------------------------------
 
@@ -165,3 +167,85 @@ changed made, and log of it building as part of this commit, binaries/assets com
 the majority of them were header files that have moved-around and/or the SDK getting more complex and needing to pring in a few more folders.
 
 ... "pico-sdk.mk"  is the new "V2" one, and the old one is preserved as "-sdk1.mk" unchanged.
+
+--------------------
+
+on my machine there's a ready to use picotool here: /home/buzz/.arduino15/packages/rp2040/tools/pqt-picotool/4.0.1-8ec9d6f/picotool  because I have the pico/pic2 arduino libs installed.
+
+"picotool" and "pico-sdk" are different repos  - dont bother trying to use -sdk to get "tool", it gets u a broken one.
+    ---THIS STANZA BROKEN AS IT ENDS UP NO USB SUPPORT--- DONT USE
+    [ ensure u have cloned the git 'pico-sdk' repo]
+    cd /home/buzz2/Chibi/pico-sdk/
+    git submodule update --init lib/mbedtls
+    git submodule update --init lib/tinyusb
+    git submodule update --init
+    sudo apt install build-essential pkg-config libusb-1.0-0-dev cmake
+    mkdir build
+    cd build
+    cmake -DCMAKE_INSTALL_PREFIX=~/bin ..
+    make
+    make install
+    then after its done its here:
+    ls _deps/picotool/picotool
+    cp _deps/picotool/picotool ../picotool
+    cd ..
+    ./picotool version
+    picotool v2.1.1-develop (Linux, GNU-13.3.0, Release)
+    ...but This Picotool is MISSING the 'picotool load' command its becasue missing libusb-1.0-0-dev is not installed, this happens , it builds without usb capabilities, which is stupid, so go back and re-do it.
+--------------------
+
+
+how to convert a .elf or a .bin to a .uf2.?    we want ot use "picotool", apparently.
+
+get a good "picotool", from its own repo - this uses code from the sdk, but is separate.
+cd /home/buzz2/Chibi
+git clone https://github.com/raspberrypi/picotool
+cd picotool
+mkdir build
+cd build
+cmake -DPICO_SDK_PATH=/home/buzz2/Chibi/pico-sdk ..
+make
+cp ./picotool ..
+cd ..
+pwd
+/home/buzz2/Chibi/picotool/picotool load
+
+cd /home/buzz2/Chibi/ChibiOS-RT/demos/RP/RT-RP2040-PICO/build
+
+/home/buzz2/Chibi/picotool/picotool uf2 convert ch.elf ch.uf2  --family rp2350-arm-s --abs-block
+    RP2350-E10: Adding absolute block to UF2 targeting 0x10ffff00
+
+file ch.uf2 
+    ch.uf2: UF2 firmware image, family 0xe48bff59, address 0x20000000, 273 total blocks
+
+
+how to upload.?   aparently arduino uses 'uf2conv.py'.. ... to upload the xxx.UF2 file.
+
+but we might upload like this too.... "-f" is for devives *not* in BOOTSEL mode, ie /dev/ttyACM0 exists
+/home/buzz2/Chibi/picotool/picotool load -v -x ch.uf2 -f
+    Loading into RAM:     [==============================]  100%
+    Verifying RAM:        [==============================]  100%
+    OK
+
+    The device was rebooted to start the application.
+
+
+cd /home/buzz2/Chibi/ChibiOS-RT/demos/RP/RT-RP2040-PICO/build
+[ unplug pico from usb, hold button down while re-connecting, keep holding for 1 sec after then...]
+../picotool load -v -x ch.uf2 -f
+    Loading into RAM:     [==============================]  100%
+    Verifying RAM:        [==============================]  100%
+    OK
+
+    The device was rebooted to start the application.
+
+
+fab, but after that happends I have no signs of life, so I guess I need to "gdb" ths sucker with my other pico and openocd.?
+
+--------------------
+    relevant exceprts from my arduino in verbose mode when uploading to 2350 ..
+
+    /home/buzz/.arduino15/packages/rp2040/tools/pqt-picotool/4.0.1-8ec9d6f/picotool uf2 convert /home/buzz/.cache/arduino/sketches/589FD8E4BCF6B2949511472F117B1D78/pico2.buzz.ino.elf /home/buzz/.cache/arduino/sketches/589FD8E4BCF6B2949511472F117B1D78/pico2.buzz.ino.uf2 --family rp2350-arm-s --abs-block
+
+
+    "/home/buzz/.arduino15/packages/rp2040/tools/pqt-python3/1.0.1-base-3a57aed-1/python3" -I "/home/buzz/.arduino15/packages/rp2040/hardware/rp2040/4.4.2/tools/uf2conv.py" --serial "/dev/ttyACM0" --family RP2040 --deploy "/home/buzz/.cache/arduino/sketches/589FD8E4BCF6B2949511472F117B1D78/pico2.buzz.ino.uf2"
