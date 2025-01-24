@@ -17,6 +17,10 @@
 #include "ch.h"
 #include "hal.h"
 
+//#include <pico/runtime_init.h>
+#include <stdio.h>
+#include "pico/stdlib.h"
+
 semaphore_t blinker_sem;
 
 /*
@@ -37,6 +41,13 @@ static THD_FUNCTION(Thread1, arg) {
  * Application entry point.
  */
 int main(void) {
+
+  stdio_init_all(); //init all the pico-sdk.
+
+      // these are pico sdk calls, and we can call function/s from any .c file mentioned in 
+      // os/various/pico_bindings/pico-sdk.mk which right now includes gpio,clocks,pll.
+      gpio_init(PICO_DEFAULT_LED_PIN);
+      gpio_set_dir(PICO_DEFAULT_LED_PIN, GPIO_OUT);
 
   /*
    * Shared objects initialization.
