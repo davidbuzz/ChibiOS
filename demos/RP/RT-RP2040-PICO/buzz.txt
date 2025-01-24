@@ -24,15 +24,22 @@ pico-sdk...    there's a .7z in /ext/ that cna be extracted into ./ext/ dir..
 cd /home/buzz2/Chibi/ChibiOS-RT/ext
 7z x pico-sdk\ 1.1.0.7z
 done!  its in ChibiOS-RT/ext/pico-sdk/ folder
+THIS "included" pico-sdk is release 1.1.0, and date/s from "Mar 6, 2021"
+    https://github.com/raspberrypi/pico-sdk/releases
+... so its "very old", much older than the "pico 2" 2350.... which is supported/added as part of "release 2.1.0" Nov 25, 2024
 
-        ... or get a diff one..
+
+        So i also got a diff/newer one..
         cd /home/buzz2/Chibi
         git clone https://github.com/raspberrypi/pico-sdk
+        cd pico-sdk
+        git checkout master
+        git pull
         # instrurciotns here: https://github.com/raspberrypi/pico-sdk
         sudo apt install cmake python3 build-essential gcc-arm-none-eabi libnewlib-arm-none-eabi libstdc++-arm-none-eabi-newlib
-
         export PICO_SDK_PATH=/home/buzz2/Chibi/pico-sdk
 
+        # todo - make use of the newer sdk.
 
 make the RP demo...
 
@@ -137,6 +144,11 @@ sweet, compiles.  now what.?
 
 make it with more verbosity.?
 make clean
-make -d
-[masses of output]
+    make -d
+    [masses of output]
 make -d > make.debug.log
+
+
+where is the resulting binary.?
+ls build/ch.bin
+file build/ch.bin
