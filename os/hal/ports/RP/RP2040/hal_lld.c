@@ -24,6 +24,9 @@
 
 #include "hal.h"
 
+#include <stdio.h>
+#include "pico/stdlib.h"
+
 /*===========================================================================*/
 /* Driver local definitions.                                                 */
 /*===========================================================================*/
@@ -100,7 +103,9 @@ static void start_core1(void) {
 void hal_lld_init(void) {
 
 #if RP_NO_INIT == FALSE
-  clocks_init();
+  //clocks_init(); //sdk1
+  //runtime_init_clocks();//no worky? missing includes.?
+  //stdio_init_all(); //init all the pico-sdk.
 
   SystemCoreClock = RP_CORE_CLK;
 
