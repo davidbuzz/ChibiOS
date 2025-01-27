@@ -82,6 +82,19 @@ endif
 # Project, target, sources and paths
 #
 
+# create a boolean that les me choose either the RP2040 or RP2350
+USE_RP2350 =no
+USE_RP2040 =yes 
+# tell user what we are doing
+ifeq ($(USE_RP2040),yes)
+  $(info Using RP2040)
+endif  
+ifeq ($(USE_RP2350),yes)
+  $(info Using RP2350)
+endif  
+
+
+
 # Define project name here
 PROJECT = ch
 
@@ -97,15 +110,37 @@ DEPDIR   := ./.dep
 # Licensing files.
 include $(CHIBIOS)/os/license/license.mk
 # Startup files.
+ifeq ($(USE_RP2040),yes)
 include $(CHIBIOS)/os/common/startup/ARMCMx/compilers/GCC/mk/startup_rp2040.mk
+endif
+ifeq ($(USE_RP2350),yes)
+include $(CHIBIOS)/os/common/startup/ARMCMx/compilers/GCC/mk/startup_rp2350.mk
+endif
 # HAL-OSAL files (optional).
 include $(CHIBIOS)/os/hal/hal.mk
+ifeq ($(USE_RP2040),yes)
 include $(CHIBIOS)/os/hal/ports/RP/RP2040/platform.mk
+endif
+ifeq ($(USE_RP2350),yes)
+include $(CHIBIOS)/os/hal/ports/RP/RP2350/platform.mk
+endif
+ifeq ($(USE_RP2040),yes)
 include $(CHIBIOS)/os/hal/boards/RP_PICO_RP2040/board.mk
+endif
+ifeq ($(USE_RP2350),yes)
+include $(CHIBIOS)/os/hal/boards/RP_PICO_RP2350/board.mk
+endif
 include $(CHIBIOS)/os/hal/osal/rt-nil/osal.mk
 # RTOS files (optional).
 include $(CHIBIOS)/os/rt/rt.mk
+ifeq ($(USE_RP2040),yes)
 include $(CHIBIOS)/os/common/ports/ARMv6-M-RP2/compilers/GCC/mk/port.mk
+endif
+ifeq ($(USE_RP2350),yes)
+# todo this points to the armv6 from 2040 and should use armv8, but we havent validated that yet
+include $(CHIBIOS)/os/common/ports/ARMv6-M-RP2/compilers/GCC/mk/port.mk
+#include $(CHIBIOS)/os/common/ports/ARMv8-M-ML/compilers/GCC/mk/port.mk
+endif
 # Auto-build files in ./source recursively.
 include $(CHIBIOS)/tools/mk/autobuild.mk
 # Other files (optional).
@@ -155,9 +190,13 @@ CPPWARN = -Wall -Wextra -Wundef
 
 # List all user C define here, like -D_DEBUG=1
 # 2040 / original pico:
-UDEFS = -DCRT0_VTOR_INIT=1 -DCRT0_EXTRA_CORES_NUMBER=1 -DPICO_NO_FPGA_CHECK -DNDEBUG -DPICO_RP2040 -DPICO_USE_GPIO_COPROCESSOR=0 -DPICO_SECURE=0
+ifeq ($(USE_RP2040),yes)
+UDEFS = -DCRT0_VTOR_INIT=1 -DCRT0_EXTRA_CORES_NUMBER=1 -DPICO_NO_FPGA_CHECK -DNDEBUG -DPICO_RP2040=1 -DPICO_RP2350=0 -DPICO_USE_GPIO_COPROCESSOR=0 -DPICO_SECURE=0
+endif
+ifeq ($(USE_RP2350),yes)
 # 2350 / "pico 2": todo try this
-#UDEFS = -DCRT0_VTOR_INIT=1 -DCRT0_EXTRA_CORES_NUMBER=1 -DPICO_NO_FPGA_CHECK -DNDEBUG -DPICO_RP2350
+UDEFS = -DCRT0_VTOR_INIT=1 -DCRT0_EXTRA_CORES_NUMBER=1 -DPICO_NO_FPGA_CHECK -DNDEBUG -DPICO_RP2350=1 -DPICO_RP2040=0 -DPICO_USE_GPIO_COPROCESSOR=0 -DPICO_SECURE=0
+endif
 
 # Define ASM defines here
 UADEFS = -DCRT0_VTOR_INIT=1 -DCRT0_EXTRA_CORES_NUMBER=1
