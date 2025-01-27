@@ -27,7 +27,12 @@
  * 0...1        Lowest...Highest.
  */
 
+#if PICO_RP2040 == 1
 #define RP2040_MCUCONF
+#endif
+#if PICO_RP2350 == 1
+#define RP2350_MCUCONF
+#endif
 
 /*
  * HAL driver system settings.
