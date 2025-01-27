@@ -1,0 +1,23 @@
+{
+    //  put these in the bottom of vscodes global settings.json
+    //"cortex-debug.openocdPath": "/home/buzz2/Chibi/openocd/openocd",
+    //"cortex-debug.gdbPath": "/opt/gcc-arm-none-eabi-10-2020-q4-major/bin//arm-none-eabi-gdb"
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "PI-PICO2 Cortex Debug",
+            "cwd": "/home/buzz2/Chibi/ChibiOS-RT/demos/RP/RT-RP2040-PICO/build",
+            "executable": "/home/buzz2/Chibi/ChibiOS-RT/demos/RP/RT-RP2040-PICO/build/ch.elf",
+            "request": "launch",
+            "type": "cortex-debug",
+            "servertype": "openocd",
+
+            "device": "Pico2040",
+            //"runToEntryPoint": true,
+            "showDevDebugOutput": "raw",
+            "configFiles": ["interface/cmsis-dap.cfg", "target/rp2350.cfg"],
+            "searchDir": ["/home/buzz2/Chibi/openocd/scripts"],
+            "svdFile": "/home/buzz2/Chibi/ChibiOS-RT/ext/pico-sdk/src/rp2040/hardware_regs/rp2040.svd",
+        }
+    ]
+}
