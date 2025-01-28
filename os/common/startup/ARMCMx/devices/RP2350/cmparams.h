@@ -31,7 +31,7 @@
 /**
  * @brief   Cortex core model.
  */
-#define CORTEX_MODEL            0
+#define CORTEX_MODEL            (33U)
 
 /**
  * @brief   Floating Point unit presence.

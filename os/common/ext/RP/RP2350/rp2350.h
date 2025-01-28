@@ -77,7 +77,7 @@ typedef enum {
   Vector_31n                            = 31
 } IRQn_Type;
 
-#include "core_cm0plus.h"
+#include "core_cm33.h"
 #include "system_rp2350.h"
 
 /**

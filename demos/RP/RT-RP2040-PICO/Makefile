@@ -143,8 +143,10 @@ include $(CHIBIOS)/os/common/ports/ARMv6-M-RP2/compilers/GCC/mk/port.mk
 endif
 ifeq ($(USE_RP2350),yes)
 # todo this points to the armv6 from 2040 and should use armv8, but we havent validated that yet
-include $(CHIBIOS)/os/common/ports/ARMv6-M-RP2/compilers/GCC/mk/port.mk
-#include $(CHIBIOS)/os/common/ports/ARMv8-M-ML/compilers/GCC/mk/port.mk
+#include $(CHIBIOS)/os/common/ports/ARMv6-M-RP2/compilers/GCC/mk/port.mk
+include $(CHIBIOS)/os/common/ports/ARMv8-M-ML/compilers/GCC/mk/port.mk
+#include $(CHIBIOS)/os/common/ports/ARMv8-M-ML-ALT/compilers/GCC/mk/port.mk
+#include $(CHIBIOS)/os/common/ports/ARMv8-M-ML-TZ/compilers/GCC/mk/port.mk
 endif
 # Auto-build files in ./source recursively.
 include $(CHIBIOS)/tools/mk/autobuild.mk
@@ -205,7 +207,7 @@ UDEFS = -DCRT0_VTOR_INIT=1 -DCRT0_EXTRA_CORES_NUMBER=1 -DPICO_NO_FPGA_CHECK -DND
 endif
 ifeq ($(USE_RP2350),yes)
 # 2350 / "pico 2": todo try this
-UDEFS = -DCRT0_VTOR_INIT=1 -DCRT0_EXTRA_CORES_NUMBER=1 -DPICO_NO_FPGA_CHECK -DNDEBUG -DPICO_RP2350A=1 -DPICO_RP2350=1 -DPICO_RP2040=0 -DPICO_USE_GPIO_COPROCESSOR=0 -DPICO_SECURE=0
+UDEFS = -DCRT0_VTOR_INIT=1 -DCRT0_EXTRA_CORES_NUMBER=1 -DPICO_NO_FPGA_CHECK -DNDEBUG -DPICO_RP2350A=1 -DPICO_RP2350=1 -DPICO_RP2040=0 -DPICO_USE_GPIO_COPROCESSOR=0 -DPICO_SECURE=0 -D__DSP_PRESENT=1
 endif
 
 # Define ASM defines here
