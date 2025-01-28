@@ -173,16 +173,15 @@ __port_switch_from_isr:
                 .globl  __port_exit_from_isr
 __port_exit_from_isr:
                 ldr     r2, =SCB_ICSR
-
-#if CORTEX_SIMPLIFIED_PRIORITY
-                movw    r3, #:lower16:SCB_ICSR
-                movt    r3, #:upper16:SCB_ICSR
-                mov     r2, ICSR_PENDSVSET
-                str     r2, [r3, #0]
+#if CORTEX_ALTERNATE_SWITCH
+                ldr     r3, =ICSR_PENDSVSET
+#else
+                ldr     r3, =ICSR_NMIPENDSET
+#endif
+                str     r3, [r2, #0]
+#if CORTEX_ALTERNATE_SWITCH
                 cpsie   i
-#else /* !CORTEX_SIMPLIFIED_PRIORITY */
-                svc     #0
-#endif /* !CORTEX_SIMPLIFIED_PRIORITY */
+#endif
 1:              b       1b
 
 #endif /* !defined(__DOXYGEN__) */
