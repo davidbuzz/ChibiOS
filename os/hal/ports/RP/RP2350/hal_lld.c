@@ -71,6 +71,7 @@ static void start_core1(void) {
 
   /* Starting core 1.*/
   seq = 0;
+  return;// fifoFlushRead still not working, so we just skip teh entire below bit..
   do {
     uint32_t response;
     uint32_t cmd = cmd_sequence[seq];
@@ -79,8 +80,8 @@ static void start_core1(void) {
     if (!cmd) {
       fifoFlushRead();
     }
-    fifoBlockingWrite(cmd);
-    response = fifoBlockingRead();
+    //fifoBlockingWrite(cmd);  //this is a blocking call and prevents booting core1 right now
+    response = 0;//fifoBlockingRead(); //this is a blocking call and prevents booting core1 right now
     /* Checking response, going forward or back to first step.*/
     seq = cmd == response ? seq + 1U : 0U;
   } while (seq < count_of(cmd_sequence));
