@@ -12831,38 +12831,38 @@ Considering target file 'all'.
      File 'build/obj' does not exist.
      Finished prerequisites of target file 'build/obj'.
     Must remake target 'build/obj'.
-Putting child 0x5938776a0b60 (build/obj) PID 2403750 on the chain.
-Live child 0x5938776a0b60 (build/obj) PID 2403750 
-Reaping winning child 0x5938776a0b60 PID 2403750 
-Removing child 0x5938776a0b60 PID 2403750 from chain.
+Putting child 0x61765192bb50 (build/obj) PID 2411746 on the chain.
+Live child 0x61765192bb50 (build/obj) PID 2411746 
+Reaping winning child 0x61765192bb50 PID 2411746 
+Removing child 0x61765192bb50 PID 2411746 from chain.
     Successfully remade target file 'build/obj'.
     Considering target file 'build/lst'.
      File 'build/lst' does not exist.
      Finished prerequisites of target file 'build/lst'.
     Must remake target 'build/lst'.
-Putting child 0x5938776a1500 (build/lst) PID 2403751 on the chain.
-Live child 0x5938776a1500 (build/lst) PID 2403751 
-Reaping winning child 0x5938776a1500 PID 2403751 
-Removing child 0x5938776a1500 PID 2403751 from chain.
+Putting child 0x61765192c4d0 (build/lst) PID 2411747 on the chain.
+Live child 0x61765192c4d0 (build/lst) PID 2411747 
+Reaping winning child 0x61765192c4d0 PID 2411747 
+Removing child 0x61765192c4d0 PID 2411747 from chain.
     Successfully remade target file 'build/lst'.
     Considering target file '.dep'.
      File '.dep' does not exist.
      Finished prerequisites of target file '.dep'.
     Must remake target '.dep'.
-Putting child 0x5938776a1240 (.dep) PID 2403752 on the chain.
-Live child 0x5938776a1240 (.dep) PID 2403752 
-Reaping winning child 0x5938776a1240 PID 2403752 
-Removing child 0x5938776a1240 PID 2403752 from chain.
+Putting child 0x61765192c290 (.dep) PID 2411748 on the chain.
+Live child 0x61765192c290 (.dep) PID 2411748 
+Reaping winning child 0x61765192c290 PID 2411748 
+Removing child 0x61765192c290 PID 2411748 from chain.
     Successfully remade target file '.dep'.
    Finished prerequisites of target file 'build/obj/crt0_v8m-ml.o'.
   Must remake target 'build/obj/crt0_v8m-ml.o'.
-Putting child 0x59387765b030 (build/obj/crt0_v8m-ml.o) PID 2403753 on the chain.
-Live child 0x59387765b030 (build/obj/crt0_v8m-ml.o) PID 2403753 
+Putting child 0x6176518dfc90 (build/obj/crt0_v8m-ml.o) PID 2411749 on the chain.
+Live child 0x6176518dfc90 (build/obj/crt0_v8m-ml.o) PID 2411749 
 Compiling crt0_v8m-ml.S
-Reaping winning child 0x59387765b030 PID 2403753 
-Live child 0x59387765b030 (build/obj/crt0_v8m-ml.o) PID 2403754 
-Reaping winning child 0x59387765b030 PID 2403754 
-Removing child 0x59387765b030 PID 2403754 from chain.
+Reaping winning child 0x6176518dfc90 PID 2411749 
+Live child 0x6176518dfc90 (build/obj/crt0_v8m-ml.o) PID 2411750 
+Reaping winning child 0x6176518dfc90 PID 2411750 
+Removing child 0x6176518dfc90 PID 2411750 from chain.
   Successfully remade target file 'build/obj/crt0_v8m-ml.o'.
   Considering target file 'build/obj/vectors.o'.
    File 'build/obj/vectors.o' does not exist.
@@ -12917,13 +12917,13 @@ Removing child 0x59387765b030 PID 2403754 from chain.
     Pruning file '.dep'.
    Finished prerequisites of target file 'build/obj/vectors.o'.
   Must remake target 'build/obj/vectors.o'.
-Putting child 0x59387765b0f0 (build/obj/vectors.o) PID 2403757 on the chain.
-Live child 0x59387765b0f0 (build/obj/vectors.o) PID 2403757 
+Putting child 0x6176518de410 (build/obj/vectors.o) PID 2411753 on the chain.
+Live child 0x6176518de410 (build/obj/vectors.o) PID 2411753 
 Compiling vectors.S
-Reaping winning child 0x59387765b0f0 PID 2403757 
-Live child 0x59387765b0f0 (build/obj/vectors.o) PID 2403758 
-Reaping winning child 0x59387765b0f0 PID 2403758 
-Removing child 0x59387765b0f0 PID 2403758 from chain.
+Reaping winning child 0x6176518de410 PID 2411753 
+Live child 0x6176518de410 (build/obj/vectors.o) PID 2411754 
+Reaping winning child 0x6176518de410 PID 2411754 
+Removing child 0x6176518de410 PID 2411754 from chain.
   Successfully remade target file 'build/obj/vectors.o'.
   Considering target file 'build/obj/chcoreasm.o'.
    File 'build/obj/chcoreasm.o' does not exist.
@@ -12978,13 +12978,13 @@ Removing child 0x59387765b0f0 PID 2403758 from chain.
     Pruning file '.dep'.
    Finished prerequisites of target file 'build/obj/chcoreasm.o'.
   Must remake target 'build/obj/chcoreasm.o'.
-Putting child 0x593877659990 (build/obj/chcoreasm.o) PID 2403761 on the chain.
-Live child 0x593877659990 (build/obj/chcoreasm.o) PID 2403761 
+Putting child 0x6176518de1d0 (build/obj/chcoreasm.o) PID 2411757 on the chain.
+Live child 0x6176518de1d0 (build/obj/chcoreasm.o) PID 2411757 
 Compiling chcoreasm.S
-Reaping winning child 0x593877659990 PID 2403761 
-Live child 0x593877659990 (build/obj/chcoreasm.o) PID 2403762 
-Reaping winning child 0x593877659990 PID 2403762 
-Removing child 0x593877659990 PID 2403762 from chain.
+Reaping winning child 0x6176518de1d0 PID 2411757 
+Live child 0x6176518de1d0 (build/obj/chcoreasm.o) PID 2411758 
+Reaping winning child 0x6176518de1d0 PID 2411758 
+Removing child 0x6176518de1d0 PID 2411758 from chain.
   Successfully remade target file 'build/obj/chcoreasm.o'.
   Considering target file 'build/obj/crt1.o'.
    File 'build/obj/crt1.o' does not exist.
@@ -13091,13 +13091,13 @@ Removing child 0x593877659990 PID 2403762 from chain.
     Pruning file '.dep'.
    Finished prerequisites of target file 'build/obj/crt1.o'.
   Must remake target 'build/obj/crt1.o'.
-Putting child 0x59387765c590 (build/obj/crt1.o) PID 2403765 on the chain.
-Live child 0x59387765c590 (build/obj/crt1.o) PID 2403765 
+Putting child 0x6176518f9340 (build/obj/crt1.o) PID 2411761 on the chain.
+Live child 0x6176518f9340 (build/obj/crt1.o) PID 2411761 
 Compiling crt1.c
-Reaping winning child 0x59387765c590 PID 2403765 
-Live child 0x59387765c590 (build/obj/crt1.o) PID 2403766 
-Reaping winning child 0x59387765c590 PID 2403766 
-Removing child 0x59387765c590 PID 2403766 from chain.
+Reaping winning child 0x6176518f9340 PID 2411761 
+Live child 0x6176518f9340 (build/obj/crt1.o) PID 2411762 
+Reaping winning child 0x6176518f9340 PID 2411762 
+Removing child 0x6176518f9340 PID 2411762 from chain.
   Successfully remade target file 'build/obj/crt1.o'.
   Considering target file 'build/obj/oop_base_object.o'.
    File 'build/obj/oop_base_object.o' does not exist.
@@ -13204,13 +13204,13 @@ Removing child 0x59387765c590 PID 2403766 from chain.
     Pruning file '.dep'.
    Finished prerequisites of target file 'build/obj/oop_base_object.o'.
   Must remake target 'build/obj/oop_base_object.o'.
-Putting child 0x593877668170 (build/obj/oop_base_object.o) PID 2403769 on the chain.
-Live child 0x593877668170 (build/obj/oop_base_object.o) PID 2403769 
+Putting child 0x6176518f8820 (build/obj/oop_base_object.o) PID 2411765 on the chain.
+Live child 0x6176518f8820 (build/obj/oop_base_object.o) PID 2411765 
 Compiling oop_base_object.c
-Reaping winning child 0x593877668170 PID 2403769 
-Live child 0x593877668170 (build/obj/oop_base_object.o) PID 2403770 
-Reaping winning child 0x593877668170 PID 2403770 
-Removing child 0x593877668170 PID 2403770 from chain.
+Reaping winning child 0x6176518f8820 PID 2411765 
+Live child 0x6176518f8820 (build/obj/oop_base_object.o) PID 2411766 
+Reaping winning child 0x6176518f8820 PID 2411766 
+Removing child 0x6176518f8820 PID 2411766 from chain.
   Successfully remade target file 'build/obj/oop_base_object.o'.
   Considering target file 'build/obj/hal.o'.
    File 'build/obj/hal.o' does not exist.
@@ -13317,13 +13317,13 @@ Removing child 0x593877668170 PID 2403770 from chain.
     Pruning file '.dep'.
    Finished prerequisites of target file 'build/obj/hal.o'.
   Must remake target 'build/obj/hal.o'.
-Putting child 0x59387766cb70 (build/obj/hal.o) PID 2403773 on the chain.
-Live child 0x59387766cb70 (build/obj/hal.o) PID 2403773 
+Putting child 0x6176518f0ee0 (build/obj/hal.o) PID 2411769 on the chain.
+Live child 0x6176518f0ee0 (build/obj/hal.o) PID 2411769 
 Compiling hal.c
-Reaping winning child 0x59387766cb70 PID 2403773 
-Live child 0x59387766cb70 (build/obj/hal.o) PID 2403774 
-Reaping winning child 0x59387766cb70 PID 2403774 
-Removing child 0x59387766cb70 PID 2403774 from chain.
+Reaping winning child 0x6176518f0ee0 PID 2411769 
+Live child 0x6176518f0ee0 (build/obj/hal.o) PID 2411770 
+Reaping winning child 0x6176518f0ee0 PID 2411770 
+Removing child 0x6176518f0ee0 PID 2411770 from chain.
   Successfully remade target file 'build/obj/hal.o'.
   Considering target file 'build/obj/hal_st.o'.
    File 'build/obj/hal_st.o' does not exist.
@@ -13430,13 +13430,13 @@ Removing child 0x59387766cb70 PID 2403774 from chain.
     Pruning file '.dep'.
    Finished prerequisites of target file 'build/obj/hal_st.o'.
   Must remake target 'build/obj/hal_st.o'.
-Putting child 0x59387766d360 (build/obj/hal_st.o) PID 2403777 on the chain.
-Live child 0x59387766d360 (build/obj/hal_st.o) PID 2403777 
+Putting child 0x6176518eec00 (build/obj/hal_st.o) PID 2411773 on the chain.
+Live child 0x6176518eec00 (build/obj/hal_st.o) PID 2411773 
 Compiling hal_st.c
-Reaping winning child 0x59387766d360 PID 2403777 
-Live child 0x59387766d360 (build/obj/hal_st.o) PID 2403778 
-Reaping winning child 0x59387766d360 PID 2403778 
-Removing child 0x59387766d360 PID 2403778 from chain.
+Reaping winning child 0x6176518eec00 PID 2411773 
+Live child 0x6176518eec00 (build/obj/hal_st.o) PID 2411774 
+Reaping winning child 0x6176518eec00 PID 2411774 
+Removing child 0x6176518eec00 PID 2411774 from chain.
   Successfully remade target file 'build/obj/hal_st.o'.
   Considering target file 'build/obj/hal_buffered_serial.o'.
    File 'build/obj/hal_buffered_serial.o' does not exist.
@@ -13543,13 +13543,13 @@ Removing child 0x59387766d360 PID 2403778 from chain.
     Pruning file '.dep'.
    Finished prerequisites of target file 'build/obj/hal_buffered_serial.o'.
   Must remake target 'build/obj/hal_buffered_serial.o'.
-Putting child 0x59387766a720 (build/obj/hal_buffered_serial.o) PID 2403782 on the chain.
-Live child 0x59387766a720 (build/obj/hal_buffered_serial.o) PID 2403782 
+Putting child 0x6176518ef8e0 (build/obj/hal_buffered_serial.o) PID 2411778 on the chain.
+Live child 0x6176518ef8e0 (build/obj/hal_buffered_serial.o) PID 2411778 
 Compiling hal_buffered_serial.c
-Reaping winning child 0x59387766a720 PID 2403782 
-Live child 0x59387766a720 (build/obj/hal_buffered_serial.o) PID 2403783 
-Reaping winning child 0x59387766a720 PID 2403783 
-Removing child 0x59387766a720 PID 2403783 from chain.
+Reaping winning child 0x6176518ef8e0 PID 2411778 
+Live child 0x6176518ef8e0 (build/obj/hal_buffered_serial.o) PID 2411779 
+Reaping winning child 0x6176518ef8e0 PID 2411779 
+Removing child 0x6176518ef8e0 PID 2411779 from chain.
   Successfully remade target file 'build/obj/hal_buffered_serial.o'.
   Considering target file 'build/obj/hal_buffers.o'.
    File 'build/obj/hal_buffers.o' does not exist.
@@ -13656,13 +13656,13 @@ Removing child 0x59387766a720 PID 2403783 from chain.
     Pruning file '.dep'.
    Finished prerequisites of target file 'build/obj/hal_buffers.o'.
   Must remake target 'build/obj/hal_buffers.o'.
-Putting child 0x59387765e4c0 (build/obj/hal_buffers.o) PID 2403786 on the chain.
-Live child 0x59387765e4c0 (build/obj/hal_buffers.o) PID 2403786 
+Putting child 0x6176518f1e90 (build/obj/hal_buffers.o) PID 2411782 on the chain.
+Live child 0x6176518f1e90 (build/obj/hal_buffers.o) PID 2411782 
 Compiling hal_buffers.c
-Reaping winning child 0x59387765e4c0 PID 2403786 
-Live child 0x59387765e4c0 (build/obj/hal_buffers.o) PID 2403787 
-Reaping winning child 0x59387765e4c0 PID 2403787 
-Removing child 0x59387765e4c0 PID 2403787 from chain.
+Reaping winning child 0x6176518f1e90 PID 2411782 
+Live child 0x6176518f1e90 (build/obj/hal_buffers.o) PID 2411783 
+Reaping winning child 0x6176518f1e90 PID 2411783 
+Removing child 0x6176518f1e90 PID 2411783 from chain.
   Successfully remade target file 'build/obj/hal_buffers.o'.
   Considering target file 'build/obj/hal_queues.o'.
    File 'build/obj/hal_queues.o' does not exist.
@@ -13769,13 +13769,13 @@ Removing child 0x59387765e4c0 PID 2403787 from chain.
     Pruning file '.dep'.
    Finished prerequisites of target file 'build/obj/hal_queues.o'.
   Must remake target 'build/obj/hal_queues.o'.
-Putting child 0x59387765f920 (build/obj/hal_queues.o) PID 2403790 on the chain.
-Live child 0x59387765f920 (build/obj/hal_queues.o) PID 2403790 
+Putting child 0x6176518f7010 (build/obj/hal_queues.o) PID 2411787 on the chain.
+Live child 0x6176518f7010 (build/obj/hal_queues.o) PID 2411787 
 Compiling hal_queues.c
-Reaping winning child 0x59387765f920 PID 2403790 
-Live child 0x59387765f920 (build/obj/hal_queues.o) PID 2403791 
-Reaping winning child 0x59387765f920 PID 2403791 
-Removing child 0x59387765f920 PID 2403791 from chain.
+Reaping winning child 0x6176518f7010 PID 2411787 
+Live child 0x6176518f7010 (build/obj/hal_queues.o) PID 2411788 
+Reaping winning child 0x6176518f7010 PID 2411788 
+Removing child 0x6176518f7010 PID 2411788 from chain.
   Successfully remade target file 'build/obj/hal_queues.o'.
   Considering target file 'build/obj/hal_mmcsd.o'.
    File 'build/obj/hal_mmcsd.o' does not exist.
@@ -13882,13 +13882,13 @@ Removing child 0x59387765f920 PID 2403791 from chain.
     Pruning file '.dep'.
    Finished prerequisites of target file 'build/obj/hal_mmcsd.o'.
   Must remake target 'build/obj/hal_mmcsd.o'.
-Putting child 0x593877660cc0 (build/obj/hal_mmcsd.o) PID 2403794 on the chain.
-Live child 0x593877660cc0 (build/obj/hal_mmcsd.o) PID 2403794 
+Putting child 0x6176518f7cb0 (build/obj/hal_mmcsd.o) PID 2411791 on the chain.
+Live child 0x6176518f7cb0 (build/obj/hal_mmcsd.o) PID 2411791 
 Compiling hal_mmcsd.c
-Reaping winning child 0x593877660cc0 PID 2403794 
-Live child 0x593877660cc0 (build/obj/hal_mmcsd.o) PID 2403795 
-Reaping winning child 0x593877660cc0 PID 2403795 
-Removing child 0x593877660cc0 PID 2403795 from chain.
+Reaping winning child 0x6176518f7cb0 PID 2411791 
+Live child 0x6176518f7cb0 (build/obj/hal_mmcsd.o) PID 2411792 
+Reaping winning child 0x6176518f7cb0 PID 2411792 
+Removing child 0x6176518f7cb0 PID 2411792 from chain.
   Successfully remade target file 'build/obj/hal_mmcsd.o'.
   Considering target file 'build/obj/hal_pal.o'.
    File 'build/obj/hal_pal.o' does not exist.
@@ -13995,13 +13995,13 @@ Removing child 0x593877660cc0 PID 2403795 from chain.
     Pruning file '.dep'.
    Finished prerequisites of target file 'build/obj/hal_pal.o'.
   Must remake target 'build/obj/hal_pal.o'.
-Putting child 0x593877661620 (build/obj/hal_pal.o) PID 2403798 on the chain.
-Live child 0x593877661620 (build/obj/hal_pal.o) PID 2403798 
+Putting child 0x6176518f5d90 (build/obj/hal_pal.o) PID 2411796 on the chain.
+Live child 0x6176518f5d90 (build/obj/hal_pal.o) PID 2411796 
 Compiling hal_pal.c
-Reaping winning child 0x593877661620 PID 2403798 
-Live child 0x593877661620 (build/obj/hal_pal.o) PID 2403799 
-Reaping winning child 0x593877661620 PID 2403799 
-Removing child 0x593877661620 PID 2403799 from chain.
+Reaping winning child 0x6176518f5d90 PID 2411796 
+Live child 0x6176518f5d90 (build/obj/hal_pal.o) PID 2411797 
+Reaping winning child 0x6176518f5d90 PID 2411797 
+Removing child 0x6176518f5d90 PID 2411797 from chain.
   Successfully remade target file 'build/obj/hal_pal.o'.
   Considering target file 'build/obj/hal_sio.o'.
    File 'build/obj/hal_sio.o' does not exist.
@@ -14108,13 +14108,13 @@ Removing child 0x593877661620 PID 2403799 from chain.
     Pruning file '.dep'.
    Finished prerequisites of target file 'build/obj/hal_sio.o'.
   Must remake target 'build/obj/hal_sio.o'.
-Putting child 0x593877662180 (build/obj/hal_sio.o) PID 2403802 on the chain.
-Live child 0x593877662180 (build/obj/hal_sio.o) PID 2403802 
+Putting child 0x6176518f4200 (build/obj/hal_sio.o) PID 2411818 on the chain.
+Live child 0x6176518f4200 (build/obj/hal_sio.o) PID 2411818 
 Compiling hal_sio.c
-Reaping winning child 0x593877662180 PID 2403802 
-Live child 0x593877662180 (build/obj/hal_sio.o) PID 2403803 
-Reaping winning child 0x593877662180 PID 2403803 
-Removing child 0x593877662180 PID 2403803 from chain.
+Reaping winning child 0x6176518f4200 PID 2411818 
+Live child 0x6176518f4200 (build/obj/hal_sio.o) PID 2411819 
+Reaping winning child 0x6176518f4200 PID 2411819 
+Removing child 0x6176518f4200 PID 2411819 from chain.
   Successfully remade target file 'build/obj/hal_sio.o'.
   Considering target file 'build/obj/hal_flash.o'.
    File 'build/obj/hal_flash.o' does not exist.
@@ -14221,13 +14221,13 @@ Removing child 0x593877662180 PID 2403803 from chain.
     Pruning file '.dep'.
    Finished prerequisites of target file 'build/obj/hal_flash.o'.
   Must remake target 'build/obj/hal_flash.o'.
-Putting child 0x593877664b20 (build/obj/hal_flash.o) PID 2403806 on the chain.
-Live child 0x593877664b20 (build/obj/hal_flash.o) PID 2403806 
+Putting child 0x6176518e1530 (build/obj/hal_flash.o) PID 2411822 on the chain.
+Live child 0x6176518e1530 (build/obj/hal_flash.o) PID 2411822 
 Compiling hal_flash.c
-Reaping winning child 0x593877664b20 PID 2403806 
-Live child 0x593877664b20 (build/obj/hal_flash.o) PID 2403807 
-Reaping winning child 0x593877664b20 PID 2403807 
-Removing child 0x593877664b20 PID 2403807 from chain.
+Reaping winning child 0x6176518e1530 PID 2411822 
+Live child 0x6176518e1530 (build/obj/hal_flash.o) PID 2411823 
+Reaping winning child 0x6176518e1530 PID 2411823 
+Removing child 0x6176518e1530 PID 2411823 from chain.
   Successfully remade target file 'build/obj/hal_flash.o'.
   Considering target file 'build/obj/nvic.o'.
    File 'build/obj/nvic.o' does not exist.
@@ -14334,13 +14334,13 @@ Removing child 0x593877664b20 PID 2403807 from chain.
     Pruning file '.dep'.
    Finished prerequisites of target file 'build/obj/nvic.o'.
   Must remake target 'build/obj/nvic.o'.
-Putting child 0x593877664e40 (build/obj/nvic.o) PID 2403810 on the chain.
-Live child 0x593877664e40 (build/obj/nvic.o) PID 2403810 
+Putting child 0x6176518e1670 (build/obj/nvic.o) PID 2411826 on the chain.
+Live child 0x6176518e1670 (build/obj/nvic.o) PID 2411826 
 Compiling nvic.c
-Reaping winning child 0x593877664e40 PID 2403810 
-Live child 0x593877664e40 (build/obj/nvic.o) PID 2403811 
-Reaping winning child 0x593877664e40 PID 2403811 
-Removing child 0x593877664e40 PID 2403811 from chain.
+Reaping winning child 0x6176518e1670 PID 2411826 
+Live child 0x6176518e1670 (build/obj/nvic.o) PID 2411827 
+Reaping winning child 0x6176518e1670 PID 2411827 
+Removing child 0x6176518e1670 PID 2411827 from chain.
   Successfully remade target file 'build/obj/nvic.o'.
   Considering target file 'build/obj/rp_isr.o'.
    File 'build/obj/rp_isr.o' does not exist.
@@ -14447,13 +14447,13 @@ Removing child 0x593877664e40 PID 2403811 from chain.
     Pruning file '.dep'.
    Finished prerequisites of target file 'build/obj/rp_isr.o'.
   Must remake target 'build/obj/rp_isr.o'.
-Putting child 0x59387764dbe0 (build/obj/rp_isr.o) PID 2403815 on the chain.
-Live child 0x59387764dbe0 (build/obj/rp_isr.o) PID 2403815 
+Putting child 0x6176518e2990 (build/obj/rp_isr.o) PID 2411830 on the chain.
+Live child 0x6176518e2990 (build/obj/rp_isr.o) PID 2411830 
 Compiling rp_isr.c
-Reaping winning child 0x59387764dbe0 PID 2403815 
-Live child 0x59387764dbe0 (build/obj/rp_isr.o) PID 2403816 
-Reaping winning child 0x59387764dbe0 PID 2403816 
-Removing child 0x59387764dbe0 PID 2403816 from chain.
+Reaping winning child 0x6176518e2990 PID 2411830 
+Live child 0x6176518e2990 (build/obj/rp_isr.o) PID 2411831 
+Reaping winning child 0x6176518e2990 PID 2411831 
+Removing child 0x6176518e2990 PID 2411831 from chain.
   Successfully remade target file 'build/obj/rp_isr.o'.
   Considering target file 'build/obj/hal_lld.o'.
    File 'build/obj/hal_lld.o' does not exist.
@@ -14560,13 +14560,23 @@ Removing child 0x59387764dbe0 PID 2403816 from chain.
     Pruning file '.dep'.
    Finished prerequisites of target file 'build/obj/hal_lld.o'.
   Must remake target 'build/obj/hal_lld.o'.
-Putting child 0x593877650470 (build/obj/hal_lld.o) PID 2403819 on the chain.
-Live child 0x593877650470 (build/obj/hal_lld.o) PID 2403819 
+Putting child 0x6176518e6ac0 (build/obj/hal_lld.o) PID 2411834 on the chain.
+Live child 0x6176518e6ac0 (build/obj/hal_lld.o) PID 2411834 
 Compiling hal_lld.c
-Reaping winning child 0x593877650470 PID 2403819 
-Live child 0x593877650470 (build/obj/hal_lld.o) PID 2403820 
-Reaping winning child 0x593877650470 PID 2403820 
-Removing child 0x593877650470 PID 2403820 from chain.
+Reaping winning child 0x6176518e6ac0 PID 2411834 
+Live child 0x6176518e6ac0 (build/obj/hal_lld.o) PID 2411835 
+In file included from ../../../os/hal/ports/RP/RP2350/hal_lld.c:28:
+/home/buzz2/Chibi/pico-sdk/src/common/pico_stdlib_headers/include/pico/stdlib.h:48:5: warning: "LIB_PICO_STDIO_UART" is not defined, evaluates to 0 [-Wundef]
+   48 | #if LIB_PICO_STDIO_UART
+      |     ^~~~~~~~~~~~~~~~~~~
+/home/buzz2/Chibi/pico-sdk/src/common/pico_stdlib_headers/include/pico/stdlib.h:52:5: warning: "LIB_PICO_STDIO_USB" is not defined, evaluates to 0 [-Wundef]
+   52 | #if LIB_PICO_STDIO_USB
+      |     ^~~~~~~~~~~~~~~~~~
+/home/buzz2/Chibi/pico-sdk/src/common/pico_stdlib_headers/include/pico/stdlib.h:56:5: warning: "LIB_PICO_STDIO_SEMIHOSTING" is not defined, evaluates to 0 [-Wundef]
+   56 | #if LIB_PICO_STDIO_SEMIHOSTING
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~
+Reaping winning child 0x6176518e6ac0 PID 2411835 
+Removing child 0x6176518e6ac0 PID 2411835 from chain.
   Successfully remade target file 'build/obj/hal_lld.o'.
   Considering target file 'build/obj/rp_dma.o'.
    File 'build/obj/rp_dma.o' does not exist.
@@ -14673,13 +14683,13 @@ Removing child 0x593877650470 PID 2403820 from chain.
     Pruning file '.dep'.
    Finished prerequisites of target file 'build/obj/rp_dma.o'.
   Must remake target 'build/obj/rp_dma.o'.
-Putting child 0x593877655410 (build/obj/rp_dma.o) PID 2403825 on the chain.
-Live child 0x593877655410 (build/obj/rp_dma.o) PID 2403825 
+Putting child 0x6176518e4e10 (build/obj/rp_dma.o) PID 2411838 on the chain.
+Live child 0x6176518e4e10 (build/obj/rp_dma.o) PID 2411838 
 Compiling rp_dma.c
-Reaping winning child 0x593877655410 PID 2403825 
-Live child 0x593877655410 (build/obj/rp_dma.o) PID 2403826 
-Reaping winning child 0x593877655410 PID 2403826 
-Removing child 0x593877655410 PID 2403826 from chain.
+Reaping winning child 0x6176518e4e10 PID 2411838 
+Live child 0x6176518e4e10 (build/obj/rp_dma.o) PID 2411839 
+Reaping winning child 0x6176518e4e10 PID 2411839 
+Removing child 0x6176518e4e10 PID 2411839 from chain.
   Successfully remade target file 'build/obj/rp_dma.o'.
   Considering target file 'build/obj/hal_pal_lld.o'.
    File 'build/obj/hal_pal_lld.o' does not exist.
@@ -14786,13 +14796,13 @@ Removing child 0x593877655410 PID 2403826 from chain.
     Pruning file '.dep'.
    Finished prerequisites of target file 'build/obj/hal_pal_lld.o'.
   Must remake target 'build/obj/hal_pal_lld.o'.
-Putting child 0x593877654010 (build/obj/hal_pal_lld.o) PID 2403829 on the chain.
-Live child 0x593877654010 (build/obj/hal_pal_lld.o) PID 2403829 
+Putting child 0x6176518e5e50 (build/obj/hal_pal_lld.o) PID 2411842 on the chain.
+Live child 0x6176518e5e50 (build/obj/hal_pal_lld.o) PID 2411842 
 Compiling hal_pal_lld.c
-Reaping winning child 0x593877654010 PID 2403829 
-Live child 0x593877654010 (build/obj/hal_pal_lld.o) PID 2403830 
-Reaping winning child 0x593877654010 PID 2403830 
-Removing child 0x593877654010 PID 2403830 from chain.
+Reaping winning child 0x6176518e5e50 PID 2411842 
+Live child 0x6176518e5e50 (build/obj/hal_pal_lld.o) PID 2411843 
+Reaping winning child 0x6176518e5e50 PID 2411843 
+Removing child 0x6176518e5e50 PID 2411843 from chain.
   Successfully remade target file 'build/obj/hal_pal_lld.o'.
   Considering target file 'build/obj/hal_spi_lld.o'.
    File 'build/obj/hal_spi_lld.o' does not exist.
@@ -14899,13 +14909,13 @@ Removing child 0x593877654010 PID 2403830 from chain.
     Pruning file '.dep'.
    Finished prerequisites of target file 'build/obj/hal_spi_lld.o'.
   Must remake target 'build/obj/hal_spi_lld.o'.
-Putting child 0x5938776edc60 (build/obj/hal_spi_lld.o) PID 2403833 on the chain.
-Live child 0x5938776edc60 (build/obj/hal_spi_lld.o) PID 2403833 
+Putting child 0x617651978b50 (build/obj/hal_spi_lld.o) PID 2411846 on the chain.
+Live child 0x617651978b50 (build/obj/hal_spi_lld.o) PID 2411846 
 Compiling hal_spi_lld.c
-Reaping winning child 0x5938776edc60 PID 2403833 
-Live child 0x5938776edc60 (build/obj/hal_spi_lld.o) PID 2403834 
-Reaping winning child 0x5938776edc60 PID 2403834 
-Removing child 0x5938776edc60 PID 2403834 from chain.
+Reaping winning child 0x617651978b50 PID 2411846 
+Live child 0x617651978b50 (build/obj/hal_spi_lld.o) PID 2411847 
+Reaping winning child 0x617651978b50 PID 2411847 
+Removing child 0x617651978b50 PID 2411847 from chain.
   Successfully remade target file 'build/obj/hal_spi_lld.o'.
   Considering target file 'build/obj/hal_st_lld.o'.
    File 'build/obj/hal_st_lld.o' does not exist.
@@ -15012,13 +15022,13 @@ Removing child 0x5938776edc60 PID 2403834 from chain.
     Pruning file '.dep'.
    Finished prerequisites of target file 'build/obj/hal_st_lld.o'.
   Must remake target 'build/obj/hal_st_lld.o'.
-Putting child 0x5938776ef110 (build/obj/hal_st_lld.o) PID 2403837 on the chain.
-Live child 0x5938776ef110 (build/obj/hal_st_lld.o) PID 2403837 
+Putting child 0x617651979fa0 (build/obj/hal_st_lld.o) PID 2411850 on the chain.
+Live child 0x617651979fa0 (build/obj/hal_st_lld.o) PID 2411850 
 Compiling hal_st_lld.c
-Reaping winning child 0x5938776ef110 PID 2403837 
-Live child 0x5938776ef110 (build/obj/hal_st_lld.o) PID 2403838 
-Reaping winning child 0x5938776ef110 PID 2403838 
-Removing child 0x5938776ef110 PID 2403838 from chain.
+Reaping winning child 0x617651979fa0 PID 2411850 
+Live child 0x617651979fa0 (build/obj/hal_st_lld.o) PID 2411851 
+Reaping winning child 0x617651979fa0 PID 2411851 
+Removing child 0x617651979fa0 PID 2411851 from chain.
   Successfully remade target file 'build/obj/hal_st_lld.o'.
   Considering target file 'build/obj/hal_sio_lld.o'.
    File 'build/obj/hal_sio_lld.o' does not exist.
@@ -15125,13 +15135,13 @@ Removing child 0x5938776ef110 PID 2403838 from chain.
     Pruning file '.dep'.
    Finished prerequisites of target file 'build/obj/hal_sio_lld.o'.
   Must remake target 'build/obj/hal_sio_lld.o'.
-Putting child 0x5938776f0590 (build/obj/hal_sio_lld.o) PID 2403841 on the chain.
-Live child 0x5938776f0590 (build/obj/hal_sio_lld.o) PID 2403841 
+Putting child 0x61765197b410 (build/obj/hal_sio_lld.o) PID 2411854 on the chain.
+Live child 0x61765197b410 (build/obj/hal_sio_lld.o) PID 2411854 
 Compiling hal_sio_lld.c
-Reaping winning child 0x5938776f0590 PID 2403841 
-Live child 0x5938776f0590 (build/obj/hal_sio_lld.o) PID 2403842 
-Reaping winning child 0x5938776f0590 PID 2403842 
-Removing child 0x5938776f0590 PID 2403842 from chain.
+Reaping winning child 0x61765197b410 PID 2411854 
+Live child 0x61765197b410 (build/obj/hal_sio_lld.o) PID 2411855 
+Reaping winning child 0x61765197b410 PID 2411855 
+Removing child 0x61765197b410 PID 2411855 from chain.
   Successfully remade target file 'build/obj/hal_sio_lld.o'.
   Considering target file 'build/obj/board.o'.
    File 'build/obj/board.o' does not exist.
@@ -15238,13 +15248,13 @@ Removing child 0x5938776f0590 PID 2403842 from chain.
     Pruning file '.dep'.
    Finished prerequisites of target file 'build/obj/board.o'.
   Must remake target 'build/obj/board.o'.
-Putting child 0x5938776f21c0 (build/obj/board.o) PID 2403845 on the chain.
-Live child 0x5938776f21c0 (build/obj/board.o) PID 2403845 
+Putting child 0x61765197c880 (build/obj/board.o) PID 2411858 on the chain.
+Live child 0x61765197c880 (build/obj/board.o) PID 2411858 
 Compiling board.c
-Reaping winning child 0x5938776f21c0 PID 2403845 
-Live child 0x5938776f21c0 (build/obj/board.o) PID 2403846 
-Reaping winning child 0x5938776f21c0 PID 2403846 
-Removing child 0x5938776f21c0 PID 2403846 from chain.
+Reaping winning child 0x61765197c880 PID 2411858 
+Live child 0x61765197c880 (build/obj/board.o) PID 2411859 
+Reaping winning child 0x61765197c880 PID 2411859 
+Removing child 0x61765197c880 PID 2411859 from chain.
   Successfully remade target file 'build/obj/board.o'.
   Considering target file 'build/obj/osal.o'.
    File 'build/obj/osal.o' does not exist.
@@ -15351,13 +15361,13 @@ Removing child 0x5938776f21c0 PID 2403846 from chain.
     Pruning file '.dep'.
    Finished prerequisites of target file 'build/obj/osal.o'.
   Must remake target 'build/obj/osal.o'.
-Putting child 0x5938776f3520 (build/obj/osal.o) PID 2403849 on the chain.
-Live child 0x5938776f3520 (build/obj/osal.o) PID 2403849 
+Putting child 0x61765197dcf0 (build/obj/osal.o) PID 2411862 on the chain.
+Live child 0x61765197dcf0 (build/obj/osal.o) PID 2411862 
 Compiling osal.c
-Reaping winning child 0x5938776f3520 PID 2403849 
-Live child 0x5938776f3520 (build/obj/osal.o) PID 2403850 
-Reaping winning child 0x5938776f3520 PID 2403850 
-Removing child 0x5938776f3520 PID 2403850 from chain.
+Reaping winning child 0x61765197dcf0 PID 2411862 
+Live child 0x61765197dcf0 (build/obj/osal.o) PID 2411863 
+Reaping winning child 0x61765197dcf0 PID 2411863 
+Removing child 0x61765197dcf0 PID 2411863 from chain.
   Successfully remade target file 'build/obj/osal.o'.
   Considering target file 'build/obj/chsys.o'.
    File 'build/obj/chsys.o' does not exist.
@@ -15464,13 +15474,13 @@ Removing child 0x5938776f3520 PID 2403850 from chain.
     Pruning file '.dep'.
    Finished prerequisites of target file 'build/obj/chsys.o'.
   Must remake target 'build/obj/chsys.o'.
-Putting child 0x5938776f4710 (build/obj/chsys.o) PID 2403853 on the chain.
-Live child 0x5938776f4710 (build/obj/chsys.o) PID 2403853 
+Putting child 0x61765197f120 (build/obj/chsys.o) PID 2411866 on the chain.
+Live child 0x61765197f120 (build/obj/chsys.o) PID 2411866 
 Compiling chsys.c
-Reaping winning child 0x5938776f4710 PID 2403853 
-Live child 0x5938776f4710 (build/obj/chsys.o) PID 2403854 
-Reaping winning child 0x5938776f4710 PID 2403854 
-Removing child 0x5938776f4710 PID 2403854 from chain.
+Reaping winning child 0x61765197f120 PID 2411866 
+Live child 0x61765197f120 (build/obj/chsys.o) PID 2411867 
+Reaping winning child 0x61765197f120 PID 2411867 
+Removing child 0x61765197f120 PID 2411867 from chain.
   Successfully remade target file 'build/obj/chsys.o'.
   Considering target file 'build/obj/chrfcu.o'.
    File 'build/obj/chrfcu.o' does not exist.
@@ -15577,13 +15587,13 @@ Removing child 0x5938776f4710 PID 2403854 from chain.
     Pruning file '.dep'.
    Finished prerequisites of target file 'build/obj/chrfcu.o'.
   Must remake target 'build/obj/chrfcu.o'.
-Putting child 0x5938776f5b40 (build/obj/chrfcu.o) PID 2403857 on the chain.
-Live child 0x5938776f5b40 (build/obj/chrfcu.o) PID 2403857 
+Putting child 0x617651980390 (build/obj/chrfcu.o) PID 2411870 on the chain.
+Live child 0x617651980390 (build/obj/chrfcu.o) PID 2411870 
 Compiling chrfcu.c
-Reaping winning child 0x5938776f5b40 PID 2403857 
-Live child 0x5938776f5b40 (build/obj/chrfcu.o) PID 2403858 
-Reaping winning child 0x5938776f5b40 PID 2403858 
-Removing child 0x5938776f5b40 PID 2403858 from chain.
+Reaping winning child 0x617651980390 PID 2411870 
+Live child 0x617651980390 (build/obj/chrfcu.o) PID 2411871 
+Reaping winning child 0x617651980390 PID 2411871 
+Removing child 0x617651980390 PID 2411871 from chain.
   Successfully remade target file 'build/obj/chrfcu.o'.
   Considering target file 'build/obj/chdebug.o'.
    File 'build/obj/chdebug.o' does not exist.
@@ -15690,13 +15700,13 @@ Removing child 0x5938776f5b40 PID 2403858 from chain.
     Pruning file '.dep'.
    Finished prerequisites of target file 'build/obj/chdebug.o'.
   Must remake target 'build/obj/chdebug.o'.
-Putting child 0x5938776f6f70 (build/obj/chdebug.o) PID 2403861 on the chain.
-Live child 0x5938776f6f70 (build/obj/chdebug.o) PID 2403861 
+Putting child 0x617651981980 (build/obj/chdebug.o) PID 2411874 on the chain.
+Live child 0x617651981980 (build/obj/chdebug.o) PID 2411874 
 Compiling chdebug.c
-Reaping winning child 0x5938776f6f70 PID 2403861 
-Live child 0x5938776f6f70 (build/obj/chdebug.o) PID 2403862 
-Reaping winning child 0x5938776f6f70 PID 2403862 
-Removing child 0x5938776f6f70 PID 2403862 from chain.
+Reaping winning child 0x617651981980 PID 2411874 
+Live child 0x617651981980 (build/obj/chdebug.o) PID 2411875 
+Reaping winning child 0x617651981980 PID 2411875 
+Removing child 0x617651981980 PID 2411875 from chain.
   Successfully remade target file 'build/obj/chdebug.o'.
   Considering target file 'build/obj/chtrace.o'.
    File 'build/obj/chtrace.o' does not exist.
@@ -15803,13 +15813,13 @@ Removing child 0x5938776f6f70 PID 2403862 from chain.
     Pruning file '.dep'.
    Finished prerequisites of target file 'build/obj/chtrace.o'.
   Must remake target 'build/obj/chtrace.o'.
-Putting child 0x5938776f8b50 (build/obj/chtrace.o) PID 2403866 on the chain.
-Live child 0x5938776f8b50 (build/obj/chtrace.o) PID 2403866 
+Putting child 0x617651982c30 (build/obj/chtrace.o) PID 2411878 on the chain.
+Live child 0x617651982c30 (build/obj/chtrace.o) PID 2411878 
 Compiling chtrace.c
-Reaping winning child 0x5938776f8b50 PID 2403866 
-Live child 0x5938776f8b50 (build/obj/chtrace.o) PID 2403867 
-Reaping winning child 0x5938776f8b50 PID 2403867 
-Removing child 0x5938776f8b50 PID 2403867 from chain.
+Reaping winning child 0x617651982c30 PID 2411878 
+Live child 0x617651982c30 (build/obj/chtrace.o) PID 2411879 
+Reaping winning child 0x617651982c30 PID 2411879 
+Removing child 0x617651982c30 PID 2411879 from chain.
   Successfully remade target file 'build/obj/chtrace.o'.
   Considering target file 'build/obj/chvt.o'.
    File 'build/obj/chvt.o' does not exist.
@@ -15916,13 +15926,13 @@ Removing child 0x5938776f8b50 PID 2403867 from chain.
     Pruning file '.dep'.
    Finished prerequisites of target file 'build/obj/chvt.o'.
   Must remake target 'build/obj/chvt.o'.
-Putting child 0x5938776f99a0 (build/obj/chvt.o) PID 2403870 on the chain.
-Live child 0x5938776f99a0 (build/obj/chvt.o) PID 2403870 
+Putting child 0x617651984080 (build/obj/chvt.o) PID 2411882 on the chain.
+Live child 0x617651984080 (build/obj/chvt.o) PID 2411882 
 Compiling chvt.c
-Reaping winning child 0x5938776f99a0 PID 2403870 
-Live child 0x5938776f99a0 (build/obj/chvt.o) PID 2403871 
-Reaping winning child 0x5938776f99a0 PID 2403871 
-Removing child 0x5938776f99a0 PID 2403871 from chain.
+Reaping winning child 0x617651984080 PID 2411882 
+Live child 0x617651984080 (build/obj/chvt.o) PID 2411883 
+Reaping winning child 0x617651984080 PID 2411883 
+Removing child 0x617651984080 PID 2411883 from chain.
   Successfully remade target file 'build/obj/chvt.o'.
   Considering target file 'build/obj/chschd.o'.
    File 'build/obj/chschd.o' does not exist.
@@ -16029,13 +16039,13 @@ Removing child 0x5938776f99a0 PID 2403871 from chain.
     Pruning file '.dep'.
    Finished prerequisites of target file 'build/obj/chschd.o'.
   Must remake target 'build/obj/chschd.o'.
-Putting child 0x5938776fadc0 (build/obj/chschd.o) PID 2403874 on the chain.
-Live child 0x5938776fadc0 (build/obj/chschd.o) PID 2403874 
+Putting child 0x617651985670 (build/obj/chschd.o) PID 2411886 on the chain.
+Live child 0x617651985670 (build/obj/chschd.o) PID 2411886 
 Compiling chschd.c
-Reaping winning child 0x5938776fadc0 PID 2403874 
-Live child 0x5938776fadc0 (build/obj/chschd.o) PID 2403875 
-Reaping winning child 0x5938776fadc0 PID 2403875 
-Removing child 0x5938776fadc0 PID 2403875 from chain.
+Reaping winning child 0x617651985670 PID 2411886 
+Live child 0x617651985670 (build/obj/chschd.o) PID 2411887 
+Reaping winning child 0x617651985670 PID 2411887 
+Removing child 0x617651985670 PID 2411887 from chain.
   Successfully remade target file 'build/obj/chschd.o'.
   Considering target file 'build/obj/chinstances.o'.
    File 'build/obj/chinstances.o' does not exist.
@@ -16142,13 +16152,13 @@ Removing child 0x5938776fadc0 PID 2403875 from chain.
     Pruning file '.dep'.
    Finished prerequisites of target file 'build/obj/chinstances.o'.
   Must remake target 'build/obj/chinstances.o'.
-Putting child 0x5938775da450 (build/obj/chinstances.o) PID 2403886 on the chain.
-Live child 0x5938775da450 (build/obj/chinstances.o) PID 2403886 
+Putting child 0x6176518662b0 (build/obj/chinstances.o) PID 2411890 on the chain.
+Live child 0x6176518662b0 (build/obj/chinstances.o) PID 2411890 
 Compiling chinstances.c
-Reaping winning child 0x5938775da450 PID 2403886 
-Live child 0x5938775da450 (build/obj/chinstances.o) PID 2403887 
-Reaping winning child 0x5938775da450 PID 2403887 
-Removing child 0x5938775da450 PID 2403887 from chain.
+Reaping winning child 0x6176518662b0 PID 2411890 
+Live child 0x6176518662b0 (build/obj/chinstances.o) PID 2411891 
+Reaping winning child 0x6176518662b0 PID 2411891 
+Removing child 0x6176518662b0 PID 2411891 from chain.
   Successfully remade target file 'build/obj/chinstances.o'.
   Considering target file 'build/obj/chthreads.o'.
    File 'build/obj/chthreads.o' does not exist.
@@ -16255,13 +16265,13 @@ Removing child 0x5938775da450 PID 2403887 from chain.
     Pruning file '.dep'.
    Finished prerequisites of target file 'build/obj/chthreads.o'.
   Must remake target 'build/obj/chthreads.o'.
-Putting child 0x5938775db860 (build/obj/chthreads.o) PID 2403890 on the chain.
-Live child 0x5938775db860 (build/obj/chthreads.o) PID 2403890 
+Putting child 0x617651867860 (build/obj/chthreads.o) PID 2411894 on the chain.
+Live child 0x617651867860 (build/obj/chthreads.o) PID 2411894 
 Compiling chthreads.c
-Reaping winning child 0x5938775db860 PID 2403890 
-Live child 0x5938775db860 (build/obj/chthreads.o) PID 2403891 
-Reaping winning child 0x5938775db860 PID 2403891 
-Removing child 0x5938775db860 PID 2403891 from chain.
+Reaping winning child 0x617651867860 PID 2411894 
+Live child 0x617651867860 (build/obj/chthreads.o) PID 2411895 
+Reaping winning child 0x617651867860 PID 2411895 
+Removing child 0x617651867860 PID 2411895 from chain.
   Successfully remade target file 'build/obj/chthreads.o'.
   Considering target file 'build/obj/chtm.o'.
    File 'build/obj/chtm.o' does not exist.
@@ -16368,13 +16378,13 @@ Removing child 0x5938775db860 PID 2403891 from chain.
     Pruning file '.dep'.
    Finished prerequisites of target file 'build/obj/chtm.o'.
   Must remake target 'build/obj/chtm.o'.
-Putting child 0x5938775dbbc0 (build/obj/chtm.o) PID 2403894 on the chain.
-Live child 0x5938775dbbc0 (build/obj/chtm.o) PID 2403894 
+Putting child 0x617651867be0 (build/obj/chtm.o) PID 2411898 on the chain.
+Live child 0x617651867be0 (build/obj/chtm.o) PID 2411898 
 Compiling chtm.c
-Reaping winning child 0x5938775dbbc0 PID 2403894 
-Live child 0x5938775dbbc0 (build/obj/chtm.o) PID 2403895 
-Reaping winning child 0x5938775dbbc0 PID 2403895 
-Removing child 0x5938775dbbc0 PID 2403895 from chain.
+Reaping winning child 0x617651867be0 PID 2411898 
+Live child 0x617651867be0 (build/obj/chtm.o) PID 2411899 
+Reaping winning child 0x617651867be0 PID 2411899 
+Removing child 0x617651867be0 PID 2411899 from chain.
   Successfully remade target file 'build/obj/chtm.o'.
   Considering target file 'build/obj/chregistry.o'.
    File 'build/obj/chregistry.o' does not exist.
@@ -16481,13 +16491,13 @@ Removing child 0x5938775dbbc0 PID 2403895 from chain.
     Pruning file '.dep'.
    Finished prerequisites of target file 'build/obj/chregistry.o'.
   Must remake target 'build/obj/chregistry.o'.
-Putting child 0x5938775de120 (build/obj/chregistry.o) PID 2403898 on the chain.
-Live child 0x5938775de120 (build/obj/chregistry.o) PID 2403898 
+Putting child 0x617651869fa0 (build/obj/chregistry.o) PID 2411902 on the chain.
+Live child 0x617651869fa0 (build/obj/chregistry.o) PID 2411902 
 Compiling chregistry.c
-Reaping winning child 0x5938775de120 PID 2403898 
-Live child 0x5938775de120 (build/obj/chregistry.o) PID 2403899 
-Reaping winning child 0x5938775de120 PID 2403899 
-Removing child 0x5938775de120 PID 2403899 from chain.
+Reaping winning child 0x617651869fa0 PID 2411902 
+Live child 0x617651869fa0 (build/obj/chregistry.o) PID 2411903 
+Reaping winning child 0x617651869fa0 PID 2411903 
+Removing child 0x617651869fa0 PID 2411903 from chain.
   Successfully remade target file 'build/obj/chregistry.o'.
   Considering target file 'build/obj/chsem.o'.
    File 'build/obj/chsem.o' does not exist.
@@ -16594,13 +16604,13 @@ Removing child 0x5938775de120 PID 2403899 from chain.
     Pruning file '.dep'.
    Finished prerequisites of target file 'build/obj/chsem.o'.
   Must remake target 'build/obj/chsem.o'.
-Putting child 0x5938775df510 (build/obj/chsem.o) PID 2403920 on the chain.
-Live child 0x5938775df510 (build/obj/chsem.o) PID 2403920 
+Putting child 0x61765186b510 (build/obj/chsem.o) PID 2411906 on the chain.
+Live child 0x61765186b510 (build/obj/chsem.o) PID 2411906 
 Compiling chsem.c
-Reaping winning child 0x5938775df510 PID 2403920 
-Live child 0x5938775df510 (build/obj/chsem.o) PID 2403921 
-Reaping winning child 0x5938775df510 PID 2403921 
-Removing child 0x5938775df510 PID 2403921 from chain.
+Reaping winning child 0x61765186b510 PID 2411906 
+Live child 0x61765186b510 (build/obj/chsem.o) PID 2411907 
+Reaping winning child 0x61765186b510 PID 2411907 
+Removing child 0x61765186b510 PID 2411907 from chain.
   Successfully remade target file 'build/obj/chsem.o'.
   Considering target file 'build/obj/chmtx.o'.
    File 'build/obj/chmtx.o' does not exist.
@@ -16707,13 +16717,13 @@ Removing child 0x5938775df510 PID 2403921 from chain.
     Pruning file '.dep'.
    Finished prerequisites of target file 'build/obj/chmtx.o'.
   Must remake target 'build/obj/chmtx.o'.
-Putting child 0x5938775df890 (build/obj/chmtx.o) PID 2403924 on the chain.
-Live child 0x5938775df890 (build/obj/chmtx.o) PID 2403924 
+Putting child 0x61765186c810 (build/obj/chmtx.o) PID 2411910 on the chain.
+Live child 0x61765186c810 (build/obj/chmtx.o) PID 2411910 
 Compiling chmtx.c
-Reaping winning child 0x5938775df890 PID 2403924 
-Live child 0x5938775df890 (build/obj/chmtx.o) PID 2403925 
-Reaping winning child 0x5938775df890 PID 2403925 
-Removing child 0x5938775df890 PID 2403925 from chain.
+Reaping winning child 0x61765186c810 PID 2411910 
+Live child 0x61765186c810 (build/obj/chmtx.o) PID 2411911 
+Reaping winning child 0x61765186c810 PID 2411911 
+Removing child 0x61765186c810 PID 2411911 from chain.
   Successfully remade target file 'build/obj/chmtx.o'.
   Considering target file 'build/obj/chcond.o'.
    File 'build/obj/chcond.o' does not exist.
@@ -16820,13 +16830,13 @@ Removing child 0x5938775df890 PID 2403925 from chain.
     Pruning file '.dep'.
    Finished prerequisites of target file 'build/obj/chcond.o'.
   Must remake target 'build/obj/chcond.o'.
-Putting child 0x5938775e1be0 (build/obj/chcond.o) PID 2403928 on the chain.
-Live child 0x5938775e1be0 (build/obj/chcond.o) PID 2403928 
+Putting child 0x61765186dc60 (build/obj/chcond.o) PID 2411914 on the chain.
+Live child 0x61765186dc60 (build/obj/chcond.o) PID 2411914 
 Compiling chcond.c
-Reaping winning child 0x5938775e1be0 PID 2403928 
-Live child 0x5938775e1be0 (build/obj/chcond.o) PID 2403929 
-Reaping winning child 0x5938775e1be0 PID 2403929 
-Removing child 0x5938775e1be0 PID 2403929 from chain.
+Reaping winning child 0x61765186dc60 PID 2411914 
+Live child 0x61765186dc60 (build/obj/chcond.o) PID 2411915 
+Reaping winning child 0x61765186dc60 PID 2411915 
+Removing child 0x61765186dc60 PID 2411915 from chain.
   Successfully remade target file 'build/obj/chcond.o'.
   Considering target file 'build/obj/chevents.o'.
    File 'build/obj/chevents.o' does not exist.
@@ -16933,13 +16943,13 @@ Removing child 0x5938775e1be0 PID 2403929 from chain.
     Pruning file '.dep'.
    Finished prerequisites of target file 'build/obj/chevents.o'.
   Must remake target 'build/obj/chevents.o'.
-Putting child 0x5938775e3250 (build/obj/chevents.o) PID 2403932 on the chain.
-Live child 0x5938775e3250 (build/obj/chevents.o) PID 2403932 
+Putting child 0x61765186f200 (build/obj/chevents.o) PID 2411918 on the chain.
+Live child 0x61765186f200 (build/obj/chevents.o) PID 2411918 
 Compiling chevents.c
-Reaping winning child 0x5938775e3250 PID 2403932 
-Live child 0x5938775e3250 (build/obj/chevents.o) PID 2403933 
-Reaping winning child 0x5938775e3250 PID 2403933 
-Removing child 0x5938775e3250 PID 2403933 from chain.
+Reaping winning child 0x61765186f200 PID 2411918 
+Live child 0x61765186f200 (build/obj/chevents.o) PID 2411919 
+Reaping winning child 0x61765186f200 PID 2411919 
+Removing child 0x61765186f200 PID 2411919 from chain.
   Successfully remade target file 'build/obj/chevents.o'.
   Considering target file 'build/obj/chmsg.o'.
    File 'build/obj/chmsg.o' does not exist.
@@ -17046,13 +17056,13 @@ Removing child 0x5938775e3250 PID 2403933 from chain.
     Pruning file '.dep'.
    Finished prerequisites of target file 'build/obj/chmsg.o'.
   Must remake target 'build/obj/chmsg.o'.
-Putting child 0x5938775e8960 (build/obj/chmsg.o) PID 2403937 on the chain.
-Live child 0x5938775e8960 (build/obj/chmsg.o) PID 2403937 
+Putting child 0x6176518704a0 (build/obj/chmsg.o) PID 2411922 on the chain.
+Live child 0x6176518704a0 (build/obj/chmsg.o) PID 2411922 
 Compiling chmsg.c
-Reaping winning child 0x5938775e8960 PID 2403937 
-Live child 0x5938775e8960 (build/obj/chmsg.o) PID 2403938 
-Reaping winning child 0x5938775e8960 PID 2403938 
-Removing child 0x5938775e8960 PID 2403938 from chain.
+Reaping winning child 0x6176518704a0 PID 2411922 
+Live child 0x6176518704a0 (build/obj/chmsg.o) PID 2411923 
+Reaping winning child 0x6176518704a0 PID 2411923 
+Removing child 0x6176518704a0 PID 2411923 from chain.
   Successfully remade target file 'build/obj/chmsg.o'.
   Considering target file 'build/obj/chdynamic.o'.
    File 'build/obj/chdynamic.o' does not exist.
@@ -17159,13 +17169,13 @@ Removing child 0x5938775e8960 PID 2403938 from chain.
     Pruning file '.dep'.
    Finished prerequisites of target file 'build/obj/chdynamic.o'.
   Must remake target 'build/obj/chdynamic.o'.
-Putting child 0x5938775e7590 (build/obj/chdynamic.o) PID 2403941 on the chain.
-Live child 0x5938775e7590 (build/obj/chdynamic.o) PID 2403941 
+Putting child 0x6176518713b0 (build/obj/chdynamic.o) PID 2411926 on the chain.
+Live child 0x6176518713b0 (build/obj/chdynamic.o) PID 2411926 
 Compiling chdynamic.c
-Reaping winning child 0x5938775e7590 PID 2403941 
-Live child 0x5938775e7590 (build/obj/chdynamic.o) PID 2403942 
-Reaping winning child 0x5938775e7590 PID 2403942 
-Removing child 0x5938775e7590 PID 2403942 from chain.
+Reaping winning child 0x6176518713b0 PID 2411926 
+Live child 0x6176518713b0 (build/obj/chdynamic.o) PID 2411927 
+Reaping winning child 0x6176518713b0 PID 2411927 
+Removing child 0x6176518713b0 PID 2411927 from chain.
   Successfully remade target file 'build/obj/chdynamic.o'.
   Considering target file 'build/obj/chmemchecks.o'.
    File 'build/obj/chmemchecks.o' does not exist.
@@ -17272,13 +17282,13 @@ Removing child 0x5938775e7590 PID 2403942 from chain.
     Pruning file '.dep'.
    Finished prerequisites of target file 'build/obj/chmemchecks.o'.
   Must remake target 'build/obj/chmemchecks.o'.
-Putting child 0x5938775e47e0 (build/obj/chmemchecks.o) PID 2403945 on the chain.
-Live child 0x5938775e47e0 (build/obj/chmemchecks.o) PID 2403945 
+Putting child 0x617651872270 (build/obj/chmemchecks.o) PID 2411930 on the chain.
+Live child 0x617651872270 (build/obj/chmemchecks.o) PID 2411930 
 Compiling chmemchecks.c
-Reaping winning child 0x5938775e47e0 PID 2403945 
-Live child 0x5938775e47e0 (build/obj/chmemchecks.o) PID 2403946 
-Reaping winning child 0x5938775e47e0 PID 2403946 
-Removing child 0x5938775e47e0 PID 2403946 from chain.
+Reaping winning child 0x617651872270 PID 2411930 
+Live child 0x617651872270 (build/obj/chmemchecks.o) PID 2411931 
+Reaping winning child 0x617651872270 PID 2411931 
+Removing child 0x617651872270 PID 2411931 from chain.
   Successfully remade target file 'build/obj/chmemchecks.o'.
   Considering target file 'build/obj/chmboxes.o'.
    File 'build/obj/chmboxes.o' does not exist.
@@ -17385,13 +17395,13 @@ Removing child 0x5938775e47e0 PID 2403946 from chain.
     Pruning file '.dep'.
    Finished prerequisites of target file 'build/obj/chmboxes.o'.
   Must remake target 'build/obj/chmboxes.o'.
-Putting child 0x5938775e6030 (build/obj/chmboxes.o) PID 2403949 on the chain.
-Live child 0x5938775e6030 (build/obj/chmboxes.o) PID 2403949 
+Putting child 0x617651986900 (build/obj/chmboxes.o) PID 2411934 on the chain.
+Live child 0x617651986900 (build/obj/chmboxes.o) PID 2411934 
 Compiling chmboxes.c
-Reaping winning child 0x5938775e6030 PID 2403949 
-Live child 0x5938775e6030 (build/obj/chmboxes.o) PID 2403950 
-Reaping winning child 0x5938775e6030 PID 2403950 
-Removing child 0x5938775e6030 PID 2403950 from chain.
+Reaping winning child 0x617651986900 PID 2411934 
+Live child 0x617651986900 (build/obj/chmboxes.o) PID 2411935 
+Reaping winning child 0x617651986900 PID 2411935 
+Removing child 0x617651986900 PID 2411935 from chain.
   Successfully remade target file 'build/obj/chmboxes.o'.
   Considering target file 'build/obj/chmemcore.o'.
    File 'build/obj/chmemcore.o' does not exist.
@@ -17498,13 +17508,13 @@ Removing child 0x5938775e6030 PID 2403950 from chain.
     Pruning file '.dep'.
    Finished prerequisites of target file 'build/obj/chmemcore.o'.
   Must remake target 'build/obj/chmemcore.o'.
-Putting child 0x5938776fdc20 (build/obj/chmemcore.o) PID 2403953 on the chain.
-Live child 0x5938776fdc20 (build/obj/chmemcore.o) PID 2403953 
+Putting child 0x617651987d00 (build/obj/chmemcore.o) PID 2411938 on the chain.
+Live child 0x617651987d00 (build/obj/chmemcore.o) PID 2411938 
 Compiling chmemcore.c
-Reaping winning child 0x5938776fdc20 PID 2403953 
-Live child 0x5938776fdc20 (build/obj/chmemcore.o) PID 2403954 
-Reaping winning child 0x5938776fdc20 PID 2403954 
-Removing child 0x5938776fdc20 PID 2403954 from chain.
+Reaping winning child 0x617651987d00 PID 2411938 
+Live child 0x617651987d00 (build/obj/chmemcore.o) PID 2411939 
+Reaping winning child 0x617651987d00 PID 2411939 
+Removing child 0x617651987d00 PID 2411939 from chain.
   Successfully remade target file 'build/obj/chmemcore.o'.
   Considering target file 'build/obj/chmemheaps.o'.
    File 'build/obj/chmemheaps.o' does not exist.
@@ -17611,13 +17621,13 @@ Removing child 0x5938776fdc20 PID 2403954 from chain.
     Pruning file '.dep'.
    Finished prerequisites of target file 'build/obj/chmemheaps.o'.
   Must remake target 'build/obj/chmemheaps.o'.
-Putting child 0x5938776fe760 (build/obj/chmemheaps.o) PID 2403957 on the chain.
-Live child 0x5938776fe760 (build/obj/chmemheaps.o) PID 2403957 
+Putting child 0x617651988060 (build/obj/chmemheaps.o) PID 2411942 on the chain.
+Live child 0x617651988060 (build/obj/chmemheaps.o) PID 2411942 
 Compiling chmemheaps.c
-Reaping winning child 0x5938776fe760 PID 2403957 
-Live child 0x5938776fe760 (build/obj/chmemheaps.o) PID 2403958 
-Reaping winning child 0x5938776fe760 PID 2403958 
-Removing child 0x5938776fe760 PID 2403958 from chain.
+Reaping winning child 0x617651988060 PID 2411942 
+Live child 0x617651988060 (build/obj/chmemheaps.o) PID 2411943 
+Reaping winning child 0x617651988060 PID 2411943 
+Removing child 0x617651988060 PID 2411943 from chain.
   Successfully remade target file 'build/obj/chmemheaps.o'.
   Considering target file 'build/obj/chmempools.o'.
    File 'build/obj/chmempools.o' does not exist.
@@ -17724,13 +17734,13 @@ Removing child 0x5938776fe760 PID 2403958 from chain.
     Pruning file '.dep'.
    Finished prerequisites of target file 'build/obj/chmempools.o'.
   Must remake target 'build/obj/chmempools.o'.
-Putting child 0x5938776fff20 (build/obj/chmempools.o) PID 2403961 on the chain.
-Live child 0x5938776fff20 (build/obj/chmempools.o) PID 2403961 
+Putting child 0x61765198a3c0 (build/obj/chmempools.o) PID 2411946 on the chain.
+Live child 0x61765198a3c0 (build/obj/chmempools.o) PID 2411946 
 Compiling chmempools.c
-Reaping winning child 0x5938776fff20 PID 2403961 
-Live child 0x5938776fff20 (build/obj/chmempools.o) PID 2403962 
-Reaping winning child 0x5938776fff20 PID 2403962 
-Removing child 0x5938776fff20 PID 2403962 from chain.
+Reaping winning child 0x61765198a3c0 PID 2411946 
+Live child 0x61765198a3c0 (build/obj/chmempools.o) PID 2411947 
+Reaping winning child 0x61765198a3c0 PID 2411947 
+Removing child 0x61765198a3c0 PID 2411947 from chain.
   Successfully remade target file 'build/obj/chmempools.o'.
   Considering target file 'build/obj/chpipes.o'.
    File 'build/obj/chpipes.o' does not exist.
@@ -17837,13 +17847,13 @@ Removing child 0x5938776fff20 PID 2403962 from chain.
     Pruning file '.dep'.
    Finished prerequisites of target file 'build/obj/chpipes.o'.
   Must remake target 'build/obj/chpipes.o'.
-Putting child 0x5938777011a0 (build/obj/chpipes.o) PID 2403965 on the chain.
-Live child 0x5938777011a0 (build/obj/chpipes.o) PID 2403965 
+Putting child 0x61765198ba20 (build/obj/chpipes.o) PID 2411950 on the chain.
+Live child 0x61765198ba20 (build/obj/chpipes.o) PID 2411950 
 Compiling chpipes.c
-Reaping winning child 0x5938777011a0 PID 2403965 
-Live child 0x5938777011a0 (build/obj/chpipes.o) PID 2403966 
-Reaping winning child 0x5938777011a0 PID 2403966 
-Removing child 0x5938777011a0 PID 2403966 from chain.
+Reaping winning child 0x61765198ba20 PID 2411950 
+Live child 0x61765198ba20 (build/obj/chpipes.o) PID 2411951 
+Reaping winning child 0x61765198ba20 PID 2411951 
+Removing child 0x61765198ba20 PID 2411951 from chain.
   Successfully remade target file 'build/obj/chpipes.o'.
   Considering target file 'build/obj/chobjcaches.o'.
    File 'build/obj/chobjcaches.o' does not exist.
@@ -17950,13 +17960,13 @@ Removing child 0x5938777011a0 PID 2403966 from chain.
     Pruning file '.dep'.
    Finished prerequisites of target file 'build/obj/chobjcaches.o'.
   Must remake target 'build/obj/chobjcaches.o'.
-Putting child 0x5938777025e0 (build/obj/chobjcaches.o) PID 2403969 on the chain.
-Live child 0x5938777025e0 (build/obj/chobjcaches.o) PID 2403969 
+Putting child 0x61765198cca0 (build/obj/chobjcaches.o) PID 2411954 on the chain.
+Live child 0x61765198cca0 (build/obj/chobjcaches.o) PID 2411954 
 Compiling chobjcaches.c
-Reaping winning child 0x5938777025e0 PID 2403969 
-Live child 0x5938777025e0 (build/obj/chobjcaches.o) PID 2403970 
-Reaping winning child 0x5938777025e0 PID 2403970 
-Removing child 0x5938777025e0 PID 2403970 from chain.
+Reaping winning child 0x61765198cca0 PID 2411954 
+Live child 0x61765198cca0 (build/obj/chobjcaches.o) PID 2411955 
+Reaping winning child 0x61765198cca0 PID 2411955 
+Removing child 0x61765198cca0 PID 2411955 from chain.
   Successfully remade target file 'build/obj/chobjcaches.o'.
   Considering target file 'build/obj/chdelegates.o'.
    File 'build/obj/chdelegates.o' does not exist.
@@ -18063,13 +18073,13 @@ Removing child 0x5938777025e0 PID 2403970 from chain.
     Pruning file '.dep'.
    Finished prerequisites of target file 'build/obj/chdelegates.o'.
   Must remake target 'build/obj/chdelegates.o'.
-Putting child 0x593877703bd0 (build/obj/chdelegates.o) PID 2403973 on the chain.
-Live child 0x593877703bd0 (build/obj/chdelegates.o) PID 2403973 
+Putting child 0x61765198e0d0 (build/obj/chdelegates.o) PID 2411958 on the chain.
+Live child 0x61765198e0d0 (build/obj/chdelegates.o) PID 2411958 
 Compiling chdelegates.c
-Reaping winning child 0x593877703bd0 PID 2403973 
-Live child 0x593877703bd0 (build/obj/chdelegates.o) PID 2403974 
-Reaping winning child 0x593877703bd0 PID 2403974 
-Removing child 0x593877703bd0 PID 2403974 from chain.
+Reaping winning child 0x61765198e0d0 PID 2411958 
+Live child 0x61765198e0d0 (build/obj/chdelegates.o) PID 2411959 
+Reaping winning child 0x61765198e0d0 PID 2411959 
+Removing child 0x61765198e0d0 PID 2411959 from chain.
   Successfully remade target file 'build/obj/chdelegates.o'.
   Considering target file 'build/obj/chfactory.o'.
    File 'build/obj/chfactory.o' does not exist.
@@ -18176,13 +18186,13 @@ Removing child 0x593877703bd0 PID 2403974 from chain.
     Pruning file '.dep'.
    Finished prerequisites of target file 'build/obj/chfactory.o'.
   Must remake target 'build/obj/chfactory.o'.
-Putting child 0x593877704e50 (build/obj/chfactory.o) PID 2403977 on the chain.
-Live child 0x593877704e50 (build/obj/chfactory.o) PID 2403977 
+Putting child 0x61765198f6d0 (build/obj/chfactory.o) PID 2411962 on the chain.
+Live child 0x61765198f6d0 (build/obj/chfactory.o) PID 2411962 
 Compiling chfactory.c
-Reaping winning child 0x593877704e50 PID 2403977 
-Live child 0x593877704e50 (build/obj/chfactory.o) PID 2403978 
-Reaping winning child 0x593877704e50 PID 2403978 
-Removing child 0x593877704e50 PID 2403978 from chain.
+Reaping winning child 0x61765198f6d0 PID 2411962 
+Live child 0x61765198f6d0 (build/obj/chfactory.o) PID 2411963 
+Reaping winning child 0x61765198f6d0 PID 2411963 
+Removing child 0x61765198f6d0 PID 2411963 from chain.
   Successfully remade target file 'build/obj/chfactory.o'.
   Considering target file 'build/obj/chcore.o'.
    File 'build/obj/chcore.o' does not exist.
@@ -18289,13 +18299,13 @@ Removing child 0x593877704e50 PID 2403978 from chain.
     Pruning file '.dep'.
    Finished prerequisites of target file 'build/obj/chcore.o'.
   Must remake target 'build/obj/chcore.o'.
-Putting child 0x5938777062b0 (build/obj/chcore.o) PID 2403981 on the chain.
-Live child 0x5938777062b0 (build/obj/chcore.o) PID 2403981 
+Putting child 0x617651990970 (build/obj/chcore.o) PID 2411966 on the chain.
+Live child 0x617651990970 (build/obj/chcore.o) PID 2411966 
 Compiling chcore.c
-Reaping winning child 0x5938777062b0 PID 2403981 
-Live child 0x5938777062b0 (build/obj/chcore.o) PID 2403982 
-Reaping winning child 0x5938777062b0 PID 2403982 
-Removing child 0x5938777062b0 PID 2403982 from chain.
+Reaping winning child 0x617651990970 PID 2411966 
+Live child 0x617651990970 (build/obj/chcore.o) PID 2411967 
+Reaping winning child 0x617651990970 PID 2411967 
+Removing child 0x617651990970 PID 2411967 from chain.
   Successfully remade target file 'build/obj/chcore.o'.
   Considering target file 'build/obj/clocks.o'.
    File 'build/obj/clocks.o' does not exist.
@@ -18402,13 +18412,20 @@ Removing child 0x5938777062b0 PID 2403982 from chain.
     Pruning file '.dep'.
    Finished prerequisites of target file 'build/obj/clocks.o'.
   Must remake target 'build/obj/clocks.o'.
-Putting child 0x593877707910 (build/obj/clocks.o) PID 2403985 on the chain.
-Live child 0x593877707910 (build/obj/clocks.o) PID 2403985 
+Putting child 0x617651990bb0 (build/obj/clocks.o) PID 2411970 on the chain.
+Live child 0x617651990bb0 (build/obj/clocks.o) PID 2411970 
 Compiling clocks.c
-Reaping winning child 0x593877707910 PID 2403985 
-Live child 0x593877707910 (build/obj/clocks.o) PID 2403986 
-Reaping winning child 0x593877707910 PID 2403986 
-Removing child 0x593877707910 PID 2403986 from chain.
+Reaping winning child 0x617651990bb0 PID 2411970 
+Live child 0x617651990bb0 (build/obj/clocks.o) PID 2411971 
+/home/buzz2/Chibi/pico-sdk/src/rp2_common/hardware_clocks/clocks.c:295:5: warning: "HAS_RP2040_RTC" is not defined, evaluates to 0 [-Wundef]
+  295 | #if HAS_RP2040_RTC
+      |     ^~~~~~~~~~~~~~
+/home/buzz2/Chibi/pico-sdk/src/rp2_common/hardware_clocks/clocks.c: In function 'clock_configure_gpin':
+/home/buzz2/Chibi/pico-sdk/src/rp2_common/hardware_clocks/clocks.c:304:5: warning: "PICO_RP2350" is not defined, evaluates to 0 [-Wundef]
+  304 | #if PICO_RP2350
+      |     ^~~~~~~~~~~
+Reaping winning child 0x617651990bb0 PID 2411971 
+Removing child 0x617651990bb0 PID 2411971 from chain.
   Successfully remade target file 'build/obj/clocks.o'.
   Considering target file 'build/obj/stdio.o'.
    File 'build/obj/stdio.o' does not exist.
@@ -18515,13 +18532,117 @@ Removing child 0x593877707910 PID 2403986 from chain.
     Pruning file '.dep'.
    Finished prerequisites of target file 'build/obj/stdio.o'.
   Must remake target 'build/obj/stdio.o'.
-Putting child 0x593877708c10 (build/obj/stdio.o) PID 2403989 on the chain.
-Live child 0x593877708c10 (build/obj/stdio.o) PID 2403989 
+Putting child 0x6176519932b0 (build/obj/stdio.o) PID 2411974 on the chain.
+Live child 0x6176519932b0 (build/obj/stdio.o) PID 2411974 
 Compiling stdio.c
-Reaping winning child 0x593877708c10 PID 2403989 
-Live child 0x593877708c10 (build/obj/stdio.o) PID 2403990 
-Reaping winning child 0x593877708c10 PID 2403990 
-Removing child 0x593877708c10 PID 2403990 from chain.
+Reaping winning child 0x6176519932b0 PID 2411974 
+Live child 0x6176519932b0 (build/obj/stdio.o) PID 2411975 
+/home/buzz2/Chibi/pico-sdk/src/rp2_common/pico_stdio/stdio.c:12:5: warning: "LIB_PICO_PRINTF_PICO" is not defined, evaluates to 0 [-Wundef]
+   12 | #if LIB_PICO_PRINTF_PICO
+      |     ^~~~~~~~~~~~~~~~~~~~
+In file included from /home/buzz2/Chibi/pico-sdk/src/rp2_common/hardware_sync/include/hardware/sync.h:262,
+                 from /home/buzz2/Chibi/pico-sdk/src/common/pico_sync/include/pico/lock_core.h:12,
+                 from /home/buzz2/Chibi/pico-sdk/src/common/pico_sync/include/pico/mutex.h:10,
+                 from /home/buzz2/Chibi/pico-sdk/src/rp2_common/pico_stdio/stdio.c:19:
+/home/buzz2/Chibi/pico-sdk/src/rp2_common/hardware_sync_spin_lock/include/hardware/sync/spin_lock.h:15:5: warning: "PICO_RP2350" is not defined, evaluates to 0 [-Wundef]
+   15 | #if PICO_RP2350
+      |     ^~~~~~~~~~~
+/home/buzz2/Chibi/pico-sdk/src/rp2_common/hardware_sync_spin_lock/include/hardware/sync/spin_lock.h:82:6: warning: "PICO_USE_SW_SPIN_LOCKS" is not defined, evaluates to 0 [-Wundef]
+   82 | #if !PICO_USE_SW_SPIN_LOCKS
+      |      ^~~~~~~~~~~~~~~~~~~~~~
+/home/buzz2/Chibi/pico-sdk/src/rp2_common/hardware_sync_spin_lock/include/hardware/sync/spin_lock.h:93:5: warning: "PICO_USE_SW_SPIN_LOCKS" is not defined, evaluates to 0 [-Wundef]
+   93 | #if PICO_USE_SW_SPIN_LOCKS
+      |     ^~~~~~~~~~~~~~~~~~~~~~
+/home/buzz2/Chibi/pico-sdk/src/rp2_common/hardware_sync_spin_lock/include/hardware/sync/spin_lock.h: In function 'spin_lock_instance':
+/home/buzz2/Chibi/pico-sdk/src/rp2_common/hardware_sync_spin_lock/include/hardware/sync/spin_lock.h:227:5: warning: "PICO_USE_SW_SPIN_LOCKS" is not defined, evaluates to 0 [-Wundef]
+  227 | #if PICO_USE_SW_SPIN_LOCKS
+      |     ^~~~~~~~~~~~~~~~~~~~~~
+/home/buzz2/Chibi/pico-sdk/src/rp2_common/hardware_sync_spin_lock/include/hardware/sync/spin_lock.h: In function 'spin_lock_get_num':
+/home/buzz2/Chibi/pico-sdk/src/rp2_common/hardware_sync_spin_lock/include/hardware/sync/spin_lock.h:241:5: warning: "PICO_USE_SW_SPIN_LOCKS" is not defined, evaluates to 0 [-Wundef]
+  241 | #if PICO_USE_SW_SPIN_LOCKS
+      |     ^~~~~~~~~~~~~~~~~~~~~~
+/home/buzz2/Chibi/pico-sdk/src/rp2_common/hardware_sync_spin_lock/include/hardware/sync/spin_lock.h: In function 'spin_lock_unsafe_blocking':
+/home/buzz2/Chibi/pico-sdk/src/rp2_common/hardware_sync_spin_lock/include/hardware/sync/spin_lock.h:262:5: warning: "PICO_USE_SW_SPIN_LOCKS" is not defined, evaluates to 0 [-Wundef]
+  262 | #if PICO_USE_SW_SPIN_LOCKS
+      |     ^~~~~~~~~~~~~~~~~~~~~~
+/home/buzz2/Chibi/pico-sdk/src/rp2_common/hardware_sync_spin_lock/include/hardware/sync/spin_lock.h: In function 'spin_try_lock_unsafe':
+/home/buzz2/Chibi/pico-sdk/src/rp2_common/hardware_sync_spin_lock/include/hardware/sync/spin_lock.h:273:5: warning: "PICO_USE_SW_SPIN_LOCKS" is not defined, evaluates to 0 [-Wundef]
+  273 | #if PICO_USE_SW_SPIN_LOCKS
+      |     ^~~~~~~~~~~~~~~~~~~~~~
+/home/buzz2/Chibi/pico-sdk/src/rp2_common/hardware_sync_spin_lock/include/hardware/sync/spin_lock.h: In function 'spin_unlock_unsafe':
+/home/buzz2/Chibi/pico-sdk/src/rp2_common/hardware_sync_spin_lock/include/hardware/sync/spin_lock.h:285:5: warning: "PICO_USE_SW_SPIN_LOCKS" is not defined, evaluates to 0 [-Wundef]
+  285 | #if PICO_USE_SW_SPIN_LOCKS
+      |     ^~~~~~~~~~~~~~~~~~~~~~
+/home/buzz2/Chibi/pico-sdk/src/rp2_common/hardware_sync_spin_lock/include/hardware/sync/spin_lock.h: In function 'is_spin_locked':
+/home/buzz2/Chibi/pico-sdk/src/rp2_common/hardware_sync_spin_lock/include/hardware/sync/spin_lock.h:313:5: warning: "PICO_USE_SW_SPIN_LOCKS" is not defined, evaluates to 0 [-Wundef]
+  313 | #if PICO_USE_SW_SPIN_LOCKS
+      |     ^~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/buzz2/Chibi/pico-sdk/src/rp2_common/pico_stdio/stdio.c:19:
+/home/buzz2/Chibi/pico-sdk/src/common/pico_sync/include/pico/mutex.h: At top level:
+/home/buzz2/Chibi/pico-sdk/src/common/pico_sync/include/pico/mutex.h:51:5: warning: "PICO_MUTEX_ENABLE_SDK120_COMPATIBILITY" is not defined, evaluates to 0 [-Wundef]
+   51 | #if PICO_MUTEX_ENABLE_SDK120_COMPATIBILITY
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/buzz2/Chibi/pico-sdk/src/common/pico_sync/include/pico/mutex.h:59:6: warning: "PICO_MUTEX_ENABLE_SDK120_COMPATIBILITY" is not defined, evaluates to 0 [-Wundef]
+   59 | #if !PICO_MUTEX_ENABLE_SDK120_COMPATIBILITY
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/buzz2/Chibi/pico-sdk/src/rp2_common/pico_stdio/stdio.c:22:5: warning: "LIB_PICO_STDIO_UART" is not defined, evaluates to 0 [-Wundef]
+   22 | #if LIB_PICO_STDIO_UART
+      |     ^~~~~~~~~~~~~~~~~~~
+/home/buzz2/Chibi/pico-sdk/src/rp2_common/pico_stdio/stdio.c:26:5: warning: "LIB_PICO_STDIO_USB" is not defined, evaluates to 0 [-Wundef]
+   26 | #if LIB_PICO_STDIO_USB
+      |     ^~~~~~~~~~~~~~~~~~
+/home/buzz2/Chibi/pico-sdk/src/rp2_common/pico_stdio/stdio.c:30:5: warning: "LIB_PICO_STDIO_SEMIHOSTING" is not defined, evaluates to 0 [-Wundef]
+   30 | #if LIB_PICO_STDIO_SEMIHOSTING
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/buzz2/Chibi/pico-sdk/src/rp2_common/pico_stdio/stdio.c:34:5: warning: "LIB_PICO_STDIO_RTT" is not defined, evaluates to 0 [-Wundef]
+   34 | #if LIB_PICO_STDIO_RTT
+      |     ^~~~~~~~~~~~~~~~~~
+/home/buzz2/Chibi/pico-sdk/src/rp2_common/pico_stdio/stdio.c: In function 'stdio_put_string':
+/home/buzz2/Chibi/pico-sdk/src/rp2_common/pico_stdio/stdio.c:95:5: warning: "PICO_STDIO_IGNORE_NESTED_STDOUT" is not defined, evaluates to 0 [-Wundef]
+   95 | #if PICO_STDIO_IGNORE_NESTED_STDOUT
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/buzz2/Chibi/pico-sdk/src/rp2_common/pico_stdio/stdio.c: At top level:
+/home/buzz2/Chibi/pico-sdk/src/rp2_common/pico_stdio/stdio.c:174:5: warning: "LIB_PICO_PRINTF_PICO" is not defined, evaluates to 0 [-Wundef]
+  174 | #if LIB_PICO_PRINTF_PICO
+      |     ^~~~~~~~~~~~~~~~~~~~
+/home/buzz2/Chibi/pico-sdk/src/rp2_common/pico_stdio/stdio.c: In function 'stdio_init_all':
+/home/buzz2/Chibi/pico-sdk/src/rp2_common/pico_stdio/stdio.c:205:5: warning: "LIB_PICO_STDIO_UART" is not defined, evaluates to 0 [-Wundef]
+  205 | #if LIB_PICO_STDIO_UART
+      |     ^~~~~~~~~~~~~~~~~~~
+/home/buzz2/Chibi/pico-sdk/src/rp2_common/pico_stdio/stdio.c:210:5: warning: "LIB_PICO_STDIO_SEMIHOSTING" is not defined, evaluates to 0 [-Wundef]
+  210 | #if LIB_PICO_STDIO_SEMIHOSTING
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/buzz2/Chibi/pico-sdk/src/rp2_common/pico_stdio/stdio.c:215:5: warning: "LIB_PICO_STDIO_RTT" is not defined, evaluates to 0 [-Wundef]
+  215 | #if LIB_PICO_STDIO_RTT
+      |     ^~~~~~~~~~~~~~~~~~
+/home/buzz2/Chibi/pico-sdk/src/rp2_common/pico_stdio/stdio.c:220:5: warning: "LIB_PICO_STDIO_USB" is not defined, evaluates to 0 [-Wundef]
+  220 | #if LIB_PICO_STDIO_USB
+      |     ^~~~~~~~~~~~~~~~~~
+/home/buzz2/Chibi/pico-sdk/src/rp2_common/pico_stdio/stdio.c: In function 'stdio_deinit_all':
+/home/buzz2/Chibi/pico-sdk/src/rp2_common/pico_stdio/stdio.c:234:5: warning: "LIB_PICO_STDIO_UART" is not defined, evaluates to 0 [-Wundef]
+  234 | #if LIB_PICO_STDIO_UART
+      |     ^~~~~~~~~~~~~~~~~~~
+/home/buzz2/Chibi/pico-sdk/src/rp2_common/pico_stdio/stdio.c:239:5: warning: "LIB_PICO_STDIO_SEMIHOSTING" is not defined, evaluates to 0 [-Wundef]
+  239 | #if LIB_PICO_STDIO_SEMIHOSTING
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/buzz2/Chibi/pico-sdk/src/rp2_common/pico_stdio/stdio.c:244:5: warning: "LIB_PICO_STDIO_RTT" is not defined, evaluates to 0 [-Wundef]
+  244 | #if LIB_PICO_STDIO_RTT
+      |     ^~~~~~~~~~~~~~~~~~
+/home/buzz2/Chibi/pico-sdk/src/rp2_common/pico_stdio/stdio.c:249:5: warning: "LIB_PICO_STDIO_USB" is not defined, evaluates to 0 [-Wundef]
+  249 | #if LIB_PICO_STDIO_USB
+      |     ^~~~~~~~~~~~~~~~~~
+/home/buzz2/Chibi/pico-sdk/src/rp2_common/pico_stdio/stdio.c: In function '__wrap_vprintf':
+/home/buzz2/Chibi/pico-sdk/src/rp2_common/pico_stdio/stdio.c:320:5: warning: "PICO_STDIO_IGNORE_NESTED_STDOUT" is not defined, evaluates to 0 [-Wundef]
+  320 | #if PICO_STDIO_IGNORE_NESTED_STDOUT
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/buzz2/Chibi/pico-sdk/src/rp2_common/pico_stdio/stdio.c:325:5: warning: "LIB_PICO_PRINTF_PICO" is not defined, evaluates to 0 [-Wundef]
+  325 | #if LIB_PICO_PRINTF_PICO
+      |     ^~~~~~~~~~~~~~~~~~~~
+/home/buzz2/Chibi/pico-sdk/src/rp2_common/pico_stdio/stdio.c:331:7: warning: "LIB_PICO_PRINTF_NONE" is not defined, evaluates to 0 [-Wundef]
+  331 | #elif LIB_PICO_PRINTF_NONE
+      |       ^~~~~~~~~~~~~~~~~~~~
+Reaping winning child 0x6176519932b0 PID 2411975 
+Removing child 0x6176519932b0 PID 2411975 from chain.
   Successfully remade target file 'build/obj/stdio.o'.
   Considering target file 'build/obj/gpio.o'.
    File 'build/obj/gpio.o' does not exist.
@@ -18628,13 +18749,56 @@ Removing child 0x593877708c10 PID 2403990 from chain.
     Pruning file '.dep'.
    Finished prerequisites of target file 'build/obj/gpio.o'.
   Must remake target 'build/obj/gpio.o'.
-Putting child 0x59387770a230 (build/obj/gpio.o) PID 2403993 on the chain.
-Live child 0x59387770a230 (build/obj/gpio.o) PID 2403993 
+Putting child 0x617651994940 (build/obj/gpio.o) PID 2411978 on the chain.
+Live child 0x617651994940 (build/obj/gpio.o) PID 2411978 
 Compiling gpio.c
-Reaping winning child 0x59387770a230 PID 2403993 
-Live child 0x59387770a230 (build/obj/gpio.o) PID 2403994 
-Reaping winning child 0x59387770a230 PID 2403994 
-Removing child 0x59387770a230 PID 2403994 from chain.
+Reaping winning child 0x617651994940 PID 2411978 
+Live child 0x617651994940 (build/obj/gpio.o) PID 2411979 
+In file included from /home/buzz2/Chibi/pico-sdk/src/rp2_common/hardware_sync/include/hardware/sync.h:262,
+                 from /home/buzz2/Chibi/pico-sdk/src/rp2_common/hardware_gpio/gpio.c:8:
+/home/buzz2/Chibi/pico-sdk/src/rp2_common/hardware_sync_spin_lock/include/hardware/sync/spin_lock.h:15:5: warning: "PICO_RP2350" is not defined, evaluates to 0 [-Wundef]
+   15 | #if PICO_RP2350
+      |     ^~~~~~~~~~~
+/home/buzz2/Chibi/pico-sdk/src/rp2_common/hardware_sync_spin_lock/include/hardware/sync/spin_lock.h:82:6: warning: "PICO_USE_SW_SPIN_LOCKS" is not defined, evaluates to 0 [-Wundef]
+   82 | #if !PICO_USE_SW_SPIN_LOCKS
+      |      ^~~~~~~~~~~~~~~~~~~~~~
+/home/buzz2/Chibi/pico-sdk/src/rp2_common/hardware_sync_spin_lock/include/hardware/sync/spin_lock.h:93:5: warning: "PICO_USE_SW_SPIN_LOCKS" is not defined, evaluates to 0 [-Wundef]
+   93 | #if PICO_USE_SW_SPIN_LOCKS
+      |     ^~~~~~~~~~~~~~~~~~~~~~
+/home/buzz2/Chibi/pico-sdk/src/rp2_common/hardware_sync_spin_lock/include/hardware/sync/spin_lock.h: In function 'spin_lock_instance':
+/home/buzz2/Chibi/pico-sdk/src/rp2_common/hardware_sync_spin_lock/include/hardware/sync/spin_lock.h:227:5: warning: "PICO_USE_SW_SPIN_LOCKS" is not defined, evaluates to 0 [-Wundef]
+  227 | #if PICO_USE_SW_SPIN_LOCKS
+      |     ^~~~~~~~~~~~~~~~~~~~~~
+/home/buzz2/Chibi/pico-sdk/src/rp2_common/hardware_sync_spin_lock/include/hardware/sync/spin_lock.h: In function 'spin_lock_get_num':
+/home/buzz2/Chibi/pico-sdk/src/rp2_common/hardware_sync_spin_lock/include/hardware/sync/spin_lock.h:241:5: warning: "PICO_USE_SW_SPIN_LOCKS" is not defined, evaluates to 0 [-Wundef]
+  241 | #if PICO_USE_SW_SPIN_LOCKS
+      |     ^~~~~~~~~~~~~~~~~~~~~~
+/home/buzz2/Chibi/pico-sdk/src/rp2_common/hardware_sync_spin_lock/include/hardware/sync/spin_lock.h: In function 'spin_lock_unsafe_blocking':
+/home/buzz2/Chibi/pico-sdk/src/rp2_common/hardware_sync_spin_lock/include/hardware/sync/spin_lock.h:262:5: warning: "PICO_USE_SW_SPIN_LOCKS" is not defined, evaluates to 0 [-Wundef]
+  262 | #if PICO_USE_SW_SPIN_LOCKS
+      |     ^~~~~~~~~~~~~~~~~~~~~~
+/home/buzz2/Chibi/pico-sdk/src/rp2_common/hardware_sync_spin_lock/include/hardware/sync/spin_lock.h: In function 'spin_try_lock_unsafe':
+/home/buzz2/Chibi/pico-sdk/src/rp2_common/hardware_sync_spin_lock/include/hardware/sync/spin_lock.h:273:5: warning: "PICO_USE_SW_SPIN_LOCKS" is not defined, evaluates to 0 [-Wundef]
+  273 | #if PICO_USE_SW_SPIN_LOCKS
+      |     ^~~~~~~~~~~~~~~~~~~~~~
+/home/buzz2/Chibi/pico-sdk/src/rp2_common/hardware_sync_spin_lock/include/hardware/sync/spin_lock.h: In function 'spin_unlock_unsafe':
+/home/buzz2/Chibi/pico-sdk/src/rp2_common/hardware_sync_spin_lock/include/hardware/sync/spin_lock.h:285:5: warning: "PICO_USE_SW_SPIN_LOCKS" is not defined, evaluates to 0 [-Wundef]
+  285 | #if PICO_USE_SW_SPIN_LOCKS
+      |     ^~~~~~~~~~~~~~~~~~~~~~
+/home/buzz2/Chibi/pico-sdk/src/rp2_common/hardware_sync_spin_lock/include/hardware/sync/spin_lock.h: In function 'is_spin_locked':
+/home/buzz2/Chibi/pico-sdk/src/rp2_common/hardware_sync_spin_lock/include/hardware/sync/spin_lock.h:313:5: warning: "PICO_USE_SW_SPIN_LOCKS" is not defined, evaluates to 0 [-Wundef]
+  313 | #if PICO_USE_SW_SPIN_LOCKS
+      |     ^~~~~~~~~~~~~~~~~~~~~~
+/home/buzz2/Chibi/pico-sdk/src/rp2_common/hardware_gpio/gpio.c: At top level:
+/home/buzz2/Chibi/pico-sdk/src/rp2_common/hardware_gpio/gpio.c:13:5: warning: "LIB_PICO_BINARY_INFO" is not defined, evaluates to 0 [-Wundef]
+   13 | #if LIB_PICO_BINARY_INFO
+      |     ^~~~~~~~~~~~~~~~~~~~
+/home/buzz2/Chibi/pico-sdk/src/rp2_common/hardware_gpio/gpio.c: In function 'gpio_debug_pins_init':
+/home/buzz2/Chibi/pico-sdk/src/rp2_common/hardware_gpio/gpio.c:268:5: warning: "LIB_PICO_BINARY_INFO" is not defined, evaluates to 0 [-Wundef]
+  268 | #if LIB_PICO_BINARY_INFO
+      |     ^~~~~~~~~~~~~~~~~~~~
+Reaping winning child 0x617651994940 PID 2411979 
+Removing child 0x617651994940 PID 2411979 from chain.
   Successfully remade target file 'build/obj/gpio.o'.
   Considering target file 'build/obj/pll.o'.
    File 'build/obj/pll.o' does not exist.
@@ -18741,13 +18905,13 @@ Removing child 0x59387770a230 PID 2403994 from chain.
     Pruning file '.dep'.
    Finished prerequisites of target file 'build/obj/pll.o'.
   Must remake target 'build/obj/pll.o'.
-Putting child 0x59387770b670 (build/obj/pll.o) PID 2403997 on the chain.
-Live child 0x59387770b670 (build/obj/pll.o) PID 2403997 
+Putting child 0x617651995db0 (build/obj/pll.o) PID 2411982 on the chain.
+Live child 0x617651995db0 (build/obj/pll.o) PID 2411982 
 Compiling pll.c
-Reaping winning child 0x59387770b670 PID 2403997 
-Live child 0x59387770b670 (build/obj/pll.o) PID 2403998 
-Reaping winning child 0x59387770b670 PID 2403998 
-Removing child 0x59387770b670 PID 2403998 from chain.
+Reaping winning child 0x617651995db0 PID 2411982 
+Live child 0x617651995db0 (build/obj/pll.o) PID 2411983 
+Reaping winning child 0x617651995db0 PID 2411983 
+Removing child 0x617651995db0 PID 2411983 from chain.
   Successfully remade target file 'build/obj/pll.o'.
   Considering target file 'build/obj/watchdog.o'.
    File 'build/obj/watchdog.o' does not exist.
@@ -18854,13 +19018,60 @@ Removing child 0x59387770b670 PID 2403998 from chain.
     Pruning file '.dep'.
    Finished prerequisites of target file 'build/obj/watchdog.o'.
   Must remake target 'build/obj/watchdog.o'.
-Putting child 0x59387770cb00 (build/obj/watchdog.o) PID 2404001 on the chain.
-Live child 0x59387770cb00 (build/obj/watchdog.o) PID 2404001 
+Putting child 0x617651997260 (build/obj/watchdog.o) PID 2411986 on the chain.
+Live child 0x617651997260 (build/obj/watchdog.o) PID 2411986 
 Compiling watchdog.c
-Reaping winning child 0x59387770cb00 PID 2404001 
-Live child 0x59387770cb00 (build/obj/watchdog.o) PID 2404002 
-Reaping winning child 0x59387770cb00 PID 2404002 
-Removing child 0x59387770cb00 PID 2404002 from chain.
+Reaping winning child 0x617651997260 PID 2411986 
+Live child 0x617651997260 (build/obj/watchdog.o) PID 2411987 
+In file included from /home/buzz2/Chibi/pico-sdk/src/rp2_common/hardware_sync/include/hardware/sync.h:262,
+                 from /home/buzz2/Chibi/pico-sdk/src/rp2_common/hardware_boot_lock/include/hardware/boot_lock.h:18,
+                 from /home/buzz2/Chibi/pico-sdk/src/rp2_common/pico_bootrom/include/pico/bootrom/lock.h:10,
+                 from /home/buzz2/Chibi/pico-sdk/src/rp2_common/pico_bootrom/include/pico/bootrom.h:22,
+                 from /home/buzz2/Chibi/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c:13:
+/home/buzz2/Chibi/pico-sdk/src/rp2_common/hardware_sync_spin_lock/include/hardware/sync/spin_lock.h:15:5: warning: "PICO_RP2350" is not defined, evaluates to 0 [-Wundef]
+   15 | #if PICO_RP2350
+      |     ^~~~~~~~~~~
+/home/buzz2/Chibi/pico-sdk/src/rp2_common/hardware_sync_spin_lock/include/hardware/sync/spin_lock.h:82:6: warning: "PICO_USE_SW_SPIN_LOCKS" is not defined, evaluates to 0 [-Wundef]
+   82 | #if !PICO_USE_SW_SPIN_LOCKS
+      |      ^~~~~~~~~~~~~~~~~~~~~~
+/home/buzz2/Chibi/pico-sdk/src/rp2_common/hardware_sync_spin_lock/include/hardware/sync/spin_lock.h:93:5: warning: "PICO_USE_SW_SPIN_LOCKS" is not defined, evaluates to 0 [-Wundef]
+   93 | #if PICO_USE_SW_SPIN_LOCKS
+      |     ^~~~~~~~~~~~~~~~~~~~~~
+/home/buzz2/Chibi/pico-sdk/src/rp2_common/hardware_sync_spin_lock/include/hardware/sync/spin_lock.h: In function 'spin_lock_instance':
+/home/buzz2/Chibi/pico-sdk/src/rp2_common/hardware_sync_spin_lock/include/hardware/sync/spin_lock.h:227:5: warning: "PICO_USE_SW_SPIN_LOCKS" is not defined, evaluates to 0 [-Wundef]
+  227 | #if PICO_USE_SW_SPIN_LOCKS
+      |     ^~~~~~~~~~~~~~~~~~~~~~
+/home/buzz2/Chibi/pico-sdk/src/rp2_common/hardware_sync_spin_lock/include/hardware/sync/spin_lock.h: In function 'spin_lock_get_num':
+/home/buzz2/Chibi/pico-sdk/src/rp2_common/hardware_sync_spin_lock/include/hardware/sync/spin_lock.h:241:5: warning: "PICO_USE_SW_SPIN_LOCKS" is not defined, evaluates to 0 [-Wundef]
+  241 | #if PICO_USE_SW_SPIN_LOCKS
+      |     ^~~~~~~~~~~~~~~~~~~~~~
+/home/buzz2/Chibi/pico-sdk/src/rp2_common/hardware_sync_spin_lock/include/hardware/sync/spin_lock.h: In function 'spin_lock_unsafe_blocking':
+/home/buzz2/Chibi/pico-sdk/src/rp2_common/hardware_sync_spin_lock/include/hardware/sync/spin_lock.h:262:5: warning: "PICO_USE_SW_SPIN_LOCKS" is not defined, evaluates to 0 [-Wundef]
+  262 | #if PICO_USE_SW_SPIN_LOCKS
+      |     ^~~~~~~~~~~~~~~~~~~~~~
+/home/buzz2/Chibi/pico-sdk/src/rp2_common/hardware_sync_spin_lock/include/hardware/sync/spin_lock.h: In function 'spin_try_lock_unsafe':
+/home/buzz2/Chibi/pico-sdk/src/rp2_common/hardware_sync_spin_lock/include/hardware/sync/spin_lock.h:273:5: warning: "PICO_USE_SW_SPIN_LOCKS" is not defined, evaluates to 0 [-Wundef]
+  273 | #if PICO_USE_SW_SPIN_LOCKS
+      |     ^~~~~~~~~~~~~~~~~~~~~~
+/home/buzz2/Chibi/pico-sdk/src/rp2_common/hardware_sync_spin_lock/include/hardware/sync/spin_lock.h: In function 'spin_unlock_unsafe':
+/home/buzz2/Chibi/pico-sdk/src/rp2_common/hardware_sync_spin_lock/include/hardware/sync/spin_lock.h:285:5: warning: "PICO_USE_SW_SPIN_LOCKS" is not defined, evaluates to 0 [-Wundef]
+  285 | #if PICO_USE_SW_SPIN_LOCKS
+      |     ^~~~~~~~~~~~~~~~~~~~~~
+/home/buzz2/Chibi/pico-sdk/src/rp2_common/hardware_sync_spin_lock/include/hardware/sync/spin_lock.h: In function 'is_spin_locked':
+/home/buzz2/Chibi/pico-sdk/src/rp2_common/hardware_sync_spin_lock/include/hardware/sync/spin_lock.h:313:5: warning: "PICO_USE_SW_SPIN_LOCKS" is not defined, evaluates to 0 [-Wundef]
+  313 | #if PICO_USE_SW_SPIN_LOCKS
+      |     ^~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/buzz2/Chibi/pico-sdk/src/rp2_common/pico_bootrom/include/pico/bootrom.h:23,
+                 from /home/buzz2/Chibi/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c:13:
+/home/buzz2/Chibi/pico-sdk/src/rp2_common/pico_flash/include/pico/flash.h: At top level:
+/home/buzz2/Chibi/pico-sdk/src/rp2_common/pico_flash/include/pico/flash.h:106:5: warning: "LIB_FREERTOS_KERNEL" is not defined, evaluates to 0 [-Wundef]
+  106 | #if LIB_FREERTOS_KERNEL && FREE_RTOS_KERNEL_SMP // set by RP2040 SMP port
+      |     ^~~~~~~~~~~~~~~~~~~
+/home/buzz2/Chibi/pico-sdk/src/rp2_common/pico_flash/include/pico/flash.h:113:5: warning: "LIB_PICO_MULTICORE" is not defined, evaluates to 0 [-Wundef]
+  113 | #if LIB_PICO_MULTICORE
+      |     ^~~~~~~~~~~~~~~~~~
+Reaping winning child 0x617651997260 PID 2411987 
+Removing child 0x617651997260 PID 2411987 from chain.
   Successfully remade target file 'build/obj/watchdog.o'.
   Considering target file 'build/obj/xosc.o'.
    File 'build/obj/xosc.o' does not exist.
@@ -18967,13 +19178,13 @@ Removing child 0x59387770cb00 PID 2404002 from chain.
     Pruning file '.dep'.
    Finished prerequisites of target file 'build/obj/xosc.o'.
   Must remake target 'build/obj/xosc.o'.
-Putting child 0x59387770e760 (build/obj/xosc.o) PID 2404005 on the chain.
-Live child 0x59387770e760 (build/obj/xosc.o) PID 2404005 
+Putting child 0x6176518dd0c0 (build/obj/xosc.o) PID 2411990 on the chain.
+Live child 0x6176518dd0c0 (build/obj/xosc.o) PID 2411990 
 Compiling xosc.c
-Reaping winning child 0x59387770e760 PID 2404005 
-Live child 0x59387770e760 (build/obj/xosc.o) PID 2404006 
-Reaping winning child 0x59387770e760 PID 2404006 
-Removing child 0x59387770e760 PID 2404006 from chain.
+Reaping winning child 0x6176518dd0c0 PID 2411990 
+Live child 0x6176518dd0c0 (build/obj/xosc.o) PID 2411991 
+Reaping winning child 0x6176518dd0c0 PID 2411991 
+Removing child 0x6176518dd0c0 PID 2411991 from chain.
   Successfully remade target file 'build/obj/xosc.o'.
   Considering target file 'build/obj/chprintf.o'.
    File 'build/obj/chprintf.o' does not exist.
@@ -19080,13 +19291,13 @@ Removing child 0x59387770e760 PID 2404006 from chain.
     Pruning file '.dep'.
    Finished prerequisites of target file 'build/obj/chprintf.o'.
   Must remake target 'build/obj/chprintf.o'.
-Putting child 0x59387770ed40 (build/obj/chprintf.o) PID 2404010 on the chain.
-Live child 0x59387770ed40 (build/obj/chprintf.o) PID 2404010 
+Putting child 0x61765199acd0 (build/obj/chprintf.o) PID 2411994 on the chain.
+Live child 0x61765199acd0 (build/obj/chprintf.o) PID 2411994 
 Compiling chprintf.c
-Reaping winning child 0x59387770ed40 PID 2404010 
-Live child 0x59387770ed40 (build/obj/chprintf.o) PID 2404011 
-Reaping winning child 0x59387770ed40 PID 2404011 
-Removing child 0x59387770ed40 PID 2404011 from chain.
+Reaping winning child 0x61765199acd0 PID 2411994 
+Live child 0x61765199acd0 (build/obj/chprintf.o) PID 2411995 
+Reaping winning child 0x61765199acd0 PID 2411995 
+Removing child 0x61765199acd0 PID 2411995 from chain.
   Successfully remade target file 'build/obj/chprintf.o'.
   Considering target file 'build/obj/chscanf.o'.
    File 'build/obj/chscanf.o' does not exist.
@@ -19193,13 +19404,13 @@ Removing child 0x59387770ed40 PID 2404011 from chain.
     Pruning file '.dep'.
    Finished prerequisites of target file 'build/obj/chscanf.o'.
   Must remake target 'build/obj/chscanf.o'.
-Putting child 0x5938777110f0 (build/obj/chscanf.o) PID 2404014 on the chain.
-Live child 0x5938777110f0 (build/obj/chscanf.o) PID 2404014 
+Putting child 0x61765199ba20 (build/obj/chscanf.o) PID 2411998 on the chain.
+Live child 0x61765199ba20 (build/obj/chscanf.o) PID 2411998 
 Compiling chscanf.c
-Reaping winning child 0x5938777110f0 PID 2404014 
-Live child 0x5938777110f0 (build/obj/chscanf.o) PID 2404015 
-Reaping winning child 0x5938777110f0 PID 2404015 
-Removing child 0x5938777110f0 PID 2404015 from chain.
+Reaping winning child 0x61765199ba20 PID 2411998 
+Live child 0x61765199ba20 (build/obj/chscanf.o) PID 2411999 
+Reaping winning child 0x61765199ba20 PID 2411999 
+Removing child 0x61765199ba20 PID 2411999 from chain.
   Successfully remade target file 'build/obj/chscanf.o'.
   Considering target file 'build/obj/memstreams.o'.
    File 'build/obj/memstreams.o' does not exist.
@@ -19306,13 +19517,13 @@ Removing child 0x5938777110f0 PID 2404015 from chain.
     Pruning file '.dep'.
    Finished prerequisites of target file 'build/obj/memstreams.o'.
   Must remake target 'build/obj/memstreams.o'.
-Putting child 0x5938776ecdf0 (build/obj/memstreams.o) PID 2404018 on the chain.
-Live child 0x5938776ecdf0 (build/obj/memstreams.o) PID 2404018 
+Putting child 0x617651999c80 (build/obj/memstreams.o) PID 2412002 on the chain.
+Live child 0x617651999c80 (build/obj/memstreams.o) PID 2412002 
 Compiling memstreams.c
-Reaping winning child 0x5938776ecdf0 PID 2404018 
-Live child 0x5938776ecdf0 (build/obj/memstreams.o) PID 2404019 
-Reaping winning child 0x5938776ecdf0 PID 2404019 
-Removing child 0x5938776ecdf0 PID 2404019 from chain.
+Reaping winning child 0x617651999c80 PID 2412002 
+Live child 0x617651999c80 (build/obj/memstreams.o) PID 2412003 
+Reaping winning child 0x617651999c80 PID 2412003 
+Removing child 0x617651999c80 PID 2412003 from chain.
   Successfully remade target file 'build/obj/memstreams.o'.
   Considering target file 'build/obj/nullstreams.o'.
    File 'build/obj/nullstreams.o' does not exist.
@@ -19419,13 +19630,13 @@ Removing child 0x5938776ecdf0 PID 2404019 from chain.
     Pruning file '.dep'.
    Finished prerequisites of target file 'build/obj/nullstreams.o'.
   Must remake target 'build/obj/nullstreams.o'.
-Putting child 0x5938777120e0 (build/obj/nullstreams.o) PID 2404022 on the chain.
-Live child 0x5938777120e0 (build/obj/nullstreams.o) PID 2404022 
+Putting child 0x61765199e760 (build/obj/nullstreams.o) PID 2412006 on the chain.
+Live child 0x61765199e760 (build/obj/nullstreams.o) PID 2412006 
 Compiling nullstreams.c
-Reaping winning child 0x5938777120e0 PID 2404022 
-Live child 0x5938777120e0 (build/obj/nullstreams.o) PID 2404023 
-Reaping winning child 0x5938777120e0 PID 2404023 
-Removing child 0x5938777120e0 PID 2404023 from chain.
+Reaping winning child 0x61765199e760 PID 2412006 
+Live child 0x61765199e760 (build/obj/nullstreams.o) PID 2412007 
+Reaping winning child 0x61765199e760 PID 2412007 
+Removing child 0x61765199e760 PID 2412007 from chain.
   Successfully remade target file 'build/obj/nullstreams.o'.
   Considering target file 'build/obj/bufstreams.o'.
    File 'build/obj/bufstreams.o' does not exist.
@@ -19532,13 +19743,13 @@ Removing child 0x5938777120e0 PID 2404023 from chain.
     Pruning file '.dep'.
    Finished prerequisites of target file 'build/obj/bufstreams.o'.
   Must remake target 'build/obj/bufstreams.o'.
-Putting child 0x593877714140 (build/obj/bufstreams.o) PID 2404026 on the chain.
-Live child 0x593877714140 (build/obj/bufstreams.o) PID 2404026 
+Putting child 0x61765199fbc0 (build/obj/bufstreams.o) PID 2412010 on the chain.
+Live child 0x61765199fbc0 (build/obj/bufstreams.o) PID 2412010 
 Compiling bufstreams.c
-Reaping winning child 0x593877714140 PID 2404026 
-Live child 0x593877714140 (build/obj/bufstreams.o) PID 2404027 
-Reaping winning child 0x593877714140 PID 2404027 
-Removing child 0x593877714140 PID 2404027 from chain.
+Reaping winning child 0x61765199fbc0 PID 2412010 
+Live child 0x61765199fbc0 (build/obj/bufstreams.o) PID 2412011 
+Reaping winning child 0x61765199fbc0 PID 2412011 
+Removing child 0x61765199fbc0 PID 2412011 from chain.
   Successfully remade target file 'build/obj/bufstreams.o'.
   Considering target file 'build/obj/shell.o'.
    File 'build/obj/shell.o' does not exist.
@@ -19645,13 +19856,13 @@ Removing child 0x593877714140 PID 2404027 from chain.
     Pruning file '.dep'.
    Finished prerequisites of target file 'build/obj/shell.o'.
   Must remake target 'build/obj/shell.o'.
-Putting child 0x5938777155c0 (build/obj/shell.o) PID 2404030 on the chain.
-Live child 0x5938777155c0 (build/obj/shell.o) PID 2404030 
+Putting child 0x6176519a1f30 (build/obj/shell.o) PID 2412014 on the chain.
+Live child 0x6176519a1f30 (build/obj/shell.o) PID 2412014 
 Compiling shell.c
-Reaping winning child 0x5938777155c0 PID 2404030 
-Live child 0x5938777155c0 (build/obj/shell.o) PID 2404031 
-Reaping winning child 0x5938777155c0 PID 2404031 
-Removing child 0x5938777155c0 PID 2404031 from chain.
+Reaping winning child 0x6176519a1f30 PID 2412014 
+Live child 0x6176519a1f30 (build/obj/shell.o) PID 2412015 
+Reaping winning child 0x6176519a1f30 PID 2412015 
+Removing child 0x6176519a1f30 PID 2412015 from chain.
   Successfully remade target file 'build/obj/shell.o'.
   Considering target file 'build/obj/shell_cmd.o'.
    File 'build/obj/shell_cmd.o' does not exist.
@@ -19758,13 +19969,13 @@ Removing child 0x5938777155c0 PID 2404031 from chain.
     Pruning file '.dep'.
    Finished prerequisites of target file 'build/obj/shell_cmd.o'.
   Must remake target 'build/obj/shell_cmd.o'.
-Putting child 0x593877716760 (build/obj/shell_cmd.o) PID 2404034 on the chain.
-Live child 0x593877716760 (build/obj/shell_cmd.o) PID 2404034 
+Putting child 0x6176519a4a00 (build/obj/shell_cmd.o) PID 2412018 on the chain.
+Live child 0x6176519a4a00 (build/obj/shell_cmd.o) PID 2412018 
 Compiling shell_cmd.c
-Reaping winning child 0x593877716760 PID 2404034 
-Live child 0x593877716760 (build/obj/shell_cmd.o) PID 2404035 
-Reaping winning child 0x593877716760 PID 2404035 
-Removing child 0x593877716760 PID 2404035 from chain.
+Reaping winning child 0x6176519a4a00 PID 2412018 
+Live child 0x6176519a4a00 (build/obj/shell_cmd.o) PID 2412019 
+Reaping winning child 0x6176519a4a00 PID 2412019 
+Removing child 0x6176519a4a00 PID 2412019 from chain.
   Successfully remade target file 'build/obj/shell_cmd.o'.
   Considering target file 'build/obj/ch_test.o'.
    File 'build/obj/ch_test.o' does not exist.
@@ -19871,13 +20082,13 @@ Removing child 0x593877716760 PID 2404035 from chain.
     Pruning file '.dep'.
    Finished prerequisites of target file 'build/obj/ch_test.o'.
   Must remake target 'build/obj/ch_test.o'.
-Putting child 0x59387771a340 (build/obj/ch_test.o) PID 2404038 on the chain.
-Live child 0x59387771a340 (build/obj/ch_test.o) PID 2404038 
+Putting child 0x6176519a5540 (build/obj/ch_test.o) PID 2412022 on the chain.
+Live child 0x6176519a5540 (build/obj/ch_test.o) PID 2412022 
 Compiling ch_test.c
-Reaping winning child 0x59387771a340 PID 2404038 
-Live child 0x59387771a340 (build/obj/ch_test.o) PID 2404039 
-Reaping winning child 0x59387771a340 PID 2404039 
-Removing child 0x59387771a340 PID 2404039 from chain.
+Reaping winning child 0x6176519a5540 PID 2412022 
+Live child 0x6176519a5540 (build/obj/ch_test.o) PID 2412023 
+Reaping winning child 0x6176519a5540 PID 2412023 
+Removing child 0x6176519a5540 PID 2412023 from chain.
   Successfully remade target file 'build/obj/ch_test.o'.
   Considering target file 'build/obj/ch_test_printf.o'.
    File 'build/obj/ch_test_printf.o' does not exist.
@@ -19984,13 +20195,13 @@ Removing child 0x59387771a340 PID 2404039 from chain.
     Pruning file '.dep'.
    Finished prerequisites of target file 'build/obj/ch_test_printf.o'.
   Must remake target 'build/obj/ch_test_printf.o'.
-Putting child 0x59387771b230 (build/obj/ch_test_printf.o) PID 2404043 on the chain.
-Live child 0x59387771b230 (build/obj/ch_test_printf.o) PID 2404043 
+Putting child 0x6176519a71b0 (build/obj/ch_test_printf.o) PID 2412026 on the chain.
+Live child 0x6176519a71b0 (build/obj/ch_test_printf.o) PID 2412026 
 Compiling ch_test_printf.c
-Reaping winning child 0x59387771b230 PID 2404043 
-Live child 0x59387771b230 (build/obj/ch_test_printf.o) PID 2404044 
-Reaping winning child 0x59387771b230 PID 2404044 
-Removing child 0x59387771b230 PID 2404044 from chain.
+Reaping winning child 0x6176519a71b0 PID 2412026 
+Live child 0x6176519a71b0 (build/obj/ch_test_printf.o) PID 2412027 
+Reaping winning child 0x6176519a71b0 PID 2412027 
+Removing child 0x6176519a71b0 PID 2412027 from chain.
   Successfully remade target file 'build/obj/ch_test_printf.o'.
   Considering target file 'build/obj/rt_test_root.o'.
    File 'build/obj/rt_test_root.o' does not exist.
@@ -20097,13 +20308,13 @@ Removing child 0x59387771b230 PID 2404044 from chain.
     Pruning file '.dep'.
    Finished prerequisites of target file 'build/obj/rt_test_root.o'.
   Must remake target 'build/obj/rt_test_root.o'.
-Putting child 0x59387771c670 (build/obj/rt_test_root.o) PID 2404047 on the chain.
-Live child 0x59387771c670 (build/obj/rt_test_root.o) PID 2404047 
+Putting child 0x6176519a75c0 (build/obj/rt_test_root.o) PID 2412030 on the chain.
+Live child 0x6176519a75c0 (build/obj/rt_test_root.o) PID 2412030 
 Compiling rt_test_root.c
-Reaping winning child 0x59387771c670 PID 2404047 
-Live child 0x59387771c670 (build/obj/rt_test_root.o) PID 2404048 
-Reaping winning child 0x59387771c670 PID 2404048 
-Removing child 0x59387771c670 PID 2404048 from chain.
+Reaping winning child 0x6176519a75c0 PID 2412030 
+Live child 0x6176519a75c0 (build/obj/rt_test_root.o) PID 2412031 
+Reaping winning child 0x6176519a75c0 PID 2412031 
+Removing child 0x6176519a75c0 PID 2412031 from chain.
   Successfully remade target file 'build/obj/rt_test_root.o'.
   Considering target file 'build/obj/rt_test_sequence_001.o'.
    File 'build/obj/rt_test_sequence_001.o' does not exist.
@@ -20210,13 +20421,13 @@ Removing child 0x59387771c670 PID 2404048 from chain.
     Pruning file '.dep'.
    Finished prerequisites of target file 'build/obj/rt_test_sequence_001.o'.
   Must remake target 'build/obj/rt_test_sequence_001.o'.
-Putting child 0x59387771d800 (build/obj/rt_test_sequence_001.o) PID 2404051 on the chain.
-Live child 0x59387771d800 (build/obj/rt_test_sequence_001.o) PID 2404051 
+Putting child 0x6176519a9630 (build/obj/rt_test_sequence_001.o) PID 2412034 on the chain.
+Live child 0x6176519a9630 (build/obj/rt_test_sequence_001.o) PID 2412034 
 Compiling rt_test_sequence_001.c
-Reaping winning child 0x59387771d800 PID 2404051 
-Live child 0x59387771d800 (build/obj/rt_test_sequence_001.o) PID 2404052 
-Reaping winning child 0x59387771d800 PID 2404052 
-Removing child 0x59387771d800 PID 2404052 from chain.
+Reaping winning child 0x6176519a9630 PID 2412034 
+Live child 0x6176519a9630 (build/obj/rt_test_sequence_001.o) PID 2412035 
+Reaping winning child 0x6176519a9630 PID 2412035 
+Removing child 0x6176519a9630 PID 2412035 from chain.
   Successfully remade target file 'build/obj/rt_test_sequence_001.o'.
   Considering target file 'build/obj/rt_test_sequence_002.o'.
    File 'build/obj/rt_test_sequence_002.o' does not exist.
@@ -20323,13 +20534,13 @@ Removing child 0x59387771d800 PID 2404052 from chain.
     Pruning file '.dep'.
    Finished prerequisites of target file 'build/obj/rt_test_sequence_002.o'.
   Must remake target 'build/obj/rt_test_sequence_002.o'.
-Putting child 0x593877720120 (build/obj/rt_test_sequence_002.o) PID 2404055 on the chain.
-Live child 0x593877720120 (build/obj/rt_test_sequence_002.o) PID 2404055 
+Putting child 0x6176519aaab0 (build/obj/rt_test_sequence_002.o) PID 2412038 on the chain.
+Live child 0x6176519aaab0 (build/obj/rt_test_sequence_002.o) PID 2412038 
 Compiling rt_test_sequence_002.c
-Reaping winning child 0x593877720120 PID 2404055 
-Live child 0x593877720120 (build/obj/rt_test_sequence_002.o) PID 2404056 
-Reaping winning child 0x593877720120 PID 2404056 
-Removing child 0x593877720120 PID 2404056 from chain.
+Reaping winning child 0x6176519aaab0 PID 2412038 
+Live child 0x6176519aaab0 (build/obj/rt_test_sequence_002.o) PID 2412039 
+Reaping winning child 0x6176519aaab0 PID 2412039 
+Removing child 0x6176519aaab0 PID 2412039 from chain.
   Successfully remade target file 'build/obj/rt_test_sequence_002.o'.
   Considering target file 'build/obj/rt_test_sequence_003.o'.
    File 'build/obj/rt_test_sequence_003.o' does not exist.
@@ -20436,13 +20647,13 @@ Removing child 0x593877720120 PID 2404056 from chain.
     Pruning file '.dep'.
    Finished prerequisites of target file 'build/obj/rt_test_sequence_003.o'.
   Must remake target 'build/obj/rt_test_sequence_003.o'.
-Putting child 0x593877720360 (build/obj/rt_test_sequence_003.o) PID 2404059 on the chain.
-Live child 0x593877720360 (build/obj/rt_test_sequence_003.o) PID 2404059 
+Putting child 0x6176519abf30 (build/obj/rt_test_sequence_003.o) PID 2412042 on the chain.
+Live child 0x6176519abf30 (build/obj/rt_test_sequence_003.o) PID 2412042 
 Compiling rt_test_sequence_003.c
-Reaping winning child 0x593877720360 PID 2404059 
-Live child 0x593877720360 (build/obj/rt_test_sequence_003.o) PID 2404060 
-Reaping winning child 0x593877720360 PID 2404060 
-Removing child 0x593877720360 PID 2404060 from chain.
+Reaping winning child 0x6176519abf30 PID 2412042 
+Live child 0x6176519abf30 (build/obj/rt_test_sequence_003.o) PID 2412043 
+Reaping winning child 0x6176519abf30 PID 2412043 
+Removing child 0x6176519abf30 PID 2412043 from chain.
   Successfully remade target file 'build/obj/rt_test_sequence_003.o'.
   Considering target file 'build/obj/rt_test_sequence_004.o'.
    File 'build/obj/rt_test_sequence_004.o' does not exist.
@@ -20549,13 +20760,13 @@ Removing child 0x593877720360 PID 2404060 from chain.
     Pruning file '.dep'.
    Finished prerequisites of target file 'build/obj/rt_test_sequence_004.o'.
   Must remake target 'build/obj/rt_test_sequence_004.o'.
-Putting child 0x593877722a90 (build/obj/rt_test_sequence_004.o) PID 2404063 on the chain.
-Live child 0x593877722a90 (build/obj/rt_test_sequence_004.o) PID 2404063 
+Putting child 0x6176519ad400 (build/obj/rt_test_sequence_004.o) PID 2412046 on the chain.
+Live child 0x6176519ad400 (build/obj/rt_test_sequence_004.o) PID 2412046 
 Compiling rt_test_sequence_004.c
-Reaping winning child 0x593877722a90 PID 2404063 
-Live child 0x593877722a90 (build/obj/rt_test_sequence_004.o) PID 2404064 
-Reaping winning child 0x593877722a90 PID 2404064 
-Removing child 0x593877722a90 PID 2404064 from chain.
+Reaping winning child 0x6176519ad400 PID 2412046 
+Live child 0x6176519ad400 (build/obj/rt_test_sequence_004.o) PID 2412047 
+Reaping winning child 0x6176519ad400 PID 2412047 
+Removing child 0x6176519ad400 PID 2412047 from chain.
   Successfully remade target file 'build/obj/rt_test_sequence_004.o'.
   Considering target file 'build/obj/rt_test_sequence_005.o'.
    File 'build/obj/rt_test_sequence_005.o' does not exist.
@@ -20662,13 +20873,13 @@ Removing child 0x593877722a90 PID 2404064 from chain.
     Pruning file '.dep'.
    Finished prerequisites of target file 'build/obj/rt_test_sequence_005.o'.
   Must remake target 'build/obj/rt_test_sequence_005.o'.
-Putting child 0x593877722cd0 (build/obj/rt_test_sequence_005.o) PID 2404067 on the chain.
-Live child 0x593877722cd0 (build/obj/rt_test_sequence_005.o) PID 2404067 
+Putting child 0x6176519ae8b0 (build/obj/rt_test_sequence_005.o) PID 2412050 on the chain.
+Live child 0x6176519ae8b0 (build/obj/rt_test_sequence_005.o) PID 2412050 
 Compiling rt_test_sequence_005.c
-Reaping winning child 0x593877722cd0 PID 2404067 
-Live child 0x593877722cd0 (build/obj/rt_test_sequence_005.o) PID 2404068 
-Reaping winning child 0x593877722cd0 PID 2404068 
-Removing child 0x593877722cd0 PID 2404068 from chain.
+Reaping winning child 0x6176519ae8b0 PID 2412050 
+Live child 0x6176519ae8b0 (build/obj/rt_test_sequence_005.o) PID 2412051 
+Reaping winning child 0x6176519ae8b0 PID 2412051 
+Removing child 0x6176519ae8b0 PID 2412051 from chain.
   Successfully remade target file 'build/obj/rt_test_sequence_005.o'.
   Considering target file 'build/obj/rt_test_sequence_006.o'.
    File 'build/obj/rt_test_sequence_006.o' does not exist.
@@ -20775,13 +20986,13 @@ Removing child 0x593877722cd0 PID 2404068 from chain.
     Pruning file '.dep'.
    Finished prerequisites of target file 'build/obj/rt_test_sequence_006.o'.
   Must remake target 'build/obj/rt_test_sequence_006.o'.
-Putting child 0x5938777253b0 (build/obj/rt_test_sequence_006.o) PID 2404071 on the chain.
-Live child 0x5938777253b0 (build/obj/rt_test_sequence_006.o) PID 2404071 
+Putting child 0x6176519afd30 (build/obj/rt_test_sequence_006.o) PID 2412054 on the chain.
+Live child 0x6176519afd30 (build/obj/rt_test_sequence_006.o) PID 2412054 
 Compiling rt_test_sequence_006.c
-Reaping winning child 0x5938777253b0 PID 2404071 
-Live child 0x5938777253b0 (build/obj/rt_test_sequence_006.o) PID 2404072 
-Reaping winning child 0x5938777253b0 PID 2404072 
-Removing child 0x5938777253b0 PID 2404072 from chain.
+Reaping winning child 0x6176519afd30 PID 2412054 
+Live child 0x6176519afd30 (build/obj/rt_test_sequence_006.o) PID 2412055 
+Reaping winning child 0x6176519afd30 PID 2412055 
+Removing child 0x6176519afd30 PID 2412055 from chain.
   Successfully remade target file 'build/obj/rt_test_sequence_006.o'.
   Considering target file 'build/obj/rt_test_sequence_007.o'.
    File 'build/obj/rt_test_sequence_007.o' does not exist.
@@ -20888,13 +21099,13 @@ Removing child 0x5938777253b0 PID 2404072 from chain.
     Pruning file '.dep'.
    Finished prerequisites of target file 'build/obj/rt_test_sequence_007.o'.
   Must remake target 'build/obj/rt_test_sequence_007.o'.
-Putting child 0x5938777255f0 (build/obj/rt_test_sequence_007.o) PID 2404075 on the chain.
-Live child 0x5938777255f0 (build/obj/rt_test_sequence_007.o) PID 2404075 
+Putting child 0x6176519b11f0 (build/obj/rt_test_sequence_007.o) PID 2412058 on the chain.
+Live child 0x6176519b11f0 (build/obj/rt_test_sequence_007.o) PID 2412058 
 Compiling rt_test_sequence_007.c
-Reaping winning child 0x5938777255f0 PID 2404075 
-Live child 0x5938777255f0 (build/obj/rt_test_sequence_007.o) PID 2404076 
-Reaping winning child 0x5938777255f0 PID 2404076 
-Removing child 0x5938777255f0 PID 2404076 from chain.
+Reaping winning child 0x6176519b11f0 PID 2412058 
+Live child 0x6176519b11f0 (build/obj/rt_test_sequence_007.o) PID 2412059 
+Reaping winning child 0x6176519b11f0 PID 2412059 
+Removing child 0x6176519b11f0 PID 2412059 from chain.
   Successfully remade target file 'build/obj/rt_test_sequence_007.o'.
   Considering target file 'build/obj/rt_test_sequence_008.o'.
    File 'build/obj/rt_test_sequence_008.o' does not exist.
@@ -21001,13 +21212,13 @@ Removing child 0x5938777255f0 PID 2404076 from chain.
     Pruning file '.dep'.
    Finished prerequisites of target file 'build/obj/rt_test_sequence_008.o'.
   Must remake target 'build/obj/rt_test_sequence_008.o'.
-Putting child 0x593877727cf0 (build/obj/rt_test_sequence_008.o) PID 2404079 on the chain.
-Live child 0x593877727cf0 (build/obj/rt_test_sequence_008.o) PID 2404079 
+Putting child 0x6176519b2640 (build/obj/rt_test_sequence_008.o) PID 2412062 on the chain.
+Live child 0x6176519b2640 (build/obj/rt_test_sequence_008.o) PID 2412062 
 Compiling rt_test_sequence_008.c
-Reaping winning child 0x593877727cf0 PID 2404079 
-Live child 0x593877727cf0 (build/obj/rt_test_sequence_008.o) PID 2404080 
-Reaping winning child 0x593877727cf0 PID 2404080 
-Removing child 0x593877727cf0 PID 2404080 from chain.
+Reaping winning child 0x6176519b2640 PID 2412062 
+Live child 0x6176519b2640 (build/obj/rt_test_sequence_008.o) PID 2412063 
+Reaping winning child 0x6176519b2640 PID 2412063 
+Removing child 0x6176519b2640 PID 2412063 from chain.
   Successfully remade target file 'build/obj/rt_test_sequence_008.o'.
   Considering target file 'build/obj/rt_test_sequence_009.o'.
    File 'build/obj/rt_test_sequence_009.o' does not exist.
@@ -21114,13 +21325,13 @@ Removing child 0x593877727cf0 PID 2404080 from chain.
     Pruning file '.dep'.
    Finished prerequisites of target file 'build/obj/rt_test_sequence_009.o'.
   Must remake target 'build/obj/rt_test_sequence_009.o'.
-Putting child 0x593877729190 (build/obj/rt_test_sequence_009.o) PID 2404083 on the chain.
-Live child 0x593877729190 (build/obj/rt_test_sequence_009.o) PID 2404083 
+Putting child 0x6176519b3ad0 (build/obj/rt_test_sequence_009.o) PID 2412066 on the chain.
+Live child 0x6176519b3ad0 (build/obj/rt_test_sequence_009.o) PID 2412066 
 Compiling rt_test_sequence_009.c
-Reaping winning child 0x593877729190 PID 2404083 
-Live child 0x593877729190 (build/obj/rt_test_sequence_009.o) PID 2404084 
-Reaping winning child 0x593877729190 PID 2404084 
-Removing child 0x593877729190 PID 2404084 from chain.
+Reaping winning child 0x6176519b3ad0 PID 2412066 
+Live child 0x6176519b3ad0 (build/obj/rt_test_sequence_009.o) PID 2412067 
+Reaping winning child 0x6176519b3ad0 PID 2412067 
+Removing child 0x6176519b3ad0 PID 2412067 from chain.
   Successfully remade target file 'build/obj/rt_test_sequence_009.o'.
   Considering target file 'build/obj/rt_test_sequence_010.o'.
    File 'build/obj/rt_test_sequence_010.o' does not exist.
@@ -21227,13 +21438,13 @@ Removing child 0x593877729190 PID 2404084 from chain.
     Pruning file '.dep'.
    Finished prerequisites of target file 'build/obj/rt_test_sequence_010.o'.
   Must remake target 'build/obj/rt_test_sequence_010.o'.
-Putting child 0x59387772b4c0 (build/obj/rt_test_sequence_010.o) PID 2404087 on the chain.
-Live child 0x59387772b4c0 (build/obj/rt_test_sequence_010.o) PID 2404087 
+Putting child 0x6176519b4800 (build/obj/rt_test_sequence_010.o) PID 2412070 on the chain.
+Live child 0x6176519b4800 (build/obj/rt_test_sequence_010.o) PID 2412070 
 Compiling rt_test_sequence_010.c
-Reaping winning child 0x59387772b4c0 PID 2404087 
-Live child 0x59387772b4c0 (build/obj/rt_test_sequence_010.o) PID 2404088 
-Reaping winning child 0x59387772b4c0 PID 2404088 
-Removing child 0x59387772b4c0 PID 2404088 from chain.
+Reaping winning child 0x6176519b4800 PID 2412070 
+Live child 0x6176519b4800 (build/obj/rt_test_sequence_010.o) PID 2412071 
+Reaping winning child 0x6176519b4800 PID 2412071 
+Removing child 0x6176519b4800 PID 2412071 from chain.
   Successfully remade target file 'build/obj/rt_test_sequence_010.o'.
   Considering target file 'build/obj/rt_test_sequence_011.o'.
    File 'build/obj/rt_test_sequence_011.o' does not exist.
@@ -21340,13 +21551,13 @@ Removing child 0x59387772b4c0 PID 2404088 from chain.
     Pruning file '.dep'.
    Finished prerequisites of target file 'build/obj/rt_test_sequence_011.o'.
   Must remake target 'build/obj/rt_test_sequence_011.o'.
-Putting child 0x59387772a110 (build/obj/rt_test_sequence_011.o) PID 2404091 on the chain.
-Live child 0x59387772a110 (build/obj/rt_test_sequence_011.o) PID 2404091 
+Putting child 0x6176519b4e00 (build/obj/rt_test_sequence_011.o) PID 2412074 on the chain.
+Live child 0x6176519b4e00 (build/obj/rt_test_sequence_011.o) PID 2412074 
 Compiling rt_test_sequence_011.c
-Reaping winning child 0x59387772a110 PID 2404091 
-Live child 0x59387772a110 (build/obj/rt_test_sequence_011.o) PID 2404092 
-Reaping winning child 0x59387772a110 PID 2404092 
-Removing child 0x59387772a110 PID 2404092 from chain.
+Reaping winning child 0x6176519b4e00 PID 2412074 
+Live child 0x6176519b4e00 (build/obj/rt_test_sequence_011.o) PID 2412075 
+Reaping winning child 0x6176519b4e00 PID 2412075 
+Removing child 0x6176519b4e00 PID 2412075 from chain.
   Successfully remade target file 'build/obj/rt_test_sequence_011.o'.
   Considering target file 'build/obj/rt_test_sequence_012.o'.
    File 'build/obj/rt_test_sequence_012.o' does not exist.
@@ -21453,13 +21664,13 @@ Removing child 0x59387772a110 PID 2404092 from chain.
     Pruning file '.dep'.
    Finished prerequisites of target file 'build/obj/rt_test_sequence_012.o'.
   Must remake target 'build/obj/rt_test_sequence_012.o'.
-Putting child 0x59387772f360 (build/obj/rt_test_sequence_012.o) PID 2404095 on the chain.
-Live child 0x59387772f360 (build/obj/rt_test_sequence_012.o) PID 2404095 
+Putting child 0x6176519b9a60 (build/obj/rt_test_sequence_012.o) PID 2412078 on the chain.
+Live child 0x6176519b9a60 (build/obj/rt_test_sequence_012.o) PID 2412078 
 Compiling rt_test_sequence_012.c
-Reaping winning child 0x59387772f360 PID 2404095 
-Live child 0x59387772f360 (build/obj/rt_test_sequence_012.o) PID 2404096 
-Reaping winning child 0x59387772f360 PID 2404096 
-Removing child 0x59387772f360 PID 2404096 from chain.
+Reaping winning child 0x6176519b9a60 PID 2412078 
+Live child 0x6176519b9a60 (build/obj/rt_test_sequence_012.o) PID 2412079 
+Reaping winning child 0x6176519b9a60 PID 2412079 
+Removing child 0x6176519b9a60 PID 2412079 from chain.
   Successfully remade target file 'build/obj/rt_test_sequence_012.o'.
   Considering target file 'build/obj/oslib_test_root.o'.
    File 'build/obj/oslib_test_root.o' does not exist.
@@ -21566,13 +21777,13 @@ Removing child 0x59387772f360 PID 2404096 from chain.
     Pruning file '.dep'.
    Finished prerequisites of target file 'build/obj/oslib_test_root.o'.
   Must remake target 'build/obj/oslib_test_root.o'.
-Putting child 0x593877730830 (build/obj/oslib_test_root.o) PID 2404099 on the chain.
-Live child 0x593877730830 (build/obj/oslib_test_root.o) PID 2404099 
+Putting child 0x6176519baee0 (build/obj/oslib_test_root.o) PID 2412100 on the chain.
+Live child 0x6176519baee0 (build/obj/oslib_test_root.o) PID 2412100 
 Compiling oslib_test_root.c
-Reaping winning child 0x593877730830 PID 2404099 
-Live child 0x593877730830 (build/obj/oslib_test_root.o) PID 2404100 
-Reaping winning child 0x593877730830 PID 2404100 
-Removing child 0x593877730830 PID 2404100 from chain.
+Reaping winning child 0x6176519baee0 PID 2412100 
+Live child 0x6176519baee0 (build/obj/oslib_test_root.o) PID 2412101 
+Reaping winning child 0x6176519baee0 PID 2412101 
+Removing child 0x6176519baee0 PID 2412101 from chain.
   Successfully remade target file 'build/obj/oslib_test_root.o'.
   Considering target file 'build/obj/oslib_test_sequence_001.o'.
    File 'build/obj/oslib_test_sequence_001.o' does not exist.
@@ -21679,13 +21890,13 @@ Removing child 0x593877730830 PID 2404100 from chain.
     Pruning file '.dep'.
    Finished prerequisites of target file 'build/obj/oslib_test_sequence_001.o'.
   Must remake target 'build/obj/oslib_test_sequence_001.o'.
-Putting child 0x593877731ce0 (build/obj/oslib_test_sequence_001.o) PID 2404103 on the chain.
-Live child 0x593877731ce0 (build/obj/oslib_test_sequence_001.o) PID 2404103 
+Putting child 0x6176519bc380 (build/obj/oslib_test_sequence_001.o) PID 2412104 on the chain.
+Live child 0x6176519bc380 (build/obj/oslib_test_sequence_001.o) PID 2412104 
 Compiling oslib_test_sequence_001.c
-Reaping winning child 0x593877731ce0 PID 2404103 
-Live child 0x593877731ce0 (build/obj/oslib_test_sequence_001.o) PID 2404104 
-Reaping winning child 0x593877731ce0 PID 2404104 
-Removing child 0x593877731ce0 PID 2404104 from chain.
+Reaping winning child 0x6176519bc380 PID 2412104 
+Live child 0x6176519bc380 (build/obj/oslib_test_sequence_001.o) PID 2412105 
+Reaping winning child 0x6176519bc380 PID 2412105 
+Removing child 0x6176519bc380 PID 2412105 from chain.
   Successfully remade target file 'build/obj/oslib_test_sequence_001.o'.
   Considering target file 'build/obj/oslib_test_sequence_002.o'.
    File 'build/obj/oslib_test_sequence_002.o' does not exist.
@@ -21792,13 +22003,13 @@ Removing child 0x593877731ce0 PID 2404104 from chain.
     Pruning file '.dep'.
    Finished prerequisites of target file 'build/obj/oslib_test_sequence_002.o'.
   Must remake target 'build/obj/oslib_test_sequence_002.o'.
-Putting child 0x5938777336c0 (build/obj/oslib_test_sequence_002.o) PID 2404107 on the chain.
-Live child 0x5938777336c0 (build/obj/oslib_test_sequence_002.o) PID 2404107 
+Putting child 0x6176519bdcb0 (build/obj/oslib_test_sequence_002.o) PID 2412108 on the chain.
+Live child 0x6176519bdcb0 (build/obj/oslib_test_sequence_002.o) PID 2412108 
 Compiling oslib_test_sequence_002.c
-Reaping winning child 0x5938777336c0 PID 2404107 
-Live child 0x5938777336c0 (build/obj/oslib_test_sequence_002.o) PID 2404108 
-Reaping winning child 0x5938777336c0 PID 2404108 
-Removing child 0x5938777336c0 PID 2404108 from chain.
+Reaping winning child 0x6176519bdcb0 PID 2412108 
+Live child 0x6176519bdcb0 (build/obj/oslib_test_sequence_002.o) PID 2412109 
+Reaping winning child 0x6176519bdcb0 PID 2412109 
+Removing child 0x6176519bdcb0 PID 2412109 from chain.
   Successfully remade target file 'build/obj/oslib_test_sequence_002.o'.
   Considering target file 'build/obj/oslib_test_sequence_003.o'.
    File 'build/obj/oslib_test_sequence_003.o' does not exist.
@@ -21905,13 +22116,13 @@ Removing child 0x5938777336c0 PID 2404108 from chain.
     Pruning file '.dep'.
    Finished prerequisites of target file 'build/obj/oslib_test_sequence_003.o'.
   Must remake target 'build/obj/oslib_test_sequence_003.o'.
-Putting child 0x593877733c20 (build/obj/oslib_test_sequence_003.o) PID 2404111 on the chain.
-Live child 0x593877733c20 (build/obj/oslib_test_sequence_003.o) PID 2404111 
+Putting child 0x6176519c1160 (build/obj/oslib_test_sequence_003.o) PID 2412112 on the chain.
+Live child 0x6176519c1160 (build/obj/oslib_test_sequence_003.o) PID 2412112 
 Compiling oslib_test_sequence_003.c
-Reaping winning child 0x593877733c20 PID 2404111 
-Live child 0x593877733c20 (build/obj/oslib_test_sequence_003.o) PID 2404112 
-Reaping winning child 0x593877733c20 PID 2404112 
-Removing child 0x593877733c20 PID 2404112 from chain.
+Reaping winning child 0x6176519c1160 PID 2412112 
+Live child 0x6176519c1160 (build/obj/oslib_test_sequence_003.o) PID 2412113 
+Reaping winning child 0x6176519c1160 PID 2412113 
+Removing child 0x6176519c1160 PID 2412113 from chain.
   Successfully remade target file 'build/obj/oslib_test_sequence_003.o'.
   Considering target file 'build/obj/oslib_test_sequence_004.o'.
    File 'build/obj/oslib_test_sequence_004.o' does not exist.
@@ -22018,13 +22229,13 @@ Removing child 0x593877733c20 PID 2404112 from chain.
     Pruning file '.dep'.
    Finished prerequisites of target file 'build/obj/oslib_test_sequence_004.o'.
   Must remake target 'build/obj/oslib_test_sequence_004.o'.
-Putting child 0x593877736170 (build/obj/oslib_test_sequence_004.o) PID 2404115 on the chain.
-Live child 0x593877736170 (build/obj/oslib_test_sequence_004.o) PID 2404115 
+Putting child 0x6176519c2020 (build/obj/oslib_test_sequence_004.o) PID 2412117 on the chain.
+Live child 0x6176519c2020 (build/obj/oslib_test_sequence_004.o) PID 2412117 
 Compiling oslib_test_sequence_004.c
-Reaping winning child 0x593877736170 PID 2404115 
-Live child 0x593877736170 (build/obj/oslib_test_sequence_004.o) PID 2404116 
-Reaping winning child 0x593877736170 PID 2404116 
-Removing child 0x593877736170 PID 2404116 from chain.
+Reaping winning child 0x6176519c2020 PID 2412117 
+Live child 0x6176519c2020 (build/obj/oslib_test_sequence_004.o) PID 2412118 
+Reaping winning child 0x6176519c2020 PID 2412118 
+Removing child 0x6176519c2020 PID 2412118 from chain.
   Successfully remade target file 'build/obj/oslib_test_sequence_004.o'.
   Considering target file 'build/obj/oslib_test_sequence_005.o'.
    File 'build/obj/oslib_test_sequence_005.o' does not exist.
@@ -22131,13 +22342,13 @@ Removing child 0x593877736170 PID 2404116 from chain.
     Pruning file '.dep'.
    Finished prerequisites of target file 'build/obj/oslib_test_sequence_005.o'.
   Must remake target 'build/obj/oslib_test_sequence_005.o'.
-Putting child 0x5938777395c0 (build/obj/oslib_test_sequence_005.o) PID 2404119 on the chain.
-Live child 0x5938777395c0 (build/obj/oslib_test_sequence_005.o) PID 2404119 
+Putting child 0x6176519bffb0 (build/obj/oslib_test_sequence_005.o) PID 2412121 on the chain.
+Live child 0x6176519bffb0 (build/obj/oslib_test_sequence_005.o) PID 2412121 
 Compiling oslib_test_sequence_005.c
-Reaping winning child 0x5938777395c0 PID 2404119 
-Live child 0x5938777395c0 (build/obj/oslib_test_sequence_005.o) PID 2404120 
-Reaping winning child 0x5938777395c0 PID 2404120 
-Removing child 0x5938777395c0 PID 2404120 from chain.
+Reaping winning child 0x6176519bffb0 PID 2412121 
+Live child 0x6176519bffb0 (build/obj/oslib_test_sequence_005.o) PID 2412122 
+Reaping winning child 0x6176519bffb0 PID 2412122 
+Removing child 0x6176519bffb0 PID 2412122 from chain.
   Successfully remade target file 'build/obj/oslib_test_sequence_005.o'.
   Considering target file 'build/obj/oslib_test_sequence_006.o'.
    File 'build/obj/oslib_test_sequence_006.o' does not exist.
@@ -22244,13 +22455,13 @@ Removing child 0x5938777395c0 PID 2404120 from chain.
     Pruning file '.dep'.
    Finished prerequisites of target file 'build/obj/oslib_test_sequence_006.o'.
   Must remake target 'build/obj/oslib_test_sequence_006.o'.
-Putting child 0x593877736be0 (build/obj/oslib_test_sequence_006.o) PID 2404124 on the chain.
-Live child 0x593877736be0 (build/obj/oslib_test_sequence_006.o) PID 2404124 
+Putting child 0x6176519c4ba0 (build/obj/oslib_test_sequence_006.o) PID 2412126 on the chain.
+Live child 0x6176519c4ba0 (build/obj/oslib_test_sequence_006.o) PID 2412126 
 Compiling oslib_test_sequence_006.c
-Reaping winning child 0x593877736be0 PID 2404124 
-Live child 0x593877736be0 (build/obj/oslib_test_sequence_006.o) PID 2404125 
-Reaping winning child 0x593877736be0 PID 2404125 
-Removing child 0x593877736be0 PID 2404125 from chain.
+Reaping winning child 0x6176519c4ba0 PID 2412126 
+Live child 0x6176519c4ba0 (build/obj/oslib_test_sequence_006.o) PID 2412127 
+Reaping winning child 0x6176519c4ba0 PID 2412127 
+Removing child 0x6176519c4ba0 PID 2412127 from chain.
   Successfully remade target file 'build/obj/oslib_test_sequence_006.o'.
   Considering target file 'build/obj/oslib_test_sequence_007.o'.
    File 'build/obj/oslib_test_sequence_007.o' does not exist.
@@ -22357,13 +22568,13 @@ Removing child 0x593877736be0 PID 2404125 from chain.
     Pruning file '.dep'.
    Finished prerequisites of target file 'build/obj/oslib_test_sequence_007.o'.
   Must remake target 'build/obj/oslib_test_sequence_007.o'.
-Putting child 0x59387773a750 (build/obj/oslib_test_sequence_007.o) PID 2404128 on the chain.
-Live child 0x59387773a750 (build/obj/oslib_test_sequence_007.o) PID 2404128 
+Putting child 0x6176519c3aa0 (build/obj/oslib_test_sequence_007.o) PID 2412130 on the chain.
+Live child 0x6176519c3aa0 (build/obj/oslib_test_sequence_007.o) PID 2412130 
 Compiling oslib_test_sequence_007.c
-Reaping winning child 0x59387773a750 PID 2404128 
-Live child 0x59387773a750 (build/obj/oslib_test_sequence_007.o) PID 2404129 
-Reaping winning child 0x59387773a750 PID 2404129 
-Removing child 0x59387773a750 PID 2404129 from chain.
+Reaping winning child 0x6176519c3aa0 PID 2412130 
+Live child 0x6176519c3aa0 (build/obj/oslib_test_sequence_007.o) PID 2412131 
+Reaping winning child 0x6176519c3aa0 PID 2412131 
+Removing child 0x6176519c3aa0 PID 2412131 from chain.
   Successfully remade target file 'build/obj/oslib_test_sequence_007.o'.
   Considering target file 'build/obj/oslib_test_sequence_008.o'.
    File 'build/obj/oslib_test_sequence_008.o' does not exist.
@@ -22470,13 +22681,13 @@ Removing child 0x59387773a750 PID 2404129 from chain.
     Pruning file '.dep'.
    Finished prerequisites of target file 'build/obj/oslib_test_sequence_008.o'.
   Must remake target 'build/obj/oslib_test_sequence_008.o'.
-Putting child 0x593877738840 (build/obj/oslib_test_sequence_008.o) PID 2404133 on the chain.
-Live child 0x593877738840 (build/obj/oslib_test_sequence_008.o) PID 2404133 
+Putting child 0x6176519c77c0 (build/obj/oslib_test_sequence_008.o) PID 2412134 on the chain.
+Live child 0x6176519c77c0 (build/obj/oslib_test_sequence_008.o) PID 2412134 
 Compiling oslib_test_sequence_008.c
-Reaping winning child 0x593877738840 PID 2404133 
-Live child 0x593877738840 (build/obj/oslib_test_sequence_008.o) PID 2404134 
-Reaping winning child 0x593877738840 PID 2404134 
-Removing child 0x593877738840 PID 2404134 from chain.
+Reaping winning child 0x6176519c77c0 PID 2412134 
+Live child 0x6176519c77c0 (build/obj/oslib_test_sequence_008.o) PID 2412135 
+Reaping winning child 0x6176519c77c0 PID 2412135 
+Removing child 0x6176519c77c0 PID 2412135 from chain.
   Successfully remade target file 'build/obj/oslib_test_sequence_008.o'.
   Considering target file 'build/obj/oslib_test_sequence_009.o'.
    File 'build/obj/oslib_test_sequence_009.o' does not exist.
@@ -22583,13 +22794,13 @@ Removing child 0x593877738840 PID 2404134 from chain.
     Pruning file '.dep'.
    Finished prerequisites of target file 'build/obj/oslib_test_sequence_009.o'.
   Must remake target 'build/obj/oslib_test_sequence_009.o'.
-Putting child 0x59387773d150 (build/obj/oslib_test_sequence_009.o) PID 2404143 on the chain.
-Live child 0x59387773d150 (build/obj/oslib_test_sequence_009.o) PID 2404143 
+Putting child 0x6176519c5ee0 (build/obj/oslib_test_sequence_009.o) PID 2412138 on the chain.
+Live child 0x6176519c5ee0 (build/obj/oslib_test_sequence_009.o) PID 2412138 
 Compiling oslib_test_sequence_009.c
-Reaping winning child 0x59387773d150 PID 2404143 
-Live child 0x59387773d150 (build/obj/oslib_test_sequence_009.o) PID 2404144 
-Reaping winning child 0x59387773d150 PID 2404144 
-Removing child 0x59387773d150 PID 2404144 from chain.
+Reaping winning child 0x6176519c5ee0 PID 2412138 
+Live child 0x6176519c5ee0 (build/obj/oslib_test_sequence_009.o) PID 2412139 
+Reaping winning child 0x6176519c5ee0 PID 2412139 
+Removing child 0x6176519c5ee0 PID 2412139 from chain.
   Successfully remade target file 'build/obj/oslib_test_sequence_009.o'.
   Considering target file 'build/obj/main.o'.
    File 'build/obj/main.o' does not exist.
@@ -22696,13 +22907,23 @@ Removing child 0x59387773d150 PID 2404144 from chain.
     Pruning file '.dep'.
    Finished prerequisites of target file 'build/obj/main.o'.
   Must remake target 'build/obj/main.o'.
-Putting child 0x59387773bfa0 (build/obj/main.o) PID 2404147 on the chain.
-Live child 0x59387773bfa0 (build/obj/main.o) PID 2404147 
+Putting child 0x6176519c6b50 (build/obj/main.o) PID 2412142 on the chain.
+Live child 0x6176519c6b50 (build/obj/main.o) PID 2412142 
 Compiling main.c
-Reaping winning child 0x59387773bfa0 PID 2404147 
-Live child 0x59387773bfa0 (build/obj/main.o) PID 2404148 
-Reaping winning child 0x59387773bfa0 PID 2404148 
-Removing child 0x59387773bfa0 PID 2404148 from chain.
+Reaping winning child 0x6176519c6b50 PID 2412142 
+Live child 0x6176519c6b50 (build/obj/main.o) PID 2412143 
+In file included from main.c:22:
+/home/buzz2/Chibi/pico-sdk/src/common/pico_stdlib_headers/include/pico/stdlib.h:48:5: warning: "LIB_PICO_STDIO_UART" is not defined, evaluates to 0 [-Wundef]
+   48 | #if LIB_PICO_STDIO_UART
+      |     ^~~~~~~~~~~~~~~~~~~
+/home/buzz2/Chibi/pico-sdk/src/common/pico_stdlib_headers/include/pico/stdlib.h:52:5: warning: "LIB_PICO_STDIO_USB" is not defined, evaluates to 0 [-Wundef]
+   52 | #if LIB_PICO_STDIO_USB
+      |     ^~~~~~~~~~~~~~~~~~
+/home/buzz2/Chibi/pico-sdk/src/common/pico_stdlib_headers/include/pico/stdlib.h:56:5: warning: "LIB_PICO_STDIO_SEMIHOSTING" is not defined, evaluates to 0 [-Wundef]
+   56 | #if LIB_PICO_STDIO_SEMIHOSTING
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~
+Reaping winning child 0x6176519c6b50 PID 2412143 
+Removing child 0x6176519c6b50 PID 2412143 from chain.
   Successfully remade target file 'build/obj/main.o'.
   Considering target file 'build/obj/c1_main.o'.
    File 'build/obj/c1_main.o' does not exist.
@@ -22809,13 +23030,13 @@ Removing child 0x59387773bfa0 PID 2404148 from chain.
     Pruning file '.dep'.
    Finished prerequisites of target file 'build/obj/c1_main.o'.
   Must remake target 'build/obj/c1_main.o'.
-Putting child 0x593877740bc0 (build/obj/c1_main.o) PID 2404151 on the chain.
-Live child 0x593877740bc0 (build/obj/c1_main.o) PID 2404151 
+Putting child 0x6176519c8530 (build/obj/c1_main.o) PID 2412146 on the chain.
+Live child 0x6176519c8530 (build/obj/c1_main.o) PID 2412146 
 Compiling c1_main.c
-Reaping winning child 0x593877740bc0 PID 2404151 
-Live child 0x593877740bc0 (build/obj/c1_main.o) PID 2404152 
-Reaping winning child 0x593877740bc0 PID 2404152 
-Removing child 0x593877740bc0 PID 2404152 from chain.
+Reaping winning child 0x6176519c8530 PID 2412146 
+Live child 0x6176519c8530 (build/obj/c1_main.o) PID 2412147 
+Reaping winning child 0x6176519c8530 PID 2412147 
+Removing child 0x6176519c8530 PID 2412147 from chain.
   Successfully remade target file 'build/obj/c1_main.o'.
   Considering target file 'build/ch.elf'.
    File 'build/ch.elf' does not exist.
@@ -23321,11 +23542,507 @@ Removing child 0x593877740bc0 PID 2404152 from chain.
     No need to remake target '../../../os/common/startup/ARMCMx/compilers/GCC/ld/RP2040_RAM.ld'.
    Finished prerequisites of target file 'build/ch.elf'.
   Must remake target 'build/ch.elf'.
-Putting child 0x593877746790 (build/ch.elf) PID 2404155 on the chain.
-Live child 0x593877746790 (build/ch.elf) PID 2404155 
+Putting child 0x6176519cce40 (build/ch.elf) PID 2412150 on the chain.
+Live child 0x6176519cce40 (build/ch.elf) PID 2412150 
 Linking build/ch.elf
-Reaping winning child 0x593877746790 PID 2404155 
-Live child 0x593877746790 (build/ch.elf) PID 2404156 
-Live child 0x593877746790 (build/ch.elf) PID 2404156 
-Reaping losing child 0x593877746790 PID 2404156 
-Removing child 0x593877746790 PID 2404156 from chain.
+Reaping winning child 0x6176519cce40 PID 2412150 
+Live child 0x6176519cce40 (build/ch.elf) PID 2412151 
+Reaping winning child 0x6176519cce40 PID 2412151 
+Removing child 0x6176519cce40 PID 2412151 from chain.
+  Successfully remade target file 'build/ch.elf'.
+  Considering target file 'build/ch.hex'.
+   File 'build/ch.hex' does not exist.
+   Looking for an implicit rule for 'build/ch.hex'.
+   Trying pattern rule with stem 'ch'.
+   Trying implicit prerequisite 'build/ch.elf'.
+   Found an implicit rule for 'build/ch.hex'.
+    Pruning file 'build/ch.elf'.
+   Finished prerequisites of target file 'build/ch.hex'.
+  Must remake target 'build/ch.hex'.
+Putting child 0x6176519d3ce0 (build/ch.hex) PID 2412189 on the chain.
+Live child 0x6176519d3ce0 (build/ch.hex) PID 2412189 
+Creating build/ch.hex
+Reaping winning child 0x6176519d3ce0 PID 2412189 
+Live child 0x6176519d3ce0 (build/ch.hex) PID 2412190 
+Reaping winning child 0x6176519d3ce0 PID 2412190 
+Removing child 0x6176519d3ce0 PID 2412190 from chain.
+  Successfully remade target file 'build/ch.hex'.
+  Considering target file 'build/ch.bin'.
+   File 'build/ch.bin' does not exist.
+   Looking for an implicit rule for 'build/ch.bin'.
+   Trying pattern rule with stem 'ch'.
+   Trying implicit prerequisite 'build/ch.elf'.
+   Found an implicit rule for 'build/ch.bin'.
+    Pruning file 'build/ch.elf'.
+   Finished prerequisites of target file 'build/ch.bin'.
+  Must remake target 'build/ch.bin'.
+Putting child 0x6176519d3e40 (build/ch.bin) PID 2412191 on the chain.
+Live child 0x6176519d3e40 (build/ch.bin) PID 2412191 
+Creating build/ch.bin
+Reaping winning child 0x6176519d3e40 PID 2412191 
+Live child 0x6176519d3e40 (build/ch.bin) PID 2412192 
+Reaping winning child 0x6176519d3e40 PID 2412192 
+Removing child 0x6176519d3e40 PID 2412192 from chain.
+  Successfully remade target file 'build/ch.bin'.
+  Considering target file 'build/ch.dmp'.
+   File 'build/ch.dmp' does not exist.
+   Looking for an implicit rule for 'build/ch.dmp'.
+   Trying pattern rule with stem 'ch'.
+   Trying implicit prerequisite 'build/ch.elf'.
+   Found an implicit rule for 'build/ch.dmp'.
+    Pruning file 'build/ch.elf'.
+   Finished prerequisites of target file 'build/ch.dmp'.
+  Must remake target 'build/ch.dmp'.
+Putting child 0x6176519d3880 (build/ch.dmp) PID 2412193 on the chain.
+Live child 0x6176519d3880 (build/ch.dmp) PID 2412193 
+Creating build/ch.dmp
+Reaping winning child 0x6176519d3880 PID 2412193 
+Live child 0x6176519d3880 (build/ch.dmp) PID 2412194 
+Reaping winning child 0x6176519d3880 PID 2412194 
+Live child 0x6176519d3880 (build/ch.dmp) PID 2412196 
+
+Reaping winning child 0x6176519d3880 PID 2412196 
+Live child 0x6176519d3880 (build/ch.dmp) PID 2412197 
+   text	   data	    bss	    dec	    hex	filename
+  69540	    220	 195872	 265632	  40da0	build/ch.elf
+Reaping winning child 0x6176519d3880 PID 2412197 
+Removing child 0x6176519d3880 PID 2412197 from chain.
+  Successfully remade target file 'build/ch.dmp'.
+  Considering target file 'build/ch.list'.
+   File 'build/ch.list' does not exist.
+   Looking for an implicit rule for 'build/ch.list'.
+   Trying pattern rule with stem 'ch'.
+   Trying implicit prerequisite 'build/ch.elf'.
+   Found an implicit rule for 'build/ch.list'.
+    Pruning file 'build/ch.elf'.
+   Finished prerequisites of target file 'build/ch.list'.
+  Must remake target 'build/ch.list'.
+Putting child 0x6176519d77c0 (build/ch.list) PID 2412198 on the chain.
+Live child 0x6176519d77c0 (build/ch.list) PID 2412198 
+Creating build/ch.list
+Reaping winning child 0x6176519d77c0 PID 2412198 
+Live child 0x6176519d77c0 (build/ch.list) PID 2412199 
+Reaping winning child 0x6176519d77c0 PID 2412199 
+Live child 0x6176519d77c0 (build/ch.list) PID 2412219 
+
+Reaping winning child 0x6176519d77c0 PID 2412219 
+Live child 0x6176519d77c0 (build/ch.list) PID 2412220 
+Done
+Reaping winning child 0x6176519d77c0 PID 2412220 
+Removing child 0x6176519d77c0 PID 2412220 from chain.
+  Successfully remade target file 'build/ch.list'.
+  Considering target file 'POST_MAKE_ALL_RULE_HOOK'.
+   File 'POST_MAKE_ALL_RULE_HOOK' does not exist.
+   Looking for an implicit rule for 'POST_MAKE_ALL_RULE_HOOK'.
+   Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK'.
+   Trying implicit prerequisite 'POST_MAKE_ALL_RULE_HOOK.o'.
+   Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK'.
+   Trying implicit prerequisite 'POST_MAKE_ALL_RULE_HOOK.c'.
+   Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK'.
+   Trying implicit prerequisite 'POST_MAKE_ALL_RULE_HOOK.cc'.
+   Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK'.
+   Trying implicit prerequisite 'POST_MAKE_ALL_RULE_HOOK.C'.
+   Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK'.
+   Trying implicit prerequisite 'POST_MAKE_ALL_RULE_HOOK.cpp'.
+   Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK'.
+   Trying implicit prerequisite 'POST_MAKE_ALL_RULE_HOOK.p'.
+   Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK'.
+   Trying implicit prerequisite 'POST_MAKE_ALL_RULE_HOOK.f'.
+   Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK'.
+   Trying implicit prerequisite 'POST_MAKE_ALL_RULE_HOOK.F'.
+   Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK'.
+   Trying implicit prerequisite 'POST_MAKE_ALL_RULE_HOOK.m'.
+   Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK'.
+   Trying implicit prerequisite 'POST_MAKE_ALL_RULE_HOOK.r'.
+   Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK'.
+   Trying implicit prerequisite 'POST_MAKE_ALL_RULE_HOOK.s'.
+   Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK'.
+   Trying implicit prerequisite 'POST_MAKE_ALL_RULE_HOOK.S'.
+   Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK'.
+   Trying implicit prerequisite 'POST_MAKE_ALL_RULE_HOOK.mod'.
+   Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK'.
+   Trying implicit prerequisite 'POST_MAKE_ALL_RULE_HOOK.sh'.
+   Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK'.
+   Trying implicit prerequisite 'POST_MAKE_ALL_RULE_HOOK,v'.
+   Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK'.
+   Trying implicit prerequisite 'RCS/POST_MAKE_ALL_RULE_HOOK,v'.
+   Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK'.
+   Trying implicit prerequisite 'RCS/POST_MAKE_ALL_RULE_HOOK'.
+   Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK'.
+   Trying implicit prerequisite 's.POST_MAKE_ALL_RULE_HOOK'.
+   Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK'.
+   Trying implicit prerequisite 'SCCS/s.POST_MAKE_ALL_RULE_HOOK'.
+   Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK'.
+   Trying implicit prerequisite 'POST_MAKE_ALL_RULE_HOOK.o'.
+   Looking for a rule with intermediate file 'POST_MAKE_ALL_RULE_HOOK.o'.
+    Avoiding implicit rule recursion.
+    Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK'.
+    Trying implicit prerequisite 'POST_MAKE_ALL_RULE_HOOK.c'.
+    Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK'.
+    Trying implicit prerequisite 'POST_MAKE_ALL_RULE_HOOK.cc'.
+    Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK'.
+    Trying implicit prerequisite 'POST_MAKE_ALL_RULE_HOOK.C'.
+    Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK'.
+    Trying implicit prerequisite 'POST_MAKE_ALL_RULE_HOOK.cpp'.
+    Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK'.
+    Trying implicit prerequisite 'POST_MAKE_ALL_RULE_HOOK.p'.
+    Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK'.
+    Trying implicit prerequisite 'POST_MAKE_ALL_RULE_HOOK.f'.
+    Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK'.
+    Trying implicit prerequisite 'POST_MAKE_ALL_RULE_HOOK.F'.
+    Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK'.
+    Trying implicit prerequisite 'POST_MAKE_ALL_RULE_HOOK.m'.
+    Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK'.
+    Trying implicit prerequisite 'POST_MAKE_ALL_RULE_HOOK.r'.
+    Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK'.
+    Trying implicit prerequisite 'POST_MAKE_ALL_RULE_HOOK.s'.
+    Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK'.
+    Trying implicit prerequisite 'POST_MAKE_ALL_RULE_HOOK.S'.
+    Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK'.
+    Trying implicit prerequisite 'POST_MAKE_ALL_RULE_HOOK.mod'.
+    Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.o'.
+    Trying implicit prerequisite 'POST_MAKE_ALL_RULE_HOOK.o,v'.
+    Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.o'.
+    Trying implicit prerequisite 'RCS/POST_MAKE_ALL_RULE_HOOK.o,v'.
+    Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.o'.
+    Trying implicit prerequisite 'RCS/POST_MAKE_ALL_RULE_HOOK.o'.
+    Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.o'.
+    Trying implicit prerequisite 's.POST_MAKE_ALL_RULE_HOOK.o'.
+    Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.o'.
+    Trying implicit prerequisite 'SCCS/s.POST_MAKE_ALL_RULE_HOOK.o'.
+    Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK'.
+    Trying implicit prerequisite 'POST_MAKE_ALL_RULE_HOOK.c'.
+    Looking for a rule with intermediate file 'POST_MAKE_ALL_RULE_HOOK.c'.
+     Avoiding implicit rule recursion.
+     Avoiding implicit rule recursion.
+     Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK'.
+     Trying implicit prerequisite 'POST_MAKE_ALL_RULE_HOOK.y'.
+     Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK'.
+     Trying implicit prerequisite 'POST_MAKE_ALL_RULE_HOOK.l'.
+     Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK'.
+     Trying implicit prerequisite 'POST_MAKE_ALL_RULE_HOOK.w'.
+     Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK'.
+     Trying implicit prerequisite 'POST_MAKE_ALL_RULE_HOOK.w'.
+     Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.c'.
+     Trying implicit prerequisite 'POST_MAKE_ALL_RULE_HOOK.c,v'.
+     Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.c'.
+     Trying implicit prerequisite 'RCS/POST_MAKE_ALL_RULE_HOOK.c,v'.
+     Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.c'.
+     Trying implicit prerequisite 'RCS/POST_MAKE_ALL_RULE_HOOK.c'.
+     Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.c'.
+     Trying implicit prerequisite 's.POST_MAKE_ALL_RULE_HOOK.c'.
+     Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.c'.
+     Trying implicit prerequisite 'SCCS/s.POST_MAKE_ALL_RULE_HOOK.c'.
+     Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK'.
+     Trying implicit prerequisite 'POST_MAKE_ALL_RULE_HOOK.y'.
+     Looking for a rule with intermediate file 'POST_MAKE_ALL_RULE_HOOK.y'.
+      Avoiding implicit rule recursion.
+      Avoiding implicit rule recursion.
+      Avoiding implicit rule recursion.
+      Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.y'.
+      Trying implicit prerequisite 'POST_MAKE_ALL_RULE_HOOK.y,v'.
+      Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.y'.
+      Trying implicit prerequisite 'RCS/POST_MAKE_ALL_RULE_HOOK.y,v'.
+      Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.y'.
+      Trying implicit prerequisite 'RCS/POST_MAKE_ALL_RULE_HOOK.y'.
+      Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.y'.
+      Trying implicit prerequisite 's.POST_MAKE_ALL_RULE_HOOK.y'.
+      Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.y'.
+      Trying implicit prerequisite 'SCCS/s.POST_MAKE_ALL_RULE_HOOK.y'.
+     Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK'.
+     Trying implicit prerequisite 'POST_MAKE_ALL_RULE_HOOK.l'.
+     Looking for a rule with intermediate file 'POST_MAKE_ALL_RULE_HOOK.l'.
+      Avoiding implicit rule recursion.
+      Avoiding implicit rule recursion.
+      Avoiding implicit rule recursion.
+      Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.l'.
+      Trying implicit prerequisite 'POST_MAKE_ALL_RULE_HOOK.l,v'.
+      Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.l'.
+      Trying implicit prerequisite 'RCS/POST_MAKE_ALL_RULE_HOOK.l,v'.
+      Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.l'.
+      Trying implicit prerequisite 'RCS/POST_MAKE_ALL_RULE_HOOK.l'.
+      Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.l'.
+      Trying implicit prerequisite 's.POST_MAKE_ALL_RULE_HOOK.l'.
+      Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.l'.
+      Trying implicit prerequisite 'SCCS/s.POST_MAKE_ALL_RULE_HOOK.l'.
+     Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK'.
+     Trying implicit prerequisite 'POST_MAKE_ALL_RULE_HOOK.w'.
+     Looking for a rule with intermediate file 'POST_MAKE_ALL_RULE_HOOK.w'.
+      Avoiding implicit rule recursion.
+      Avoiding implicit rule recursion.
+      Avoiding implicit rule recursion.
+      Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.w'.
+      Trying implicit prerequisite 'POST_MAKE_ALL_RULE_HOOK.w,v'.
+      Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.w'.
+      Trying implicit prerequisite 'RCS/POST_MAKE_ALL_RULE_HOOK.w,v'.
+      Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.w'.
+      Trying implicit prerequisite 'RCS/POST_MAKE_ALL_RULE_HOOK.w'.
+      Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.w'.
+      Trying implicit prerequisite 's.POST_MAKE_ALL_RULE_HOOK.w'.
+      Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.w'.
+      Trying implicit prerequisite 'SCCS/s.POST_MAKE_ALL_RULE_HOOK.w'.
+     Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK'.
+     Rejecting impossible implicit prerequisite 'POST_MAKE_ALL_RULE_HOOK.w'.
+    Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK'.
+    Trying implicit prerequisite 'POST_MAKE_ALL_RULE_HOOK.cc'.
+    Looking for a rule with intermediate file 'POST_MAKE_ALL_RULE_HOOK.cc'.
+     Avoiding implicit rule recursion.
+     Avoiding implicit rule recursion.
+     Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.cc'.
+     Trying implicit prerequisite 'POST_MAKE_ALL_RULE_HOOK.cc,v'.
+     Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.cc'.
+     Trying implicit prerequisite 'RCS/POST_MAKE_ALL_RULE_HOOK.cc,v'.
+     Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.cc'.
+     Trying implicit prerequisite 'RCS/POST_MAKE_ALL_RULE_HOOK.cc'.
+     Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.cc'.
+     Trying implicit prerequisite 's.POST_MAKE_ALL_RULE_HOOK.cc'.
+     Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.cc'.
+     Trying implicit prerequisite 'SCCS/s.POST_MAKE_ALL_RULE_HOOK.cc'.
+    Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK'.
+    Trying implicit prerequisite 'POST_MAKE_ALL_RULE_HOOK.C'.
+    Looking for a rule with intermediate file 'POST_MAKE_ALL_RULE_HOOK.C'.
+     Avoiding implicit rule recursion.
+     Avoiding implicit rule recursion.
+     Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.C'.
+     Trying implicit prerequisite 'POST_MAKE_ALL_RULE_HOOK.C,v'.
+     Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.C'.
+     Trying implicit prerequisite 'RCS/POST_MAKE_ALL_RULE_HOOK.C,v'.
+     Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.C'.
+     Trying implicit prerequisite 'RCS/POST_MAKE_ALL_RULE_HOOK.C'.
+     Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.C'.
+     Trying implicit prerequisite 's.POST_MAKE_ALL_RULE_HOOK.C'.
+     Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.C'.
+     Trying implicit prerequisite 'SCCS/s.POST_MAKE_ALL_RULE_HOOK.C'.
+    Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK'.
+    Trying implicit prerequisite 'POST_MAKE_ALL_RULE_HOOK.cpp'.
+    Looking for a rule with intermediate file 'POST_MAKE_ALL_RULE_HOOK.cpp'.
+     Avoiding implicit rule recursion.
+     Avoiding implicit rule recursion.
+     Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.cpp'.
+     Trying implicit prerequisite 'POST_MAKE_ALL_RULE_HOOK.cpp,v'.
+     Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.cpp'.
+     Trying implicit prerequisite 'RCS/POST_MAKE_ALL_RULE_HOOK.cpp,v'.
+     Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.cpp'.
+     Trying implicit prerequisite 'RCS/POST_MAKE_ALL_RULE_HOOK.cpp'.
+     Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.cpp'.
+     Trying implicit prerequisite 's.POST_MAKE_ALL_RULE_HOOK.cpp'.
+     Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.cpp'.
+     Trying implicit prerequisite 'SCCS/s.POST_MAKE_ALL_RULE_HOOK.cpp'.
+    Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK'.
+    Trying implicit prerequisite 'POST_MAKE_ALL_RULE_HOOK.p'.
+    Looking for a rule with intermediate file 'POST_MAKE_ALL_RULE_HOOK.p'.
+     Avoiding implicit rule recursion.
+     Avoiding implicit rule recursion.
+     Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK'.
+     Trying implicit prerequisite 'POST_MAKE_ALL_RULE_HOOK.web'.
+     Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.p'.
+     Trying implicit prerequisite 'POST_MAKE_ALL_RULE_HOOK.p,v'.
+     Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.p'.
+     Trying implicit prerequisite 'RCS/POST_MAKE_ALL_RULE_HOOK.p,v'.
+     Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.p'.
+     Trying implicit prerequisite 'RCS/POST_MAKE_ALL_RULE_HOOK.p'.
+     Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.p'.
+     Trying implicit prerequisite 's.POST_MAKE_ALL_RULE_HOOK.p'.
+     Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.p'.
+     Trying implicit prerequisite 'SCCS/s.POST_MAKE_ALL_RULE_HOOK.p'.
+     Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK'.
+     Trying implicit prerequisite 'POST_MAKE_ALL_RULE_HOOK.web'.
+     Looking for a rule with intermediate file 'POST_MAKE_ALL_RULE_HOOK.web'.
+      Avoiding implicit rule recursion.
+      Avoiding implicit rule recursion.
+      Avoiding implicit rule recursion.
+      Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.web'.
+      Trying implicit prerequisite 'POST_MAKE_ALL_RULE_HOOK.web,v'.
+      Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.web'.
+      Trying implicit prerequisite 'RCS/POST_MAKE_ALL_RULE_HOOK.web,v'.
+      Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.web'.
+      Trying implicit prerequisite 'RCS/POST_MAKE_ALL_RULE_HOOK.web'.
+      Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.web'.
+      Trying implicit prerequisite 's.POST_MAKE_ALL_RULE_HOOK.web'.
+      Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.web'.
+      Trying implicit prerequisite 'SCCS/s.POST_MAKE_ALL_RULE_HOOK.web'.
+    Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK'.
+    Trying implicit prerequisite 'POST_MAKE_ALL_RULE_HOOK.f'.
+    Looking for a rule with intermediate file 'POST_MAKE_ALL_RULE_HOOK.f'.
+     Avoiding implicit rule recursion.
+     Avoiding implicit rule recursion.
+     Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK'.
+     Trying implicit prerequisite 'POST_MAKE_ALL_RULE_HOOK.F'.
+     Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK'.
+     Trying implicit prerequisite 'POST_MAKE_ALL_RULE_HOOK.r'.
+     Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.f'.
+     Trying implicit prerequisite 'POST_MAKE_ALL_RULE_HOOK.f,v'.
+     Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.f'.
+     Trying implicit prerequisite 'RCS/POST_MAKE_ALL_RULE_HOOK.f,v'.
+     Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.f'.
+     Trying implicit prerequisite 'RCS/POST_MAKE_ALL_RULE_HOOK.f'.
+     Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.f'.
+     Trying implicit prerequisite 's.POST_MAKE_ALL_RULE_HOOK.f'.
+     Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.f'.
+     Trying implicit prerequisite 'SCCS/s.POST_MAKE_ALL_RULE_HOOK.f'.
+     Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK'.
+     Trying implicit prerequisite 'POST_MAKE_ALL_RULE_HOOK.F'.
+     Looking for a rule with intermediate file 'POST_MAKE_ALL_RULE_HOOK.F'.
+      Avoiding implicit rule recursion.
+      Avoiding implicit rule recursion.
+      Avoiding implicit rule recursion.
+      Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.F'.
+      Trying implicit prerequisite 'POST_MAKE_ALL_RULE_HOOK.F,v'.
+      Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.F'.
+      Trying implicit prerequisite 'RCS/POST_MAKE_ALL_RULE_HOOK.F,v'.
+      Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.F'.
+      Trying implicit prerequisite 'RCS/POST_MAKE_ALL_RULE_HOOK.F'.
+      Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.F'.
+      Trying implicit prerequisite 's.POST_MAKE_ALL_RULE_HOOK.F'.
+      Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.F'.
+      Trying implicit prerequisite 'SCCS/s.POST_MAKE_ALL_RULE_HOOK.F'.
+     Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK'.
+     Trying implicit prerequisite 'POST_MAKE_ALL_RULE_HOOK.r'.
+     Looking for a rule with intermediate file 'POST_MAKE_ALL_RULE_HOOK.r'.
+      Avoiding implicit rule recursion.
+      Avoiding implicit rule recursion.
+      Avoiding implicit rule recursion.
+      Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK'.
+      Rejecting impossible implicit prerequisite 'POST_MAKE_ALL_RULE_HOOK.l'.
+      Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.r'.
+      Trying implicit prerequisite 'POST_MAKE_ALL_RULE_HOOK.r,v'.
+      Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.r'.
+      Trying implicit prerequisite 'RCS/POST_MAKE_ALL_RULE_HOOK.r,v'.
+      Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.r'.
+      Trying implicit prerequisite 'RCS/POST_MAKE_ALL_RULE_HOOK.r'.
+      Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.r'.
+      Trying implicit prerequisite 's.POST_MAKE_ALL_RULE_HOOK.r'.
+      Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.r'.
+      Trying implicit prerequisite 'SCCS/s.POST_MAKE_ALL_RULE_HOOK.r'.
+    Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK'.
+    Rejecting impossible implicit prerequisite 'POST_MAKE_ALL_RULE_HOOK.F'.
+    Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK'.
+    Trying implicit prerequisite 'POST_MAKE_ALL_RULE_HOOK.m'.
+    Looking for a rule with intermediate file 'POST_MAKE_ALL_RULE_HOOK.m'.
+     Avoiding implicit rule recursion.
+     Avoiding implicit rule recursion.
+     Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK'.
+     Trying implicit prerequisite 'POST_MAKE_ALL_RULE_HOOK.ym'.
+     Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.m'.
+     Trying implicit prerequisite 'POST_MAKE_ALL_RULE_HOOK.m,v'.
+     Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.m'.
+     Trying implicit prerequisite 'RCS/POST_MAKE_ALL_RULE_HOOK.m,v'.
+     Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.m'.
+     Trying implicit prerequisite 'RCS/POST_MAKE_ALL_RULE_HOOK.m'.
+     Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.m'.
+     Trying implicit prerequisite 's.POST_MAKE_ALL_RULE_HOOK.m'.
+     Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.m'.
+     Trying implicit prerequisite 'SCCS/s.POST_MAKE_ALL_RULE_HOOK.m'.
+     Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK'.
+     Trying implicit prerequisite 'POST_MAKE_ALL_RULE_HOOK.ym'.
+     Looking for a rule with intermediate file 'POST_MAKE_ALL_RULE_HOOK.ym'.
+      Avoiding implicit rule recursion.
+      Avoiding implicit rule recursion.
+      Avoiding implicit rule recursion.
+      Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.ym'.
+      Trying implicit prerequisite 'POST_MAKE_ALL_RULE_HOOK.ym,v'.
+      Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.ym'.
+      Trying implicit prerequisite 'RCS/POST_MAKE_ALL_RULE_HOOK.ym,v'.
+      Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.ym'.
+      Trying implicit prerequisite 'RCS/POST_MAKE_ALL_RULE_HOOK.ym'.
+      Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.ym'.
+      Trying implicit prerequisite 's.POST_MAKE_ALL_RULE_HOOK.ym'.
+      Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.ym'.
+      Trying implicit prerequisite 'SCCS/s.POST_MAKE_ALL_RULE_HOOK.ym'.
+    Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK'.
+    Rejecting impossible implicit prerequisite 'POST_MAKE_ALL_RULE_HOOK.r'.
+    Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK'.
+    Trying implicit prerequisite 'POST_MAKE_ALL_RULE_HOOK.s'.
+    Looking for a rule with intermediate file 'POST_MAKE_ALL_RULE_HOOK.s'.
+     Avoiding implicit rule recursion.
+     Avoiding implicit rule recursion.
+     Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK'.
+     Trying implicit prerequisite 'POST_MAKE_ALL_RULE_HOOK.S'.
+     Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.s'.
+     Trying implicit prerequisite 'POST_MAKE_ALL_RULE_HOOK.s,v'.
+     Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.s'.
+     Trying implicit prerequisite 'RCS/POST_MAKE_ALL_RULE_HOOK.s,v'.
+     Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.s'.
+     Trying implicit prerequisite 'RCS/POST_MAKE_ALL_RULE_HOOK.s'.
+     Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.s'.
+     Trying implicit prerequisite 's.POST_MAKE_ALL_RULE_HOOK.s'.
+     Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.s'.
+     Trying implicit prerequisite 'SCCS/s.POST_MAKE_ALL_RULE_HOOK.s'.
+     Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK'.
+     Trying implicit prerequisite 'POST_MAKE_ALL_RULE_HOOK.S'.
+     Looking for a rule with intermediate file 'POST_MAKE_ALL_RULE_HOOK.S'.
+      Avoiding implicit rule recursion.
+      Avoiding implicit rule recursion.
+      Avoiding implicit rule recursion.
+      Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.S'.
+      Trying implicit prerequisite 'POST_MAKE_ALL_RULE_HOOK.S,v'.
+      Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.S'.
+      Trying implicit prerequisite 'RCS/POST_MAKE_ALL_RULE_HOOK.S,v'.
+      Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.S'.
+      Trying implicit prerequisite 'RCS/POST_MAKE_ALL_RULE_HOOK.S'.
+      Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.S'.
+      Trying implicit prerequisite 's.POST_MAKE_ALL_RULE_HOOK.S'.
+      Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.S'.
+      Trying implicit prerequisite 'SCCS/s.POST_MAKE_ALL_RULE_HOOK.S'.
+    Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK'.
+    Rejecting impossible implicit prerequisite 'POST_MAKE_ALL_RULE_HOOK.S'.
+    Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK'.
+    Trying implicit prerequisite 'POST_MAKE_ALL_RULE_HOOK.mod'.
+    Looking for a rule with intermediate file 'POST_MAKE_ALL_RULE_HOOK.mod'.
+     Avoiding implicit rule recursion.
+     Avoiding implicit rule recursion.
+     Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.mod'.
+     Trying implicit prerequisite 'POST_MAKE_ALL_RULE_HOOK.mod,v'.
+     Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.mod'.
+     Trying implicit prerequisite 'RCS/POST_MAKE_ALL_RULE_HOOK.mod,v'.
+     Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.mod'.
+     Trying implicit prerequisite 'RCS/POST_MAKE_ALL_RULE_HOOK.mod'.
+     Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.mod'.
+     Trying implicit prerequisite 's.POST_MAKE_ALL_RULE_HOOK.mod'.
+     Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.mod'.
+     Trying implicit prerequisite 'SCCS/s.POST_MAKE_ALL_RULE_HOOK.mod'.
+   Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK'.
+   Rejecting impossible implicit prerequisite 'POST_MAKE_ALL_RULE_HOOK.c'.
+   Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK'.
+   Rejecting impossible implicit prerequisite 'POST_MAKE_ALL_RULE_HOOK.cc'.
+   Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK'.
+   Rejecting impossible implicit prerequisite 'POST_MAKE_ALL_RULE_HOOK.C'.
+   Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK'.
+   Rejecting impossible implicit prerequisite 'POST_MAKE_ALL_RULE_HOOK.cpp'.
+   Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK'.
+   Rejecting impossible implicit prerequisite 'POST_MAKE_ALL_RULE_HOOK.p'.
+   Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK'.
+   Rejecting impossible implicit prerequisite 'POST_MAKE_ALL_RULE_HOOK.f'.
+   Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK'.
+   Rejecting impossible implicit prerequisite 'POST_MAKE_ALL_RULE_HOOK.F'.
+   Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK'.
+   Rejecting impossible implicit prerequisite 'POST_MAKE_ALL_RULE_HOOK.m'.
+   Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK'.
+   Rejecting impossible implicit prerequisite 'POST_MAKE_ALL_RULE_HOOK.r'.
+   Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK'.
+   Rejecting impossible implicit prerequisite 'POST_MAKE_ALL_RULE_HOOK.s'.
+   Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK'.
+   Rejecting impossible implicit prerequisite 'POST_MAKE_ALL_RULE_HOOK.S'.
+   Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK'.
+   Rejecting impossible implicit prerequisite 'POST_MAKE_ALL_RULE_HOOK.mod'.
+   Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK'.
+   Trying implicit prerequisite 'POST_MAKE_ALL_RULE_HOOK.sh'.
+   Looking for a rule with intermediate file 'POST_MAKE_ALL_RULE_HOOK.sh'.
+    Avoiding implicit rule recursion.
+    Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.sh'.
+    Trying implicit prerequisite 'POST_MAKE_ALL_RULE_HOOK.sh,v'.
+    Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.sh'.
+    Trying implicit prerequisite 'RCS/POST_MAKE_ALL_RULE_HOOK.sh,v'.
+    Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.sh'.
+    Trying implicit prerequisite 'RCS/POST_MAKE_ALL_RULE_HOOK.sh'.
+    Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.sh'.
+    Trying implicit prerequisite 's.POST_MAKE_ALL_RULE_HOOK.sh'.
+    Trying pattern rule with stem 'POST_MAKE_ALL_RULE_HOOK.sh'.
+    Trying implicit prerequisite 'SCCS/s.POST_MAKE_ALL_RULE_HOOK.sh'.
+   No implicit rule found for 'POST_MAKE_ALL_RULE_HOOK'.
+   Finished prerequisites of target file 'POST_MAKE_ALL_RULE_HOOK'.
+  Must remake target 'POST_MAKE_ALL_RULE_HOOK'.
+  Successfully remade target file 'POST_MAKE_ALL_RULE_HOOK'.
+ Finished prerequisites of target file 'all'.
+Must remake target 'all'.
+Successfully remade target file 'all'.
