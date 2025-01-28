@@ -4,5 +4,7 @@ mon reset init
 set confirm off
 load 
 break main
+break c1_main
 break hal_lld_peripheral_unreset
+break chRegSetThreadName
 bt
