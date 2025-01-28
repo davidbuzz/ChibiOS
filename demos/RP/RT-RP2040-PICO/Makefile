@@ -97,7 +97,12 @@ endif
 PROJECT = ch
 
 # Target settings.
+ifeq ($(USE_RP2040),yes)
 MCU  = cortex-m0plus
+endif
+ifeq ($(USE_RP2350),yes)
+MCU  = cortex-m33 # this is what arduino uses on the 2350 and is needed to get the correct __ARM_ARCH_8M_MAIN__ and thus get the right software spinlock implementation.
+endif
 
 # Imported source files and paths.
 CHIBIOS  := ../../..
