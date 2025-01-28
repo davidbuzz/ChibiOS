@@ -340,4 +340,4 @@ cp /home/buzz2/Chibi/buzz.txt /home/buzz2/Chibi/ChibiOS-RT/demos/RP/RT-RP2040-PI
 
 
 cd /home/buzz2/Chibi/ChibiOS-RT/demos/RP/RT-RP2040-PICO
-make clean ; make -d 2>&1 > make3.debug.log
+make clean ; make -d  > make3.debug.log 2>&1
