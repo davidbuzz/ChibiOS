@@ -30,7 +30,7 @@
 #if PICO_RP2040 == 1
 #define RP2040_MCUCONF
 #endif
-#if PICO_RP2350 == 1
+#if PICO_RP2350A == 1
 #define RP2350_MCUCONF
 #endif
 
