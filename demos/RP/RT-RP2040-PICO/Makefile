@@ -82,18 +82,16 @@ endif
 # Project, target, sources and paths
 #
 
-# create a boolean that les me choose either the RP2040 or RP2350
-USE_RP2350 =no
-USE_RP2040 =yes 
+# create a boolean that les me choose either the RP2040 or RP2350 define either as "empty" for unused or "yes" for used, no spaces.
+USE_RP2040=
+USE_RP2350=yes
 # tell user what we are doing
 ifeq ($(USE_RP2040),yes)
   $(info Using RP2040)
-endif  
+endif 
 ifeq ($(USE_RP2350),yes)
   $(info Using RP2350)
 endif  
-
-
 
 # Define project name here
 PROJECT = ch

@@ -78,7 +78,7 @@ typedef enum {
 } IRQn_Type;
 
 #include "core_cm0plus.h"
-#include "system_rp2040.h"
+#include "system_rp2350.h"
 
 /**
  * @name    Peripheral structures
