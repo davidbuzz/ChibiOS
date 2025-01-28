@@ -10,6 +10,9 @@ PICOSDKSRC     = $(PICOSDKROOT)/src/rp2_common/hardware_clocks/clocks.c \
                  $(PICOSDKROOT)/src/rp2_common/hardware_watchdog/watchdog.c \
                  $(PICOSDKROOT)/src/rp2_common/hardware_xosc/xosc.c \
 
+                #  $(PICOSDKROOT)/src/rp2_common/pico_runtime/runtime.c \
+                #  $(PICOSDKROOT)/src/rp2_common/pico_multicore/multicore.c \
+
 PICOSDKINC     = $(CHIBIOS)//os/various/pico_bindings/dumb/include \
                  $(PICOSDKROOT)/src/common/pico_base_headers/include \
                  $(PICOSDKROOT)/src/common/pico_stdlib_headers/include \
@@ -41,6 +44,11 @@ PICOSDKINC     = $(CHIBIOS)//os/various/pico_bindings/dumb/include \
                  $(PICOSDKROOT)/src/rp2350/hardware_regs/include \
                  $(PICOSDKROOT)/src/rp2350/hardware_structs/include \
                  $(PICOSDKROOT)/src/boards/include
+
+                # $(PICOSDKROOT)/src/rp2_common/pico_multicore/include \
+                #  $(PICOSDKROOT)/src/common/hardware_claim/include \
+                #  $(PICOSDKROOT)/src/rp2_common/pico_runtime/include \
+
 # 2350 specific..todo
 #                 $(PICOSDKROOT)/src/rp2350/pico_platform/include 
 
