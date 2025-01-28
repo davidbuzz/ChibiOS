@@ -150,11 +150,31 @@ void port_init(os_instance_t *oip) {
 //  DWT->LAR = 0xC5ACCE55U;
   DWT->CTRL |= DWT_CTRL_CYCCNTENA_Msk;
 
-  /* Initialization of the system vectors used by the port.*/
-#if CORTEX_SIMPLIFIED_PRIORITY == FALSE
-  NVIC_SetPriority(SVCall_IRQn, CORTEX_PRIORITY_SVCALL);
-#endif
-  NVIC_SetPriority(PendSV_IRQn, CORTEX_PRIORITY_PENDSV);
+  #if CH_CFG_SMP_MODE== TRUE
+  /* FIFO handlers for each core.*/
+  SIO->FIFO_ST = SIO_FIFO_ST_ROE | SIO_FIFO_ST_WOF;
+  if (oip->core_id == 0U) {
+    NVIC_SetPriority(15, CORTEX_MINIMUM_PRIORITY);
+    NVIC_EnableIRQ(15);
+  }
+  else if (oip->core_id == 1U) {
+    NVIC_SetPriority(16, CORTEX_MINIMUM_PRIORITY);
+    NVIC_EnableIRQ(16);
+  }
+  else {
+    chDbgAssert(false, "unexpected core id");
+  }
+  #else /* CH_CFG_SMP_MODE== FALSE */
+
+    /* Initialization of the system vectors used by the port.*/
+    #if CORTEX_SIMPLIFIED_PRIORITY == FALSE
+      NVIC_SetPriority(SVCall_IRQn, CORTEX_PRIORITY_SVCALL);
+    #endif
+      NVIC_SetPriority(PendSV_IRQn, CORTEX_PRIORITY_PENDSV);
+      
+  #endif
+
+
 }
 
 /**

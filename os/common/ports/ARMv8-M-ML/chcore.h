@@ -94,6 +94,14 @@
  */
 #define CORTEX_PRIORITY_PENDSV          CORTEX_MAX_KERNEL_PRIORITY
 
+
+/**
+ * @brief   IPC messages
+ * @{
+ */
+#define PORT_FIFO_RESCHEDULE_MESSAGE    0xFFFFFFFFU
+#define PORT_FIFO_PANIC_MESSAGE         0xFFFFFFFEU
+
 /**
  * @brief   Priority level to priority mask conversion macro.
  */
@@ -175,6 +183,13 @@
 #endif
 
 /**
+ * @brief   Spinlock to be used by the port layer.
+ */
+#if !defined(PORT_SPINLOCK_NUMBER)
+#define PORT_SPINLOCK_NUMBER            31
+#endif
+
+/**
  * @brief   NVIC PRIGROUP initialization expression.
  * @details The default assigns all available priority bits as preemption
  *          priority with no sub-priority.
@@ -234,6 +249,11 @@
  * @brief   Name of the implemented architecture.
  */
 #define PORT_ARCHITECTURE_NAME          "ARMv8-M Mainline"
+
+/**
+ * @brief   Number of cores supported.
+ */
+#define PORT_CORES_NUMBER               2
 
 /**
  * @brief   Macro defining a generic ARM architecture.
@@ -552,6 +572,43 @@ extern "C" {
 /* Module inline functions.                                                  */
 /*===========================================================================*/
 
+#if (CH_CFG_SMP_MODE == TRUE) || defined(__DOXYGEN__)
+/**
+ * @brief   Triggers an inter-core notification.
+ *
+ * @param[in] oip       pointer to the @p os_instance_t structure
+ */
+__STATIC_INLINE void port_notify_instance(os_instance_t *oip) {
+
+  (void)oip;
+
+  /* Sending a reschedule order to the other core if there is space in
+     the FIFO.*/
+  if ((SIO->FIFO_ST & SIO_FIFO_ST_RDY) != 0U) {
+    SIO->FIFO_WR = PORT_FIFO_RESCHEDULE_MESSAGE;
+  }
+}
+
+/**
+ * @brief   Takes the kernel spinlock.
+ */
+__STATIC_INLINE void port_spinlock_take(void) {
+
+  while (SIO->SPINLOCK[PORT_SPINLOCK_NUMBER] == 0U) {
+  }
+  __DMB();
+}
+
+/**
+ * @brief   Releases the kernel spinlock.
+ */
+__STATIC_INLINE void port_spinlock_release(void) {
+
+  __DMB();
+  SIO->SPINLOCK[PORT_SPINLOCK_NUMBER] = (uint32_t)SIO;
+}
+#endif /* CH_CFG_SMP_MODE == TRUE */
+
  /**
   * @brief   Returns a word encoding the current interrupts status.
   *
@@ -682,6 +739,15 @@ extern "C" {
    __disable_irq();
  #endif
  }
+
+ /**
+ * @brief   Returns a core index.
+ * @return              The core identifier from 0 to @p PORT_CORES_NUMBER - 1.
+ */
+__STATIC_INLINE core_id_t port_get_core_id(void) {
+
+  return SIO->CPUID;
+}
 
  /**
   * @brief   Enables all the interrupt sources.
