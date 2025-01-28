@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccNnKj9B.s 			page 1
+ARM GAS  /tmp/ccCLQwSH.s 			page 1
 
 
    1              	# 1 "../../../os/common/ports/ARMv6-M-RP2/compilers/GCC/chcoreasm.S"
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccNnKj9B.s 			page 1
   14              	    GNU General Public License for more details.
   15              	
   16              	    You should have received a copy of the GNU General Public License
-ARM GAS  /tmp/ccNnKj9B.s 			page 2
+ARM GAS  /tmp/ccCLQwSH.s 			page 2
 
 
   17              	    along with this program.  If not, see <http://www.gnu.org/licenses/>.
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccNnKj9B.s 			page 1
    1              	/*
   70              	#if CH_LICENSE == CH_LICENSE_PARTNER
   38              	#include "chconf.h"
-ARM GAS  /tmp/ccNnKj9B.s 			page 3
+ARM GAS  /tmp/ccCLQwSH.s 			page 3
 
 
    1              	/*
@@ -172,16 +172,16 @@ ARM GAS  /tmp/ccNnKj9B.s 			page 1
   15              	*/
   16              	
   17              	/**
-  18              	 * @file    RP2040/cmparams.h
-  19              	 * @brief   ARM Cortex-M0 parameters for the RP2040.
+  18              	 * @file    RP2350/cmparams.h
+  19              	 * @brief   ARM Cortex-M0 parameters for the RP2350.
   20              	 *
-  21              	 * @defgroup ARMCMx_RP2040 RP2040 Specific Parameters
+  21              	 * @defgroup ARMCMx_RP2350 RP2350 Specific Parameters
   22              	 * @ingroup ARMCMx_SPECIFIC
   23              	 * @details This file contains the Cortex-M0 specific parameters for the
-ARM GAS  /tmp/ccNnKj9B.s 			page 4
+ARM GAS  /tmp/ccCLQwSH.s 			page 4
 
 
-  24              	 *          RP2040 platform.
+  24              	 *          RP2350 platform.
   25              	 * @{
   26              	 */
   27              	
@@ -206,7 +206,7 @@ ARM GAS  /tmp/ccNnKj9B.s 			page 1
   46              	/* If the device type is not externally defined, for example from the Makefile,
   47              	   then a file named board.h is included. This file must contain a device
   48              	   definition compatible with the vendor include file.*/
-  49              	#if !defined (RP2040)
+  49              	#if !defined (RP2350)
   50              	#include "board.h"
    1              	/*
   51              	#endif
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccNnKj9B.s 			page 1
   64              	                .text
   65              	
   66              	/*--------------------------------------------------------------------------*
-ARM GAS  /tmp/ccNnKj9B.s 			page 5
+ARM GAS  /tmp/ccCLQwSH.s 			page 5
 
 
   67              	 * Performs a context switch between two threads.
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccNnKj9B.s 			page 1
  121              	 * Exception handlers return here for context switching.
  122              	 *--------------------------------------------------------------------------*/
  123              	                .thumb_func
-ARM GAS  /tmp/ccNnKj9B.s 			page 6
+ARM GAS  /tmp/ccCLQwSH.s 			page 6
 
 
  124              	                .globl  __port_switch_from_isr
@@ -331,7 +331,7 @@ ARM GAS  /tmp/ccNnKj9B.s 			page 1
  151 003c FEE70000 	1:              b       1b
  151      04ED00E0 
  151      00000080 
-ARM GAS  /tmp/ccNnKj9B.s 			page 7
+ARM GAS  /tmp/ccCLQwSH.s 			page 7
 
 
 DEFINED SYMBOLS

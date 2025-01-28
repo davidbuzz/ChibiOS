@@ -19,15 +19,15 @@ build/obj/chtrace.o: ../../../os/rt/src/chtrace.c \
  ../../../os/rt/include/chalign.h ../../../os/rt/include/chtrace.h \
  ../../../os/rt/include/chport.h \
  ../../../os/common/ports/ARMv6-M-RP2/chcore.h \
- ../../../os/common/startup/ARMCMx/devices/RP2040/cmparams.h \
- ../../../os/hal/boards/RP_PICO_RP2040/board.h \
- ../../../os/common/ext/RP/RP2040/rp2040.h \
+ ../../../os/common/startup/ARMCMx/devices/RP2350/cmparams.h \
+ ../../../os/hal/boards/RP_PICO_RP2350/board.h \
+ ../../../os/common/ext/RP/RP2350/rp2350.h \
  ../../../os/common/ext/ARM/CMSIS/Core/Include/core_cm0plus.h \
  ../../../os/common/ext/ARM/CMSIS/Core/Include/cmsis_version.h \
  ../../../os/common/ext/ARM/CMSIS/Core/Include/cmsis_compiler.h \
  ../../../os/common/ext/ARM/CMSIS/Core/Include/cmsis_gcc.h \
  ../../../os/common/ext/ARM/CMSIS/Core/Include/mpu_armv7.h \
- ../../../os/common/ext/RP/RP2040/system_rp2040.h \
+ ../../../os/common/ext/RP/RP2350/system_rp2350.h \
  ../../../os/common/ports/ARMv6-M-RP2/chcore_timer_rp2.h \
  ../../../os/rt/include/chtm.h ../../../os/rt/include/chstats.h \
  ../../../os/rt/include/chobjects.h ../../../os/rt/include/chsys.h \
@@ -76,15 +76,15 @@ cfg/chconf.h:
 ../../../os/rt/include/chtrace.h:
 ../../../os/rt/include/chport.h:
 ../../../os/common/ports/ARMv6-M-RP2/chcore.h:
-../../../os/common/startup/ARMCMx/devices/RP2040/cmparams.h:
-../../../os/hal/boards/RP_PICO_RP2040/board.h:
-../../../os/common/ext/RP/RP2040/rp2040.h:
+../../../os/common/startup/ARMCMx/devices/RP2350/cmparams.h:
+../../../os/hal/boards/RP_PICO_RP2350/board.h:
+../../../os/common/ext/RP/RP2350/rp2350.h:
 ../../../os/common/ext/ARM/CMSIS/Core/Include/core_cm0plus.h:
 ../../../os/common/ext/ARM/CMSIS/Core/Include/cmsis_version.h:
 ../../../os/common/ext/ARM/CMSIS/Core/Include/cmsis_compiler.h:
 ../../../os/common/ext/ARM/CMSIS/Core/Include/cmsis_gcc.h:
 ../../../os/common/ext/ARM/CMSIS/Core/Include/mpu_armv7.h:
-../../../os/common/ext/RP/RP2040/system_rp2040.h:
+../../../os/common/ext/RP/RP2350/system_rp2350.h:
 ../../../os/common/ports/ARMv6-M-RP2/chcore_timer_rp2.h:
 ../../../os/rt/include/chtm.h:
 ../../../os/rt/include/chstats.h:
