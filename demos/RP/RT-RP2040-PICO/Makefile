@@ -237,7 +237,19 @@ include $(RULESPATH)/rules.mk
 ##############################################################################
 # Custom rules
 #
+uf2: $(BUILDDIR)/$(PROJECT).elf
+	$(info Creating UF2 file)
+	@/home/buzz2/Chibi/picotool/picotool uf2 convert $(BUILDDIR)/$(PROJECT).elf $(BUILDDIR)/$(PROJECT).uf2  --family rp2350-arm-s --abs-block
+	@ls -l $(BUILDDIR)/$(PROJECT).uf2
+	@file $(BUILDDIR)/$(PROJECT).uf2
+	$(info UF2 for 2350 created)
 
+upload: uf2
+	$(info Uploading UF2 file... please press the BOOTSEL button on the board while connecting the USB cable in the next 10 seconds)
+	@sleep 10
+	@/home/buzz2/Chibi/picotool/picotool load -v -x $(BUILDDIR)/$(PROJECT).uf2 -f
+	$(info UF2 file uploaded)
+#@cp $(BUILDDIR)/$(PROJECT).uf2 /media/$(USER)/RPI-RP2
 #
 # Custom rules
 ##############################################################################
