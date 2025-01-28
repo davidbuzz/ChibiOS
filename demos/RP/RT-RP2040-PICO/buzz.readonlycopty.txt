@@ -321,14 +321,14 @@ actual working for buzz, with both 2x devices connected via gnd+the two outside 
 
 + gdb of:
 
-cd /home/buzz2/Chibi/ChibiOS-RT/demos/RP/RT-RP2040-PICO/build
+cd /home/buzz2/Chibi/ChibiOS-RT/demos/RP/RT-RP2040-PICO/
 
 echo "# this sets up gdb to use openocd. You must start openocd first" > .gdbinit
 echo "target extended-remote :50000">> .gdbinit
 echo "mon reset halt">> .gdbinit
 echo "set confirm off">> .gdbinit
 
-/opt/gcc-arm-none-eabi-10-2020-q4-major/bin//arm-none-eabi-gdb ./ch.elf
+/opt/gcc-arm-none-eabi-10-2020-q4-major/bin//arm-none-eabi-gdb ./build/ch.elf
 
 --------------------
 
