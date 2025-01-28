@@ -186,9 +186,9 @@ __STATIC_INLINE void hal_lld_peripheral_reset(uint32_t mask) {
 __STATIC_INLINE void hal_lld_peripheral_unreset(uint32_t mask) {
 
   RESETS->RESET &= ~mask;
-  while ((RESETS->RESET_DONE & mask) == 0U) {
-    /* Waiting for reset.*/
-  }
+  //while ((RESETS->RESET_DONE & mask) == 0U) {
+  //  /* Waiting for reset.*/
+  //} bug - this is not working
 }
 
 #if defined(HAL_LLD_USE_CLOCK_MANAGEMENT) || defined(__DOXYGEN__)
