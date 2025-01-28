@@ -1,4 +1,4 @@
-ARM GAS  /tmp/cc3ka4Zf.s 			page 1
+ARM GAS  /tmp/ccdDAFQX.s 			page 1
 
 
    1              	# 1 "../../../os/common/ports/ARMv8-M-ML/compilers/GCC/chcoreasm.S"
@@ -58,7 +58,7 @@ ARM GAS  /tmp/cc3ka4Zf.s 			page 1
   14              	    GNU General Public License for more details.
   15              	
   16              	    You should have received a copy of the GNU General Public License
-ARM GAS  /tmp/cc3ka4Zf.s 			page 2
+ARM GAS  /tmp/ccdDAFQX.s 			page 2
 
 
   17              	    along with this program.  If not, see <http://www.gnu.org/licenses/>.
@@ -118,7 +118,7 @@ ARM GAS  /tmp/cc3ka4Zf.s 			page 1
    1              	/*
   70              	#if CH_LICENSE == CH_LICENSE_PARTNER
   38              	#include "chconf.h"
-ARM GAS  /tmp/cc3ka4Zf.s 			page 3
+ARM GAS  /tmp/ccdDAFQX.s 			page 3
 
 
    1              	/*
@@ -178,7 +178,7 @@ ARM GAS  /tmp/cc3ka4Zf.s 			page 1
   21              	 * @defgroup ARMCMx_RP2350 RP2350 Specific Parameters
   22              	 * @ingroup ARMCMx_SPECIFIC
   23              	 * @details This file contains the Cortex-M0 specific parameters for the
-ARM GAS  /tmp/cc3ka4Zf.s 			page 4
+ARM GAS  /tmp/ccdDAFQX.s 			page 4
 
 
   24              	 *          RP2350 platform.
@@ -227,137 +227,162 @@ ARM GAS  /tmp/cc3ka4Zf.s 			page 1
   53              	#error "invalid chconf.h"
   54              	#endif
   55              	
-  56              	/* MPU-related constants.*/
-  57              	#define MPU_RBAR        0xE000ED9C
-  58              	
-  59              	/* Other constants.*/
-  60              	#define SCB_ICSR        0xE000ED04
-  61              	#define ICSR_PENDSVSET  0x10000000
-  62              	
-  63              	                .syntax unified
-  64              	                .cpu    cortex-m4
-  65              	#if CORTEX_USE_FPU
-  66              	                .fpu    fpv4-sp-d16
-ARM GAS  /tmp/cc3ka4Zf.s 			page 5
+  56              	
+  57              	                .syntax unified
+  58              	                .set    MPU_RBAR, 0xE000ED9C
+  59              	                .set    SCB_ICSR, 0xE000ED04
+  60              	                .set    ICSR_PENDSVSET, 0x10000000
+  61              	                .set    ICSR_NMIPENDSET, 0x80000000
+  62              	                
+  63              	                .cpu    cortex-m4
+  64              	#if CORTEX_USE_FPU
+  65              	                .fpu    fpv4-sp-d16
+  66              	#else
+ARM GAS  /tmp/ccdDAFQX.s 			page 5
 
 
-  67              	#else
-  68              	                .fpu    softvfp
-  69              	#endif
-  70              	
-  71              	                .thumb
-  72              	                .text
-  73              	
-  74              	/*--------------------------------------------------------------------------*
-  75              	 * Performs a context switch between two threads.
-  76              	 *--------------------------------------------------------------------------*/
-  77              	                .thumb_func
-  78              	                .globl  __port_switch
-  79              	__port_switch:
-  80 0000 2DE9F04F 	                push    {r4, r5, r6, r7, r8, r9, r10, r11, lr}
-  81              	#if CORTEX_USE_FPU
-  82              	                /* Saving FPU context.*/
-  83              	                vpush   {s16-s31}
-  84              	#endif
-  85              	
-  86              	#if CH_DBG_ENABLE_STACK_CHECK
-  87              	                /* Saving stack limit register.*/
-  88              	                mrs     r3, PSPLIM
-  89              	                push    {r3}
-  90              	                movs    r3, #0
-  91              	                msr     PSPLIM, r3      /* Temporarily disabling stack check.*/
-  92              	#endif
-  93              	
-  94              	                /* Switching stacks.*/
-  95 0004 C1F80CD0 	                str     sp, [r1, #CONTEXT_OFFSET]
-  96 0008 D0F80CD0 	                ldr     sp, [r0, #CONTEXT_OFFSET]
+  67              	                .fpu    softvfp
+  68              	#endif
+  69              	
+  70              	                .thumb
+  71              	                .text
+  72              	
+  73              	/*--------------------------------------------------------------------------*
+  74              	 * Performs a context switch between two threads.
+  75              	 *--------------------------------------------------------------------------*/
+  76              	                .thumb_func
+  77              	                .globl  __port_switch
+  78              	__port_switch:
+  79 0000 F0B5     	                push    {r4, r5, r6, r7, lr}
+  80 0002 4446     	                mov     r4, r8
+  81 0004 4D46     	                mov     r5, r9
+  82 0006 5646     	                mov     r6, r10
+  83 0008 5F46     	                mov     r7, r11
+  84 000a F0B4     	                push    {r4, r5, r6, r7}
+  85              	# #if CORTEX_USE_FPU
+  86              	#                 /* Saving FPU context.*/
+  87              	#                 vpush   {s16-s31}
+  88              	# #endif
+  89              	
+  90              	# #if CH_DBG_ENABLE_STACK_CHECK
+  91              	#                 /* Saving stack limit register.*/
+  92              	#                 mrs     r3, PSPLIM
+  93              	#                 push    {r3}
+  94              	#                 movs    r3, #0
+  95              	#                 msr     PSPLIM, r3      /* Temporarily disabling stack check.*/
+  96              	# #endif
   97              	
-  98              	#if CH_DBG_ENABLE_STACK_CHECK
-  99              	                pop     {r3}
- 100              	                msr     PSPLIM, r3
- 101              	#endif
- 102              	
- 103              	#if CORTEX_USE_FPU
- 104              	                /* Restoring FPU context.*/
- 105              	                vpop    {s16-s31}
- 106              	#endif
- 107 000c BDE8F08F 	                pop     {r4, r5, r6, r7, r8, r9, r10, r11, pc}
+  98              	                /* Switching stacks.*/
+  99 000c 6B46     	                mov     r3, sp
+ 100 000e CB60     	                str     r3, [r1, #CONTEXT_OFFSET]
+ 101 0010 C368     	                ldr     r3, [r0, #CONTEXT_OFFSET]
+ 102 0012 9D46     	                mov     sp, r3
+ 103              	
+ 104              	# #if CH_DBG_ENABLE_STACK_CHECK
+ 105              	#                 pop     {r3}
+ 106              	#                 msr     PSPLIM, r3
+ 107              	# #endif
  108              	
- 109              	/*--------------------------------------------------------------------------*
- 110              	 * Start a thread by invoking its work function.
- 111              	 *
- 112              	 * Threads execution starts here, the code leaves the system critical zone
- 113              	 * and then jumps into the thread function passed in register R4. The
- 114              	 * register R5 contains the thread parameter. The function chThdExit() is
- 115              	 * called on thread function return.
- 116              	 *--------------------------------------------------------------------------*/
- 117              	                .thumb_func
- 118              	                .globl  __port_thread_start
- 119              	__port_thread_start:
- 120              	#if CH_DBG_SYSTEM_STATE_CHECK
- 121              	                bl      __dbg_check_unlock
- 122              	#endif
- 123              	#if CH_DBG_STATISTICS
-ARM GAS  /tmp/cc3ka4Zf.s 			page 6
+ 109              	# #if CORTEX_USE_FPU
+ 110              	#                 /* Restoring FPU context.*/
+ 111              	#                 vpop    {s16-s31}
+ 112              	# #endif
+ 113 0014 F0BC     	                pop     {r4, r5, r6, r7}
+ 114 0016 A046     	                mov     r8, r4
+ 115 0018 A946     	                mov     r9, r5
+ 116 001a B246     	                mov     r10, r6
+ 117 001c BB46     	                mov     r11, r7
+ 118 001e F0BD     	                pop     {r4, r5, r6, r7, pc}
+ 119              	/*--------------------------------------------------------------------------*
+ 120              	 * Start a thread by invoking its work function.
+ 121              	 *
+ 122              	 * Threads execution starts here, the code leaves the system critical zone
+ 123              	 * and then jumps into the thread function passed in register R4. The
+ARM GAS  /tmp/ccdDAFQX.s 			page 6
 
 
- 124              	                bl      __stats_stop_measure_crit_thd
- 125              	#endif
- 126              	#if CORTEX_SIMPLIFIED_PRIORITY
- 127              	                cpsie   i
- 128              	#else
- 129 0010 0023     	                movs    r3, #0              /* CORTEX_BASEPRI_DISABLED */
- 130 0012 83F31188 	                msr     BASEPRI, r3
- 131              	#endif
- 132 0016 2846     	                mov     r0, r5
- 133 0018 A047     	                blx     r4
- 134 001a 0020     	                movs    r0, #0              /* MSG_OK */
- 135 001c FFF7FEFF 	                bl      chThdExit
- 136 0020 FEE7     	1:              b       1b
- 137              	
- 138              	/*--------------------------------------------------------------------------*
- 139              	 * Post-IRQ switch code.
- 140              	 *
- 141              	 * Exception handlers return here for context switching.
- 142              	 *--------------------------------------------------------------------------*/
- 143              	                .thumb_func
- 144              	                .globl  __port_switch_from_isr
- 145              	__port_switch_from_isr:
- 146              	#if CH_DBG_STATISTICS
- 147              	                bl      __stats_start_measure_crit_thd
- 148              	#endif
- 149              	#if CH_DBG_SYSTEM_STATE_CHECK
- 150              	                bl      __dbg_check_lock
- 151              	#endif
- 152 0022 FFF7FEFF 	                bl      chSchDoPreemption
- 153              	#if CH_DBG_SYSTEM_STATE_CHECK
- 154              	                bl      __dbg_check_unlock
- 155              	#endif
- 156              	#if CH_DBG_STATISTICS
- 157              	                bl      __stats_stop_measure_crit_thd
- 158              	#endif
- 159              	                .globl  __port_exit_from_isr
- 160              	__port_exit_from_isr:
- 161              	#if CORTEX_SIMPLIFIED_PRIORITY
- 162              	                movw    r3, #:lower16:SCB_ICSR
- 163              	                movt    r3, #:upper16:SCB_ICSR
- 164              	                mov     r2, ICSR_PENDSVSET
- 165              	                str     r2, [r3, #0]
- 166              	                cpsie   i
- 167              	#else /* !CORTEX_SIMPLIFIED_PRIORITY */
- 168 0026 00DF     	                svc     #0
- 169              	#endif /* !CORTEX_SIMPLIFIED_PRIORITY */
- 170 0028 FEE7     	1:              b       1b
-ARM GAS  /tmp/cc3ka4Zf.s 			page 7
+ 124              	 * register R5 contains the thread parameter. The function chThdExit() is
+ 125              	 * called on thread function return.
+ 126              	 *--------------------------------------------------------------------------*/
+ 127              	                .thumb_func
+ 128              	                .globl  __port_thread_start
+ 129              	__port_thread_start:
+ 130              	#if CH_DBG_SYSTEM_STATE_CHECK
+ 131              	                bl      __dbg_check_unlock
+ 132              	#endif
+ 133              	#if CH_DBG_STATISTICS
+ 134              	                bl      __stats_stop_measure_crit_thd
+ 135              	#endif
+ 136              	#if CH_CFG_SMP_MODE == TRUE
+ 137 0020 FFF7FEFF 	                bl      __port_spinlock_release
+ 138              	#endif
+ 139              	#  must define CORTEX_SIMPLIFIED_PRIORITY in rp2350
+ 140              	#if CORTEX_SIMPLIFIED_PRIORITY
+ 141 0024 62B6     	                cpsie   i
+ 142              	#else
+ 143              	                 movs    r3, #0              /* CORTEX_BASEPRI_DISABLED */
+ 144              	                 msr     BASEPRI, r3
+ 145              	#endif
+ 146 0026 2846     	                mov     r0, r5
+ 147 0028 A047     	                blx     r4
+ 148 002a 0020     	                movs    r0, #0              /* MSG_OK */
+ 149 002c FFF7FEFF 	                bl      chThdExit
+ 150 0030 FEE7     	1:              b       1b
+ 151              	
+ 152              	/*--------------------------------------------------------------------------*
+ 153              	 * Post-IRQ switch code.
+ 154              	 *
+ 155              	 * Exception handlers return here for context switching.
+ 156              	 *--------------------------------------------------------------------------*/
+ 157              	                .thumb_func
+ 158              	                .globl  __port_switch_from_isr
+ 159              	__port_switch_from_isr:
+ 160              	#if CH_DBG_STATISTICS
+ 161              	                bl      __stats_start_measure_crit_thd
+ 162              	#endif
+ 163              	#if CH_DBG_SYSTEM_STATE_CHECK
+ 164              	                bl      __dbg_check_lock
+ 165              	#endif
+ 166 0032 FFF7FEFF 	                bl      chSchDoPreemption
+ 167              	#if CH_DBG_SYSTEM_STATE_CHECK
+ 168              	                bl      __dbg_check_unlock
+ 169              	#endif
+ 170              	#if CH_DBG_STATISTICS
+ 171              	                bl      __stats_stop_measure_crit_thd
+ 172              	#endif
+ 173              	                .globl  __port_exit_from_isr
+ 174              	__port_exit_from_isr:
+ 175 0036 024A     	                ldr     r2, =SCB_ICSR
+ 176              	#if CORTEX_ALTERNATE_SWITCH
+ 177              	                ldr     r3, =ICSR_PENDSVSET
+ 178              	#else
+ 179 0038 4FF00043 	                ldr     r3, =ICSR_NMIPENDSET
+ 180              	#endif
+ARM GAS  /tmp/ccdDAFQX.s 			page 7
+
+
+ 181 003c 1360     	                str     r3, [r2, #0]
+ 182              	#if CORTEX_ALTERNATE_SWITCH
+ 183              	                cpsie   i
+ 184              	#endif
+ 185 003e FEE704ED 	1:              b       1b
+ 185      00E0
+ARM GAS  /tmp/ccdDAFQX.s 			page 8
 
 
 DEFINED SYMBOLS
-../../../os/common/ports/ARMv8-M-ML/compilers/GCC/chcoreasm.S:79     .text:0000000000000000 __port_switch
-../../../os/common/ports/ARMv8-M-ML/compilers/GCC/chcoreasm.S:80     .text:0000000000000000 $t
-../../../os/common/ports/ARMv8-M-ML/compilers/GCC/chcoreasm.S:119    .text:0000000000000010 __port_thread_start
-../../../os/common/ports/ARMv8-M-ML/compilers/GCC/chcoreasm.S:145    .text:0000000000000022 __port_switch_from_isr
-../../../os/common/ports/ARMv8-M-ML/compilers/GCC/chcoreasm.S:160    .text:0000000000000026 __port_exit_from_isr
+../../../os/common/ports/ARMv8-M-ML/compilers/GCC/chcoreasm.S:58     *ABS*:00000000e000ed9c MPU_RBAR
+../../../os/common/ports/ARMv8-M-ML/compilers/GCC/chcoreasm.S:59     *ABS*:00000000e000ed04 SCB_ICSR
+../../../os/common/ports/ARMv8-M-ML/compilers/GCC/chcoreasm.S:60     *ABS*:0000000010000000 ICSR_PENDSVSET
+../../../os/common/ports/ARMv8-M-ML/compilers/GCC/chcoreasm.S:61     *ABS*:0000000080000000 ICSR_NMIPENDSET
+../../../os/common/ports/ARMv8-M-ML/compilers/GCC/chcoreasm.S:78     .text:0000000000000000 __port_switch
+../../../os/common/ports/ARMv8-M-ML/compilers/GCC/chcoreasm.S:79     .text:0000000000000000 $t
+../../../os/common/ports/ARMv8-M-ML/compilers/GCC/chcoreasm.S:129    .text:0000000000000020 __port_thread_start
+../../../os/common/ports/ARMv8-M-ML/compilers/GCC/chcoreasm.S:159    .text:0000000000000032 __port_switch_from_isr
+../../../os/common/ports/ARMv8-M-ML/compilers/GCC/chcoreasm.S:174    .text:0000000000000036 __port_exit_from_isr
+../../../os/common/ports/ARMv8-M-ML/compilers/GCC/chcoreasm.S:185    .text:0000000000000040 $d
 
 UNDEFINED SYMBOLS
+__port_spinlock_release
 chThdExit
 chSchDoPreemption
