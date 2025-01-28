@@ -2,5 +2,7 @@
 target extended-remote :50000
 mon reset init
 set confirm off
-starti
-
+load 
+break main
+break hal_lld_peripheral_unreset
+bt
