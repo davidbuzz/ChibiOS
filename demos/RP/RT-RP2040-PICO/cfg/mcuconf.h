@@ -32,6 +32,7 @@
 #endif
 #if PICO_RP2350A == 1
 #define RP2350_MCUCONF
+#define CORTEX_SIMPLIFIED_PRIORITY 1
 #endif
 
 /*
