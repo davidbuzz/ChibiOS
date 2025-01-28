@@ -158,6 +158,43 @@ arm-none-eabi-objdump -p build/ch.elf
 
 ----------------------------------------
 
+lets poke around in the relevant makefiles:
+code Makefile
+code ../../../os/various/pico_bindings/pico-sdk.mk 
+
+maybe more..?
+code ../../../os/license/license.mk 
+code ../../../os/common/startup/ARMCMx/compilers/GCC/mk/startup_rp2040.mk 
+code ../../../os/hal/hal.mk 
+code ../../../os/common/oop/oop.mk 
+code ../../../os/hal/ports/RP/RP2040/platform.mk 
+code ../../../os/hal/ports/RP/LLD/DMAv1/driver.mk 
+code ../../../os/hal/ports/RP/LLD/GPIOv1/driver.mk 
+code ../../../os/hal/ports/RP/LLD/SPIv1/driver.mk 
+code ../../../os/hal/ports/RP/LLD/TIMERv1/driver.mk 
+code ../../../os/hal/ports/RP/LLD/UARTv1/driver.mk 
+code ../../../os/hal/ports/RP/LLD/RTCv1/driver.mk 
+code ../../../os/hal/ports/RP/LLD/WDGv1/driver.mk 
+code ../../../os/hal/boards/RP_PICO_RP2040/board.mk 
+code ../../../os/hal/osal/rt-nil/osal.mk 
+code ../../../os/rt/rt.mk 
+code ../../../os/oslib/oslib.mk 
+code ../../../os/common/ports/ARMv6-M-RP2/compilers/GCC/mk/port.mk 
+code ../../../os/common/portability/GCC/ccportab.mk 
+code ../../../os/common/ports/ARM-common/arm-common.mk 
+code ../../../tools/mk/autobuild.mk 
+code ../../../os/test/test.mk 
+code ../../../test/rt/rt_test.mk 
+code ../../../test/oslib/oslib_test.mk 
+code ../../../os/various/pico_bindings/pico-sdk.mk 
+code ../../../os/hal/lib/streams/streams.mk 
+code ../../../os/various/shell/shell.mk 
+code ../../../os/common/startup/ARMCMx/compilers/GCC/mk/arm-none-eabi.mk 
+code ../../../os/common/startup/ARMCMx/compilers/GCC/mk/rules.mk 
+
+
+----------------------------------------
+
 I appear to have gotten the code to commpile using pico "SDK 2.1" as pulled down from git...
 
 make clean ; make -d > make2.debug.log 2>&1
@@ -294,9 +331,13 @@ echo "set confirm off">> .gdbinit
 /opt/gcc-arm-none-eabi-10-2020-q4-major/bin//arm-none-eabi-gdb ./ch.elf
 
 --------------------
-    relevant exceprts from my arduino in verbose mode when uploading to 2350 ..
 
-    /home/buzz/.arduino15/packages/rp2040/tools/pqt-picotool/4.0.1-8ec9d6f/picotool uf2 convert /home/buzz/.cache/arduino/sketches/589FD8E4BCF6B2949511472F117B1D78/pico2.buzz.ino.elf /home/buzz/.cache/arduino/sketches/589FD8E4BCF6B2949511472F117B1D78/pico2.buzz.ino.uf2 --family rp2350-arm-s --abs-block
+and  now I've massaged all the includes and dirs and search-replace to refer to 2350 not 2040 as they really are separate targets.
+
+I've hacked on the demo as well so , despite being in the 'RT-RP2040-PICO' folder, its *also* capable of being a 'RT-RP2350-PICO2' target, and I can compile either now. - maybe I'm close enough now to see if gdb can do anything other than 'mon reset halt ad ctrl-c.?
+
+cp /home/buzz2/Chibi/buzz.txt /home/buzz2/Chibi/ChibiOS-RT/demos/RP/RT-RP2040-PICO/buzz.readonlycopty.txt
 
 
-    "/home/buzz/.arduino15/packages/rp2040/tools/pqt-python3/1.0.1-base-3a57aed-1/python3" -I "/home/buzz/.arduino15/packages/rp2040/hardware/rp2040/4.4.2/tools/uf2conv.py" --serial "/dev/ttyACM0" --family RP2040 --deploy "/home/buzz/.cache/arduino/sketches/589FD8E4BCF6B2949511472F117B1D78/pico2.buzz.ino.uf2"
+cd /home/buzz2/Chibi/ChibiOS-RT/demos/RP/RT-RP2040-PICO
+make clean ; make -d 2>&1 > make3.debug.log
