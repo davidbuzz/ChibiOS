@@ -1,4 +1,4 @@
-# Pico-SDK 2 files - currently configured for the RP2040
+# Pico-SDK 2 files - currently configured for the RP2350
 PICOSDKROOT   := /home/buzz2/Chibi/pico-sdk
 
 # stdio.c lets us call stdio_init_all()
@@ -15,7 +15,7 @@ PICOSDKINC     = $(CHIBIOS)//os/various/pico_bindings/dumb/include \
                  $(PICOSDKROOT)/src/common/pico_stdlib_headers/include \
                  $(PICOSDKROOT)/src/common/pico_time/include \
                  $(PICOSDKROOT)/src/common/pico_sync/include \
-                 $(PICOSDKROOT)/src/rp2040/pico_platform/include \
+                 $(PICOSDKROOT)/src/rp2350/pico_platform/include \
                  $(PICOSDKROOT)/src/rp2_common/pico_stdio/include \
                  $(PICOSDKROOT)/src/rp2_common/pico_platform_compiler/include \
                  $(PICOSDKROOT)/src/rp2_common/pico_platform_sections/include \
@@ -38,8 +38,8 @@ PICOSDKINC     = $(CHIBIOS)//os/various/pico_bindings/dumb/include \
                  $(PICOSDKROOT)/src/rp2_common/boot_bootrom_headers/include \
                  $(PICOSDKROOT)/src/rp2_common/hardware_boot_lock/include \
                  $(PICOSDKROOT)/src/rp2_common/pico_flash/include \
-                 $(PICOSDKROOT)/src/rp2040/hardware_regs/include \
-                 $(PICOSDKROOT)/src/rp2040/hardware_structs/include \
+                 $(PICOSDKROOT)/src/rp2350/hardware_regs/include \
+                 $(PICOSDKROOT)/src/rp2350/hardware_structs/include \
                  $(PICOSDKROOT)/src/boards/include
 # 2350 specific..todo
 #                 $(PICOSDKROOT)/src/rp2350/pico_platform/include 

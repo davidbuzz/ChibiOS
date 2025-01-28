@@ -145,8 +145,13 @@ include $(CHIBIOS)/tools/mk/autobuild.mk
 include $(CHIBIOS)/os/test/test.mk
 include $(CHIBIOS)/test/rt/rt_test.mk
 include $(CHIBIOS)/test/oslib/oslib_test.mk
-#include $(CHIBIOS)/os/various/pico_bindings/pico-sdk1.mk
-include $(CHIBIOS)/os/various/pico_bindings/pico-sdk.mk
+#include $(CHIBIOS)/os/various/pico_bindings/pico-sdk1.mk - old v1 sdk
+ifeq ($(USE_RP2040),yes)
+include $(CHIBIOS)/os/various/pico_bindings/pico-sdk.2040.mk
+endif
+ifeq ($(USE_RP2350),yes)
+include $(CHIBIOS)/os/various/pico_bindings/pico-sdk.2350.mk
+endif
 include $(CHIBIOS)/os/hal/lib/streams/streams.mk
 include $(CHIBIOS)/os/various/shell/shell.mk
 
@@ -189,11 +194,11 @@ CPPWARN = -Wall -Wextra -Wundef
 # List all user C define here, like -D_DEBUG=1
 # 2040 / original pico:
 ifeq ($(USE_RP2040),yes)
-UDEFS = -DCRT0_VTOR_INIT=1 -DCRT0_EXTRA_CORES_NUMBER=1 -DPICO_NO_FPGA_CHECK -DNDEBUG -DPICO_RP2040=1 -DPICO_RP2350=0 -DPICO_USE_GPIO_COPROCESSOR=0 -DPICO_SECURE=0
+UDEFS = -DCRT0_VTOR_INIT=1 -DCRT0_EXTRA_CORES_NUMBER=1 -DPICO_NO_FPGA_CHECK -DNDEBUG -DPICO_RP2040=1 -DPICO_RP2350A=0 -DPICO_USE_GPIO_COPROCESSOR=0 -DPICO_SECURE=0
 endif
 ifeq ($(USE_RP2350),yes)
 # 2350 / "pico 2": todo try this
-UDEFS = -DCRT0_VTOR_INIT=1 -DCRT0_EXTRA_CORES_NUMBER=1 -DPICO_NO_FPGA_CHECK -DNDEBUG -DPICO_RP2350=1 -DPICO_RP2040=0 -DPICO_USE_GPIO_COPROCESSOR=0 -DPICO_SECURE=0
+UDEFS = -DCRT0_VTOR_INIT=1 -DCRT0_EXTRA_CORES_NUMBER=1 -DPICO_NO_FPGA_CHECK -DNDEBUG -DPICO_RP2350A=1 -DPICO_RP2040=0 -DPICO_USE_GPIO_COPROCESSOR=0 -DPICO_SECURE=0
 endif
 
 # Define ASM defines here
