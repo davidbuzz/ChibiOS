@@ -226,7 +226,25 @@ void __port_irq_epilogue(void) {
        order to keep the rest of the context switch atomic.*/
     return;
   }
-  port_unlock_from_isr();
+  //port_unlock_from_isr();
 }
+
+#if (CH_CFG_SMP_MODE== TRUE) || defined(__DOXYGEN__)
+/**
+ * @brief   Takes the kernel spinlock.
+ */
+void __port_spinlock_take(void) {
+
+  port_spinlock_take();
+}
+
+/**
+ * @brief   Releases the kernel spinlock.
+ */
+void __port_spinlock_release(void) {
+
+  port_spinlock_release();
+}
+#endif /* CH_CFG_SMP_MODE== TRUE */
 
 /** @} */

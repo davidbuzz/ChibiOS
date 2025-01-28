@@ -182,6 +182,10 @@
 #error "invalid priority level specified for CORTEX_PRIORITY_SVCALL"
 #endif
 
+#if !defined(CORTEX_ALTERNATE_SWITCH)
+#define CORTEX_ALTERNATE_SWITCH         FALSE
+#endif
+
 /**
  * @brief   Spinlock to be used by the port layer.
  */
@@ -283,12 +287,30 @@
 /**
  * @brief   Port-specific information string.
  */
-#if (CORTEX_SIMPLIFIED_PRIORITY == FALSE) || defined(__DOXYGEN__)
-  #define PORT_INFO                     "Advanced kernel mode"
+
+ /**
+ * @brief   Port-specific information string.
+ */
+#if (CH_CFG_SMP_MODE == TRUE) 
+  #if (CORTEX_ALTERNATE_SWITCH == FALSE) || defined(__DOXYGEN__)
+    #define PORT_INFO                   "Preemption through NMI (SMP)"
+  #else
+    #define PORT_INFO                   "Preemption through PendSV (SMP)"
+  #endif
 #else
-  #define PORT_INFO                     "Compact kernel mode"
+  #if (CORTEX_ALTERNATE_SWITCH == FALSE) || defined(__DOXYGEN__)
+    #define PORT_INFO                     "Preemption through NMI"
+  #else
+    #define PORT_INFO                     "Preemption through PendSV"
+  #endif
 #endif
 /** @} */
+
+//
+#ifndef CORTEX_SIMPLIFIED_PRIORITY
+#define CORTEX_SIMPLIFIED_PRIORITY 1
+#endif
+
 
 #if (CORTEX_SIMPLIFIED_PRIORITY == FALSE) || defined(__DOXYGEN__)
   /**
@@ -564,6 +586,10 @@ extern "C" {
   void __port_thread_start(void);
   void __port_switch_from_isr(void);
   void __port_exit_from_isr(void);
+#if (CH_CFG_SMP_MODE == TRUE) || defined(__DOXYGEN__)
+  void __port_spinlock_take(void);
+  void __port_spinlock_release_inline(void);
+#endif /* CH_CFG_SMP_MODE == TRUE */
 #ifdef __cplusplus
 }
 #endif
