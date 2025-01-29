@@ -284,6 +284,8 @@ typedef struct {
 #include "rp_fifo.h"
 #include "rp_dma.h"
 
+#include "hardware/structs/resets.h" // for resets_hw
+
 #ifdef __cplusplus
 extern "C" {
 #endif

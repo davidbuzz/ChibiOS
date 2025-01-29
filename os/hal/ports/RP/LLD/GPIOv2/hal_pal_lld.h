@@ -25,6 +25,11 @@
 #ifndef HAL_PAL_LLD_H
 #define HAL_PAL_LLD_H
 
+#include "hardware/structs/sio.h" // for sio_hw
+#include "hardware/structs/iobank0.h" // for io_bank0_hw
+#include "hardware/structs/pads_bank0.h" // for pads_bank0_hw
+
+
 #if HAL_USE_PAL || defined(__DOXYGEN__)
 
 /*===========================================================================*/

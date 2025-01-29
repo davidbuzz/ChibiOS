@@ -30,6 +30,8 @@
 
 /* Inclusion of the Cortex-Mx implementation specific parameters.*/
 #include "cmparams.h"
+#include "hardware/timer.h" // for timer0_hw
+#include "hardware/structs/sio.h" // for sio_hw
 
 /*===========================================================================*/
 /* Module constants.                                                         */
