@@ -84,9 +84,11 @@ endif
 # Project, target, sources and paths
 #
 
-# create a boolean that les me choose either the RP2040 or RP2350 define either as "empty" for unused or "yes" for used, no spaces.
+# create a boolean that les me choose either the RP2040 or RP2350 define either as "empty" for unused or "yes" for used, no spaces, and no comments on the next 3 lines.
 USE_RP2040=
 USE_RP2350=yes
+# enable wifi for the 'pico 2 W' variant.
+USE_WIFI_VARIANT=no
 # tell user what we are doing
 ifeq ($(USE_RP2040),yes)
   $(info Using RP2040)
@@ -94,6 +96,11 @@ endif
 ifeq ($(USE_RP2350),yes)
   $(info Using RP2350)
 endif  
+ifeq ($(USE_WIFI_VARIANT),yes)
+  $(info Using WIFI-VARIANT)
+else 
+  $(info Using NO-WIFI-VARIANT)
+endif
 
 # Define project name here
 PROJECT = ch
@@ -142,12 +149,10 @@ ifeq ($(USE_RP2040),yes)
 include $(CHIBIOS)/os/common/ports/ARMv6-M-RP2/compilers/GCC/mk/port.mk
 endif
 ifeq ($(USE_RP2350),yes)
-# todo this points to the armv6 from 2040 and should use armv8, but we havent validated that yet
-#include $(CHIBIOS)/os/common/ports/ARMv6-M-RP2/compilers/GCC/mk/port.mk
+# this points to karls armv8-m-rp2 variant as it seems to be the most up to date, and it boots.
+# the -ML variant might be the other choice, and is "mainline", and it seems to compile right-now, but it doesnt boot.
 #include $(CHIBIOS)/os/common/ports/ARMv8-M-ML/compilers/GCC/mk/port.mk
 include $(CHIBIOS)/os/common/ports/ARMv8-M-RP2/compilers/GCC/mk/port.mk
-#include $(CHIBIOS)/os/common/ports/ARMv8-M-ML-ALT/compilers/GCC/mk/port.mk
-#include $(CHIBIOS)/os/common/ports/ARMv8-M-ML-TZ/compilers/GCC/mk/port.mk
 endif
 # Auto-build files in ./source recursively.
 include $(CHIBIOS)/tools/mk/autobuild.mk
@@ -208,7 +213,11 @@ UDEFS = -DCRT0_VTOR_INIT=1 -DCRT0_EXTRA_CORES_NUMBER=1 -DPICO_NO_FPGA_CHECK -DND
 endif
 ifeq ($(USE_RP2350),yes)
 # 2350 / "pico 2": todo try this
-UDEFS = -DCRT0_VTOR_INIT=1 -DCRT0_EXTRA_CORES_NUMBER=1 -DPICO_NO_FPGA_CHECK -DNDEBUG -DPICO_RP2350A=1 -DPICO_RP2350=1 -DPICO_RP2040=0 -DPICO_USE_GPIO_COPROCESSOR=0 -DPICO_SECURE=0 -D__DSP_PRESENT=1
+UDEFS = -DCRT0_VTOR_INIT=1 -DCRT0_EXTRA_CORES_NUMBER=1 -DPICO_NO_FPGA_CHECK -DNDEBUG -DPICO_RP2350A=1 -DPICO_RP2350=1 -DPICO_RP2040=0 -DPICO_USE_GPIO_COPROCESSOR=0 -DPICO_SECURE=0 -D__DSP_PRESENT=1 
+# pico 2 W variant has wifi... but we dont have to enable wifi, u can leave this OFF on the 'w' and just not use its wifi features.
+  ifeq ($(USE_WIFI_VARIANT),yes)
+    UDEFS += -DUSE_WIFI_VARIANT=1 -DPICO_CYW43_ARCH_POLL=1 -DCYW43_DEFAULT_PIN_WL_HOST_WAKE=24u -DCYW43_DEFAULT_PIN_WL_REG_ON=23u
+  endif
 endif
 
 # Define ASM defines here
@@ -250,8 +259,8 @@ uf2: $(BUILDDIR)/$(PROJECT).elf
 	$(info UF2 for 2350 created)
 
 upload: uf2
-	$(info Uploading UF2 file... please press the BOOTSEL button on the board while connecting the USB cable in the next 10 seconds)
-	@sleep 10
+	$(info Uploading UF2 file... please press the BOOTSEL button on the board while connecting the USB cable in the next 5 seconds)
+	@sleep 5
 	@/home/buzz2/Chibi/picotool/picotool load -v -x $(BUILDDIR)/$(PROJECT).uf2 -f
 	$(info UF2 file uploaded)
 #@cp $(BUILDDIR)/$(PROJECT).uf2 /media/$(USER)/RPI-RP2

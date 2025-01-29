@@ -21,6 +21,10 @@
 #include <stdio.h>
 #include "pico/stdlib.h"
 
+#if USE_WIFI_VARIANT == 1
+#include "pico/cyw43_arch.h" // for cyw43_arch_gpio_put etc
+#endif
+
 semaphore_t blinker_sem;
 
 /*
@@ -33,7 +37,10 @@ static THD_FUNCTION(Thread1, arg) {
   chRegSetThreadName("blinker");
   while (true) {
     chSemWait(&blinker_sem);
-    palToggleLine(25U);
+    palToggleLine(25U); // on non-"W" boards, pin25 is the led.
+    #if USE_WIFI_VARIANT == 1
+    cyw43_arch_gpio_put(1, 1); // on "W" boards,   WL0/WL_GPIO0 is the led, so we do both
+    #endif
   }
 }
 
