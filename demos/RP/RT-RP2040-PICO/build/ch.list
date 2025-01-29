@@ -797,7 +797,7 @@ __port_exit_from_isr:
  */
 __STATIC_INLINE systime_t st_lld_get_counter(void) {
 
-  return (systime_t)TIMER->TIMERAWL;
+  return (systime_t)TIMER0->TIMERAWL;
 20000500:	4b01      	ldr	r3, [pc, #4]	; (20000508 <stGetCounter+0x8>)
 20000502:	6a98      	ldr	r0, [r3, #40]	; 0x28
  * @api
@@ -817,13 +817,13 @@ systime_t stGetCounter(void) {
  */
 __STATIC_INLINE void st_lld_start_alarm(systime_t abstime) {
 
-  TIMER->ALARM[0]       = (uint32_t)abstime;
+  TIMER0->ALARM[0]       = (uint32_t)abstime;
 20000510:	4b04      	ldr	r3, [pc, #16]	; (20000524 <stStartAlarm+0x14>)
 20000512:	6118      	str	r0, [r3, #16]
-  TIMER->INTR           = (1U << 0);
+  TIMER0->INTR           = (1U << 0);
 20000514:	2201      	movs	r2, #1
 20000516:	635a      	str	r2, [r3, #52]	; 0x34
-  TIMER->INTE          |= (1U << 0);
+  TIMER0->INTE          |= (1U << 0);
 20000518:	6b9a      	ldr	r2, [r3, #56]	; 0x38
 2000051a:	f042 0201 	orr.w	r2, r2, #1
 2000051e:	639a      	str	r2, [r3, #56]	; 0x38
@@ -844,7 +844,7 @@ void stStartAlarm(systime_t abstime) {
  */
 __STATIC_INLINE void st_lld_stop_alarm(void) {
 
-  TIMER->INTE          &= ~(1U << 0);
+  TIMER0->INTE          &= ~(1U << 0);
 20000530:	4a02      	ldr	r2, [pc, #8]	; (2000053c <stStopAlarm+0xc>)
 20000532:	6b93      	ldr	r3, [r2, #56]	; 0x38
 20000534:	f023 0301 	bic.w	r3, r3, #1
@@ -864,7 +864,7 @@ void stStopAlarm(void) {
  */
 __STATIC_INLINE void st_lld_set_alarm(systime_t abstime) {
 
-  TIMER->ALARM[0]       = (uint32_t)abstime;
+  TIMER0->ALARM[0]       = (uint32_t)abstime;
 20000540:	4b01      	ldr	r3, [pc, #4]	; (20000548 <stSetAlarm+0x8>)
 20000542:	6118      	str	r0, [r3, #16]
 void stSetAlarm(systime_t abstime) {
@@ -950,487 +950,491 @@ void sioObjectInit(SIODriver *siop) {
 20000594:	e000e100 	.word	0xe000e100
 	...
 
-200005a0 <__pal_lld_init>:
-  RESETS->RESET |=  mask;
-}
-
-__STATIC_INLINE void hal_lld_peripheral_unreset(uint32_t mask) {
-
-  RESETS->RESET &= ~mask;
-200005a0:	4b04      	ldr	r3, [pc, #16]	; (200005b4 <__pal_lld_init+0x14>)
-200005a2:	681a      	ldr	r2, [r3, #0]
-200005a4:	f022 0220 	bic.w	r2, r2, #32
-200005a8:	601a      	str	r2, [r3, #0]
-200005aa:	681a      	ldr	r2, [r3, #0]
-200005ac:	f422 7280 	bic.w	r2, r2, #256	; 0x100
-200005b0:	601a      	str	r2, [r3, #0]
-    _pal_init_event(i);
-  }
-
-  nvicEnableVector(RP_IO_IRQ_BANK0_NUMBER, RP_IO_IRQ_BANK0_PRIORITY);
-  #endif
-}
-200005b2:	4770      	bx	lr
-200005b4:	4000c000 	.word	0x4000c000
-	...
-
-200005c0 <st_lld_init>:
-void st_lld_init(void) {
-
-#if OSAL_ST_MODE == OSAL_ST_MODE_FREERUNNING
-  /* The timer needs to stop during debug or the virtual timers list would
-     go out of sync.*/
-  TIMER->DBGPAUSE   = TIMER_DBGPAUSE_DBG0 | TIMER_DBGPAUSE_DBG1;
-200005c0:	4b06      	ldr	r3, [pc, #24]	; (200005dc <st_lld_init+0x1c>)
-200005c2:	2206      	movs	r2, #6
-200005c4:	62da      	str	r2, [r3, #44]	; 0x2c
-
-  /* Comparators and counter initially at zero.*/
-  TIMER->TIMELW     = 0U;
-200005c6:	2200      	movs	r2, #0
-200005c8:	605a      	str	r2, [r3, #4]
-  TIMER->TIMEHW     = 0U;
-200005ca:	601a      	str	r2, [r3, #0]
-  TIMER->ALARM[0]   = 0U;
-200005cc:	611a      	str	r2, [r3, #16]
-  TIMER->ALARM[1]   = 0U;
-200005ce:	615a      	str	r2, [r3, #20]
-  TIMER->ALARM[2]   = 0U;
-200005d0:	619a      	str	r2, [r3, #24]
-  TIMER->ALARM[3]   = 0U;
-200005d2:	61da      	str	r2, [r3, #28]
-  TIMER->INTE       = 0U;
-200005d4:	639a      	str	r2, [r3, #56]	; 0x38
-  TIMER->INTR       = TIMER_INTR_ALARM3 | TIMER_INTR_ALARM2 |
-200005d6:	220f      	movs	r2, #15
-200005d8:	635a      	str	r2, [r3, #52]	; 0x34
-                      TIMER_INTR_ALARM1 | TIMER_INTR_ALARM0;
-
-#endif /* OSAL_ST_MODE == OSAL_ST_MODE_FREERUNNING */
-}
-200005da:	4770      	bx	lr
-200005dc:	40054000 	.word	0x40054000
-
-200005e0 <stInit>:
-void stInit(void) {
-200005e0:	b508      	push	{r3, lr}
-  for (i = 0U; i < (unsigned)ST_LLD_NUM_ALARMS; i++) {
-200005e2:	2300      	movs	r3, #0
-200005e4:	e004      	b.n	200005f0 <stInit+0x10>
-    st_callbacks[i] = NULL;
-200005e6:	4a05      	ldr	r2, [pc, #20]	; (200005fc <stInit+0x1c>)
-200005e8:	2100      	movs	r1, #0
-200005ea:	f842 1023 	str.w	r1, [r2, r3, lsl #2]
-  for (i = 0U; i < (unsigned)ST_LLD_NUM_ALARMS; i++) {
-200005ee:	3301      	adds	r3, #1
-200005f0:	2b03      	cmp	r3, #3
-200005f2:	d9f8      	bls.n	200005e6 <stInit+0x6>
-  st_lld_init();
-200005f4:	f7ff ffe4 	bl	200005c0 <st_lld_init>
-}
-200005f8:	bd08      	pop	{r3, pc}
-200005fa:	bf00      	nop
-200005fc:	2000dc48 	.word	0x2000dc48
-
-20000600 <sio_lld_init>:
+200005a0 <sio_lld_init>:
 /**
  * @brief   Low level SIO driver initialization.
  *
  * @notapi
  */
 void sio_lld_init(void) {
-20000600:	b538      	push	{r3, r4, r5, lr}
+200005a0:	b538      	push	{r3, r4, r5, lr}
 
   /* Driver instances initialization.*/
 #if RP_SIO_USE_UART0 == TRUE
   sioObjectInit(&SIOD0);
-20000602:	4c0b      	ldr	r4, [pc, #44]	; (20000630 <sio_lld_init+0x30>)
-20000604:	4620      	mov	r0, r4
-20000606:	f7ff ffa3 	bl	20000550 <sioObjectInit>
+200005a2:	4c0b      	ldr	r4, [pc, #44]	; (200005d0 <sio_lld_init+0x30>)
+200005a4:	4620      	mov	r0, r4
+200005a6:	f7ff ffd3 	bl	20000550 <sioObjectInit>
   SIOD0.uart = UART0;
-2000060a:	4b0a      	ldr	r3, [pc, #40]	; (20000634 <sio_lld_init+0x34>)
-2000060c:	62a3      	str	r3, [r4, #40]	; 0x28
-  RESETS->RESET |=  mask;
-2000060e:	4c0a      	ldr	r4, [pc, #40]	; (20000638 <sio_lld_init+0x38>)
-20000610:	6823      	ldr	r3, [r4, #0]
-20000612:	f443 0380 	orr.w	r3, r3, #4194304	; 0x400000
-20000616:	6023      	str	r3, [r4, #0]
+200005aa:	4b0a      	ldr	r3, [pc, #40]	; (200005d4 <sio_lld_init+0x34>)
+200005ac:	62a3      	str	r3, [r4, #40]	; 0x28
+ * @{
+ */
+/**
+ * @brief   Disables the clocks initialization in the HAL.
+ */
+#if !defined(RP_NO_INIT) || defined(__DOXYGEN__)
+200005ae:	4c0a      	ldr	r4, [pc, #40]	; (200005d8 <sio_lld_init+0x38>)
+200005b0:	6823      	ldr	r3, [r4, #0]
+200005b2:	f443 0380 	orr.w	r3, r3, #4194304	; 0x400000
+200005b6:	6023      	str	r3, [r4, #0]
   hal_lld_peripheral_reset(RESETS_ALLREG_UART0);
 #endif
 #if RP_SIO_USE_UART1 == TRUE
   sioObjectInit(&SIOD1);
-20000618:	4d08      	ldr	r5, [pc, #32]	; (2000063c <sio_lld_init+0x3c>)
-2000061a:	4628      	mov	r0, r5
-2000061c:	f7ff ff98 	bl	20000550 <sioObjectInit>
+200005b8:	4d08      	ldr	r5, [pc, #32]	; (200005dc <sio_lld_init+0x3c>)
+200005ba:	4628      	mov	r0, r5
+200005bc:	f7ff ffc8 	bl	20000550 <sioObjectInit>
   SIOD1.uart = UART1;
-20000620:	4b07      	ldr	r3, [pc, #28]	; (20000640 <sio_lld_init+0x40>)
-20000622:	62ab      	str	r3, [r5, #40]	; 0x28
-20000624:	6823      	ldr	r3, [r4, #0]
-20000626:	f443 0300 	orr.w	r3, r3, #8388608	; 0x800000
-2000062a:	6023      	str	r3, [r4, #0]
+200005c0:	4b07      	ldr	r3, [pc, #28]	; (200005e0 <sio_lld_init+0x40>)
+200005c2:	62ab      	str	r3, [r5, #40]	; 0x28
+200005c4:	6823      	ldr	r3, [r4, #0]
+200005c6:	f443 0300 	orr.w	r3, r3, #8388608	; 0x800000
+200005ca:	6023      	str	r3, [r4, #0]
   hal_lld_peripheral_reset(RESETS_ALLREG_UART1);
 #endif
 }
-2000062c:	bd38      	pop	{r3, r4, r5, pc}
-2000062e:	bf00      	nop
-20000630:	2000d920 	.word	0x2000d920
-20000634:	40034000 	.word	0x40034000
-20000638:	4000c000 	.word	0x4000c000
-2000063c:	2000d94c 	.word	0x2000d94c
-20000640:	40038000 	.word	0x40038000
+200005cc:	bd38      	pop	{r3, r4, r5, pc}
+200005ce:	bf00      	nop
+200005d0:	2000d920 	.word	0x2000d920
+200005d4:	40034000 	.word	0x40034000
+200005d8:	4000c000 	.word	0x4000c000
+200005dc:	2000d94c 	.word	0x2000d94c
+200005e0:	40038000 	.word	0x40038000
 	...
 
-20000650 <sioInit>:
+200005f0 <sioInit>:
 void sioInit(void) {
-20000650:	b508      	push	{r3, lr}
+200005f0:	b508      	push	{r3, lr}
   sio_lld_init();
-20000652:	f7ff ffd5 	bl	20000600 <sio_lld_init>
+200005f2:	f7ff ffd5 	bl	200005a0 <sio_lld_init>
 }
-20000656:	bd08      	pop	{r3, pc}
+200005f6:	bd08      	pop	{r3, pc}
 	...
 
-20000660 <sio_lld_update_enable_flags>:
+20000600 <sio_lld_update_enable_flags>:
 void sio_lld_update_enable_flags(SIODriver *siop) {
   uint32_t imsc;
 
   osalDbgAssert((siop->enabled & SIO_EV_TXDONE) == 0U, "unsupported event");
 
   imsc = __sio_reloc_field(siop->enabled, SIO_EV_RXNOTEMPY,   SIO_EV_RXNOTEMPY_POS,   UART_UARTIMSC_RXIM_Pos) |
-20000660:	68c2      	ldr	r2, [r0, #12]
-20000662:	0893      	lsrs	r3, r2, #2
-20000664:	011b      	lsls	r3, r3, #4
-20000666:	f003 0310 	and.w	r3, r3, #16
+20000600:	68c2      	ldr	r2, [r0, #12]
+20000602:	0893      	lsrs	r3, r2, #2
+20000604:	011b      	lsls	r3, r3, #4
+20000606:	f003 0310 	and.w	r3, r3, #16
          __sio_reloc_field(siop->enabled, SIO_EV_TXNOTFULL,   SIO_EV_TXNOTFULL_POS,   UART_UARTIMSC_TXIM_Pos) |
-2000066a:	08d1      	lsrs	r1, r2, #3
-2000066c:	0149      	lsls	r1, r1, #5
-2000066e:	f001 0120 	and.w	r1, r1, #32
+2000060a:	08d1      	lsrs	r1, r2, #3
+2000060c:	0149      	lsls	r1, r1, #5
+2000060e:	f001 0120 	and.w	r1, r1, #32
   imsc = __sio_reloc_field(siop->enabled, SIO_EV_RXNOTEMPY,   SIO_EV_RXNOTEMPY_POS,   UART_UARTIMSC_RXIM_Pos) |
-20000672:	430b      	orrs	r3, r1
+20000612:	430b      	orrs	r3, r1
          __sio_reloc_field(siop->enabled, SIO_EV_OVERRUN_ERR, SIO_EV_OVERRUN_ERR_POS, UART_UARTIMSC_OEIM_Pos) |
-20000674:	0a11      	lsrs	r1, r2, #8
-20000676:	0289      	lsls	r1, r1, #10
-20000678:	f401 6180 	and.w	r1, r1, #1024	; 0x400
+20000614:	0a11      	lsrs	r1, r2, #8
+20000616:	0289      	lsls	r1, r1, #10
+20000618:	f401 6180 	and.w	r1, r1, #1024	; 0x400
          __sio_reloc_field(siop->enabled, SIO_EV_TXNOTFULL,   SIO_EV_TXNOTFULL_POS,   UART_UARTIMSC_TXIM_Pos) |
-2000067c:	430b      	orrs	r3, r1
+2000061c:	430b      	orrs	r3, r1
          __sio_reloc_field(siop->enabled, SIO_EV_RXBREAK,     SIO_EV_RXBREAK_POS,     UART_UARTIMSC_BEIM_Pos) |
-2000067e:	0a91      	lsrs	r1, r2, #10
-20000680:	0249      	lsls	r1, r1, #9
-20000682:	f401 7100 	and.w	r1, r1, #512	; 0x200
+2000061e:	0a91      	lsrs	r1, r2, #10
+20000620:	0249      	lsls	r1, r1, #9
+20000622:	f401 7100 	and.w	r1, r1, #512	; 0x200
          __sio_reloc_field(siop->enabled, SIO_EV_OVERRUN_ERR, SIO_EV_OVERRUN_ERR_POS, UART_UARTIMSC_OEIM_Pos) |
-20000686:	430b      	orrs	r3, r1
+20000626:	430b      	orrs	r3, r1
          __sio_reloc_field(siop->enabled, SIO_EV_PARITY_ERR,  SIO_EV_PARITY_ERR_POS,  UART_UARTIMSC_PEIM_Pos) |
-20000688:	0951      	lsrs	r1, r2, #5
-2000068a:	0209      	lsls	r1, r1, #8
-2000068c:	f401 7180 	and.w	r1, r1, #256	; 0x100
+20000628:	0951      	lsrs	r1, r2, #5
+2000062a:	0209      	lsls	r1, r1, #8
+2000062c:	f401 7180 	and.w	r1, r1, #256	; 0x100
          __sio_reloc_field(siop->enabled, SIO_EV_RXBREAK,     SIO_EV_RXBREAK_POS,     UART_UARTIMSC_BEIM_Pos) |
-20000690:	430b      	orrs	r3, r1
+20000630:	430b      	orrs	r3, r1
          __sio_reloc_field(siop->enabled, SIO_EV_FRAMING_ERR, SIO_EV_FRAMING_ERR_POS, UART_UARTIMSC_TXIM_Pos) |
-20000692:	0991      	lsrs	r1, r2, #6
-20000694:	0149      	lsls	r1, r1, #5
-20000696:	f001 0120 	and.w	r1, r1, #32
+20000632:	0991      	lsrs	r1, r2, #6
+20000634:	0149      	lsls	r1, r1, #5
+20000636:	f001 0120 	and.w	r1, r1, #32
          __sio_reloc_field(siop->enabled, SIO_EV_PARITY_ERR,  SIO_EV_PARITY_ERR_POS,  UART_UARTIMSC_PEIM_Pos) |
-2000069a:	430b      	orrs	r3, r1
+2000063a:	430b      	orrs	r3, r1
          __sio_reloc_field(siop->enabled, SIO_EV_RXIDLE,      SIO_EV_RXIDLE_POS,      UART_UARTIMSC_FEIM_Pos);
-2000069c:	0a52      	lsrs	r2, r2, #9
-2000069e:	01d2      	lsls	r2, r2, #7
-200006a0:	b2d2      	uxtb	r2, r2
+2000063c:	0a52      	lsrs	r2, r2, #9
+2000063e:	01d2      	lsls	r2, r2, #7
+20000640:	b2d2      	uxtb	r2, r2
   imsc = __sio_reloc_field(siop->enabled, SIO_EV_RXNOTEMPY,   SIO_EV_RXNOTEMPY_POS,   UART_UARTIMSC_RXIM_Pos) |
-200006a2:	4313      	orrs	r3, r2
+20000642:	4313      	orrs	r3, r2
 
   /* Setting up the operation.*/
   siop->uart->UARTIMSC = imsc;
-200006a4:	6a82      	ldr	r2, [r0, #40]	; 0x28
-200006a6:	6393      	str	r3, [r2, #56]	; 0x38
+20000644:	6a82      	ldr	r2, [r0, #40]	; 0x28
+20000646:	6393      	str	r3, [r2, #56]	; 0x38
 }
-200006a8:	4770      	bx	lr
-200006aa:	bf00      	nop
-200006ac:	0000      	movs	r0, r0
+20000648:	4770      	bx	lr
+2000064a:	bf00      	nop
+2000064c:	0000      	movs	r0, r0
 	...
 
-200006b0 <sio_lld_read>:
+20000650 <sio_lld_read>:
  * @param[in] buffer        pointer to the buffer for read frames
  * @param[in] n             maximum number of frames to be read
  * @return                  The number of frames copied from the buffer.
  * @retval 0                if the TX FIFO is full.
  */
 size_t sio_lld_read(SIODriver *siop, uint8_t *buffer, size_t n) {
-200006b0:	b410      	push	{r4}
-200006b2:	4684      	mov	ip, r0
+20000650:	b410      	push	{r4}
+20000652:	4684      	mov	ip, r0
   size_t rd;
 
   rd = 0U;
-200006b4:	2000      	movs	r0, #0
-200006b6:	e01a      	b.n	200006ee <sio_lld_read+0x3e>
+20000654:	2000      	movs	r0, #0
+20000656:	e01a      	b.n	2000068e <sio_lld_read+0x3e>
   if ((siop->enabled & SIO_EV_RXNOTEMPY) != 0U) {
-200006b8:	f8dc 300c 	ldr.w	r3, [ip, #12]
-200006bc:	f013 0f04 	tst.w	r3, #4
-200006c0:	d005      	beq.n	200006ce <sio_lld_read+0x1e>
+20000658:	f8dc 300c 	ldr.w	r3, [ip, #12]
+2000065c:	f013 0f04 	tst.w	r3, #4
+20000660:	d005      	beq.n	2000066e <sio_lld_read+0x1e>
     siop->uart->UARTIMSC |= UART_UARTIMSC_RXIM;
-200006c2:	f8dc 2028 	ldr.w	r2, [ip, #40]	; 0x28
-200006c6:	6b93      	ldr	r3, [r2, #56]	; 0x38
-200006c8:	f043 0310 	orr.w	r3, r3, #16
-200006cc:	6393      	str	r3, [r2, #56]	; 0x38
+20000662:	f8dc 2028 	ldr.w	r2, [ip, #40]	; 0x28
+20000666:	6b93      	ldr	r3, [r2, #56]	; 0x38
+20000668:	f043 0310 	orr.w	r3, r3, #16
+2000066c:	6393      	str	r3, [r2, #56]	; 0x38
   if ((siop->enabled & SIO_EV_RXIDLE) != 0U) {
-200006ce:	f8dc 300c 	ldr.w	r3, [ip, #12]
-200006d2:	f413 7f00 	tst.w	r3, #512	; 0x200
-200006d6:	d012      	beq.n	200006fe <sio_lld_read+0x4e>
+2000066e:	f8dc 300c 	ldr.w	r3, [ip, #12]
+20000672:	f413 7f00 	tst.w	r3, #512	; 0x200
+20000676:	d012      	beq.n	2000069e <sio_lld_read+0x4e>
     siop->uart->UARTIMSC |= UART_UARTIMSC_RTIM;
-200006d8:	f8dc 2028 	ldr.w	r2, [ip, #40]	; 0x28
-200006dc:	6b93      	ldr	r3, [r2, #56]	; 0x38
-200006de:	f043 0340 	orr.w	r3, r3, #64	; 0x40
-200006e2:	6393      	str	r3, [r2, #56]	; 0x38
+20000678:	f8dc 2028 	ldr.w	r2, [ip, #40]	; 0x28
+2000067c:	6b93      	ldr	r3, [r2, #56]	; 0x38
+2000067e:	f043 0340 	orr.w	r3, r3, #64	; 0x40
+20000682:	6393      	str	r3, [r2, #56]	; 0x38
 }
-200006e4:	e00b      	b.n	200006fe <sio_lld_read+0x4e>
+20000684:	e00b      	b.n	2000069e <sio_lld_read+0x4e>
     /* Buffer filled condition.*/
     if (rd >= n) {
       break;
     }
 
     *buffer++ = (uint8_t)siop->uart->UARTDR;
-200006e6:	681b      	ldr	r3, [r3, #0]
-200006e8:	f801 3b01 	strb.w	r3, [r1], #1
+20000686:	681b      	ldr	r3, [r3, #0]
+20000688:	f801 3b01 	strb.w	r3, [r1], #1
     rd++;
-200006ec:	3001      	adds	r0, #1
+2000068c:	3001      	adds	r0, #1
     if (sio_lld_is_rx_empty(siop)) {
-200006ee:	f8dc 3028 	ldr.w	r3, [ip, #40]	; 0x28
-200006f2:	699c      	ldr	r4, [r3, #24]
-200006f4:	f014 0f10 	tst.w	r4, #16
-200006f8:	d1de      	bne.n	200006b8 <sio_lld_read+0x8>
+2000068e:	f8dc 3028 	ldr.w	r3, [ip, #40]	; 0x28
+20000692:	699c      	ldr	r4, [r3, #24]
+20000694:	f014 0f10 	tst.w	r4, #16
+20000698:	d1de      	bne.n	20000658 <sio_lld_read+0x8>
     if (rd >= n) {
-200006fa:	4290      	cmp	r0, r2
-200006fc:	d3f3      	bcc.n	200006e6 <sio_lld_read+0x36>
+2000069a:	4290      	cmp	r0, r2
+2000069c:	d3f3      	bcc.n	20000686 <sio_lld_read+0x36>
   }
 
   return rd;
 }
-200006fe:	bc10      	pop	{r4}
-20000700:	4770      	bx	lr
-20000702:	bf00      	nop
+2000069e:	bc10      	pop	{r4}
+200006a0:	4770      	bx	lr
+200006a2:	bf00      	nop
 	...
 
-20000710 <sioAsyncRead>:
+200006b0 <sioAsyncRead>:
  * @param[in] n         maximum number of frames to read
  * @return              The number of received frames.
  *
  * @api
  */
 size_t sioAsyncRead(SIODriver *siop, uint8_t *buffer, size_t n) {
-20000710:	b508      	push	{r3, lr}
+200006b0:	b508      	push	{r3, lr}
   \details Disables IRQ interrupts by setting the I-bit in the CPSR.
            Can only be executed in Privileged modes.
  */
 __STATIC_FORCEINLINE void __disable_irq(void)
 {
   __ASM volatile ("cpsid i" : : : "memory");
-20000712:	b672      	cpsid	i
+200006b2:	b672      	cpsid	i
 
   osalSysLock();
 
   osalDbgAssert(siop->state == SIO_READY, "invalid state");
 
   n = sioAsyncReadX(siop, buffer, n);
-20000714:	f7ff ffcc 	bl	200006b0 <sio_lld_read>
+200006b4:	f7ff ffcc 	bl	20000650 <sio_lld_read>
   __ASM volatile ("cpsie i" : : : "memory");
-20000718:	b662      	cpsie	i
+200006b8:	b662      	cpsie	i
 
   osalSysUnlock();
 
   return n;
 }
-2000071a:	bd08      	pop	{r3, pc}
-2000071c:	0000      	movs	r0, r0
+200006ba:	bd08      	pop	{r3, pc}
+200006bc:	0000      	movs	r0, r0
 	...
 
-20000720 <sio_lld_write>:
+200006c0 <sio_lld_write>:
  * @param[in] buffer        pointer to the buffer for read frames
  * @param[in] n             maximum number of frames to be written
  * @return                  The number of frames copied from the buffer.
  * @retval 0                if the TX FIFO is full.
  */
 size_t sio_lld_write(SIODriver *siop, const uint8_t *buffer, size_t n) {
-20000720:	b410      	push	{r4}
-20000722:	4684      	mov	ip, r0
+200006c0:	b410      	push	{r4}
+200006c2:	4684      	mov	ip, r0
   size_t wr;
 
   wr = 0U;
-20000724:	2000      	movs	r0, #0
-20000726:	e00d      	b.n	20000744 <sio_lld_write+0x24>
+200006c4:	2000      	movs	r0, #0
+200006c6:	e00d      	b.n	200006e4 <sio_lld_write+0x24>
   if ((siop->enabled & SIO_EV_TXNOTFULL) != 0U) {
-20000728:	f8dc 200c 	ldr.w	r2, [ip, #12]
-2000072c:	f012 0f08 	tst.w	r2, #8
-20000730:	d010      	beq.n	20000754 <sio_lld_write+0x34>
+200006c8:	f8dc 200c 	ldr.w	r2, [ip, #12]
+200006cc:	f012 0f08 	tst.w	r2, #8
+200006d0:	d010      	beq.n	200006f4 <sio_lld_write+0x34>
     siop->uart->UARTIMSC |= UART_UARTIMSC_TXIM;
-20000732:	6b9a      	ldr	r2, [r3, #56]	; 0x38
-20000734:	f042 0220 	orr.w	r2, r2, #32
-20000738:	639a      	str	r2, [r3, #56]	; 0x38
-2000073a:	e00b      	b.n	20000754 <sio_lld_write+0x34>
+200006d2:	6b9a      	ldr	r2, [r3, #56]	; 0x38
+200006d4:	f042 0220 	orr.w	r2, r2, #32
+200006d8:	639a      	str	r2, [r3, #56]	; 0x38
+200006da:	e00b      	b.n	200006f4 <sio_lld_write+0x34>
     /* Buffer emptied condition.*/
     if (wr >= n) {
       break;
     }
 
     siop->uart->UARTDR = (uint32_t)*buffer++;
-2000073c:	f811 4b01 	ldrb.w	r4, [r1], #1
-20000740:	601c      	str	r4, [r3, #0]
+200006dc:	f811 4b01 	ldrb.w	r4, [r1], #1
+200006e0:	601c      	str	r4, [r3, #0]
     wr++;
-20000742:	3001      	adds	r0, #1
+200006e2:	3001      	adds	r0, #1
     if (sio_lld_is_tx_full(siop)) {
-20000744:	f8dc 3028 	ldr.w	r3, [ip, #40]	; 0x28
-20000748:	699c      	ldr	r4, [r3, #24]
-2000074a:	f014 0f20 	tst.w	r4, #32
-2000074e:	d1eb      	bne.n	20000728 <sio_lld_write+0x8>
+200006e4:	f8dc 3028 	ldr.w	r3, [ip, #40]	; 0x28
+200006e8:	699c      	ldr	r4, [r3, #24]
+200006ea:	f014 0f20 	tst.w	r4, #32
+200006ee:	d1eb      	bne.n	200006c8 <sio_lld_write+0x8>
     if (wr >= n) {
-20000750:	4290      	cmp	r0, r2
-20000752:	d3f3      	bcc.n	2000073c <sio_lld_write+0x1c>
+200006f0:	4290      	cmp	r0, r2
+200006f2:	d3f3      	bcc.n	200006dc <sio_lld_write+0x1c>
 
   /* The transmit complete interrupt is always re-enabled on write.*/
   /* none */
 
   return wr;
 }
-20000754:	bc10      	pop	{r4}
-20000756:	4770      	bx	lr
+200006f4:	bc10      	pop	{r4}
+200006f6:	4770      	bx	lr
 	...
 
-20000760 <sioAsyncWrite>:
+20000700 <sioAsyncWrite>:
  * @param[in] n         maximum number of frames to read
  * @return              The number of transmitted frames.
  *
  * @api
  */
 size_t sioAsyncWrite(SIODriver *siop, const uint8_t *buffer, size_t n) {
-20000760:	b508      	push	{r3, lr}
+20000700:	b508      	push	{r3, lr}
   __ASM volatile ("cpsid i" : : : "memory");
-20000762:	b672      	cpsid	i
+20000702:	b672      	cpsid	i
 
   osalSysLock();
 
   osalDbgAssert(siop->state == SIO_READY, "invalid state");
 
   n = sioAsyncWriteX(siop, buffer, n);
-20000764:	f7ff ffdc 	bl	20000720 <sio_lld_write>
+20000704:	f7ff ffdc 	bl	200006c0 <sio_lld_write>
   __ASM volatile ("cpsie i" : : : "memory");
-20000768:	b662      	cpsie	i
+20000708:	b662      	cpsie	i
 
   osalSysUnlock();
 
   return n;
 }
-2000076a:	bd08      	pop	{r3, pc}
-2000076c:	0000      	movs	r0, r0
+2000070a:	bd08      	pop	{r3, pc}
+2000070c:	0000      	movs	r0, r0
 	...
 
-20000770 <sio_lld_get>:
+20000710 <sio_lld_get>:
  * @param[in] siop      pointer to the @p SIODriver object
  * @return              The frame from RX FIFO.
  *
  * @notapi
  */
 msg_t sio_lld_get(SIODriver *siop) {
-20000770:	4603      	mov	r3, r0
+20000710:	4603      	mov	r3, r0
   msg_t msg;
 
   msg = (msg_t)(siop->uart->UARTDR & 0xFFU);
-20000772:	6a82      	ldr	r2, [r0, #40]	; 0x28
-20000774:	6810      	ldr	r0, [r2, #0]
-20000776:	b2c0      	uxtb	r0, r0
+20000712:	6a82      	ldr	r2, [r0, #40]	; 0x28
+20000714:	6810      	ldr	r0, [r2, #0]
+20000716:	b2c0      	uxtb	r0, r0
 
   /* If the RX FIFO has been emptied then the interrupt is enabled again.*/
   if (sio_lld_is_rx_empty(siop)) {
-20000778:	6992      	ldr	r2, [r2, #24]
-2000077a:	f012 0f10 	tst.w	r2, #16
-2000077e:	d100      	bne.n	20000782 <sio_lld_get+0x12>
+20000718:	6992      	ldr	r2, [r2, #24]
+2000071a:	f012 0f10 	tst.w	r2, #16
+2000071e:	d100      	bne.n	20000722 <sio_lld_get+0x12>
     uart_enable_rx_irq(siop);
   }
 
   return msg;
 }
-20000780:	4770      	bx	lr
+20000720:	4770      	bx	lr
   if ((siop->enabled & SIO_EV_RXNOTEMPY) != 0U) {
-20000782:	68da      	ldr	r2, [r3, #12]
-20000784:	f012 0f04 	tst.w	r2, #4
-20000788:	d004      	beq.n	20000794 <sio_lld_get+0x24>
+20000722:	68da      	ldr	r2, [r3, #12]
+20000724:	f012 0f04 	tst.w	r2, #4
+20000728:	d004      	beq.n	20000734 <sio_lld_get+0x24>
     siop->uart->UARTIMSC |= UART_UARTIMSC_RXIM;
-2000078a:	6a99      	ldr	r1, [r3, #40]	; 0x28
-2000078c:	6b8a      	ldr	r2, [r1, #56]	; 0x38
-2000078e:	f042 0210 	orr.w	r2, r2, #16
-20000792:	638a      	str	r2, [r1, #56]	; 0x38
+2000072a:	6a99      	ldr	r1, [r3, #40]	; 0x28
+2000072c:	6b8a      	ldr	r2, [r1, #56]	; 0x38
+2000072e:	f042 0210 	orr.w	r2, r2, #16
+20000732:	638a      	str	r2, [r1, #56]	; 0x38
   if ((siop->enabled & SIO_EV_RXIDLE) != 0U) {
-20000794:	68da      	ldr	r2, [r3, #12]
-20000796:	f412 7f00 	tst.w	r2, #512	; 0x200
-2000079a:	d0f1      	beq.n	20000780 <sio_lld_get+0x10>
+20000734:	68da      	ldr	r2, [r3, #12]
+20000736:	f412 7f00 	tst.w	r2, #512	; 0x200
+2000073a:	d0f1      	beq.n	20000720 <sio_lld_get+0x10>
     siop->uart->UARTIMSC |= UART_UARTIMSC_RTIM;
-2000079c:	6a9a      	ldr	r2, [r3, #40]	; 0x28
-2000079e:	6b93      	ldr	r3, [r2, #56]	; 0x38
-200007a0:	f043 0340 	orr.w	r3, r3, #64	; 0x40
-200007a4:	6393      	str	r3, [r2, #56]	; 0x38
+2000073c:	6a9a      	ldr	r2, [r3, #40]	; 0x28
+2000073e:	6b93      	ldr	r3, [r2, #56]	; 0x38
+20000740:	f043 0340 	orr.w	r3, r3, #64	; 0x40
+20000744:	6393      	str	r3, [r2, #56]	; 0x38
   return msg;
-200007a6:	e7eb      	b.n	20000780 <sio_lld_get+0x10>
+20000746:	e7eb      	b.n	20000720 <sio_lld_get+0x10>
 	...
 
-200007b0 <sio_lld_put>:
+20000750 <sio_lld_put>:
  *
  * @notapi
  */
 void sio_lld_put(SIODriver *siop, uint_fast16_t data) {
 
   siop->uart->UARTDR = data;
-200007b0:	6a83      	ldr	r3, [r0, #40]	; 0x28
-200007b2:	6019      	str	r1, [r3, #0]
+20000750:	6a83      	ldr	r3, [r0, #40]	; 0x28
+20000752:	6019      	str	r1, [r3, #0]
 
   /* If the TX FIFO has been filled then the interrupt is enabled again.*/
   if (sio_lld_is_tx_full(siop)) {
-200007b4:	6a83      	ldr	r3, [r0, #40]	; 0x28
-200007b6:	699a      	ldr	r2, [r3, #24]
-200007b8:	f012 0f20 	tst.w	r2, #32
-200007bc:	d007      	beq.n	200007ce <sio_lld_put+0x1e>
+20000754:	6a83      	ldr	r3, [r0, #40]	; 0x28
+20000756:	699a      	ldr	r2, [r3, #24]
+20000758:	f012 0f20 	tst.w	r2, #32
+2000075c:	d007      	beq.n	2000076e <sio_lld_put+0x1e>
   if ((siop->enabled & SIO_EV_TXNOTFULL) != 0U) {
-200007be:	68c2      	ldr	r2, [r0, #12]
-200007c0:	f012 0f08 	tst.w	r2, #8
-200007c4:	d003      	beq.n	200007ce <sio_lld_put+0x1e>
+2000075e:	68c2      	ldr	r2, [r0, #12]
+20000760:	f012 0f08 	tst.w	r2, #8
+20000764:	d003      	beq.n	2000076e <sio_lld_put+0x1e>
     siop->uart->UARTIMSC |= UART_UARTIMSC_TXIM;
-200007c6:	6b9a      	ldr	r2, [r3, #56]	; 0x38
-200007c8:	f042 0220 	orr.w	r2, r2, #32
-200007cc:	639a      	str	r2, [r3, #56]	; 0x38
+20000766:	6b9a      	ldr	r2, [r3, #56]	; 0x38
+20000768:	f042 0220 	orr.w	r2, r2, #32
+2000076c:	639a      	str	r2, [r3, #56]	; 0x38
     uart_enable_tx_irq(siop);
   }
 
   /* The transmit complete interrupt is always re-enabled on write.*/
   /* none */
 }
-200007ce:	4770      	bx	lr
+2000076e:	4770      	bx	lr
 
-200007d0 <sio_lld_control>:
+20000770 <sio_lld_control>:
   (void)siop;
   (void)operation;
   (void)arg;
 
   return MSG_OK;
 }
-200007d0:	2000      	movs	r0, #0
-200007d2:	4770      	bx	lr
+20000770:	2000      	movs	r0, #0
+20000772:	4770      	bx	lr
 	...
 
-200007e0 <__ctl>:
+20000780 <__ctl>:
   switch (operation) {
-200007e0:	b129      	cbz	r1, 200007ee <__ctl+0xe>
+20000780:	b129      	cbz	r1, 2000078e <__ctl+0xe>
 static msg_t __ctl(void *ip, unsigned int operation, void *arg) {
-200007e2:	b508      	push	{r3, lr}
+20000782:	b508      	push	{r3, lr}
   switch (operation) {
-200007e4:	2901      	cmp	r1, #1
-200007e6:	d005      	beq.n	200007f4 <__ctl+0x14>
+20000784:	2901      	cmp	r1, #1
+20000786:	d005      	beq.n	20000794 <__ctl+0x14>
     return sio_lld_control(siop, operation, arg);
-200007e8:	f7ff fff2 	bl	200007d0 <sio_lld_control>
-200007ec:	e003      	b.n	200007f6 <__ctl+0x16>
+20000788:	f7ff fff2 	bl	20000770 <sio_lld_control>
+2000078c:	e003      	b.n	20000796 <__ctl+0x16>
   switch (operation) {
-200007ee:	f06f 0013 	mvn.w	r0, #19
+2000078e:	f06f 0013 	mvn.w	r0, #19
 }
-200007f2:	4770      	bx	lr
+20000792:	4770      	bx	lr
   return HAL_RET_SUCCESS;
-200007f4:	2000      	movs	r0, #0
+20000794:	2000      	movs	r0, #0
 }
-200007f6:	bd08      	pop	{r3, pc}
+20000796:	bd08      	pop	{r3, pc}
 	...
+
+200007a0 <__pal_lld_init>:
+#define RP_NO_INIT                          FALSE
+#endif
+
+/**
+ * @brief   Starts core 1 after initialization.
+200007a0:	4b04      	ldr	r3, [pc, #16]	; (200007b4 <__pal_lld_init+0x14>)
+200007a2:	681a      	ldr	r2, [r3, #0]
+200007a4:	f022 0220 	bic.w	r2, r2, #32
+200007a8:	601a      	str	r2, [r3, #0]
+200007aa:	681a      	ldr	r2, [r3, #0]
+200007ac:	f422 7280 	bic.w	r2, r2, #256	; 0x100
+200007b0:	601a      	str	r2, [r3, #0]
+    _pal_init_event(i);
+  }
+
+  nvicEnableVector(RP_IO_IRQ_BANK0_NUMBER, RP_IO_IRQ_BANK0_PRIORITY);
+  #endif
+}
+200007b2:	4770      	bx	lr
+200007b4:	4000c000 	.word	0x4000c000
+	...
+
+200007c0 <st_lld_init>:
+void st_lld_init(void) {
+
+#if OSAL_ST_MODE == OSAL_ST_MODE_FREERUNNING
+  /* The timer needs to stop during debug or the virtual timers list would
+     go out of sync.*/
+  TIMER0->DBGPAUSE   = TIMER_DBGPAUSE_DBG0 | TIMER_DBGPAUSE_DBG1;
+200007c0:	4b06      	ldr	r3, [pc, #24]	; (200007dc <st_lld_init+0x1c>)
+200007c2:	2206      	movs	r2, #6
+200007c4:	62da      	str	r2, [r3, #44]	; 0x2c
+
+  /* Comparators and counter initially at zero.*/
+  TIMER0->TIMELW     = 0U;
+200007c6:	2200      	movs	r2, #0
+200007c8:	605a      	str	r2, [r3, #4]
+  TIMER0->TIMEHW     = 0U;
+200007ca:	601a      	str	r2, [r3, #0]
+  TIMER0->ALARM[0]   = 0U;
+200007cc:	611a      	str	r2, [r3, #16]
+  TIMER0->ALARM[1]   = 0U;
+200007ce:	615a      	str	r2, [r3, #20]
+  TIMER0->ALARM[2]   = 0U;
+200007d0:	619a      	str	r2, [r3, #24]
+  TIMER0->ALARM[3]   = 0U;
+200007d2:	61da      	str	r2, [r3, #28]
+  TIMER0->INTE       = 0U;
+200007d4:	639a      	str	r2, [r3, #56]	; 0x38
+  TIMER0->INTR       = TIMER_INTR_ALARM3 | TIMER_INTR_ALARM2 |
+200007d6:	220f      	movs	r2, #15
+200007d8:	635a      	str	r2, [r3, #52]	; 0x34
+                      TIMER_INTR_ALARM1 | TIMER_INTR_ALARM0;
+
+#endif /* OSAL_ST_MODE == OSAL_ST_MODE_FREERUNNING */
+}
+200007da:	4770      	bx	lr
+200007dc:	40054000 	.word	0x40054000
+
+200007e0 <stInit>:
+void stInit(void) {
+200007e0:	b508      	push	{r3, lr}
+  for (i = 0U; i < (unsigned)ST_LLD_NUM_ALARMS; i++) {
+200007e2:	2300      	movs	r3, #0
+200007e4:	e004      	b.n	200007f0 <stInit+0x10>
+    st_callbacks[i] = NULL;
+200007e6:	4a05      	ldr	r2, [pc, #20]	; (200007fc <stInit+0x1c>)
+200007e8:	2100      	movs	r1, #0
+200007ea:	f842 1023 	str.w	r1, [r2, r3, lsl #2]
+  for (i = 0U; i < (unsigned)ST_LLD_NUM_ALARMS; i++) {
+200007ee:	3301      	adds	r3, #1
+200007f0:	2b03      	cmp	r3, #3
+200007f2:	d9f8      	bls.n	200007e6 <stInit+0x6>
+  st_lld_init();
+200007f4:	f7ff ffe4 	bl	200007c0 <st_lld_init>
+}
+200007f8:	bd08      	pop	{r3, pc}
+200007fa:	bf00      	nop
+200007fc:	2000dc48 	.word	0x2000dc48
 
 20000800 <chSysIntegrityCheckI>:
  * @brief   Returns a core index.
@@ -3465,23 +3469,23 @@ uint32_t clock_get_hz(clock_handle_t clock) {
  */
 void hal_lld_init(void) {
 20001060:	b508      	push	{r3, lr}
+ * Configuration-related checks.
  */
-__STATIC_INLINE halfreq_t hal_lld_get_clock_point(halclkpt_t clkpt) {
+#if !defined(RP2350_MCUCONF)
+#error "Using a wrong mcuconf.h file, RP2350_MCUCONF not defined"
+#endif
 
-  osalDbgAssert(clkpt < CLK_COUNT, "invalid clock point");
-
-  return clock_get_hz(clkpt);
 20001062:	2005      	movs	r0, #5
 20001064:	f7ff fff4 	bl	20001050 <clock_get_hz>
 #if RP_NO_INIT == FALSE
   //clocks_init(); //sdk1
-  //runtime_init_clocks();//no worky? missing includes.?
+  //runtime_init_clocks();//no worky? missing includes.? buzz todo karl had this line in.
   //stdio_init_all(); //init all the pico-sdk.
 
   SystemCoreClock = RP_CORE_CLK;
 20001068:	4b07      	ldr	r3, [pc, #28]	; (20001088 <hal_lld_init+0x28>)
 2000106a:	6018      	str	r0, [r3, #0]
-  RESETS->RESET &= ~mask;
+ * @brief   Starts core 1 after initialization.
 2000106c:	4b07      	ldr	r3, [pc, #28]	; (2000108c <hal_lld_init+0x2c>)
 2000106e:	681a      	ldr	r2, [r3, #0]
 20001070:	f022 0202 	bic.w	r2, r2, #2
@@ -3492,12 +3496,12 @@ __STATIC_INLINE halfreq_t hal_lld_get_clock_point(halclkpt_t clkpt) {
 2000107e:	681a      	ldr	r2, [r3, #0]
 20001080:	f422 2280 	bic.w	r2, r2, #262144	; 0x40000
 20001084:	601a      	str	r2, [r3, #0]
-#endif
+#endif /* RP_NO_INIT */
 
-#if RP_CORE1_START == TRUE
-  start_core1();
-#endif
-}
+  /* Common subsystems initialization.*/
+  irqInit();
+#if defined(RP_DMA_REQUIRED)
+  dmaInit();
 20001086:	bd08      	pop	{r3, pc}
 20001088:	2000d978 	.word	0x2000d978
 2000108c:	4000c000 	.word	0x4000c000
@@ -3514,7 +3518,7 @@ msg_t sio_lld_start(SIODriver *siop) {
 2000109a:	7923      	ldrb	r3, [r4, #4]
 2000109c:	2b01      	cmp	r3, #1
 2000109e:	d02e      	beq.n	200010fe <sio_lld_start+0x6e>
-  return clock_get_hz(clkpt);
+
 200010a0:	2006      	movs	r0, #6
 200010a2:	f7ff ffd5 	bl	20001050 <clock_get_hz>
   div = (8U * (uint32_t)clock) / siop->config->baud;
@@ -3575,7 +3579,7 @@ msg_t sio_lld_start(SIODriver *siop) {
 20001104:	4b0d      	ldr	r3, [pc, #52]	; (2000113c <sio_lld_start+0xac>)
 20001106:	429c      	cmp	r4, r3
 20001108:	d1ca      	bne.n	200010a0 <sio_lld_start+0x10>
-  RESETS->RESET &= ~mask;
+ * @brief   Starts core 1 after initialization.
 2000110a:	4a0d      	ldr	r2, [pc, #52]	; (20001140 <sio_lld_start+0xb0>)
 2000110c:	6813      	ldr	r3, [r2, #0]
 2000110e:	f423 0300 	bic.w	r3, r3, #8388608	; 0x800000
@@ -7086,7 +7090,7 @@ msg_t sioSynchronizeRX(SIODriver *siop, sysinterval_t timeout) {
 20002440:	1b32      	subs	r2, r6, r4
 20002442:	4629      	mov	r1, r5
 20002444:	4638      	mov	r0, r7
-20002446:	f7fe f963 	bl	20000710 <sioAsyncRead>
+20002446:	f7fe f933 	bl	200006b0 <sioAsyncRead>
     i += read;
 2000244a:	4404      	add	r4, r0
     bp += read;
@@ -7139,7 +7143,7 @@ static msg_t __get(void *ip) {
 2000249e:	bd10      	pop	{r4, pc}
   return sioGetX(siop);
 200024a0:	4620      	mov	r0, r4
-200024a2:	f7fe f965 	bl	20000770 <sio_lld_get>
+200024a2:	f7fe f935 	bl	20000710 <sio_lld_get>
 200024a6:	e7fa      	b.n	2000249e <__get+0xe>
 	...
 
@@ -7155,7 +7159,7 @@ static msg_t __gett(void *ip, sysinterval_t timeout) {
 200024ba:	bd10      	pop	{r4, pc}
   return sioGetX(siop);
 200024bc:	4620      	mov	r0, r4
-200024be:	f7fe f957 	bl	20000770 <sio_lld_get>
+200024be:	f7fe f927 	bl	20000710 <sio_lld_get>
 200024c2:	e7fa      	b.n	200024ba <__gett+0xa>
 	...
 
@@ -7224,7 +7228,7 @@ msg_t sioSynchronizeTX(SIODriver *siop, sysinterval_t timeout) {
 20002510:	1b32      	subs	r2, r6, r4
 20002512:	4629      	mov	r1, r5
 20002514:	4638      	mov	r0, r7
-20002516:	f7fe f923 	bl	20000760 <sioAsyncWrite>
+20002516:	f7fe f8f3 	bl	20000700 <sioAsyncWrite>
     i += written;
 2000251a:	4404      	add	r4, r0
     bp += written;
@@ -7281,7 +7285,7 @@ static msg_t __put(void *ip, uint8_t b) {
   sioPutX(siop, b);
 20002576:	4629      	mov	r1, r5
 20002578:	4620      	mov	r0, r4
-2000257a:	f7fe f919 	bl	200007b0 <sio_lld_put>
+2000257a:	f7fe f8e9 	bl	20000750 <sio_lld_put>
   return MSG_OK;
 2000257e:	e7f8      	b.n	20002572 <__put+0x12>
 
@@ -7302,7 +7306,7 @@ static msg_t __putt(void *ip, uint8_t b, sysinterval_t timeout) {
   sioPutX(siop, b);
 20002594:	4629      	mov	r1, r5
 20002596:	4620      	mov	r0, r4
-20002598:	f7fe f90a 	bl	200007b0 <sio_lld_put>
+20002598:	f7fe f8da 	bl	20000750 <sio_lld_put>
   return MSG_OK;
 2000259c:	e7f8      	b.n	20002590 <__putt+0x10>
 2000259e:	bf00      	nop
@@ -10970,21 +10974,21 @@ void halInit(void) {
 #if (HAL_USE_PAL == TRUE) || defined(__DOXYGEN__)
 #if defined(PAL_NEW_INIT)
   palInit();
-20003d56:	f7fc fc23 	bl	200005a0 <__pal_lld_init>
+20003d56:	f7fc fd23 	bl	200007a0 <__pal_lld_init>
 #endif
 #if (HAL_USE_SDC == TRUE) || defined(__DOXYGEN__)
   sdcInit();
 #endif
 #if (HAL_USE_SIO == TRUE) || defined(__DOXYGEN__)
   sioInit();
-20003d5a:	f7fc fc79 	bl	20000650 <sioInit>
+20003d5a:	f7fc fc49 	bl	200005f0 <sioInit>
 /*
  *  The ST driver is a special case, it is only initialized if the OSAL is
  *  configured to require it.
  */
 #if OSAL_ST_MODE != OSAL_ST_MODE_NONE
   stInit();
-20003d5e:	f7fc fc3f 	bl	200005e0 <stInit>
+20003d5e:	f7fc fd3f 	bl	200007e0 <stInit>
 #endif
 }
 20003d62:	bd08      	pop	{r3, pc}
@@ -11010,7 +11014,7 @@ msg_t sioStart(SIODriver *siop, const SIOConfig *config) {
 20003d84:	f240 73fc 	movw	r3, #2044	; 0x7fc
 20003d88:	60e3      	str	r3, [r4, #12]
 20003d8a:	4620      	mov	r0, r4
-20003d8c:	f7fc fc68 	bl	20000660 <sio_lld_update_enable_flags>
+20003d8c:	f7fc fc38 	bl	20000600 <sio_lld_update_enable_flags>
   __ASM volatile ("cpsie i" : : : "memory");
 20003d90:	b662      	cpsie	i
 }
@@ -11084,7 +11088,7 @@ OSAL_IRQ_HANDLER(RP_UART1_IRQ_HANDLER) {
 20003de0 <Vector40>:
 OSAL_IRQ_HANDLER(RP_TIMER_IRQ0_HANDLER) {
 20003de0:	b508      	push	{r3, lr}
-  TIMER->INTR = TIMER_INTR_ALARM0;
+  TIMER0->INTR = TIMER_INTR_ALARM0;
 20003de2:	4b05      	ldr	r3, [pc, #20]	; (20003df8 <Vector40+0x18>)
 20003de4:	2201      	movs	r2, #1
 20003de6:	635a      	str	r2, [r3, #52]	; 0x34
@@ -11105,7 +11109,7 @@ OSAL_IRQ_HANDLER(RP_TIMER_IRQ0_HANDLER) {
 20003e00 <Vector44>:
 OSAL_IRQ_HANDLER(RP_TIMER_IRQ1_HANDLER) {
 20003e00:	b508      	push	{r3, lr}
-  TIMER->INTR = TIMER_INTR_ALARM1;
+  TIMER0->INTR = TIMER_INTR_ALARM1;
 20003e02:	4b05      	ldr	r3, [pc, #20]	; (20003e18 <Vector44+0x18>)
 20003e04:	2202      	movs	r2, #2
 20003e06:	635a      	str	r2, [r3, #52]	; 0x34
@@ -11125,7 +11129,7 @@ OSAL_IRQ_HANDLER(RP_TIMER_IRQ1_HANDLER) {
 20003e20 <Vector48>:
 OSAL_IRQ_HANDLER(RP_TIMER_IRQ2_HANDLER) {
 20003e20:	b508      	push	{r3, lr}
-  TIMER->INTR = TIMER_INTR_ALARM2;
+  TIMER0->INTR = TIMER_INTR_ALARM2;
 20003e22:	4b05      	ldr	r3, [pc, #20]	; (20003e38 <Vector48+0x18>)
 20003e24:	2204      	movs	r2, #4
 20003e26:	635a      	str	r2, [r3, #52]	; 0x34
@@ -11146,7 +11150,7 @@ OSAL_IRQ_HANDLER(RP_TIMER_IRQ2_HANDLER) {
 20003e40 <Vector4C>:
 OSAL_IRQ_HANDLER(RP_TIMER_IRQ3_HANDLER) {
 20003e40:	b508      	push	{r3, lr}
-  TIMER->INTR = TIMER_INTR_ALARM3;
+  TIMER0->INTR = TIMER_INTR_ALARM3;
 20003e42:	4b05      	ldr	r3, [pc, #20]	; (20003e58 <Vector4C+0x18>)
 20003e44:	2208      	movs	r2, #8
 20003e46:	635a      	str	r2, [r3, #52]	; 0x34

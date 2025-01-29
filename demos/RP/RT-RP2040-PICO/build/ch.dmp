@@ -142,20 +142,20 @@ e000ed04 l       *ABS*	00000000 SCB_ICSR
 20000540 l     F .text	0000000c stSetAlarm
 20000550 l     F .text	00000020 sioObjectInit
 20000570 l     F .text	00000028 nvicEnableVector
-200005a0 l     F .text	00000018 __pal_lld_init
-200005c0 l     F .text	00000020 st_lld_init
-200005e0 l     F .text	00000020 stInit
-20000600 l     F .text	00000044 sio_lld_init
-20000650 l     F .text	00000008 sioInit
-20000660 l     F .text	0000004a sio_lld_update_enable_flags
-200006b0 l     F .text	00000052 sio_lld_read
-20000710 l     F .text	0000000c sioAsyncRead
-20000720 l     F .text	00000038 sio_lld_write
-20000760 l     F .text	0000000c sioAsyncWrite
-20000770 l     F .text	00000038 sio_lld_get
-200007b0 l     F .text	00000020 sio_lld_put
-200007d0 l     F .text	00000004 sio_lld_control
-200007e0 l     F .text	00000018 __ctl
+200005a0 l     F .text	00000044 sio_lld_init
+200005f0 l     F .text	00000008 sioInit
+20000600 l     F .text	0000004a sio_lld_update_enable_flags
+20000650 l     F .text	00000052 sio_lld_read
+200006b0 l     F .text	0000000c sioAsyncRead
+200006c0 l     F .text	00000038 sio_lld_write
+20000700 l     F .text	0000000c sioAsyncWrite
+20000710 l     F .text	00000038 sio_lld_get
+20000750 l     F .text	00000020 sio_lld_put
+20000770 l     F .text	00000004 sio_lld_control
+20000780 l     F .text	00000018 __ctl
+200007a0 l     F .text	00000018 __pal_lld_init
+200007c0 l     F .text	00000020 st_lld_init
+200007e0 l     F .text	00000020 stInit
 20000800 l     F .text	000000dc chSysIntegrityCheckI
 200008e0 l     F .text	0000001c chSysGetStatusAndLockX
 20000900 l     F .text	00000010 chRFCUCollectFaultsI
@@ -860,63 +860,63 @@ e000ed04 l       *ABS*	00000000 SCB_ICSR
 000255ff l       .debug_info	00000000 
 000255ff l       .debug_info	00000000 
 000255ff l       .debug_info	00000000 
+000255ff l       .debug_info	00000000 
+000255ff l       .debug_info	00000000 
+000255ff l       .debug_info	00000000 
+000255ff l       .debug_info	00000000 
+000255ff l       .debug_info	00000000 
+000255ff l       .debug_info	00000000 
+000255ff l       .debug_info	00000000 
+000255ff l       .debug_info	00000000 
+000255ff l       .debug_info	00000000 
+000255ff l       .debug_info	00000000 
+000255ff l       .debug_info	00000000 
+000255ff l       .debug_info	00000000 
+000255ff l       .debug_info	00000000 
+000255ff l       .debug_info	00000000 
+000255ff l       .debug_info	00000000 
+000255ff l       .debug_info	00000000 
 00000000 l    df *ABS*	00000000 
-000256f9 l       .debug_info	00000000 
-000256f9 l       .debug_info	00000000 
-000256f9 l       .debug_info	00000000 
-000256f9 l       .debug_info	00000000 
-000256f9 l       .debug_info	00000000 
-000256f9 l       .debug_info	00000000 
-000256f9 l       .debug_info	00000000 
-000256f9 l       .debug_info	00000000 
-000256f9 l       .debug_info	00000000 
-000256f9 l       .debug_info	00000000 
-000256f9 l       .debug_info	00000000 
-000256f9 l       .debug_info	00000000 
-000256f9 l       .debug_info	00000000 
-000256f9 l       .debug_info	00000000 
-000256f9 l       .debug_info	00000000 
-000256f9 l       .debug_info	00000000 
-000256f9 l       .debug_info	00000000 
-000256f9 l       .debug_info	00000000 
-000256f9 l       .debug_info	00000000 
-000256f9 l       .debug_info	00000000 
-000256f9 l       .debug_info	00000000 
-000256f9 l       .debug_info	00000000 
-000256f9 l       .debug_info	00000000 
+00026cb4 l       .debug_info	00000000 
+00026cb4 l       .debug_info	00000000 
+00026cb4 l       .debug_info	00000000 
+00026cb4 l       .debug_info	00000000 
+00026cb4 l       .debug_info	00000000 
+00026cb4 l       .debug_info	00000000 
+00026cb4 l       .debug_info	00000000 
+00026cb4 l       .debug_info	00000000 
+00026cb4 l       .debug_info	00000000 
+00026cb4 l       .debug_info	00000000 
+00026cb4 l       .debug_info	00000000 
+00026cb4 l       .debug_info	00000000 
+00026cb4 l       .debug_info	00000000 
+00026cb4 l       .debug_info	00000000 
+00026cb4 l       .debug_info	00000000 
+00026cb4 l       .debug_info	00000000 
 00000000 l    df *ABS*	00000000 
-00025d10 l       .debug_info	00000000 
-00025d10 l       .debug_info	00000000 
-00025d10 l       .debug_info	00000000 
-00025d10 l       .debug_info	00000000 
-00025d10 l       .debug_info	00000000 
-00025d10 l       .debug_info	00000000 
-00025d10 l       .debug_info	00000000 
-00025d10 l       .debug_info	00000000 
-00025d10 l       .debug_info	00000000 
-00025d10 l       .debug_info	00000000 
-00025d10 l       .debug_info	00000000 
-00025d10 l       .debug_info	00000000 
-00025d10 l       .debug_info	00000000 
-00025d10 l       .debug_info	00000000 
-00025d10 l       .debug_info	00000000 
-00025d10 l       .debug_info	00000000 
-00025d10 l       .debug_info	00000000 
-00025d10 l       .debug_info	00000000 
-00025d10 l       .debug_info	00000000 
-00025d10 l       .debug_info	00000000 
-00025d10 l       .debug_info	00000000 
-00025d10 l       .debug_info	00000000 
-00025d10 l       .debug_info	00000000 
-00025d10 l       .debug_info	00000000 
-00025d10 l       .debug_info	00000000 
-00025d10 l       .debug_info	00000000 
-00025d10 l       .debug_info	00000000 
-00025d10 l       .debug_info	00000000 
-00025d10 l       .debug_info	00000000 
-00025d10 l       .debug_info	00000000 
-00025d10 l       .debug_info	00000000 
-00025d10 l       .debug_info	00000000 
+00026dae l       .debug_info	00000000 
+00026dae l       .debug_info	00000000 
+00026dae l       .debug_info	00000000 
+00026dae l       .debug_info	00000000 
+00026dae l       .debug_info	00000000 
+00026dae l       .debug_info	00000000 
+00026dae l       .debug_info	00000000 
+00026dae l       .debug_info	00000000 
+00026dae l       .debug_info	00000000 
+00026dae l       .debug_info	00000000 
+00026dae l       .debug_info	00000000 
+00026dae l       .debug_info	00000000 
+00026dae l       .debug_info	00000000 
+00026dae l       .debug_info	00000000 
+00026dae l       .debug_info	00000000 
+00026dae l       .debug_info	00000000 
+00026dae l       .debug_info	00000000 
+00026dae l       .debug_info	00000000 
+00026dae l       .debug_info	00000000 
+00026dae l       .debug_info	00000000 
+00026dae l       .debug_info	00000000 
+00026dae l       .debug_info	00000000 
+00026dae l       .debug_info	00000000 
 00000000 l    df *ABS*	00000000 
 000273c5 l       .debug_info	00000000 
 000273c5 l       .debug_info	00000000 
@@ -2792,7 +2792,7 @@ e000ed04 l       *ABS*	00000000 SCB_ICSR
 2000f2a0 g       .ram0	00000000 __ram0_clear__
 00029171  w      .debug_info	00000000 .hidden chvt.c.ad788fe3
 200099c0 g     F .text	000000f0 .hidden oslib_test_007_001_execute.lto_priv.0
-00025d10  w      .debug_info	00000000 .hidden hal_sio_lld.c.d88a03b2
+000255ff  w      .debug_info	00000000 .hidden hal_sio_lld.c.d88a03b2
 20000f10 g     F .text	00000030 .hidden __ch_delegate_fn4
 20003d00 g     F .text	00000002 __c1_default_exit
 2000020e  w    F .text	00000000 Vector70
@@ -2876,7 +2876,7 @@ e000ed04 l       *ABS*	00000000 SCB_ICSR
 00033f89  w      .debug_info	00000000 .hidden chdynamic.c.09add51d
 2000aaec g     F .text	000000cc strchr
 20005540 g     F .text	000000f0 .hidden chHeapAllocAligned
-000255ff  w      .debug_info	00000000 .hidden hal_pal_lld.c.bdb6a954
+00026cb4  w      .debug_info	00000000 .hidden hal_pal_lld.c.bdb6a954
 20040000 g       .mstack	00000000 __main_stack_base__
 20003e00 g     F .text	0000001c Vector44
 2000020e  w    F .text	00000000 Vector28
@@ -2885,7 +2885,7 @@ e000ed04 l       *ABS*	00000000 SCB_ICSR
 00000200 g       *ABS*	00000000 __main_stack_size__
 20041f00 g       .ram7	00000000 __ram7_noinit__
 20040400 g       .pstack	00000000 __process_stack_end__
-000256f9  w      .debug_info	00000000 .hidden hal_st_lld.c.9df7e01f
+00026dae  w      .debug_info	00000000 .hidden hal_st_lld.c.9df7e01f
 2000020e  w    F .text	00000000 Vector34
 00000000 g       .ram7	00000000 __flash2_init__
 20003e60 g     F .text	00000002 __early_init
