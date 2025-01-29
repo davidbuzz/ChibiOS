@@ -129,14 +129,20 @@ void hal_lld_init(void) {
 
 #if RP_NO_INIT == FALSE
   //clocks_init(); //sdk1
-  //runtime_init_clocks();//no worky? missing includes.?
+  //runtime_init_clocks();//no worky? missing includes.? buzz todo karl had this line in.
   //stdio_init_all(); //init all the pico-sdk.
 
   SystemCoreClock = RP_CORE_CLK;
 
+   // buzz todo decide... this:
   hal_lld_peripheral_unreset(RESETS_ALLREG_BUSCTRL);
   hal_lld_peripheral_unreset(RESETS_ALLREG_SYSINFO);
   hal_lld_peripheral_unreset(RESETS_ALLREG_SYSCFG);
+  // or from karl:
+  //hal_lld_peripheral_unreset(RESETS_RESET_BUSCTRL_BITS);
+  //hal_lld_peripheral_unreset(RESETS_RESET_SYSINFO_BITS);
+  //hal_lld_peripheral_unreset(RESETS_RESET_SYSCFG_BITS);
+
 #endif /* RP_NO_INIT */
 
   /* Common subsystems initialization.*/

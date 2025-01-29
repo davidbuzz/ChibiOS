@@ -62,18 +62,21 @@ extern "C" {
 
 __STATIC_INLINE bool fifoIsReadNotEmpty(void) {
 
-  return (bool)((SIO->FIFO_ST & SIO_FIFO_ST_VLD) != 0U);
+  //return (bool)((SIO->FIFO_ST & SIO_FIFO_ST_VLD) != 0U); buzz todo
+  return (bool)((sio_hw->fifo_st & SIO_FIFO_ST_VLD_BITS) != 0U);// buzz todo from karl
 }
 
 __STATIC_INLINE bool fifoIsWriteNotFull(void) {
 
-  return (bool)((SIO->FIFO_ST & SIO_FIFO_ST_RDY) != 0U);
+  //return (bool)((SIO->FIFO_ST & SIO_FIFO_ST_RDY) != 0U);
+  return (bool)((sio_hw->fifo_st & SIO_FIFO_ST_RDY_BITS) != 0U); // buzz todo from karl
 }
 
 __STATIC_INLINE void fifoFlushRead(void) {
 
   while (fifoIsReadNotEmpty()) {
-    (void)SIO->FIFO_RD;
+    //(void)SIO->FIFO_RD;
+    (void)sio_hw->fifo_rd; // buzz todo from karl
   }
 
   /* In case the other core is in WFE.*/
@@ -87,7 +90,8 @@ __STATIC_INLINE void fifoBlockingWrite(uint32_t data) {
     __WFE();
   }
 
-  SIO->FIFO_WR = data;
+  //SIO->FIFO_WR = data;
+  sio_hw->fifo_wr = data; // buzz todo from karl
 
   /* In case the other core is in WFE, signaling data available.*/
   __SEV();
@@ -101,7 +105,8 @@ __STATIC_INLINE uint32_t fifoBlockingRead(void) {
     __WFE();
   }
 
-  data = SIO->FIFO_RD;
+  //data = SIO->FIFO_RD;
+  data = sio_hw->fifo_rd; // buzz todo from karl
 
   /* In case the other core is in WFE, signaling space available.*/
   __SEV();

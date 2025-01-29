@@ -32,6 +32,7 @@
 
 /* From Pico-SDK */
 #include "hardware/clocks.h"
+#include "pico/runtime_init.h"
 
 /*===========================================================================*/
 /* Driver constants.                                                         */
@@ -141,6 +142,11 @@
 /*===========================================================================*/
 /* Driver data structures and types.                                         */
 /*===========================================================================*/
+
+/**
+ * @brief   Type of a clock point identifier.
+ */
+typedef clock_handle_t halclkpt_t;
 
 #if defined(HAL_LLD_USE_CLOCK_MANAGEMENT) || defined(__DOXYGEN__)
 /**

@@ -36,12 +36,12 @@
 /**
  * @brief   Floating Point unit presence.
  */
-#define CORTEX_HAS_FPU          0
+#define CORTEX_HAS_FPU          1
 
 /**
  * @brief   Number of bits in priority masks.
  */
-#define CORTEX_PRIORITY_BITS    2
+#define CORTEX_PRIORITY_BITS    4
 
 /* If the device type is not externally defined, for example from the Makefile,
    then a file named board.h is included. This file must contain a device
@@ -55,7 +55,7 @@
  * @note    This number does not include the 16 system vectors and must be
  *          rounded to a multiple of 8.
  */
-#define CORTEX_NUM_VECTORS      32
+#define CORTEX_NUM_VECTORS      56
 
 // this 
 #define CORTEX_SIMPLIFIED_PRIORITY 1
