@@ -24,6 +24,9 @@
 
 #include "hal.h"
 
+#include "hardware/structs/iobank0.h" // for io_bank0_hw
+
+
 #if HAL_USE_PAL || defined(__DOXYGEN__)
 
 /*===========================================================================*/

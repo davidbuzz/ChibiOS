@@ -27,6 +27,8 @@
  */
 
 #include "hal.h"
+#include "hardware/structs/sio.h" // for sio_hw
+
 
 /* The following macro is only defined if some driver requiring DMA services
    has been enabled.*/

@@ -23,6 +23,8 @@
  */
 
 #include "hal.h"
+#include "hardware/timer.h" // for timer0_hw
+
 
 #if (OSAL_ST_MODE != OSAL_ST_MODE_NONE) || defined(__DOXYGEN__)
 

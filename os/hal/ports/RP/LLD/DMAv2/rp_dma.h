@@ -25,6 +25,11 @@
 #ifndef RP_DMA_H
 #define RP_DMA_H
 
+#include "hardware/structs/sio.h" // for sio_hw
+#include "hardware/regs/dma.h" // for DMA_CH0_CTRL_TRIG_EN_BITS
+#include "hardware/structs/dma.h" // for dma_hw_t
+
+
 /*===========================================================================*/
 /* Driver constants.                                                         */
 /*===========================================================================*/
