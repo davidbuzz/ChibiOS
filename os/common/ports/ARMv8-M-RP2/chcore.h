@@ -30,8 +30,7 @@
 
 /* Inclusion of the Cortex-Mx implementation specific parameters.*/
 #include "cmparams.h"
-#include "hardware/timer.h" // for timer0_hw
-#include "hardware/structs/sio.h" // for sio_hw
+// dont put includes here, as they'll be considered assemby code when compiling chcoreasm.o
 
 /*===========================================================================*/
 /* Module constants.                                                         */
@@ -41,6 +40,9 @@
    asm module because those intrinsic macros are not necessarily defined
    by the assembler too.*/
 #if !defined(_FROM_ASM_)
+
+#include "hardware/timer.h" // for timer0_hw
+#include "hardware/structs/sio.h" // for sio_hw
 
 /**
  * @brief   Compiler name and version.

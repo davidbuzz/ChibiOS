@@ -144,8 +144,8 @@ endif
 ifeq ($(USE_RP2350),yes)
 # todo this points to the armv6 from 2040 and should use armv8, but we havent validated that yet
 #include $(CHIBIOS)/os/common/ports/ARMv6-M-RP2/compilers/GCC/mk/port.mk
-include $(CHIBIOS)/os/common/ports/ARMv8-M-ML/compilers/GCC/mk/port.mk
-#include $(CHIBIOS)/os/common/ports/ARMv8-M-RP2/compilers/GCC/mk/port.mk
+#include $(CHIBIOS)/os/common/ports/ARMv8-M-ML/compilers/GCC/mk/port.mk
+include $(CHIBIOS)/os/common/ports/ARMv8-M-RP2/compilers/GCC/mk/port.mk
 #include $(CHIBIOS)/os/common/ports/ARMv8-M-ML-ALT/compilers/GCC/mk/port.mk
 #include $(CHIBIOS)/os/common/ports/ARMv8-M-ML-TZ/compilers/GCC/mk/port.mk
 endif
