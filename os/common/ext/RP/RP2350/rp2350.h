@@ -37,7 +37,7 @@
 #define __FPU_PRESENT                  1        /*!< FPU present                                                               */
 #define __FPU_DP                       0        /*!< Double Precision FPU                                                      */
 #define __DSP_PRESENT                  1        /*!< DSP extension present                                                     */
-#define __SAUREGION_PRESENT            1        /*!< SAU region present     
+#define __SAUREGION_PRESENT            1        /*!< SAU region present      */
 
 /**
  * @brief   Interrupt vector numbers.
