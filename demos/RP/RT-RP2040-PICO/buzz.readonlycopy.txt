@@ -358,3 +358,41 @@ make clean ; make -d  > make3.debug.log 2>&1
 
 
     "/home/buzz/.arduino15/packages/rp2040/tools/pqt-python3/1.0.1-base-3a57aed-1/python3" -I "/home/buzz/.arduino15/packages/rp2040/hardware/rp2040/4.4.2/tools/uf2conv.py" --serial "/dev/ttyACM0" --family RP2040 --deploy "/home/buzz/.cache/arduino/sketches/589FD8E4BCF6B2949511472F117B1D78/pico2.buzz.ino.uf2"
+
+
+--------------------
+
+jan 29 - 
+
+ - chatted on ChibiOS discord with Karl  ( @KarlK90 ), and discovered he has a booting RP2350 work here:
+ https://github.com/KarlK90/ChibiOS/tree/feature/rp2350-support
+ https://github.com/KarlK90/ChibiOS-Contrib/tree/feature/rp2350-support
+ https://github.com/KarlK90/qmk_firmware/tree/feature/rp2350-support
+
+ so I cloned all his repos into my local machine, AND setup his KarlK90/ChibiOS as a "remote" in mine, and discovered his was about 30ish commits on top of v21.11, and it wouldnt rebase cleanly with my git skills, so I squashed it all into a single commit, and chery picked that commit onto the top of my work, and then very carefully merged the work , making note with "buzz todo" and/or "from karl" on conflicting bits.    
+
+ massaged the code one subsystem at a time till it compiled etc.
+
+  - eg my SDK version has renamed some stuff, and karl had some different case conventions on some files, and his "port.mk" has its dependancies done a bit wrong compared to "master".
+
+also  hand-brough-in some stuff from his 'mcuconf.h' from his 'qmk_firmware' branch
+
+terminal 1:
+cd /home/buzz2/Chibi/ChibiOS-RT/demos/RP/RT-RP2040-PICO
+make clean ; 
+make -d  > make3.debug.log 2>&1 ; 
+make upload
+[then hold button and re-plug usb within 10 seconds to upload]
+
+terminal 2:
+started opocd:
+cd /home/buzz2/Chibi/openocd/
+./openocd -c "gdb_port 50000" -c "tcl_port 50001" -c "telnet_port 50002" -s /home/buzz2/Chibi/openocd/scripts  -f interface/cmsis-dap.cfg -f target/rp2350.cfg -c "adapter speed 5000"
+
+terminal 3:
+cd /home/buzz2/Chibi/ChibiOS-RT/demos/RP/RT-RP2040-PICO
+gdb connected, and poked around - seems to not crash immediatly any more:
+/opt/gcc-arm-none-eabi-10-2020-q4-major/bin//arm-none-eabi-gdb ./build/ch.elf
+
+
+--------------------
