@@ -8,10 +8,13 @@ PICOSDKSRC     = $(PICOSDKROOT)/src/rp2_common/hardware_clocks/clocks.c \
                  $(PICOSDKROOT)/src/rp2_common/hardware_gpio/gpio.c \
                  $(PICOSDKROOT)/src/rp2_common/hardware_pll/pll.c \
                  $(PICOSDKROOT)/src/rp2_common/hardware_watchdog/watchdog.c \
-                 $(PICOSDKROOT)/src/rp2_common/hardware_xosc/xosc.c \
+                 $(PICOSDKROOT)/src/rp2_common/hardware_xosc/xosc.c 
 
-                #  $(PICOSDKROOT)/src/rp2_common/pico_runtime/runtime.c \
-                #  $(PICOSDKROOT)/src/rp2_common/pico_multicore/multicore.c \
+ifeq ($(USE_WIFI_VARIANT),yes)
+PICOSDKSRC    += $(PICOSDKROOT)/src/rp2_common/pico_cyw43_arch/cyw43_arch.c \
+                 $(PICOSDKROOT)/lib/cyw43-driver/src/cyw43_ctrl.c \
+                 $(PICOSDKROOT)/lib/cyw43-driver/src/cyw43_ll.c 
+endif
 
 PICOSDKINC     = $(CHIBIOS)//os/various/pico_bindings/dumb/include \
                  $(PICOSDKROOT)/src/common/pico_base_headers/include \
@@ -45,12 +48,17 @@ PICOSDKINC     = $(CHIBIOS)//os/various/pico_bindings/dumb/include \
                  $(PICOSDKROOT)/src/rp2350/hardware_structs/include \
                  $(PICOSDKROOT)/src/boards/include
 
-                # $(PICOSDKROOT)/src/rp2_common/pico_multicore/include \
-                #  $(PICOSDKROOT)/src/common/hardware_claim/include \
-                #  $(PICOSDKROOT)/src/rp2_common/pico_runtime/include \
+ifeq ($(USE_WIFI_VARIANT),yes)
+PICOSDKSRC    += $(PICOSDKROOT)/src/rp2_common/pico_async_context/include \
+                 $(PICOSDKROOT)/src/rp2_common/pico_cyw43_arch/include \
+                 $(PICOSDKROOT)/lib/cyw43-driver/src/ \
+                 $(PICOSDKROOT)/lib/cyw43-driver/firmware \
+                 $(PICOSDKROOT)/lib/lwip/src/include \
+                 $(PICOSDKROOT)/lib/btstack/platform/lwip/port \
+                 $(PICOSDKROOT)/src/rp2_common/pico_cyw43_driver/include \
+                 $(PICOSDKROOT)/src/rp2_common/pico_unique_id/include 
+endif
 
-# 2350 specific..todo
-#                 $(PICOSDKROOT)/src/rp2350/pico_platform/include 
 
 # Shared variables
 ALLCSRC += $(PICOSDKSRC)
