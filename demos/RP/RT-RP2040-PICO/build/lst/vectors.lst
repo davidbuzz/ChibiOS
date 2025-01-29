@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccacFIo9.s 			page 1
+ARM GAS  /tmp/ccBl26UM.s 			page 1
 
 
    1              	# 1 "../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S"
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccacFIo9.s 			page 1
   25              	 * @{
   26              	 */
   27              	
-ARM GAS  /tmp/ccacFIo9.s 			page 2
+ARM GAS  /tmp/ccBl26UM.s 			page 2
 
 
   28              	#ifndef CMPARAMS_H
@@ -72,12 +72,12 @@ ARM GAS  /tmp/ccacFIo9.s 			page 1
   36              	/**
   37              	 * @brief   Floating Point unit presence.
   38              	 */
-  39              	#define CORTEX_HAS_FPU          0
+  39              	#define CORTEX_HAS_FPU          1
   40              	
   41              	/**
   42              	 * @brief   Number of bits in priority masks.
   43              	 */
-  44              	#define CORTEX_PRIORITY_BITS    2
+  44              	#define CORTEX_PRIORITY_BITS    4
   45              	
   46              	/* If the device type is not externally defined, for example from the Makefile,
   47              	   then a file named board.h is included. This file must contain a device
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccacFIo9.s 			page 1
   56              	        .globl      _vectors
   57              	_vectors:
   58 0000 00000000 	        .long       __main_stack_end__
-ARM GAS  /tmp/ccacFIo9.s 			page 3
+ARM GAS  /tmp/ccBl26UM.s 			page 3
 
 
   59 0004 00000000 	        .long       Reset_Handler
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccacFIo9.s 			page 1
   92              	#endif
   93              	#if CORTEX_NUM_VECTORS > 28
   94 00b0 00000000 	        .long       VectorB0,   VectorB4,   VectorB8,   VectorBC
-ARM GAS  /tmp/ccacFIo9.s 			page 4
+ARM GAS  /tmp/ccBl26UM.s 			page 4
 
 
   94      00000000 
@@ -186,22 +186,40 @@ ARM GAS  /tmp/ccacFIo9.s 			page 1
   94      00000000 
   95              	#endif
   96              	#if CORTEX_NUM_VECTORS > 32
-  97              	        .long       VectorC0,   VectorC4,   VectorC8,   VectorCC
+  97 00c0 00000000 	        .long       VectorC0,   VectorC4,   VectorC8,   VectorCC
+  97      00000000 
+  97      00000000 
+  97      00000000 
   98              	#endif
   99              	#if CORTEX_NUM_VECTORS > 36
- 100              	        .long       VectorD0,   VectorD4,   VectorD8,   VectorDC
+ 100 00d0 00000000 	        .long       VectorD0,   VectorD4,   VectorD8,   VectorDC
+ 100      00000000 
+ 100      00000000 
+ 100      00000000 
  101              	#endif
  102              	#if CORTEX_NUM_VECTORS > 40
- 103              	        .long       VectorE0,   VectorE4,   VectorE8,   VectorEC
+ 103 00e0 00000000 	        .long       VectorE0,   VectorE4,   VectorE8,   VectorEC
+ 103      00000000 
+ 103      00000000 
+ 103      00000000 
  104              	#endif
  105              	#if CORTEX_NUM_VECTORS > 44
- 106              	        .long       VectorF0,   VectorF4,   VectorF8,   VectorFC
+ 106 00f0 00000000 	        .long       VectorF0,   VectorF4,   VectorF8,   VectorFC
+ 106      00000000 
+ 106      00000000 
+ 106      00000000 
  107              	#endif
  108              	#if CORTEX_NUM_VECTORS > 48
- 109              	        .long       Vector100,  Vector104,  Vector108,  Vector10C
+ 109 0100 00000000 	        .long       Vector100,  Vector104,  Vector108,  Vector10C
+ 109      00000000 
+ 109      00000000 
+ 109      00000000 
  110              	#endif
  111              	#if CORTEX_NUM_VECTORS > 52
- 112              	        .long       Vector110,  Vector114,  Vector118,  Vector11C
+ 112 0110 00000000 	        .long       Vector110,  Vector114,  Vector118,  Vector11C
+ 112      00000000 
+ 112      00000000 
+ 112      00000000 
  113              	#endif
  114              	#if CORTEX_NUM_VECTORS > 56
  115              	        .long       Vector120,  Vector124,  Vector128,  Vector12C
@@ -220,6 +238,9 @@ ARM GAS  /tmp/ccacFIo9.s 			page 1
  128              	#endif
  129              	#if CORTEX_NUM_VECTORS > 76
  130              	        .long       Vector170,  Vector174,  Vector178,  Vector17C
+ARM GAS  /tmp/ccBl26UM.s 			page 5
+
+
  131              	#endif
  132              	#if CORTEX_NUM_VECTORS > 80
  133              	        .long       Vector180,  Vector184,  Vector188,  Vector18C
@@ -238,9 +259,6 @@ ARM GAS  /tmp/ccacFIo9.s 			page 1
  146              	#endif
  147              	#if CORTEX_NUM_VECTORS > 100
  148              	        .long       Vector1D0,  Vector1D4,  Vector1D8,  Vector1DC
-ARM GAS  /tmp/ccacFIo9.s 			page 5
-
-
  149              	#endif
  150              	#if CORTEX_NUM_VECTORS > 104
  151              	        .long       Vector1E0,  Vector1E4,  Vector1E8,  Vector1EC
@@ -280,6 +298,9 @@ ARM GAS  /tmp/ccacFIo9.s 			page 1
  185              	#endif
  186              	#if CORTEX_NUM_VECTORS > 152
  187              	        .long       Vector2A0,  Vector2A4,  Vector2A8,  Vector2AC
+ARM GAS  /tmp/ccBl26UM.s 			page 6
+
+
  188              	#endif
  189              	#if CORTEX_NUM_VECTORS > 156
  190              	        .long       Vector2B0,  Vector2B4,  Vector2B8,  Vector2BC
@@ -298,9 +319,6 @@ ARM GAS  /tmp/ccacFIo9.s 			page 1
  203              	#endif
  204              	#if CORTEX_NUM_VECTORS > 176
  205              	        .long       Vector300,  Vector304,  Vector308,  Vector30C
-ARM GAS  /tmp/ccacFIo9.s 			page 6
-
-
  206              	#endif
  207              	#if CORTEX_NUM_VECTORS > 180
  208              	        .long       Vector310,  Vector314,  Vector318,  Vector31C
@@ -340,6 +358,9 @@ ARM GAS  /tmp/ccacFIo9.s 			page 1
  242              	#endif
  243              	#if CORTEX_NUM_VECTORS > 228
  244              	        .long       Vector3D0,  Vector3D4,  Vector3D8,  Vector3DC
+ARM GAS  /tmp/ccBl26UM.s 			page 7
+
+
  245              	#endif
  246              	#if CORTEX_NUM_VECTORS > 232
  247              	        .long       Vector3E0,  Vector3E4,  Vector3E8,  Vector3EC
@@ -358,9 +379,6 @@ ARM GAS  /tmp/ccacFIo9.s 			page 1
  260              	
  261              	        .thumb_func
  262              	        .weak       NMI_Handler
-ARM GAS  /tmp/ccacFIo9.s 			page 7
-
-
  263              	        .weak       HardFault_Handler
  264              	        .weak       MemManage_Handler
  265              	        .weak       BusFault_Handler
@@ -400,6 +418,9 @@ ARM GAS  /tmp/ccacFIo9.s 			page 1
  299              	        .weak       VectorC0,   VectorC4,   VectorC8,   VectorCC
  300              	#endif
  301              	#if CORTEX_NUM_VECTORS > 36
+ARM GAS  /tmp/ccBl26UM.s 			page 8
+
+
  302              	        .weak       VectorD0,   VectorD4,   VectorD8,   VectorDC
  303              	#endif
  304              	#if CORTEX_NUM_VECTORS > 40
@@ -418,9 +439,6 @@ ARM GAS  /tmp/ccacFIo9.s 			page 1
  317              	        .weak       Vector120,  Vector124,  Vector128,  Vector12C
  318              	#endif
  319              	#if CORTEX_NUM_VECTORS > 60
-ARM GAS  /tmp/ccacFIo9.s 			page 8
-
-
  320              	        .weak       Vector130,  Vector134,  Vector138,  Vector13C
  321              	#endif
  322              	#if CORTEX_NUM_VECTORS > 64
@@ -460,6 +478,9 @@ ARM GAS  /tmp/ccacFIo9.s 			page 1
  356              	        .weak       Vector1F0,  Vector1F4,  Vector1F8,  Vector1FC
  357              	#endif
  358              	#if CORTEX_NUM_VECTORS > 112
+ARM GAS  /tmp/ccBl26UM.s 			page 9
+
+
  359              	        .weak       Vector200,  Vector204,  Vector208,  Vector20C
  360              	#endif
  361              	#if CORTEX_NUM_VECTORS > 116
@@ -478,9 +499,6 @@ ARM GAS  /tmp/ccacFIo9.s 			page 1
  374              	        .weak       Vector250,  Vector254,  Vector258,  Vector25C
  375              	#endif
  376              	#if CORTEX_NUM_VECTORS > 136
-ARM GAS  /tmp/ccacFIo9.s 			page 9
-
-
  377              	        .weak       Vector260,  Vector264,  Vector268,  Vector26C
  378              	#endif
  379              	#if CORTEX_NUM_VECTORS > 140
@@ -520,6 +538,9 @@ ARM GAS  /tmp/ccacFIo9.s 			page 1
  413              	        .weak       Vector320,  Vector324,  Vector328,  Vector32C
  414              	#endif
  415              	#if CORTEX_NUM_VECTORS > 188
+ARM GAS  /tmp/ccBl26UM.s 			page 10
+
+
  416              	        .weak       Vector330,  Vector334,  Vector338,  Vector33C
  417              	#endif
  418              	#if CORTEX_NUM_VECTORS > 192
@@ -538,9 +559,6 @@ ARM GAS  /tmp/ccacFIo9.s 			page 1
  431              	        .weak       Vector380,  Vector384,  Vector388,  Vector38C
  432              	#endif
  433              	#if CORTEX_NUM_VECTORS > 212
-ARM GAS  /tmp/ccacFIo9.s 			page 10
-
-
  434              	        .weak       Vector390,  Vector394,  Vector398,  Vector39C
  435              	#endif
  436              	#if CORTEX_NUM_VECTORS > 216
@@ -580,6 +598,9 @@ ARM GAS  /tmp/ccacFIo9.s 			page 1
  470              	Vector24:
  471              	        .thumb_func
  472              	Vector28:
+ARM GAS  /tmp/ccBl26UM.s 			page 11
+
+
  473              	        .thumb_func
  474              	SVC_Handler:
  475              	        .thumb_func
@@ -598,9 +619,6 @@ ARM GAS  /tmp/ccacFIo9.s 			page 1
  488              	Vector48:
  489              	        .thumb_func
  490              	Vector4C:
-ARM GAS  /tmp/ccacFIo9.s 			page 11
-
-
  491              	        .thumb_func
  492              	Vector50:
  493              	        .thumb_func
@@ -640,6 +658,9 @@ ARM GAS  /tmp/ccacFIo9.s 			page 1
  527              	Vector90:
  528              	        .thumb_func
  529              	Vector94:
+ARM GAS  /tmp/ccBl26UM.s 			page 12
+
+
  530              	        .thumb_func
  531              	Vector98:
  532              	        .thumb_func
@@ -658,9 +679,6 @@ ARM GAS  /tmp/ccacFIo9.s 			page 1
  545              	VectorB0:
  546              	        .thumb_func
  547              	VectorB4:
-ARM GAS  /tmp/ccacFIo9.s 			page 12
-
-
  548              	        .thumb_func
  549              	VectorB8:
  550              	        .thumb_func
@@ -700,6 +718,9 @@ ARM GAS  /tmp/ccacFIo9.s 			page 1
  584              	        .thumb_func
  585              	VectorF8:
  586              	        .thumb_func
+ARM GAS  /tmp/ccBl26UM.s 			page 13
+
+
  587              	VectorFC:
  588              	#endif
  589              	#if CORTEX_NUM_VECTORS > 48
@@ -718,9 +739,6 @@ ARM GAS  /tmp/ccacFIo9.s 			page 1
  602              	        .thumb_func
  603              	Vector118:
  604              	        .thumb_func
-ARM GAS  /tmp/ccacFIo9.s 			page 13
-
-
  605              	Vector11C:
  606              	#endif
  607              	#if CORTEX_NUM_VECTORS > 56
@@ -760,6 +778,9 @@ ARM GAS  /tmp/ccacFIo9.s 			page 1
  641              	Vector15C:
  642              	#endif
  643              	#if CORTEX_NUM_VECTORS > 72
+ARM GAS  /tmp/ccBl26UM.s 			page 14
+
+
  644              	        .thumb_func
  645              	Vector160:
  646              	        .thumb_func
@@ -778,9 +799,6 @@ ARM GAS  /tmp/ccacFIo9.s 			page 1
  659              	Vector17C:
  660              	#endif
  661              	#if CORTEX_NUM_VECTORS > 80
-ARM GAS  /tmp/ccacFIo9.s 			page 14
-
-
  662              	        .thumb_func
  663              	Vector180:
  664              	        .thumb_func
@@ -820,6 +838,9 @@ ARM GAS  /tmp/ccacFIo9.s 			page 1
  698              	        .thumb_func
  699              	Vector1C0:
  700              	        .thumb_func
+ARM GAS  /tmp/ccBl26UM.s 			page 15
+
+
  701              	Vector1C4:
  702              	        .thumb_func
  703              	Vector1C8:
@@ -838,9 +859,6 @@ ARM GAS  /tmp/ccacFIo9.s 			page 1
  716              	        .thumb_func
  717              	Vector1E0:
  718              	        .thumb_func
-ARM GAS  /tmp/ccacFIo9.s 			page 15
-
-
  719              	Vector1E4:
  720              	        .thumb_func
  721              	Vector1E8:
@@ -880,6 +898,9 @@ ARM GAS  /tmp/ccacFIo9.s 			page 1
  755              	Vector224:
  756              	        .thumb_func
  757              	Vector228:
+ARM GAS  /tmp/ccBl26UM.s 			page 16
+
+
  758              	        .thumb_func
  759              	Vector22C:
  760              	        .thumb_func
@@ -898,9 +919,6 @@ ARM GAS  /tmp/ccacFIo9.s 			page 1
  773              	Vector244:
  774              	        .thumb_func
  775              	Vector248:
-ARM GAS  /tmp/ccacFIo9.s 			page 16
-
-
  776              	        .thumb_func
  777              	Vector24C:
  778              	        .thumb_func
@@ -940,6 +958,9 @@ ARM GAS  /tmp/ccacFIo9.s 			page 1
  812              	        .thumb_func
  813              	Vector28C:
  814              	        .thumb_func
+ARM GAS  /tmp/ccBl26UM.s 			page 17
+
+
  815              	Vector290:
  816              	        .thumb_func
  817              	Vector294:
@@ -958,9 +979,6 @@ ARM GAS  /tmp/ccacFIo9.s 			page 1
  830              	        .thumb_func
  831              	Vector2AC:
  832              	        .thumb_func
-ARM GAS  /tmp/ccacFIo9.s 			page 17
-
-
  833              	Vector2B0:
  834              	        .thumb_func
  835              	Vector2B4:
@@ -1000,6 +1018,9 @@ ARM GAS  /tmp/ccacFIo9.s 			page 1
  869              	Vector2F0:
  870              	        .thumb_func
  871              	Vector2F4:
+ARM GAS  /tmp/ccBl26UM.s 			page 18
+
+
  872              	        .thumb_func
  873              	Vector2F8:
  874              	        .thumb_func
@@ -1018,9 +1039,6 @@ ARM GAS  /tmp/ccacFIo9.s 			page 1
  887              	Vector310:
  888              	        .thumb_func
  889              	Vector314:
-ARM GAS  /tmp/ccacFIo9.s 			page 18
-
-
  890              	        .thumb_func
  891              	Vector318:
  892              	        .thumb_func
@@ -1060,6 +1078,9 @@ ARM GAS  /tmp/ccacFIo9.s 			page 1
  926              	        .thumb_func
  927              	Vector358:
  928              	        .thumb_func
+ARM GAS  /tmp/ccBl26UM.s 			page 19
+
+
  929              	Vector35C:
  930              	#endif
  931              	#if CORTEX_NUM_VECTORS > 200
@@ -1078,9 +1099,6 @@ ARM GAS  /tmp/ccacFIo9.s 			page 1
  944              	        .thumb_func
  945              	Vector378:
  946              	        .thumb_func
-ARM GAS  /tmp/ccacFIo9.s 			page 19
-
-
  947              	Vector37C:
  948              	#endif
  949              	#if CORTEX_NUM_VECTORS > 208
@@ -1120,6 +1138,9 @@ ARM GAS  /tmp/ccacFIo9.s 			page 1
  983              	Vector3BC:
  984              	#endif
  985              	#if CORTEX_NUM_VECTORS > 224
+ARM GAS  /tmp/ccBl26UM.s 			page 20
+
+
  986              	        .thumb_func
  987              	Vector3C0:
  988              	        .thumb_func
@@ -1138,9 +1159,6 @@ ARM GAS  /tmp/ccacFIo9.s 			page 1
  1001              	Vector3DC:
  1002              	#endif
  1003              	#if CORTEX_NUM_VECTORS > 232
-ARM GAS  /tmp/ccacFIo9.s 			page 20
-
-
  1004              	        .thumb_func
  1005              	Vector3E0:
  1006              	        .thumb_func
@@ -1165,7 +1183,7 @@ ARM GAS  /tmp/ccacFIo9.s 			page 1
  1025              	_unhandled_exception:
  1026              	.stay:
  1027 0006 FEE7     	        b           .stay
-ARM GAS  /tmp/ccacFIo9.s 			page 21
+ARM GAS  /tmp/ccBl26UM.s 			page 21
 
 
 DEFINED SYMBOLS
@@ -1218,6 +1236,33 @@ DEFINED SYMBOLS
 ../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:547    .text:0000000000000002 VectorB4
 ../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:549    .text:0000000000000002 VectorB8
 ../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:551    .text:0000000000000002 VectorBC
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:555    .text:0000000000000002 VectorC0
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:557    .text:0000000000000002 VectorC4
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:559    .text:0000000000000002 VectorC8
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:561    .text:0000000000000002 VectorCC
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:563    .text:0000000000000002 VectorD0
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:565    .text:0000000000000002 VectorD4
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:567    .text:0000000000000002 VectorD8
+ARM GAS  /tmp/ccBl26UM.s 			page 22
+
+
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:569    .text:0000000000000002 VectorDC
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:573    .text:0000000000000002 VectorE0
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:575    .text:0000000000000002 VectorE4
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:577    .text:0000000000000002 VectorE8
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:579    .text:0000000000000002 VectorEC
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:581    .text:0000000000000002 VectorF0
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:583    .text:0000000000000002 VectorF4
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:585    .text:0000000000000002 VectorF8
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:587    .text:0000000000000002 VectorFC
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:591    .text:0000000000000002 Vector100
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:593    .text:0000000000000002 Vector104
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:595    .text:0000000000000002 Vector108
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:597    .text:0000000000000002 Vector10C
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:599    .text:0000000000000002 Vector110
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:601    .text:0000000000000002 Vector114
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:603    .text:0000000000000002 Vector118
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:605    .text:0000000000000002 Vector11C
 ../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:255    .text:0000000000000000 $t
 ../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:1025   .text:0000000000000006 _unhandled_exception
 ../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:1026   .text:0000000000000006 .stay
@@ -1225,6 +1270,3 @@ DEFINED SYMBOLS
 UNDEFINED SYMBOLS
 __main_stack_end__
 _crt0_entry
-ARM GAS  /tmp/ccacFIo9.s 			page 22
-
-

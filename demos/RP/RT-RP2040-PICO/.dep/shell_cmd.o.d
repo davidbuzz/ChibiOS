@@ -92,7 +92,14 @@ build/obj/shell_cmd.o: ../../../os/various/shell/shell_cmd.c \
  ../../../os/hal/ports/common/ARMCMx/cache.h \
  ../../../os/hal/ports/RP/RP2350/rp_isr.h \
  ../../../os/hal/ports/RP/RP2350/rp_fifo.h \
- ../../../os/hal/ports/RP/LLD/DMAv1/rp_dma.h \
+ /home/buzz2/Chibi/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/sio.h \
+ /home/buzz2/Chibi/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/interp.h \
+ ../../../os/hal/ports/RP/LLD/DMAv2/rp_dma.h \
+ /home/buzz2/Chibi/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/dma.h \
+ /home/buzz2/Chibi/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/dma.h \
+ /home/buzz2/Chibi/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/dma_debug.h \
+ /home/buzz2/Chibi/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/resets.h \
+ /home/buzz2/Chibi/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/resets.h \
  ../../../os/hal/include/hal_objects.h \
  ../../../os/hal/include/hal_streams.h \
  ../../../os/hal/include/hal_channels.h \
@@ -105,7 +112,12 @@ build/obj/shell_cmd.o: ../../../os/various/shell/shell_cmd.c \
  ../../../os/hal/include/hal_queues.h \
  ../../../os/hal/include/hal_buffered_serial.h \
  ../../../os/hal/include/hal_pal.h \
- ../../../os/hal/ports/RP/LLD/GPIOv1/hal_pal_lld.h \
+ ../../../os/hal/ports/RP/LLD/GPIOv2/hal_pal_lld.h \
+ /home/buzz2/Chibi/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/iobank0.h \
+ /home/buzz2/Chibi/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/io_bank0.h \
+ /home/buzz2/Chibi/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/io_bank0.h \
+ /home/buzz2/Chibi/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/pads_bank0.h \
+ /home/buzz2/Chibi/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/pads_bank0.h \
  ../../../os/hal/include/hal_adc.h ../../../os/hal/include/hal_can.h \
  ../../../os/hal/include/hal_crypto.h ../../../os/hal/include/hal_dac.h \
  ../../../os/hal/include/hal_efl.h ../../../os/hal/include/hal_gpt.h \
@@ -119,7 +131,11 @@ build/obj/shell_cmd.o: ../../../os/various/shell/shell_cmd.c \
  ../../../os/hal/include/hal_uart.h ../../../os/hal/include/hal_usb.h \
  ../../../os/hal/include/hal_wdg.h ../../../os/hal/include/hal_wspi.h \
  ../../../os/hal/include/hal_st.h \
- ../../../os/hal/ports/RP/LLD/TIMERv1/hal_st_lld.h \
+ ../../../os/hal/ports/RP/LLD/TIMERv2/hal_st_lld.h \
+ /home/buzz2/Chibi/pico-sdk/src/rp2_common/hardware_timer/include/hardware/timer.h \
+ /home/buzz2/Chibi/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/timer.h \
+ /home/buzz2/Chibi/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/timer.h \
+ /home/buzz2/Chibi/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/intctrl.h \
  ../../../os/hal/include/hal_mmc_spi.h \
  ../../../os/hal/include/hal_serial_usb.h \
  ../../../os/various/shell/shell.h ../../../os/various/shell/shell_cmd.h \
@@ -261,7 +277,14 @@ cfg/mcuconf.h:
 ../../../os/hal/ports/common/ARMCMx/cache.h:
 ../../../os/hal/ports/RP/RP2350/rp_isr.h:
 ../../../os/hal/ports/RP/RP2350/rp_fifo.h:
-../../../os/hal/ports/RP/LLD/DMAv1/rp_dma.h:
+/home/buzz2/Chibi/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/sio.h:
+/home/buzz2/Chibi/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/interp.h:
+../../../os/hal/ports/RP/LLD/DMAv2/rp_dma.h:
+/home/buzz2/Chibi/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/dma.h:
+/home/buzz2/Chibi/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/dma.h:
+/home/buzz2/Chibi/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/dma_debug.h:
+/home/buzz2/Chibi/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/resets.h:
+/home/buzz2/Chibi/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/resets.h:
 ../../../os/hal/include/hal_objects.h:
 ../../../os/hal/include/hal_streams.h:
 ../../../os/hal/include/hal_channels.h:
@@ -274,7 +297,12 @@ cfg/mcuconf.h:
 ../../../os/hal/include/hal_queues.h:
 ../../../os/hal/include/hal_buffered_serial.h:
 ../../../os/hal/include/hal_pal.h:
-../../../os/hal/ports/RP/LLD/GPIOv1/hal_pal_lld.h:
+../../../os/hal/ports/RP/LLD/GPIOv2/hal_pal_lld.h:
+/home/buzz2/Chibi/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/iobank0.h:
+/home/buzz2/Chibi/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/io_bank0.h:
+/home/buzz2/Chibi/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/io_bank0.h:
+/home/buzz2/Chibi/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/pads_bank0.h:
+/home/buzz2/Chibi/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/pads_bank0.h:
 ../../../os/hal/include/hal_adc.h:
 ../../../os/hal/include/hal_can.h:
 ../../../os/hal/include/hal_crypto.h:
@@ -298,7 +326,11 @@ cfg/mcuconf.h:
 ../../../os/hal/include/hal_wdg.h:
 ../../../os/hal/include/hal_wspi.h:
 ../../../os/hal/include/hal_st.h:
-../../../os/hal/ports/RP/LLD/TIMERv1/hal_st_lld.h:
+../../../os/hal/ports/RP/LLD/TIMERv2/hal_st_lld.h:
+/home/buzz2/Chibi/pico-sdk/src/rp2_common/hardware_timer/include/hardware/timer.h:
+/home/buzz2/Chibi/pico-sdk/src/rp2350/hardware_structs/include/hardware/structs/timer.h:
+/home/buzz2/Chibi/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/timer.h:
+/home/buzz2/Chibi/pico-sdk/src/rp2350/hardware_regs/include/hardware/regs/intctrl.h:
 ../../../os/hal/include/hal_mmc_spi.h:
 ../../../os/hal/include/hal_serial_usb.h:
 ../../../os/various/shell/shell.h:
