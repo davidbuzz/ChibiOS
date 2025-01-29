@@ -15,7 +15,7 @@
 */
 
 /**
- * @file    GPIOv1/hal_pal_lld.h
+ * @file    GPIOv2/hal_pal_lld.h
  * @brief   RP PAL low level driver header.
  *
  * @addtogroup PAL
@@ -371,8 +371,10 @@ typedef uint32_t iopadid_t;
 #define pal_lld_toggleport(port, bits)                                      \
   do {                                                                      \
     (void)port;                                                             \
-    sio_hw->gpio_out_xor = (bits);                                             \
+    sio_hw->gpio_togl = (bits);                                             \
   } while (false)
+
+    //sio_hw->gpio_out_xor = (bits);   old name pre sdk 2                                          
 
 /**
  * @brief   Pad mode setup.
