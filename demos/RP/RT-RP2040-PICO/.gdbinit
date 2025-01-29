@@ -8,5 +8,5 @@ break c1_main
 break hal_lld_peripheral_unreset
 break chRegSetThreadName
 break _unhandled_exception
-break __port_switch
+#break __port_switch
 bt
