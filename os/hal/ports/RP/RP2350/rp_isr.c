@@ -44,8 +44,8 @@
 /* Driver interrupt handlers.                                                */
 /*===========================================================================*/
 
-#include "rp_uart0.inc"
-#include "rp_uart1.inc"
+#include "rp_uart0.inc" // buzz todo karl didnt have these two lines
+#include "rp_uart1.inc" // buzz todo karl didnt have these two lines
 
 /*===========================================================================*/
 /* Driver exported functions.                                                */
@@ -58,7 +58,7 @@
  */
 void irqInit(void) {
 
-//  uart0_irq_init();
+//  uart0_irq_init();  // buzz todo karl didnt have 
 //  uart1_irq_init();
 }
 
@@ -69,7 +69,7 @@ void irqInit(void) {
  */
 void irqDeinit(void) {
 
-//  uart0_irq_deinit();
+//  uart0_irq_deinit();  // buzz todo karl didnt have 
 //  uart1_irq_deinit();
 }
 

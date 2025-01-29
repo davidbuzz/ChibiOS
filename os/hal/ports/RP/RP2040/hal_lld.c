@@ -106,6 +106,7 @@ void hal_lld_init(void) {
   //clocks_init(); //sdk1
   //runtime_init_clocks();//no worky? missing includes.?
   //stdio_init_all(); //init all the pico-sdk.
+  runtime_init_clocks();
 
   SystemCoreClock = RP_CORE_CLK;
 
