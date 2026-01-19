@@ -182,8 +182,31 @@ include $(RULESPATH)/rules.mk
 # Custom rules
 #
 
-build/ch.uf2: build/ch.elf
-	picotool uf2 convert build/ch.elf build/ch.uf2
+# Picotool binary location in ./
+PICOTOOL = picotool/picotool
+# Need picotool https://github.com/raspberrypi/picotool, picotool binaries: https://github.com/raspberrypi/pico-sdk-tools/releases
+# Download and extract picotool binary if not present, on linux x86_64
+$(PICOTOOL):
+	@echo "Downloading picotool..."
+	wget -q https://github.com/raspberrypi/pico-sdk-tools/releases/download/v2.2.0-3/picotool-2.2.0-a4-x86_64-lin.tar.gz
+	@echo "Extracting picotool..."
+	tar -xzf picotool-2.2.0-a4-x86_64-lin.tar.gz
+	@echo "Picotool ready at $(PICOTOOL)"
+
+uf2: $(BUILDDIR)/$(PROJECT).elf $(PICOTOOL)
+	$(PICOTOOL) uf2 convert $(BUILDDIR)/$(PROJECT).elf $(BUILDDIR)/$(PROJECT).uf2
+
+
+upload: uf2
+	$(info Uploading UF2 file... please press the BOOTSEL button on the board while connecting the USB cable in the next 5 seconds)
+	@sleep 5
+	$(PICOTOOL) load -v -x $(BUILDDIR)/$(PROJECT).uf2 -f
+	$(info UF2 file uploaded)
+# u can alternatively just copy the uf2 file to the RPI-RP2350 mass storage device if it exists. it only appears when the board is in BOOTSEL mode
+#     @cp $(BUILDDIR)/$(PROJECT).uf2 /media/$(USER)/RP2350
+
+
+
 
 #
 # Custom rules
