@@ -1728,6 +1728,7 @@ extern memcore_t ch_memcore;
   void *chCoreAllocFromBase(size_t size, unsigned align, size_t offset);
   void *chCoreAllocFromTop(size_t size, unsigned align, size_t offset);
   void chCoreGetStatusX(memory_area_t *map);
+  size_t _chCoreGetStatusX(void);
 static inline void *chCoreAllocAlignedI(size_t size, unsigned align) {
   return chCoreAllocAlignedWithOffsetI(size, align, 0U);
 }
