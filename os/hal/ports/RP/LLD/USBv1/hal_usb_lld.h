@@ -67,7 +67,7 @@
  * @note    The default is @p FALSE.
  */
 #if !defined(RP_USB_USE_USB1) || defined(__DOXYGEN__)
-#define RP_USB_USE_USB1                  FALSE
+#define RP_USB_USE_USB1                  TRUE
 #endif
 
 /**

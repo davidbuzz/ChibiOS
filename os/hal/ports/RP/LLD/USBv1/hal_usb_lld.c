@@ -51,9 +51,9 @@
 /**
  * @brief   USB1 driver identifier.
  */
-#if (RP_USB_USE_USB1 == TRUE) || defined(__DOXYGEN__)
+//#if (RP_USB_USE_USB1 == TRUE) || defined(__DOXYGEN__)
 USBDriver USBD1;
-#endif
+//#endif
 
 /*===========================================================================*/
 /* Driver local variables and types.                                         */
@@ -499,63 +499,63 @@ void usb_lld_init(void) {
  * @notapi
  */
 void usb_lld_start(USBDriver *usbp) {
-#if RP_USB_USE_USB1 == TRUE
-  if (&USBD1 == usbp) {
-    if (usbp->state == USB_STOP) {
-      /* Reset usb controller */
-      hal_lld_peripheral_reset(RESETS_ALLREG_USBCTRL);
-      hal_lld_peripheral_unreset(RESETS_ALLREG_USBCTRL);
+  #if RP_USB_USE_USB1 == TRUE
+    if (&USBD1 == usbp) {
+      if (usbp->state == USB_STOP) {
+        /* Reset usb controller */
+        hal_lld_peripheral_reset(RESETS_ALLREG_USBCTRL);
+        hal_lld_peripheral_unreset(RESETS_ALLREG_USBCTRL);
 
-      /* Clear any previos state in dpram and hw regs */
-      memset(USB, 0, sizeof(*USB));
-      memset(USB_DPSRAM, 0, sizeof(*USB_DPSRAM));
+        /* Clear any previos state in dpram and hw regs */
+        memset(USB, 0, sizeof(*USB));
+        memset(USB_DPSRAM, 0, sizeof(*USB_DPSRAM));
 
-      /* Mux the controller to the onboard usb phy */
-      USB->MUXING = USB_USB_MUXING_SOFTCON | USB_USB_MUXING_TO_PHY;
+        /* Mux the controller to the onboard usb phy */
+        USB->MUXING = USB_USB_MUXING_SOFTCON | USB_USB_MUXING_TO_PHY;
 
-#if RP_USB_FORCE_VBUS_DETECT == TRUE
-      /* Force VBUS detect so the device thinks it is plugged into a host */
-      USB->PWR = USB_USB_PWR_VBUS_DETECT_OVERRIDE_EN | USB_USB_PWR_VBUS_DETECT;
-#else
-#if RP_USE_EXTERNAL_VBUS_DETECT == TRUE
-      /* If VBUS is detected by pin without USB VBUS DET pin,
-       * define usb_vbus_detect which returns true if VBUS is enabled.
-       */
-      if (usb_vbus_detect()) {
-        USB->PWR = USB_USB_PWR_VBUS_DETECT_OVERRIDE_EN | USB_USB_PWR_VBUS_DETECT;
+        #if RP_USB_FORCE_VBUS_DETECT == TRUE
+              /* Force VBUS detect so the device thinks it is plugged into a host */
+              USB->PWR = USB_USB_PWR_VBUS_DETECT_OVERRIDE_EN | USB_USB_PWR_VBUS_DETECT;
+        #else
+            #if RP_USE_EXTERNAL_VBUS_DETECT == TRUE
+                  /* If VBUS is detected by pin without USB VBUS DET pin,
+                  * define usb_vbus_detect which returns true if VBUS is enabled.
+                  */
+                  if (usb_vbus_detect()) {
+                    USB->PWR = USB_USB_PWR_VBUS_DETECT_OVERRIDE_EN | USB_USB_PWR_VBUS_DETECT;
+                  }
+            #endif /* RP_USE_EXTERNAL_VBUS_DETECT */
+        #endif /* RP_USB_FORCE_VBUS_DETECT */
+
+        /* Reset procedure enforced on driver start.*/
+        usb_lld_reset(usbp);
+
+        /* Enable the USB controller in device mode. */
+        USB->MAINCTRL = USB_MAIN_CTRL_CONTROLLER_EN;
+
+        /* Enable an interrupt per EP0 transaction */
+        USB->SIECTRL = USB_SIE_CTRL_EP0_INT_1BUF;
+
+        /* Enable interrupts */
+        USB->INTE = USB_INTE_SETUP_REQ |
+                    USB_INTE_DEV_RESUME_FROM_HOST |
+                    USB_INTE_DEV_SUSPEND |
+                    USB_INTE_BUS_RESET |
+                    USB_INTE_BUFF_STATUS;
+
+        if (usbp->config->sof_cb != NULL) {
+          USB->SET.INTE = USB_INTE_DEV_SOF;
+        }
+
+        #if RP_USB_USE_ERROR_DATA_SEQ_INTR == TRUE
+              USB->SET.INTE = USB_INTE_ERROR_DATA_SEQ;
+        #endif /* RP_USB_USE_ERROR_DATA_SEQ_INTR */
+
+        /* Enable USB interrupt. */
+        nvicEnableVector(RP_USBCTRL_IRQ_NUMBER, RP_IRQ_USB0_PRIORITY);
       }
-#endif /* RP_USE_EXTERNAL_VBUS_DETECT */
-#endif /* RP_USB_FORCE_VBUS_DETECT */
-
-      /* Reset procedure enforced on driver start.*/
-      usb_lld_reset(usbp);
-
-      /* Enable the USB controller in device mode. */
-      USB->MAINCTRL = USB_MAIN_CTRL_CONTROLLER_EN;
-
-      /* Enable an interrupt per EP0 transaction */
-      USB->SIECTRL = USB_SIE_CTRL_EP0_INT_1BUF;
-
-      /* Enable interrupts */
-      USB->INTE = USB_INTE_SETUP_REQ |
-                  USB_INTE_DEV_RESUME_FROM_HOST |
-                  USB_INTE_DEV_SUSPEND |
-                  USB_INTE_BUS_RESET |
-                  USB_INTE_BUFF_STATUS;
-
-      if (usbp->config->sof_cb != NULL) {
-        USB->SET.INTE = USB_INTE_DEV_SOF;
-      }
-
-#if RP_USB_USE_ERROR_DATA_SEQ_INTR == TRUE
-      USB->SET.INTE = USB_INTE_ERROR_DATA_SEQ;
-#endif /* RP_USB_USE_ERROR_DATA_SEQ_INTR */
-
-      /* Enable USB interrupt. */
-      nvicEnableVector(RP_USBCTRL_IRQ_NUMBER, RP_IRQ_USB0_PRIORITY);
     }
-  }
-#endif
+  #endif //#if RP_USB_USE_USB1 == TRUE
 }
 
 /**
