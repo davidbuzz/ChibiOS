@@ -26,7 +26,7 @@
 #include <string.h>
 
 /* Onboard LED is on GPIO 25 */
-#define LED_PIN     25U
+#define LED_PIN     7U
 
 /* UART0 pins */
 #define UART_TX_PIN 0U
