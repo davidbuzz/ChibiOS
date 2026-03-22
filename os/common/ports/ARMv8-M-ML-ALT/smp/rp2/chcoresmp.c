@@ -30,6 +30,13 @@
 /* Module local definitions.                                                 */
 /*===========================================================================*/
 
+/* PORT_FIFO_PANIC_MESSAGE is defined in chcoresmp.h, which is only pulled in
+ * by chcore.h when PORT_CORES_NUMBER > 1 (i.e. CH_CFG_SMP_MODE == TRUE).
+ * Provide a fallback so this file compiles cleanly when SMP is disabled.   */
+#ifndef PORT_FIFO_PANIC_MESSAGE
+#define PORT_FIFO_PANIC_MESSAGE  0xFFFFFFFEU
+#endif
+
 /*===========================================================================*/
 /* Module exported variables.                                                */
 /*===========================================================================*/
