@@ -141,12 +141,29 @@ uint64_t __port_schedule_next(void) {
  *
  * @notapi
  */
+/* RP2350 SMP debug: fine-grained port_init stage canary.
+ * Check c1_inst_stage after halt:
+ *  0x50 = after port_suspend (BASEPRI=16)
+ *  0x51 = after FPU init (FPDSCR/FPSCR/FPCCR/CONTROL)
+ *  0x52 = after NVIC_SetPriorityGrouping (AIRCR write)
+ *  0x53 = after CoreDebug/DWT enable
+ *  0x54 = after port_smp_init (timer+SIO FIFO IRQs armed)
+ *  0x55 = after SVCall/PendSV priority set
+ *  0x56 = after MPU regions programmed
+ *  0x57 = after mpuEnable (port_init about to return)
+ */
+extern volatile uint32_t c1_inst_stage;
+#define C1_PI(n) do { c1_inst_stage = (n); } while(0)
+
 void port_init(os_instance_t *oip) {
 
   (void)oip;
 
+  C1_PI(0x4FU); /* before port_suspend — after function prologue push */
+
   /* Starting in a known IRQ configuration.*/
   port_suspend();
+  C1_PI(0x50U);
 
 #if CORTEX_USE_FPU == TRUE
   {
@@ -172,22 +189,27 @@ void port_init(os_instance_t *oip) {
     __set_CONTROL(control);
     __ISB();
   }
+  C1_PI(0x51U);
 #endif /* CORTEX_USE_FPU == TRUE */
 
   /* Initializing priority grouping.*/
   NVIC_SetPriorityGrouping(PORT_PRIGROUP_INIT);
+  C1_PI(0x52U);
 
   /* DWT cycle counter enable.*/
   CoreDebug->DEMCR |= CoreDebug_DEMCR_TRCENA_Msk;
   DWT->CTRL |= DWT_CTRL_CYCCNTENA_Msk;
+  C1_PI(0x53U);
 
 #if defined(port_smp_init)
   port_smp_init(oip);
+  C1_PI(0x54U);
 #endif
 
   /* Initialization of the system vectors used by the port.*/
   NVIC_SetPriority(SVCall_IRQn, CORTEX_PRIORITY_SVCALL);
   NVIC_SetPriority(PendSV_IRQn, CORTEX_PRIORITY_PENDSV);
+  C1_PI(0x55U);
 
 #if PORT_MPU_INITIALIZE == TRUE
   /* MPU initialization as specified in port options.*/
@@ -201,6 +223,7 @@ void port_init(os_instance_t *oip) {
                                       PORT_MPU_RBAR2_INIT, PORT_MPU_RLAR2_INIT,
                                       PORT_MPU_RBAR3_INIT, PORT_MPU_RLAR3_INIT};
     port_init_regions(regs0, &MPU->RNR);
+    C1_PI(0x56U);
 
 #if CORTEX_MPU_REGIONS > 4
     static const uint32_t regs4[]  = {MPU_RNR_REGION(4U),
@@ -234,6 +257,7 @@ void port_init(os_instance_t *oip) {
 #if (PORT_MPU_INITIALIZE == TRUE) || (PORT_SWITCHED_REGIONS_NUMBER > 0)
   /* MPU is enabled.*/
   mpuEnable(MPU_CTRL_PRIVDEFENA);
+  C1_PI(0x57U);
 #endif
 }
 

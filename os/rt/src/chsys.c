@@ -154,6 +154,15 @@ void chSysWaitSystemState(system_state_t state) {
 void chSysInit(void) {
   unsigned i;
 
+#if CH_CFG_SMP_MODE == TRUE
+  /* RP2350: SIO spinlocks are NOT cleared by SYSRESETREQ — only by power-on
+   * or external-pin reset.  If a previous run was halted (OpenOCD) or crashed
+   * while holding spinlock N, the next boot would spin forever in
+   * port_spinlock_take().  Unconditionally release the kernel spinlock here
+   * before first use — safe whether or not it is currently held.           */
+  port_spinlock_release();
+#endif
+
   /* System object initialization.*/
   ch_system.state = ch_sys_initializing;
   for (i = 0U; i < (unsigned)PORT_CORES_NUMBER; i++) {
