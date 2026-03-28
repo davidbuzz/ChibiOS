@@ -37,6 +37,19 @@
 #define PORT_FIFO_PANIC_MESSAGE  0xFFFFFFFEU
 #endif
 
+/*
+ * This source can be compiled even when CH_CFG_SMP_MODE is disabled for
+ * RP2350 bare-metal core1 use-cases. In that configuration chcore.h does not
+ * include chcoresmp.h/chcoresmp_timer.h, so provide local no-op fallbacks in
+ * order to avoid implicit-declaration warnings while keeping behavior intact.
+ */
+#if CH_CFG_SMP_MODE != TRUE
+#define port_get_core_id()                 (0U)
+#define port_timer_enable(oip)             do { (void)(oip); } while (false)
+#define port_spinlock_take()               do { } while (false)
+#define port_spinlock_release()            do { } while (false)
+#endif
+
 /*===========================================================================*/
 /* Module exported variables.                                                */
 /*===========================================================================*/
