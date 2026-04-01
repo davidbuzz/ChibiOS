@@ -151,7 +151,16 @@ OSAL_IRQ_HANDLER(RP_IO_IRQ_BANK0_HANDLER) {
     line = i * 8;
     while (ints != 0U) {
       if (ints & 0x0FU) {
-        _pal_isr_code(line);
+        /*
+         * RP2350 note:
+         * PAL callbacks are used for high-rate GPIO edge capture (RC input).
+         * Dispatch callbacks directly here and avoid the generic _pal_isr_code()
+         * path, which also performs wait-queue dequeue operations that are not
+         * used by this port and have shown fault sensitivity during bring-up.
+         */
+        if (_pal_events[line].cb != NULL) {
+          _pal_events[line].cb(_pal_events[line].arg);
+        }
       }
       ints >>= 4;
       ++line;
