@@ -428,6 +428,10 @@ void i2c_lld_start(I2CDriver *i2cp) {
     if (&I2CD0 == i2cp) {
       hal_lld_peripheral_unreset(RESETS_ALLREG_I2C0);
 
+      /* Clear any pending I2C0 IRQ that may have been latched before the
+       * peripheral was last reset. A stale pending bit would otherwise fire
+       * _unhandled_exception() -> NVIC_SystemReset() on the first enable. */
+      nvicClearPending(RP_I2C0_IRQ_NUMBER);
       nvicEnableVector(RP_I2C0_IRQ_NUMBER, RP_IRQ_I2C0_PRIORITY);
     }
 #endif
@@ -436,6 +440,8 @@ void i2c_lld_start(I2CDriver *i2cp) {
     if (&I2CD1 == i2cp) {
       hal_lld_peripheral_unreset(RESETS_ALLREG_I2C1);
 
+      /* Same pending-IRQ defence for I2C1. */
+      nvicClearPending(RP_I2C1_IRQ_NUMBER);
       nvicEnableVector(RP_I2C1_IRQ_NUMBER, RP_IRQ_I2C1_PRIORITY);
     }
 #endif
@@ -487,7 +493,9 @@ void i2c_lld_stop(I2CDriver *i2cp) {
 #if RP_I2C_USE_I2C0 == TRUE
     if (&I2CD0 == i2cp) {
       nvicDisableVector(RP_I2C0_IRQ_NUMBER);
-
+      /* Clear any IRQ that fired between the disable and the peripheral reset;
+       * prevents a stale pending bit from triggering _unhandled_exception(). */
+      nvicClearPending(RP_I2C0_IRQ_NUMBER);
       hal_lld_peripheral_reset(RESETS_ALLREG_I2C0);
     }
 #endif
@@ -495,7 +503,8 @@ void i2c_lld_stop(I2CDriver *i2cp) {
 #if RP_I2C_USE_I2C1 == TRUE
     if (&I2CD1 == i2cp) {
       nvicDisableVector(RP_I2C1_IRQ_NUMBER);
-
+      /* Same defence for I2C1. */
+      nvicClearPending(RP_I2C1_IRQ_NUMBER);
       hal_lld_peripheral_reset(RESETS_ALLREG_I2C1);
     }
 #endif
@@ -589,9 +598,11 @@ msg_t i2c_lld_master_receive_timeout(I2CDriver *i2cp, i2caddr_t addr,
   msg = osalThreadSuspendTimeoutS(&i2cp->thread, timeout);
 
   if (msg == MSG_TIMEOUT) {
-    /* Disable and clear interrupts. */
+    /* Disable all interrupt enables and abort the in-progress transfer so the
+     * bus is not left holding SCL/SDA.  Mirrors the transmit-timeout path. */
     dp->INTRMASK = 0U;
     (void)dp->CLRINTR;
+    dp->ENABLE |= I2C_IC_ENABLE_ABORT;   /* request hardware abort */
   }
 
   return msg;
@@ -687,9 +698,12 @@ msg_t i2c_lld_master_transmit_timeout(I2CDriver *i2cp, i2caddr_t addr,
   msg = osalThreadSuspendTimeoutS(&i2cp->thread, timeout);
 
   if (msg == MSG_TIMEOUT) {
-    /* Disable and clear interrupts. */
+    /* Disable all interrupt enables in the peripheral so no further IRQs
+     * are generated.  Then abort any in-progress transaction so the bus is
+     * not left holding SCL/SDA and the peripheral returns to IDLE. */
     dp->INTRMASK = 0U;
     (void)dp->CLRINTR;
+    dp->ENABLE |= I2C_IC_ENABLE_ABORT;   /* request hardware abort */
   }
 
   return msg;
