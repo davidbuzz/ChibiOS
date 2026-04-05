@@ -568,6 +568,8 @@ void usb_lld_start(USBDriver *usbp) {
       USB->SET.INTE = USB_INTE_ERROR_DATA_SEQ;
 #endif /* RP_USB_USE_ERROR_DATA_SEQ_INTR */
 
+      /* Clear stale NVIC pending bit before enabling (RP2350 errata). */
+      nvicClearPending(RP_USBCTRL_IRQ_NUMBER);
       /* Enable USB interrupt. */
       nvicEnableVector(RP_USBCTRL_IRQ_NUMBER, RP_IRQ_USB0_PRIORITY);
     }

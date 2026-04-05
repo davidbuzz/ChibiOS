@@ -240,6 +240,10 @@ void st_lld_init(void) {
 void st_lld_bind(void) {
 
 #if OSAL_ST_MODE == OSAL_ST_MODE_FREERUNNING
+  /* Clear any stale NVIC pending bit before enabling — RP2350 does not clear
+   * ISPR on peripheral reset, so a spurious IRQ would fire immediately and
+   * trip the 'not pending' assertion in the handler. */
+  nvicClearPending(RP_TIMER0_IRQ0_NUMBER);
   nvicEnableVector(RP_TIMER0_IRQ0_NUMBER, RP_IRQ_TIMER0_ALARM0_PRIORITY);
 #endif
 #if OSAL_ST_MODE == OSAL_ST_MODE_PERIODIC
@@ -275,6 +279,8 @@ void st_lld_bind(void) {
  */
 void st_lld_bind_alarm_n(unsigned alarm) {
 
+  /* Clear any stale NVIC pending bit — same RP2350 errata as st_lld_bind(). */
+  nvicClearPending(alarm_irqs[alarm].n);
   nvicEnableVector(alarm_irqs[alarm].n, alarm_irqs[alarm].prio);
 }
 #endif /* ST_LLD_NUM_ALARMS > 1 */

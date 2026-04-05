@@ -363,6 +363,8 @@ void pwm_lld_start(PWMDriver *pwmp) {
   if (pwmp->state == PWM_STOP) {
     /* Clock activation and timer reset. */
     hal_lld_peripheral_unreset(RESETS_ALLREG_PWM);
+    /* Clear stale NVIC pending bit before enabling (RP2350 errata). */
+    nvicClearPending(RP_PWM_IRQ_WRAP_0_NUMBER);
     nvicEnableVector(RP_PWM_IRQ_WRAP_0_NUMBER, RP_PWM_IRQ_WRAP_NUMBER_PRIORITY);
   } else {
     /* Driver re-configuration scenario, it must be stopped first. */
