@@ -64,6 +64,14 @@ volatile uint32_t rp_i2c_isr_stage;
   (I2C_IC_INTR_STAT_R_RX_OVER | I2C_IC_INTR_STAT_R_RX_UNDER | \
    I2C_IC_INTR_STAT_R_TX_OVER)
 
+/* Ensure the currently active VTOR table contains the expected I2C handlers. */
+static inline void i2c_lld_force_vector(uint32_t irqn, void (*handler)(void)) {
+  uint32_t *vectors = (uint32_t *)SCB->VTOR;
+  vectors[16U + irqn] = (uint32_t)handler;
+  __DSB();
+  __ISB();
+}
+
 #define I2C_ERROR_INTERRUPTS \
   (I2C_IC_INTR_MASK_M_TX_ABRT | I2C_IC_INTR_MASK_M_TX_OVER | \
    I2C_IC_INTR_MASK_M_RX_OVER | I2C_IC_INTR_MASK_M_RX_UNDER)
@@ -451,6 +459,9 @@ void i2c_lld_init(void) {
   I2CD0.i2c = I2C0;
   I2CD0.thread = NULL;
 
+  /* Install handler in current VTOR table before any possible IRQ36 event. */
+  i2c_lld_force_vector(RP_I2C0_IRQ_NUMBER, RP_I2C0_IRQ_HANDLER);
+
   /* Reset I2C. */
   hal_lld_peripheral_reset(RESETS_ALLREG_I2C0);
 #endif
@@ -459,6 +470,9 @@ void i2c_lld_init(void) {
   i2cObjectInit(&I2CD1);
   I2CD1.i2c = I2C1;
   I2CD1.thread = NULL;
+
+  /* Install handler in current VTOR table before any possible IRQ37 event. */
+  i2c_lld_force_vector(RP_I2C1_IRQ_NUMBER, RP_I2C1_IRQ_HANDLER);
 
   /* Reset I2C. */
   hal_lld_peripheral_reset(RESETS_ALLREG_I2C1);
@@ -546,12 +560,16 @@ void i2c_lld_start(I2CDriver *i2cp) {
   if (i2cp->state == I2C_STOP) {
 #if RP_I2C_USE_I2C0 == TRUE
     if (&I2CD0 == i2cp) {
+      /* Re-assert the vector slot just before arming NVIC in case another
+       * startup path altered VTOR contents. */
+      i2c_lld_force_vector(RP_I2C0_IRQ_NUMBER, RP_I2C0_IRQ_HANDLER);
       nvicClearPending(RP_I2C0_IRQ_NUMBER);
       nvicEnableVector(RP_I2C0_IRQ_NUMBER, RP_IRQ_I2C0_PRIORITY);
     }
 #endif
 #if RP_I2C_USE_I2C1 == TRUE
     if (&I2CD1 == i2cp) {
+      i2c_lld_force_vector(RP_I2C1_IRQ_NUMBER, RP_I2C1_IRQ_HANDLER);
       nvicClearPending(RP_I2C1_IRQ_NUMBER);
       nvicEnableVector(RP_I2C1_IRQ_NUMBER, RP_IRQ_I2C1_PRIORITY);
     }
