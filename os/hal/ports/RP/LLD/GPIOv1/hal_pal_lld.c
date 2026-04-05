@@ -195,6 +195,9 @@ void _pal_lld_init(void) {
     _pal_init_event(i);
   }
 
+  /* Clear any stale NVIC pending bit for the GPIO bank0 IRQ before enabling
+   * the vector; a pending bit surviving reset fires _unhandled_exception(). */
+  nvicClearPending(RP_IO_IRQ_BANK0_NUMBER);
   nvicEnableVector(RP_IO_IRQ_BANK0_NUMBER, RP_IO_IRQ_BANK0_PRIORITY);
   #endif
 }

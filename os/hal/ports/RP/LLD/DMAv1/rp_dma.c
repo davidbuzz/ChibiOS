@@ -245,6 +245,10 @@ const rp_dma_channel_t *dmaChannelAllocI(uint32_t id,
       if (SIO->CPUID == 0U) {
         /* Channel taken by core 0.*/
         if (dma.c0_allocated_mask == 0U) {
+          /* Clear any stale pending bit that survived peripheral reset;
+           * without this it fires _unhandled_exception() on the first
+           * nvicEnableVector() call (RP2350 errata / reset behaviour). */
+          nvicClearPending(RP_DMA_IRQ_0_NUMBER);
           nvicEnableVector(RP_DMA_IRQ_0_NUMBER, priority);
         }
         dma.c0_allocated_mask |= dmachp->chnmask;
@@ -252,6 +256,8 @@ const rp_dma_channel_t *dmaChannelAllocI(uint32_t id,
       else {
         /* Channel taken by core 1.*/
         if (dma.c1_allocated_mask == 0U) {
+          /* Same pending-IRQ defence for DMA IRQ 1. */
+          nvicClearPending(RP_DMA_IRQ_1_NUMBER);
           nvicEnableVector(RP_DMA_IRQ_1_NUMBER, priority);
         }
         dma.c1_allocated_mask |= dmachp->chnmask;
@@ -326,6 +332,9 @@ void dmaChannelFreeI(const rp_dma_channel_t *dmachp) {
     dma.c0_allocated_mask &= ~dmachp->chnmask;
     if (dma.c0_allocated_mask == 0U) {
       nvicDisableVector(RP_DMA_IRQ_0_NUMBER);
+      /* Clear any IRQ that fired between disable and peripheral reset
+       * so it cannot re-fire on the next dmaChannelAllocI(). */
+      nvicClearPending(RP_DMA_IRQ_0_NUMBER);
     }
   }
   else {
@@ -333,6 +342,8 @@ void dmaChannelFreeI(const rp_dma_channel_t *dmachp) {
     dma.c1_allocated_mask &= ~dmachp->chnmask;
     if (dma.c1_allocated_mask == 0U) {
       nvicDisableVector(RP_DMA_IRQ_1_NUMBER);
+      /* Same defence for DMA IRQ 1. */
+      nvicClearPending(RP_DMA_IRQ_1_NUMBER);
     }
   }
 
