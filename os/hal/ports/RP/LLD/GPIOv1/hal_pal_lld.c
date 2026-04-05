@@ -106,10 +106,10 @@ static void rp_pal_pad_set_mode(ioportid_t port,
   uint32_t ctrlbits, padbits, oebits, bit, abspad;
   const rp_pal_port_t *rpp = &_pal_ports[(uint32_t)port];
 
-  ctrlbits = mode & 0x007FFFFFU;
-  oebits   = (mode >> 23U) & 1U;
-  padbits  = mode >> 24U;
-  bit      = 1U << pad;
+  ctrlbits = mode & 0x007FFFFFU; // Mux function and pad control bits are encoded in the lower 23 bits of the mode.
+  oebits   = (mode >> 23U) & 1U; // Output enable bit is encoded in bit 23 of the mode.
+  padbits  = mode >> 24U; // Pad control bits are encoded in bits 24-31 of the mode.
+  bit      = 1U << pad;  // Bit mask for the specified pad.
   abspad   = ((uint32_t)port << 5U) | (uint32_t)pad;
 
   if ((pad >= PAL_IOPORTS_WIDTH) ||
