@@ -70,6 +70,24 @@ static uint32_t configured_freq[RP_CLK_COUNT];
  */
 void rp_clock_init(void) {
 
+  /*  clear stale pending bit/s */
+  nvicClearPending(RP_USBCTRL_IRQ_NUMBER);
+  nvicClearPending(RP_TIMER0_IRQ0_NUMBER);
+  nvicClearPending(RP_PWM_IRQ_WRAP_0_NUMBER);
+  nvicClearPending(RP_PIO0_IRQ_0_NUMBER);
+  nvicClearPending(RP_PIO1_IRQ_0_NUMBER);
+  nvicClearPending(RP_PIO2_IRQ_0_NUMBER);
+  nvicClearPending(RP_PIO0_IRQ_1_NUMBER);
+  nvicClearPending(RP_PIO1_IRQ_1_NUMBER);
+  nvicClearPending(RP_PIO2_IRQ_1_NUMBER);
+  nvicClearPending(RP_I2C0_IRQ_NUMBER);
+  nvicClearPending(RP_I2C1_IRQ_NUMBER);
+  nvicClearPending(RP_DMA_IRQ_0_NUMBER);
+  nvicClearPending(RP_DMA_IRQ_1_NUMBER);
+  nvicClearPending(RP_IO_IRQ_BANK0_NUMBER);
+  nvicClearPending(RP_UART0_IRQ_NUMBER);
+  nvicClearPending(RP_UART1_IRQ_NUMBER);
+
   /* Start early tick generator for safety module timeouts. */
   hal_lld_peripheral_unreset(RESETS_ALLREG_TIMER0);
 
