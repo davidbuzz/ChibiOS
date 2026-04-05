@@ -168,7 +168,15 @@ static void i2c_lld_handle_errors(I2CDriver *i2cp) {
   dp->INTRMASK = 0U;
   (void)dp->CLRINTR;
   (void)dp->CLRTXABRT;
-  _i2c_wakeup_error_isr(i2cp);
+
+  /* In early-startup fault scenarios a stale IRQ can arrive after the
+   * waiting thread reference has already been cleared. Never resume through
+   * a NULL/stale thread reference, it can corrupt the scheduler state. */
+  if (i2cp->thread != NULL) {
+    _i2c_wakeup_error_isr(i2cp);
+  } else {
+    i2cp->state = I2C_READY;
+  }
 }
 
 /**
@@ -300,6 +308,24 @@ static void i2c_lld_serve_interrupt(I2CDriver *i2cp) {
   I2C_TypeDef *dp = i2cp->i2c;
   uint32_t intr = dp->INTRSTAT;
 
+  /* Guard: if no interrupt bits are set, or if the driver is not actively
+   * transferring, silence the hardware and return without touching the thread
+   * reference.  A spurious interrupt arriving while I2C is in the READY (or
+   * non-ACTIVE) state — e.g. because the RP2350 NVIC ISPR bit survived a
+   * SYSRESETREQ — must not call _i2c_wakeup_isr() with a potentially NULL or
+   * stale thread pointer, as chThdResumeI with a garbage pointer corrupts the
+   * MSP stack and causes _unhandled_exception() via a bad pop {r3,pc}. */
+  if (intr == 0U ||
+      i2cp->thread == NULL ||
+      (i2cp->state != I2C_ACTIVE_TX && i2cp->state != I2C_ACTIVE_RX)) {
+    dp->INTRMASK = 0U;  /* disable all interrupt sources in the hardware */
+    (void)dp->CLRINTR;  /* clear any stale flags */
+    if (i2cp->state != I2C_STOP) {
+      i2cp->state = I2C_READY;
+    }
+    return;
+  }
+
   /* Transmission error detected. */
   if (intr & I2C_ERROR_INTERRUPTS) {
     return i2c_lld_handle_errors(i2cp);
@@ -351,7 +377,13 @@ static void i2c_lld_serve_interrupt(I2CDriver *i2cp) {
   /* Transmission complete, disable and clear all interrupts. */
   dp->INTRMASK = 0U;
   (void)dp->CLRINTR;
-  _i2c_wakeup_isr(i2cp);
+
+  /* Same safety guard as error path: only wake a valid waiter. */
+  if (i2cp->thread != NULL) {
+    _i2c_wakeup_isr(i2cp);
+  } else {
+    i2cp->state = I2C_READY;
+  }
 }
 
 /*===========================================================================*/
@@ -422,32 +454,39 @@ void i2c_lld_init(void) {
 void i2c_lld_start(I2CDriver *i2cp) {
   I2C_TypeDef *dp = i2cp->i2c;
 
-  if (i2cp->state == I2C_STOP) {
+  /* Bring the peripheral out of reset first (state == I2C_STOP means first
+   * time start; state == I2C_READY means a reconfiguration).  The NVIC enable
+   * is deferred to *after* all hardware setup and CLRINTR, so that no
+   * stale hardware interrupt can fire against an uninitialised driver state.
+   * Previously the nvicEnableVector was placed here, which created a window:
+   * BL leaves I2C hardware flags set → app unresets peripheral → enables NVIC
+   * → HW immediately re-asserts IRQ line → VectorD0 fires before INTRMASK=0
+   * and before i2cp->state is ACTIVE, corrupting the MSP stack via a bad
+   * chSchReadyI call and reaching _unhandled_exception with IPSR=52. */
 
+  if (i2cp->state == I2C_STOP) {
 #if RP_I2C_USE_I2C0 == TRUE
     if (&I2CD0 == i2cp) {
+      /* Full reset–unreset cycle: drives DW_apb_i2c to its power-on default
+       * state, clearing IC_RAW_INTR_STAT (all bits 0) and IC_INTR_MASK (0x8FF
+       * default, but all masked after we write INTRMASK=0 below).  Without
+       * the prior reset assertion the hardware might still be in the middle of
+       * a BL transaction, keeping the IRQ line high and triggering a spurious
+       * I2C0 ISR the moment NVIC is armed. */
+      hal_lld_peripheral_reset(RESETS_ALLREG_I2C0);
       hal_lld_peripheral_unreset(RESETS_ALLREG_I2C0);
-
-      /* Clear any pending I2C0 IRQ that may have been latched before the
-       * peripheral was last reset. A stale pending bit would otherwise fire
-       * _unhandled_exception() -> NVIC_SystemReset() on the first enable. */
-      nvicClearPending(RP_I2C0_IRQ_NUMBER);
-      nvicEnableVector(RP_I2C0_IRQ_NUMBER, RP_IRQ_I2C0_PRIORITY);
     }
 #endif
-
 #if RP_I2C_USE_I2C1 == TRUE
     if (&I2CD1 == i2cp) {
+      /* Same full reset–unreset for I2C1. */
+      hal_lld_peripheral_reset(RESETS_ALLREG_I2C1);
       hal_lld_peripheral_unreset(RESETS_ALLREG_I2C1);
-
-      /* Same pending-IRQ defence for I2C1. */
-      nvicClearPending(RP_I2C1_IRQ_NUMBER);
-      nvicEnableVector(RP_I2C1_IRQ_NUMBER, RP_IRQ_I2C1_PRIORITY);
     }
 #endif
   }
 
-  /* Disable I2C peripheral for setup phase. */
+  /* Disable I2C peripheral for setup phase (clears FIFOs, stops clock). */
   if (i2c_lld_disableS(i2cp) != MSG_OK) {
     return;
   }
@@ -467,14 +506,36 @@ void i2c_lld_start(I2CDriver *i2cp) {
 
   i2c_lld_setup_frequency(i2cp);
 
-  /* Clear interrupt mask. */
+  /* Mask all hardware interrupts — IC_INTR_STAT stays zero until we set
+   * specific mask bits in master_transmit/receive_timeout below. */
   dp->INTRMASK = 0U;
 
   /* Enable peripheral. */
   dp->ENABLE = I2C_IC_ENABLE_ENABLE;
 
-  /* Clear interrupts. */
+  /* Clear any stale interrupt flags left by the bootloader or a prior run.
+   * This read of IC_CLR_INTR also releases the hardware IRQ line so that
+   * when we arm the NVIC vector below, ISPR[I2Cn] will not be asserted. */
   (void)dp->CLRINTR;
+
+  /* Enable the NVIC vector only now that hardware is fully configured and
+   * the IRQ line is known to be de-asserted (INTRMASK=0 & CLRINTR read).
+   * An additional nvicClearPending undoes any ISPR bit set by the unreset
+   * pulse or any peripheral glitch that happened during setup above. */
+  if (i2cp->state == I2C_STOP) {
+#if RP_I2C_USE_I2C0 == TRUE
+    if (&I2CD0 == i2cp) {
+      nvicClearPending(RP_I2C0_IRQ_NUMBER);
+      nvicEnableVector(RP_I2C0_IRQ_NUMBER, RP_IRQ_I2C0_PRIORITY);
+    }
+#endif
+#if RP_I2C_USE_I2C1 == TRUE
+    if (&I2CD1 == i2cp) {
+      nvicClearPending(RP_I2C1_IRQ_NUMBER);
+      nvicEnableVector(RP_I2C1_IRQ_NUMBER, RP_IRQ_I2C1_PRIORITY);
+    }
+#endif
+  }
 }
 
 /**
