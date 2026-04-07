@@ -421,22 +421,21 @@ void i2c_lld_init(void) {
  */
 void i2c_lld_start(I2CDriver *i2cp) {
   I2C_TypeDef *dp = i2cp->i2c;
+  bool enable_irq_after_setup = false;
 
   if (i2cp->state == I2C_STOP) {
 
 #if RP_I2C_USE_I2C0 == TRUE
     if (&I2CD0 == i2cp) {
       rp_peripheral_unreset(RESETS_ALLREG_I2C0);
-
-      nvicEnableVector(RP_I2C0_IRQ_NUMBER, RP_IRQ_I2C0_PRIORITY);
+      enable_irq_after_setup = true;
     }
 #endif
 
 #if RP_I2C_USE_I2C1 == TRUE
     if (&I2CD1 == i2cp) {
       rp_peripheral_unreset(RESETS_ALLREG_I2C1);
-
-      nvicEnableVector(RP_I2C1_IRQ_NUMBER, RP_IRQ_I2C1_PRIORITY);
+      enable_irq_after_setup = true;
     }
 #endif
   }
@@ -469,6 +468,26 @@ void i2c_lld_start(I2CDriver *i2cp) {
 
   /* Clear interrupts. */
   (void)dp->CLRINTR;
+
+  /*
+   * Enable NVIC only after peripheral setup and interrupt clear.
+   * This prevents stale/pending IRQ lines from firing during bring-up
+   * before driver state has reached a consistent runtime configuration.
+   */
+  if (enable_irq_after_setup) {
+#if RP_I2C_USE_I2C0 == TRUE
+    if (&I2CD0 == i2cp) {
+      nvicClearPending(RP_I2C0_IRQ_NUMBER);
+      nvicEnableVector(RP_I2C0_IRQ_NUMBER, RP_IRQ_I2C0_PRIORITY);
+    }
+#endif
+#if RP_I2C_USE_I2C1 == TRUE
+    if (&I2CD1 == i2cp) {
+      nvicClearPending(RP_I2C1_IRQ_NUMBER);
+      nvicEnableVector(RP_I2C1_IRQ_NUMBER, RP_IRQ_I2C1_PRIORITY);
+    }
+#endif
+  }
 }
 
 /**

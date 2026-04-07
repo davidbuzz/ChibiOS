@@ -156,6 +156,7 @@ void spi_lld_init(void) {
  */
 void spi_lld_start(SPIDriver *spip) {
   uint32_t dss;
+  bool enable_dma_irq_after_setup = false;
 
   if (spip->state == SPI_STOP) {
 
@@ -173,9 +174,8 @@ void spi_lld_start(SPIDriver *spip) {
                                      (rp_dmaisr_t)spi_lld_serve_tx_interrupt,
                                      (void *)spip);
       osalDbgAssert(spip->dmatx != NULL, "unable to allocate stream");
-      dmaChannelEnableInterruptX(spip->dmarx);
-      dmaChannelEnableInterruptX(spip->dmatx);
       rp_peripheral_unreset(RESETS_ALLREG_SPI0);
+      enable_dma_irq_after_setup = true;
     }
 #endif
 #if RP_SPI_USE_SPI1 == TRUE
@@ -190,9 +190,8 @@ void spi_lld_start(SPIDriver *spip) {
                                      (rp_dmaisr_t)spi_lld_serve_tx_interrupt,
                                      (void *)spip);
       osalDbgAssert(spip->dmatx != NULL, "unable to allocate stream");
-      dmaChannelEnableInterruptX(spip->dmarx);
-      dmaChannelEnableInterruptX(spip->dmatx);
       rp_peripheral_unreset(RESETS_ALLREG_SPI1);
+      enable_dma_irq_after_setup = true;
     }
 #endif
     else {
@@ -227,6 +226,16 @@ void spi_lld_start(SPIDriver *spip) {
   spip->spi->SSPCPSR  = spip->config->SSPCPSR;
   spip->spi->SSPDMACR = SPI_SSPDMACR_RXDMAE | SPI_SSPDMACR_TXDMAE;
   spip->spi->SSPCR1   = SPI_SSPCR1_SSE;
+
+  /*
+   * Enable DMA IRQ delivery only after SPI and DMA register setup is complete.
+   * This avoids early DMA ISR entry while the peripheral is still being
+   * configured during startup.
+   */
+  if (enable_dma_irq_after_setup) {
+    dmaChannelEnableInterruptX(spip->dmarx);
+    dmaChannelEnableInterruptX(spip->dmatx);
+  }
 }
 
 /**

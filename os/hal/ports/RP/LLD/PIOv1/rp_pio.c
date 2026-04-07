@@ -259,6 +259,14 @@ const rp_pio_sm_t *pioSmAllocI(const rp_pio_block_t *block,
 
     if ((prevmask & smmask) == 0U) {
 
+      /*
+       * For first use of this PIO block, release reset before enabling IRQs.
+       * This keeps IRQ delivery aligned with fully brought-up peripheral state.
+       */
+      if (prevmask == 0U) {
+        rp_peripheral_unreset(block->resets_mask);
+      }
+
       /* Installs the PIO handler.*/
       pio.blocks[b].sm[i].func  = func;
       pio.blocks[b].sm[i].param = param;
@@ -268,13 +276,16 @@ const rp_pio_sm_t *pioSmAllocI(const rp_pio_block_t *block,
         if (pio.blocks[b].c0_allocated_mask == 0U) {
           switch (b) {
           case 0U:
+            nvicClearPending(RP_PIO0_IRQ_0_NUMBER);
             nvicEnableVector(RP_PIO0_IRQ_0_NUMBER, irq_priority);
             break;
           case 1U:
+            nvicClearPending(RP_PIO1_IRQ_0_NUMBER);
             nvicEnableVector(RP_PIO1_IRQ_0_NUMBER, irq_priority);
             break;
 #if RP_HAS_PIO2 == TRUE
           case 2U:
+            nvicClearPending(RP_PIO2_IRQ_0_NUMBER);
             nvicEnableVector(RP_PIO2_IRQ_0_NUMBER, irq_priority);
             break;
 #endif
@@ -289,13 +300,16 @@ const rp_pio_sm_t *pioSmAllocI(const rp_pio_block_t *block,
         if (pio.blocks[b].c1_allocated_mask == 0U) {
           switch (b) {
           case 0U:
+            nvicClearPending(RP_PIO0_IRQ_1_NUMBER);
             nvicEnableVector(RP_PIO0_IRQ_1_NUMBER, irq_priority);
             break;
           case 1U:
+            nvicClearPending(RP_PIO1_IRQ_1_NUMBER);
             nvicEnableVector(RP_PIO1_IRQ_1_NUMBER, irq_priority);
             break;
 #if RP_HAS_PIO2 == TRUE
           case 2U:
+            nvicClearPending(RP_PIO2_IRQ_1_NUMBER);
             nvicEnableVector(RP_PIO2_IRQ_1_NUMBER, irq_priority);
             break;
 #endif
@@ -304,11 +318,6 @@ const rp_pio_sm_t *pioSmAllocI(const rp_pio_block_t *block,
           }
         }
         pio.blocks[b].c1_allocated_mask |= smmask;
-      }
-
-      /* Releasing PIO reset if this is the first state machine taken.*/
-      if (prevmask == 0U) {
-        rp_peripheral_unreset(block->resets_mask);
       }
 
       return &pio_sms[b][i];

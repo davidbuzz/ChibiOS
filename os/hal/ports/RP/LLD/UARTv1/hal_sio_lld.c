@@ -173,6 +173,9 @@ void sio_lld_init(void) {
  * @notapi
  */
 msg_t sio_lld_start(SIODriver *siop) {
+  bool enable_irq_after_setup = false;
+  uint32_t irqn = 0U;
+  uint32_t irqprio = 0U;
 
   /* Using the default configuration if the application passed a
      NULL pointer.*/
@@ -188,13 +191,17 @@ msg_t sio_lld_start(SIODriver *siop) {
 #if RP_SIO_USE_UART0 == TRUE
     else if (&SIOD0 == siop) {
       rp_peripheral_unreset(RESETS_ALLREG_UART0);
-      nvicEnableVector(RP_UART0_IRQ_NUMBER, RP_IRQ_UART0_PRIORITY);
+      enable_irq_after_setup = true;
+      irqn = RP_UART0_IRQ_NUMBER;
+      irqprio = RP_IRQ_UART0_PRIORITY;
     }
 #endif
 #if RP_SIO_USE_UART1 == TRUE
     else if (&SIOD1 == siop) {
       rp_peripheral_unreset(RESETS_ALLREG_UART1);
-      nvicEnableVector(RP_UART1_IRQ_NUMBER, RP_IRQ_UART1_PRIORITY);
+      enable_irq_after_setup = true;
+      irqn = RP_UART1_IRQ_NUMBER;
+      irqprio = RP_IRQ_UART1_PRIORITY;
     }
 #endif
     else {
@@ -204,6 +211,15 @@ msg_t sio_lld_start(SIODriver *siop) {
 
   /* Configures the peripheral.*/
   uart_init(siop);
+
+  /*
+   * Enable NVIC only after UART registers are configured.
+   * This avoids early IRQ delivery while startup state is still incomplete.
+   */
+  if (enable_irq_after_setup) {
+    nvicClearPending(irqn);
+    nvicEnableVector(irqn, irqprio);
+  }
 
   return HAL_RET_SUCCESS;
 }
