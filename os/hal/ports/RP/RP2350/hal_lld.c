@@ -116,6 +116,21 @@ void hal_lld_init(void) {
   rp_peripheral_unreset(RESETS_ALLREG_SYSCFG);
 #endif /* RP_NO_INIT */
 
+  /* Re-assert VTOR before NVIC init — only when VTOR still points at the
+   * bootrom (address < 0x10000000).  A bootloader that soft-jumps (BX without
+   * SYSRESETREQ) can leave the bootrom table active, in which case we must
+   * redirect VTOR to our own flash vector table before nvicInit() runs.
+   *
+   * If board.c __early_init() has already set VTOR to our flash or RAM table
+   * (address >= 0x10000000), leave it alone — this allows __late_init() to
+   * subsequently override VTOR with a RAM copy without us reverting it. */
+#if !defined(__ICCARM__)
+  if (SCB->VTOR < 0x10000000U) {
+    extern uint32_t _vectors;
+    SCB->VTOR = (uint32_t)&_vectors;
+  }
+#endif
+
   /* NVIC initialization.*/
   nvicInit();
 
