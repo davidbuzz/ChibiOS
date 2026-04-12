@@ -80,6 +80,17 @@
 #endif
 
 /**
+ * @brief   Timeout used while probing/connecting a card.
+ * @details This allows boards without reliable card-detect to fail fast at
+ *          boot when no card is present, while keeping normal runtime idle
+ *          timeouts unchanged for active card operations.
+ * @note    Time is in milliseconds.
+ */
+#if !defined(MMC_CONNECT_IDLE_TIMEOUT_MS) || defined(__DOXYGEN__)
+#define MMC_CONNECT_IDLE_TIMEOUT_MS     MMC_IDLE_TIMEOUT_MS
+#endif
+
+/**
  * @brief   Mutual exclusion on the SPI bus.
  */
 #if !defined(MMC_USE_MUTUAL_EXCLUSION) || defined(__DOXYGEN__)

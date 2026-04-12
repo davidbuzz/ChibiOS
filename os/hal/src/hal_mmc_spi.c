@@ -299,6 +299,9 @@ static uint8_t mmc_crc7(uint8_t crc, const uint8_t *buffer, size_t len) {
  * @notapi
  */
 static bool mmc_wait_idle(MMCDriver *mmcp) {
+  const unsigned timeout_ms =
+      (mmcp->state == BLK_CONNECTING) ? (unsigned)MMC_CONNECT_IDLE_TIMEOUT_MS :
+                                        (unsigned)MMC_IDLE_TIMEOUT_MS;
   unsigned i;
 
   for (i = 0U; i < 16U; i++) {
@@ -318,7 +321,7 @@ static bool mmc_wait_idle(MMCDriver *mmcp) {
 
     /* Trying to be nice with the other threads.*/
     osalThreadSleepMicroseconds(MMC_WRITE_WAIT_USEC);
-  } while (++i < MMC_TIMEOUT_WRITE);
+  } while (++i < (timeout_ms * 1000U) / (unsigned)MMC_WRITE_WAIT_USEC);
 
   return HAL_FAILED;
 }
