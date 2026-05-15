@@ -177,7 +177,7 @@ DRESULT disk_ioctl (
   return RES_PARERR;
 }
 
-DWORD get_fattime(void) {
+__attribute__((weak)) DWORD get_fattime(void) {
 #if HAL_USE_RTC
   RTCDateTime timespec;
 
