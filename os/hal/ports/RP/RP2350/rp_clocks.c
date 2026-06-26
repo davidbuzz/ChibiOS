@@ -243,6 +243,37 @@ void rp_clock_init(void) {
     (void)(*(volatile uint32_t *)0x10000000U);
     __asm volatile ("dsb sy" ::: "memory");
     __asm volatile ("isb" ::: "memory");
+
+    /* Configure QMI M1_TIMING for the secondary flash (W25Q128, CS1n).
+     * M1_TIMING is at QMI_BASE+0x20 = 0x400D0020.  Apply same CLKDIV and
+     * RXDELAY as M0 so M1 XIP reads at 0x11000000 use the correct speed.
+     * The reset values of M1_RFMT and M1_RCMD already encode standard SPI
+     * 03h read (PREFIX_LEN=1, PREFIX=0x03, single-width, no dummy), so only
+     * timing needs to be set here.
+     *
+     * GPIO0 is muxed to QMI CS1n (function 9) so the QMI hardware can drive
+     * the chip select for both XIP reads and direct-mode erase/write.
+     * IO_BANK0 GPIO0_CTRL = IO_BANK0_BASE(0x40028000) + 0x004.
+     *
+     * Board opt-in: define RP_QMI_M1_CS1_GPIO0 (e.g. Laurel with its
+     * secondary W25Q128 on CS1n).  Boards that use GPIO0 for other
+     * purposes (e.g. RPI_UAVFC blue LED) must not define it. */
+#if defined(RP_QMI_M1_CS1_GPIO0)
+    {
+      volatile uint32_t *m1_timing  = (volatile uint32_t *)(0x400D0020U);
+      volatile uint32_t *gpio0_ctrl = (volatile uint32_t *)(0x40028004U);
+      uint32_t t1 = *m1_timing;
+      t1 &= ~0x7FFU;
+      t1 |= ((uint32_t)(RP_QMI_RXDELAY) << 8) | (uint32_t)(RP_QMI_CLKDIV);
+      *m1_timing = t1;
+      /* Set GPIO0 FUNCSEL = 9 (QMI CS1n). */
+      uint32_t ctrl = *gpio0_ctrl;
+      ctrl = (ctrl & ~0x1FU) | 9U;
+      *gpio0_ctrl = ctrl;
+      __asm volatile ("dsb sy" ::: "memory");
+      __asm volatile ("isb"    ::: "memory");
+    }
+#endif /* RP_QMI_M1_CS1_GPIO0 */
   }
 #endif
 
