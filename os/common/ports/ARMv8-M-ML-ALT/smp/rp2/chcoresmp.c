@@ -43,6 +43,45 @@ __STATIC_INLINE void port_spinlock_release(void) {}
 /* Module exported variables.                                                */
 /*===========================================================================*/
 
+#if PORT_SPINLOCK_STATS == TRUE
+/**
+ * @brief   Kernel spinlock contention, per core.
+ * @details Written from port_spinlock_take() only when the lock was already
+ *          held by the other core, so an uncontended take is unaffected.
+ *          Read these over SWD.
+ */
+volatile uint32_t rp_spinlock_waits[PORT_CORES_NUMBER];
+volatile uint32_t rp_spinlock_wait_us[PORT_CORES_NUMBER];
+volatile uint32_t rp_spinlock_wait_max_us[PORT_CORES_NUMBER];
+
+/**
+ * @brief   Spins for the kernel spinlock and records the wait.
+ * @details Called only when the lock was already held by the other core. The
+ *          accounting runs after acquisition, so the lock serialises it.
+ * @note    SRAM-resident: this is reachable from chSysLock() and must not
+ *          need an instruction fetch while XIP is disabled.
+ *
+ * @notapi
+ */
+__attribute__((section(".ramtext")))
+void __port_spinlock_contended(void) {
+  rtcnt_t start = TIMER0->TIMERAWL;
+  rtcnt_t elapsed;
+  core_id_t core;
+
+  while (SIO->SPINLOCK[PORT_SPINLOCK_NUMBER] == 0U) {
+  }
+
+  elapsed = TIMER0->TIMERAWL - start;
+  core = SIO->CPUID;
+  rp_spinlock_waits[core]++;
+  rp_spinlock_wait_us[core] += elapsed;
+  if (elapsed > rp_spinlock_wait_max_us[core]) {
+    rp_spinlock_wait_max_us[core] = elapsed;
+  }
+}
+#endif /* PORT_SPINLOCK_STATS == TRUE */
+
 /*===========================================================================*/
 /* Module local types.                                                       */
 /*===========================================================================*/

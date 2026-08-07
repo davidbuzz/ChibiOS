@@ -56,6 +56,18 @@
 /**
  * @brief   Spinlock to be used by the port layer.
  */
+/**
+ * @brief   Kernel spinlock contention statistics.
+ * @details Records, per core, how often that core found the kernel spinlock
+ *          already held by the other core and how long it waited. Measures
+ *          cross-core latency rather than throughput, since a core spinning
+ *          in chSysLock() also has interrupts disabled. Off by default: it
+ *          costs a function call and an SRAM-resident helper.
+ */
+#if !defined(PORT_SPINLOCK_STATS)
+#define PORT_SPINLOCK_STATS             FALSE
+#endif
+
 #if !defined(PORT_SPINLOCK_NUMBER)
 #define PORT_SPINLOCK_NUMBER            31
 #endif
@@ -146,6 +158,12 @@ extern "C" {
   void __port_smp_init(os_instance_t *oip);
   void __port_spinlock_take(void);
   void __port_spinlock_release(void);
+#if (PORT_SPINLOCK_STATS == TRUE) || defined(__DOXYGEN__)
+  void __port_spinlock_contended(void);
+  extern volatile uint32_t rp_spinlock_waits[PORT_CORES_NUMBER];
+  extern volatile uint32_t rp_spinlock_wait_us[PORT_CORES_NUMBER];
+  extern volatile uint32_t rp_spinlock_wait_max_us[PORT_CORES_NUMBER];
+#endif
 #ifdef __cplusplus
 }
 #endif
@@ -175,8 +193,17 @@ __STATIC_INLINE void port_notify_instance(os_instance_t *oip) {
  */
 __STATIC_INLINE void port_spinlock_take(void) {
 
+#if PORT_SPINLOCK_STATS == TRUE
+  /* The contended path is out of line on purpose. This is inlined at every
+     chSysLock() site, so keeping it to a test and a branch avoids bloating
+     the image and perturbing the very latency being measured.*/
+  if (SIO->SPINLOCK[PORT_SPINLOCK_NUMBER] == 0U) {
+    __port_spinlock_contended();
+  }
+#else
   while (SIO->SPINLOCK[PORT_SPINLOCK_NUMBER] == 0U) {
   }
+#endif
   __DMB();
 }
 
